@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: redirect('/homepage')
+  root to: redirect('/home')
 
   get 'home', to: 'site#index'
   get 'home/new', to: 'site#index'

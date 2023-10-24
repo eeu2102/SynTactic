@@ -196,3 +196,24 @@ Processing by SiteController#index as HTML
 Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 1856)
 
 
+Started GET "/" for ::1 at 2023-10-23 21:34:15 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/homepage" for ::1 at 2023-10-23 21:34:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/homepage"):
+  
+Started GET "/" for ::1 at 2023-10-23 21:34:15 -0400
+Started GET "/homepage" for ::1 at 2023-10-23 21:34:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/homepage"):
+  
+Started GET "/home" for ::1 at 2023-10-23 21:34:21 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 191)
+  Rendered layout layouts/application.html.erb (Duration: 196.8ms | Allocations: 56741)
+Completed 200 OK in 202ms (Views: 198.3ms | ActiveRecord: 0.0ms | Allocations: 60718)
+
+
