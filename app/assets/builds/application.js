@@ -2853,9 +2853,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React4 = require_react();
+          var React5 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React5.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -4251,7 +4251,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React4.Children.forEach(props.children, function(child) {
+                  React5.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11798,7 +11798,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React4.Component().refs;
+          var emptyRefsObject = new React5.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -28134,7 +28134,7 @@
   application.register("hello", hello_controller_default);
 
   // app/javascript/application.js
-  var import_react5 = __toESM(require_react());
+  var import_react6 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/index.js
@@ -28812,7 +28812,7 @@
   }
 
   // app/javascript/components/App.js
-  var import_react4 = __toESM(require_react());
+  var import_react5 = __toESM(require_react());
 
   // app/javascript/components/Header.js
   var import_react3 = __toESM(require_react());
@@ -28821,15 +28821,34 @@
   }, /* @__PURE__ */ import_react3.default.createElement("h1", null, "SynTactic")));
   var Header_default = Header;
 
+  // app/javascript/components/HomePage.js
+  var import_react4 = __toESM(require_react());
+  var HomePage = () => {
+    return /* @__PURE__ */ import_react4.default.createElement("div", {
+      className: "home__container"
+    }, /* @__PURE__ */ import_react4.default.createElement("h1", null, "Welcome to SynTactic"), /* @__PURE__ */ import_react4.default.createElement("h2", {
+      id: "sub__header"
+    }, "Pick a Review Topic"), /* @__PURE__ */ import_react4.default.createElement("div", {
+      className: "topics__container"
+    }, /* @__PURE__ */ import_react4.default.createElement("a", {
+      href: ""
+    }, "Declaration and Instantiation"), /* @__PURE__ */ import_react4.default.createElement("a", {
+      href: ""
+    }, "Control Flow"), /* @__PURE__ */ import_react4.default.createElement("a", {
+      href: ""
+    }, "Data Structures")));
+  };
+  var HomePage_default = HomePage;
+
   // app/javascript/components/App.js
-  var App = () => /* @__PURE__ */ import_react4.default.createElement(Header_default, null);
+  var App = () => /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement(Header_default, null), /* @__PURE__ */ import_react5.default.createElement(HomePage_default, null));
   var App_default = App;
 
   // app/javascript/application.js
   var container = document.getElementById("root");
   var root = (0, import_client.createRoot)(container);
   document.addEventListener("DOMContentLoaded", () => {
-    root.render(/* @__PURE__ */ import_react5.default.createElement(import_react5.StrictMode, null, /* @__PURE__ */ import_react5.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react5.default.createElement(App_default, null))));
+    root.render(/* @__PURE__ */ import_react6.default.createElement(import_react6.StrictMode, null, /* @__PURE__ */ import_react6.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react6.default.createElement(App_default, null))));
   });
 })();
 /**

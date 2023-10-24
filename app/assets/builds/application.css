@@ -190,3 +190,22 @@ input.search {
   justify-content: center;
   align-content: center;
 }
+
+/* app/javascript/components/HomePage.css */
+.home__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.topics__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+#sub__header {
+  margin-top: 30px;
+}
