@@ -28831,11 +28831,14 @@
     }, "Pick a Review Topic"), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "topics__container"
     }, /* @__PURE__ */ import_react4.default.createElement("a", {
-      href: ""
+      href: "",
+      className: "topic"
     }, "Declaration and Instantiation"), /* @__PURE__ */ import_react4.default.createElement("a", {
-      href: ""
+      href: "",
+      className: "topic"
     }, "Control Flow"), /* @__PURE__ */ import_react4.default.createElement("a", {
-      href: ""
+      href: "",
+      className: "topic"
     }, "Data Structures")));
   };
   var HomePage_default = HomePage;

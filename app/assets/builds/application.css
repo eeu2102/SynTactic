@@ -209,3 +209,14 @@ input.search {
 #sub__header {
   margin-top: 30px;
 }
+.topic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  line-height: 40px;
+  background-color: lightgrey;
+  width: 510px;
+  height: 70px;
+  margin-top: 15px;
+}

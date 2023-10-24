@@ -5,8 +5,7 @@ const Header = () => (
   <header>
     <Link to="/home/">
       <h1>SynTactic</h1>
-    </Link>
-    
+    </Link>    
   </header>
 );
 
