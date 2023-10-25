@@ -1557,7 +1557,7 @@
             }
             return dispatcher.useContext(Context2);
           }
-          function useState3(initialState) {
+          function useState4(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -2357,7 +2357,7 @@
           exports.useMemo = useMemo3;
           exports.useReducer = useReducer;
           exports.useRef = useRef3;
-          exports.useState = useState3;
+          exports.useState = useState4;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -28134,7 +28134,7 @@
   application.register("hello", hello_controller_default);
 
   // app/javascript/application.js
-  var import_react6 = __toESM(require_react());
+  var import_react7 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/index.js
@@ -28812,46 +28812,79 @@
   }
 
   // app/javascript/components/App.js
-  var import_react5 = __toESM(require_react());
+  var import_react6 = __toESM(require_react());
 
   // app/javascript/components/Header.js
   var import_react3 = __toESM(require_react());
-  var Header = () => /* @__PURE__ */ import_react3.default.createElement("header", null, /* @__PURE__ */ import_react3.default.createElement(Link, {
-    to: "/home/"
-  }, /* @__PURE__ */ import_react3.default.createElement("h1", null, "SynTactic")));
+  var import_react4 = __toESM(require_react());
+  var Header = () => {
+    const [selectedOption, setSelectedOption] = (0, import_react4.useState)("option1");
+    const handleOptionChange = (e) => {
+      setSelectedOption(e.target.value);
+    };
+    return /* @__PURE__ */ import_react3.default.createElement("div", {
+      className: "header__container"
+    }, /* @__PURE__ */ import_react3.default.createElement("div", {
+      className: "home__link"
+    }, /* @__PURE__ */ import_react3.default.createElement(Link, {
+      to: "/home/"
+    }, /* @__PURE__ */ import_react3.default.createElement("h1", null, "SynTactic"))), /* @__PURE__ */ import_react3.default.createElement("div", {
+      className: "drop__down"
+    }, /* @__PURE__ */ import_react3.default.createElement("select", {
+      value: selectedOption,
+      onChange: handleOptionChange
+    }, /* @__PURE__ */ import_react3.default.createElement("option", {
+      value: "option1"
+    }, "Python"), /* @__PURE__ */ import_react3.default.createElement("option", {
+      value: "option2"
+    }, "Java"), /* @__PURE__ */ import_react3.default.createElement("option", {
+      value: "option3"
+    }, "C"))), /* @__PURE__ */ import_react3.default.createElement("div", {
+      className: "profile__link"
+    }, /* @__PURE__ */ import_react3.default.createElement("a", {
+      href: "",
+      target: "__blank",
+      id: "nav__ig"
+    }, /* @__PURE__ */ import_react3.default.createElement("img", {
+      className: "profile__pic"
+    }))));
+  };
   var Header_default = Header;
 
   // app/javascript/components/HomePage.js
-  var import_react4 = __toESM(require_react());
+  var import_react5 = __toESM(require_react());
   var HomePage = () => {
-    return /* @__PURE__ */ import_react4.default.createElement("div", {
+    return /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "home__container"
-    }, /* @__PURE__ */ import_react4.default.createElement("h1", null, "Welcome to SynTactic"), /* @__PURE__ */ import_react4.default.createElement("h2", {
+    }, /* @__PURE__ */ import_react5.default.createElement("h1", null, "Welcome to SynTactic"), /* @__PURE__ */ import_react5.default.createElement("h2", {
       id: "sub__header"
-    }, "Pick a Review Topic"), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, "Pick a Review Topic"), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "topics__container"
-    }, /* @__PURE__ */ import_react4.default.createElement("a", {
+    }, /* @__PURE__ */ import_react5.default.createElement("a", {
       href: "",
+      target: "__blank",
       className: "topic"
-    }, "Declaration and Instantiation"), /* @__PURE__ */ import_react4.default.createElement("a", {
+    }, "Declaration and Instantiation"), /* @__PURE__ */ import_react5.default.createElement("a", {
       href: "",
+      target: "__blank",
       className: "topic"
-    }, "Control Flow"), /* @__PURE__ */ import_react4.default.createElement("a", {
+    }, "Control Flow"), /* @__PURE__ */ import_react5.default.createElement("a", {
       href: "",
+      target: "__blank",
       className: "topic"
     }, "Data Structures")));
   };
   var HomePage_default = HomePage;
 
   // app/javascript/components/App.js
-  var App = () => /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement(Header_default, null), /* @__PURE__ */ import_react5.default.createElement(HomePage_default, null));
+  var App = () => /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement(Header_default, null), /* @__PURE__ */ import_react6.default.createElement(HomePage_default, null));
   var App_default = App;
 
   // app/javascript/application.js
   var container = document.getElementById("root");
   var root = (0, import_client.createRoot)(container);
   document.addEventListener("DOMContentLoaded", () => {
-    root.render(/* @__PURE__ */ import_react6.default.createElement(import_react6.StrictMode, null, /* @__PURE__ */ import_react6.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react6.default.createElement(App_default, null))));
+    root.render(/* @__PURE__ */ import_react7.default.createElement(import_react7.StrictMode, null, /* @__PURE__ */ import_react7.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react7.default.createElement(App_default, null))));
   });
 })();
 /**

@@ -1,3 +1,11 @@
+/* app/javascript/components/Header.css */
+.header__container {
+  display: flex;
+  background-color: #ff663b;
+  align-items: center;
+  height: 70px;
+}
+
 /* app/javascript/components/App.css */
 body,
 html,
@@ -33,26 +41,12 @@ ol {
   list-style: none;
 }
 body {
-  font-family: Roboto;
-  font-size: 16px;
-  line-height: 28px;
-}
-header {
-  background: #f57011;
-  height: 60px;
-}
-header h1,
-header h1 a {
-  display: inline-block;
   font-family: "Maven Pro";
-  font-size: 28px;
-  font-weight: 500;
-  color: white;
-  padding: 14px 5%;
-  text-decoration: none;
+  background-color: #EEF4ED;
 }
-header h1:hover {
-  text-decoration: underline;
+a {
+  text-decoration: none;
+  color: black;
 }
 .grid {
   display: grid;

@@ -8,17 +8,26 @@ ul, ol {
 }
 
 body {
-  font-family: Roboto;
-  font-size: 16px;
-  line-height: 28px;
+  font-family: "Maven Pro";
+  background-color: #EEF4ED;
 }
 
-header {
-  background: #f57011;
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* a:visted {
+  text-decoration: none;
+  color: #EEF4ED;
+} */
+
+/* header {
+  background: #ff663b;
   height: 60px;
-}
+} */
 
-header h1, header h1 a{
+/* header h1, header h1 a{
   display: inline-block;
   font-family: "Maven Pro";
   font-size: 28px;
@@ -26,11 +35,11 @@ header h1, header h1 a{
   color: white;
   padding: 14px 5%;
   text-decoration: none;
-}
+} */
 
-header h1:hover {
+/* header h1:hover {
   text-decoration: underline;
-}
+} */
 
 .grid {
   display: grid;
