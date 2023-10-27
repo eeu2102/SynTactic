@@ -185,6 +185,14 @@ input.search {
   align-content: center;
 }
 
+/* app/javascript/components/Profile.css */
+.profile__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* app/javascript/components/HomePage.css */
 .home__container {
   display: flex;
@@ -213,4 +221,53 @@ input.search {
   width: 510px;
   height: 70px;
   margin-top: 15px;
+}
+button {
+  border: none;
+  border-radius: 10px;
+}
+.home__modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  height: 450px;
+  width: 600px;
+  z-index: 200;
+  border-radius: 10px;
+}
+.review__methods {
+  display: flex;
+  justify-content: space-between;
+  width: 525px;
+}
+.method {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bolder;
+  width: 250px;
+  height: 70px;
+}
+#back__button {
+  background-color: transparent;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 import './Header.css'
+// import profilePic from "../../assets/images/profile.png"
 
 
 const Header = () => {
@@ -28,7 +29,7 @@ const Header = () => {
       </div> 
       <div className="profile__link">
         <a href="" target="__blank" id="nav__ig">
-          <img className="profile__pic" />
+          <img src="" id="profile__pic" />
         </a>
       </div> 
        

@@ -1557,7 +1557,7 @@
             }
             return dispatcher.useContext(Context2);
           }
-          function useState4(initialState) {
+          function useState5(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -2357,7 +2357,7 @@
           exports.useMemo = useMemo3;
           exports.useReducer = useReducer;
           exports.useRef = useRef3;
-          exports.useState = useState4;
+          exports.useState = useState5;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -2853,9 +2853,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React5 = require_react();
+          var React6 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React5.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React6.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -4251,7 +4251,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React5.Children.forEach(props.children, function(child) {
+                  React6.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11798,7 +11798,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React5.Component().refs;
+          var emptyRefsObject = new React6.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -28134,7 +28134,7 @@
   application.register("hello", hello_controller_default);
 
   // app/javascript/application.js
-  var import_react7 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/index.js
@@ -28812,7 +28812,7 @@
   }
 
   // app/javascript/components/App.js
-  var import_react6 = __toESM(require_react());
+  var import_react7 = __toESM(require_react());
 
   // app/javascript/components/Header.js
   var import_react3 = __toESM(require_react());
@@ -28846,45 +28846,81 @@
       target: "__blank",
       id: "nav__ig"
     }, /* @__PURE__ */ import_react3.default.createElement("img", {
-      className: "profile__pic"
+      src: "",
+      id: "profile__pic"
     }))));
   };
   var Header_default = Header;
 
-  // app/javascript/components/HomePage.js
+  // app/javascript/components/Profile.js
   var import_react5 = __toESM(require_react());
+
+  // app/javascript/components/HomePage.js
+  var import_react6 = __toESM(require_react());
   var HomePage = () => {
-    return /* @__PURE__ */ import_react5.default.createElement("div", {
+    const [showModal, setShowModal] = (0, import_react6.useState)(false);
+    const [selectedTopic, setSelectedTopic] = (0, import_react6.useState)(null);
+    const [selectedMethod, setSelectedMethod] = (0, import_react6.useState)(null);
+    const handleTopicClick = (topic) => {
+      setSelectedTopic(topic);
+      setShowModal(true);
+    };
+    return /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "home__container"
-    }, /* @__PURE__ */ import_react5.default.createElement("h1", null, "Welcome to SynTactic"), /* @__PURE__ */ import_react5.default.createElement("h2", {
+    }, /* @__PURE__ */ import_react6.default.createElement("h1", null, "Welcome to SynTactic"), /* @__PURE__ */ import_react6.default.createElement("h2", {
       id: "sub__header"
-    }, "Pick a Review Topic"), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, "Pick a Review Topic"), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "topics__container"
-    }, /* @__PURE__ */ import_react5.default.createElement("a", {
-      href: "",
-      target: "__blank",
-      className: "topic"
-    }, "Declaration and Instantiation"), /* @__PURE__ */ import_react5.default.createElement("a", {
-      href: "",
-      target: "__blank",
-      className: "topic"
-    }, "Control Flow"), /* @__PURE__ */ import_react5.default.createElement("a", {
-      href: "",
-      target: "__blank",
-      className: "topic"
-    }, "Data Structures")));
+    }, /* @__PURE__ */ import_react6.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("Declaration and Instantiation");
+      }
+    }, "Declaration and Instantiation"), /* @__PURE__ */ import_react6.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("Control Flow");
+      }
+    }, "Control Flow"), /* @__PURE__ */ import_react6.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("Data Structures");
+      }
+    }, "Data Structures")), showModal && /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "home__modal"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "overlay",
+      onClick: () => setShowModal(false)
+    }), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "modal"
+    }, /* @__PURE__ */ import_react6.default.createElement("h1", {
+      id: "modal__header"
+    }, "Pick a Review Method:"), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "review__methods"
+    }, /* @__PURE__ */ import_react6.default.createElement("button", {
+      className: "method",
+      onClick: () => {
+      }
+    }, "Multiple Choice"), /* @__PURE__ */ import_react6.default.createElement("button", {
+      className: "method",
+      onClick: () => {
+      }
+    }, "Flash Cards")), /* @__PURE__ */ import_react6.default.createElement("button", {
+      id: "back__button",
+      onClick: () => setShowModal(false)
+    }, "Back"))));
   };
   var HomePage_default = HomePage;
 
   // app/javascript/components/App.js
-  var App = () => /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement(Header_default, null), /* @__PURE__ */ import_react6.default.createElement(HomePage_default, null));
+  var App = () => /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement(Header_default, null), /* @__PURE__ */ import_react7.default.createElement(HomePage_default, null));
   var App_default = App;
 
   // app/javascript/application.js
   var container = document.getElementById("root");
   var root = (0, import_client.createRoot)(container);
   document.addEventListener("DOMContentLoaded", () => {
-    root.render(/* @__PURE__ */ import_react7.default.createElement(import_react7.StrictMode, null, /* @__PURE__ */ import_react7.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react7.default.createElement(App_default, null))));
+    root.render(/* @__PURE__ */ import_react8.default.createElement(import_react8.StrictMode, null, /* @__PURE__ */ import_react8.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react8.default.createElement(App_default, null))));
   });
 })();
 /**
