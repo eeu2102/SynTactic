@@ -3042,3 +3042,140 @@ Processing by SiteController#index as HTML
 Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 3306)
 
 
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:08:04 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 456)
+  Rendered layout layouts/application.html.erb (Duration: 658.4ms | Allocations: 63698)
+Completed 200 OK in 671ms (Views: 663.1ms | ActiveRecord: 0.0ms | Allocations: 69649)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:08:43 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 225.3ms | Allocations: 32045)
+Completed 200 OK in 231ms (Views: 230.3ms | ActiveRecord: 0.0ms | Allocations: 32358)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:09:58 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 499.8ms | Allocations: 31821)
+Completed 200 OK in 503ms (Views: 501.1ms | ActiveRecord: 0.0ms | Allocations: 32068)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:12:41 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 300.7ms | Allocations: 31811)
+Completed 200 OK in 304ms (Views: 302.9ms | ActiveRecord: 0.0ms | Allocations: 32062)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:13:28 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 1685)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.0ms | Allocations: 1936)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:14:35 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 324.3ms | Allocations: 31809)
+Completed 200 OK in 326ms (Views: 325.0ms | Allocations: 32057)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:15:05 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 304.8ms | Allocations: 31814)
+Completed 200 OK in 306ms (Views: 305.5ms | Allocations: 32058)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:17:15 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | Allocations: 3061)
+Completed 200 OK in 53ms (Views: 49.7ms | Allocations: 3305)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:18:07 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 353.4ms | Allocations: 31793)
+Completed 200 OK in 354ms (Views: 353.9ms | Allocations: 32037)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:18:24 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 3050)
+Completed 200 OK in 18ms (Views: 17.7ms | Allocations: 3294)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:18:56 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 3063)
+Completed 200 OK in 30ms (Views: 29.0ms | Allocations: 3307)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:19:44 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 3057)
+Completed 200 OK in 24ms (Views: 23.9ms | Allocations: 3301)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:19:59 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 3058)
+Completed 200 OK in 30ms (Views: 29.0ms | Allocations: 3302)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:20:04 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 3073)
+Completed 200 OK in 25ms (Views: 24.3ms | Allocations: 3317)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-10-28 14:23:51 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 36.8ms | Allocations: 3077)
+Completed 200 OK in 39ms (Views: 38.1ms | Allocations: 3321)
+
+

@@ -28863,9 +28863,9 @@
   var import_react5 = __toESM(require_react());
   var Problems = () => {
     const [questionArray, setQuestionArray] = (0, import_react5.useState)([]);
-    const totalQuestions = questionArray.length;
+    const totalQuestions = 5;
     const [questionIndex, setQuestionIndex] = (0, import_react5.useState)(1);
-    const progressPercentage = questionIndex / totalQuestions * 500;
+    const progressPercentage = questionIndex / totalQuestions * 100;
     const [questionData, setQuestionData] = (0, import_react5.useState)({
       question: "",
       choices: ["", "", ""],
@@ -28896,7 +28896,7 @@
       className: "progress__container"
     }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "progress__bar",
-      style: { width: "${progressPercentage}px" }
+      style: { width: `${progressPercentage}%` }
     })), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "question"
     }, /* @__PURE__ */ import_react5.default.createElement("h1", null, "Enter Question Text")), /* @__PURE__ */ import_react5.default.createElement("div", {
@@ -28926,9 +28926,9 @@
     const { score, questionsSolved } = useParams();
     return /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "results__container"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react6.default.createElement("h1", null, "Practice Complete!"), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "user__score"
-    }, /* @__PURE__ */ import_react6.default.createElement("p", null, "Your Score: ", score, " out of 5???"), /* @__PURE__ */ import_react6.default.createElement("p", null, "Questions Solved: +", questionsSolved, "!")), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react6.default.createElement("h2", null, "Your Score: ", score, " out of 5???"), /* @__PURE__ */ import_react6.default.createElement("h2", null, "Questions Solved: +", questionsSolved, "!")), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "results__buttons"
     }, /* @__PURE__ */ import_react6.default.createElement("a", {
       href: "\\home\\"

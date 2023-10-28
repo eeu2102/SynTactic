@@ -11,9 +11,10 @@ const Results = () => {
 
   return (
     <div className="results__container">
+      <h1>Practice Complete!</h1>
       <div className="user__score">
-        <p>Your Score: { score } out of 5???</p>
-        <p>Questions Solved: +{questionsSolved}!</p>
+        <h2>Your Score: { score } out of 5???</h2>
+        <h2>Questions Solved: +{questionsSolved}!</h2>
       </div>
       <div className="results__buttons">
         <a href="\home\">Home</a>
