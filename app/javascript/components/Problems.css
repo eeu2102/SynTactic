@@ -5,6 +5,21 @@
   align-items: center;
 }
 
+.progress__container {
+  width: 500px;
+  height: 20px;
+  background-color: lightgrey;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 70px;
+}
+
+.progress__bar {
+  height: 20px;
+  background-color: #FF6B35;
+  transition: width 0.5s;
+}
+
 .question {
   margin-bottom: 50px;
   margin-top: 50px;
@@ -25,7 +40,8 @@
   width: 500px;
   height: 80px;
   border-radius: 10px;
-  background-color: white;
+  border: none;
+  background-color: lightgrey;
   cursor: pointer;
   font-size: 30px;
 }

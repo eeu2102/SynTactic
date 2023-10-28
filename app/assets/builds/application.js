@@ -1557,7 +1557,7 @@
             }
             return dispatcher.useContext(Context2);
           }
-          function useState6(initialState) {
+          function useState5(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -2357,7 +2357,7 @@
           exports.useMemo = useMemo3;
           exports.useReducer = useReducer;
           exports.useRef = useRef3;
-          exports.useState = useState6;
+          exports.useState = useState5;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -2853,9 +2853,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React7 = require_react();
+          var React6 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React7.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React6.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -4251,7 +4251,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React7.Children.forEach(props.children, function(child) {
+                  React6.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11798,7 +11798,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React7.Component().refs;
+          var emptyRefsObject = new React6.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -28134,7 +28134,7 @@
   application.register("hello", hello_controller_default);
 
   // app/javascript/application.js
-  var import_react9 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/index.js
@@ -28549,6 +28549,13 @@
     }, [basename, navigator2, routePathnamesJson, locationPathname]);
     return navigate;
   }
+  function useParams() {
+    let {
+      matches
+    } = (0, import_react.useContext)(RouteContext);
+    let routeMatch = matches[matches.length - 1];
+    return routeMatch ? routeMatch.params : {};
+  }
   function useResolvedPath(to) {
     let {
       matches
@@ -28812,7 +28819,7 @@
   }
 
   // app/javascript/components/App.js
-  var import_react8 = __toESM(require_react());
+  var import_react7 = __toESM(require_react());
 
   // app/javascript/components/Header.js
   var import_react3 = __toESM(require_react());
@@ -28852,25 +28859,21 @@
   };
   var Header_default = Header;
 
-  // app/javascript/components/Profile.js
-  var import_react5 = __toESM(require_react());
-
-  // app/javascript/components/HomePage.js
-  var import_react6 = __toESM(require_react());
-
   // app/javascript/components/Problems.js
-  var import_react7 = __toESM(require_react());
+  var import_react5 = __toESM(require_react());
   var Problems = () => {
-    const [questionArray, setQuestionArray] = (0, import_react7.useState)([]);
-    const [questionIndex, setQuestionIndex] = (0, import_react7.useState)(0);
-    const [questionData, setQuestionData] = (0, import_react7.useState)({
+    const [questionArray, setQuestionArray] = (0, import_react5.useState)([]);
+    const totalQuestions = questionArray.length;
+    const [questionIndex, setQuestionIndex] = (0, import_react5.useState)(1);
+    const progressPercentage = questionIndex / totalQuestions * 500;
+    const [questionData, setQuestionData] = (0, import_react5.useState)({
       question: "",
       choices: ["", "", ""],
       answer: ""
     });
-    const [showModal, setShowModal] = (0, import_react7.useState)(false);
-    const [selectedAnswer, setSelectedAnswer] = (0, import_react7.useState)(null);
-    const [isAnswerCorrect, setAnswerCorrect] = (0, import_react7.useState)(false);
+    const [showModal, setShowModal] = (0, import_react5.useState)(false);
+    const [selectedAnswer, setSelectedAnswer] = (0, import_react5.useState)(null);
+    const [isAnswerCorrect, setAnswerCorrect] = (0, import_react5.useState)(false);
     const handleAnswerChoice = (selectedChoice) => {
       if (selectedChoice === questionData.correctAnswer) {
         setAnswerCorrect(true);
@@ -28887,42 +28890,63 @@
         setQuestionIndex(questionIndex + 1);
       };
     };
-    return /* @__PURE__ */ import_react7.default.createElement("div", {
+    return /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "problems__container"
-    }, /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "progress__bar"
-    }), /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "progress__container"
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "progress__bar",
+      style: { width: "${progressPercentage}px" }
+    })), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "question"
-    }, /* @__PURE__ */ import_react7.default.createElement("h1", null, "Enter Question Text")), /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("h1", null, "Enter Question Text")), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "answer__choices"
-    }, /* @__PURE__ */ import_react7.default.createElement("button", {
+    }, /* @__PURE__ */ import_react5.default.createElement("button", {
       className: "answer__choice"
-    }, /* @__PURE__ */ import_react7.default.createElement("span", null, "A"), "Answer Choice"), /* @__PURE__ */ import_react7.default.createElement("button", {
+    }, /* @__PURE__ */ import_react5.default.createElement("span", null, "A"), "Answer Choice"), /* @__PURE__ */ import_react5.default.createElement("button", {
       className: "answer__choice"
-    }, /* @__PURE__ */ import_react7.default.createElement("span", null, "B"), "Answer Choice"), /* @__PURE__ */ import_react7.default.createElement("button", {
+    }, /* @__PURE__ */ import_react5.default.createElement("span", null, "B"), "Answer Choice"), /* @__PURE__ */ import_react5.default.createElement("button", {
       className: "answer__choice"
-    }, /* @__PURE__ */ import_react7.default.createElement("span", null, "C"), "Answer Choice")), showModal && /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("span", null, "C"), "Answer Choice")), showModal && /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "problems__modal"
-    }, isAnswerCorrect ? /* @__PURE__ */ import_react7.default.createElement("p", {
+    }, isAnswerCorrect ? /* @__PURE__ */ import_react5.default.createElement("p", {
       id: "correct__answer"
-    }, "Correct!") : /* @__PURE__ */ import_react7.default.createElement("p", {
+    }, "Correct!") : /* @__PURE__ */ import_react5.default.createElement("p", {
       id: "incorrect__answer"
-    }, "Incorrect. The correct answer is: ", questionData.correctAnswer), /* @__PURE__ */ import_react7.default.createElement("button", {
+    }, "Incorrect. The correct answer is: ", questionData.correctAnswer), /* @__PURE__ */ import_react5.default.createElement("button", {
       className: "next__button",
       onClick: handleNextQuestion()
     }, "Next")));
   };
   var Problems_default = Problems;
 
+  // app/javascript/components/Results.js
+  var import_react6 = __toESM(require_react());
+  var Results = () => {
+    const { score, questionsSolved } = useParams();
+    return /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "results__container"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "user__score"
+    }, /* @__PURE__ */ import_react6.default.createElement("p", null, "Your Score: ", score, " out of 5???"), /* @__PURE__ */ import_react6.default.createElement("p", null, "Questions Solved: +", questionsSolved, "!")), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "results__buttons"
+    }, /* @__PURE__ */ import_react6.default.createElement("a", {
+      href: "\\home\\"
+    }, "Home"), /* @__PURE__ */ import_react6.default.createElement("a", {
+      href: ""
+    }, "Again")));
+  };
+  var Results_default = Results;
+
   // app/javascript/components/App.js
-  var App = () => /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement(Header_default, null), /* @__PURE__ */ import_react8.default.createElement(Problems_default, null));
+  var App = () => /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement(Header_default, null), /* @__PURE__ */ import_react7.default.createElement(Problems_default, null), /* @__PURE__ */ import_react7.default.createElement(Results_default, null));
   var App_default = App;
 
   // app/javascript/application.js
   var container = document.getElementById("root");
   var root = (0, import_client.createRoot)(container);
   document.addEventListener("DOMContentLoaded", () => {
-    root.render(/* @__PURE__ */ import_react9.default.createElement(import_react9.StrictMode, null, /* @__PURE__ */ import_react9.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react9.default.createElement(App_default, null))));
+    root.render(/* @__PURE__ */ import_react8.default.createElement(import_react8.StrictMode, null, /* @__PURE__ */ import_react8.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react8.default.createElement(App_default, null))));
   });
 })();
 /**

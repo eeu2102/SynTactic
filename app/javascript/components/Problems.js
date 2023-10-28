@@ -3,7 +3,12 @@ import "./Problems.css"
 
 const Problems = () => {
   const [questionArray, setQuestionArray] = useState([]);
-  const [questionIndex, setQuestionIndex] = useState(0);
+  // populate array
+  const totalQuestions = questionArray.length;
+  // const [questionIndex, setQuestionIndex] = useState(0);
+  const [questionIndex, setQuestionIndex] = useState(1);
+
+  const progressPercentage = ((questionIndex)/totalQuestions)*500;
   const [questionData, setQuestionData] = useState({
     question: "",
     choices: ["", "", ""],
@@ -39,7 +44,9 @@ const Problems = () => {
 
   return (
     <div className="problems__container">
-      <div className="progress__bar"></div>
+      <div className="progress__container">
+        <div className="progress__bar" style={{ width: '${progressPercentage}px' }}></div>
+      </div>
       <div className="question">
         <h1>Enter Question Text</h1>
       </div>
