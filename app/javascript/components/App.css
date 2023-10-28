@@ -7,7 +7,7 @@ ul, ol {
   list-style: none;
 }
 
-body {
+body, button {
   font-family: "Maven Pro";
   background-color: #EEF4ED;
 }

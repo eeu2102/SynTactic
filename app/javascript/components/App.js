@@ -4,12 +4,14 @@ import "./App.css";
 // import HomePage from "./HomePage";
 import Profile from "./Profile";
 import HomePage from "./HomePage";
+import Problems from "./Problems"
 
 const App = () => (
   <div>
     <Header />
-    <HomePage />
+    {/* <HomePage /> */}
     {/* <Profile /> */}
+    <Problems />
   </div>
 );
 
