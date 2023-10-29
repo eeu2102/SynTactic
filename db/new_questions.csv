@@ -1,0 +1,67 @@
+ID,question,choice_a,choice_b,choice_c,answer,coding_language,category,method
+1,Which of the following correctly checks if the value of x is between 5 and 10 (inclusive)?,if 5 < x < 10:,if 5 <= x <= 10:,if x > 5 and x < 10:,B,Python,control flow,multiple choice
+2,How do you begin a for-loop that iterates over a list my_list?,for item in my_list:,for my_list as item:,loop item in my_list:,A,Python,control flow,multiple choice
+3,Which keyword is used to exit a loop prematurely?,break,exit,return,A,Python,control flow,multiple choice
+4,Which keyword lets you test a default condition if the previous conditions were not met?,elsif,otherwise,else,C,Python,control flow,multiple choice
+5,Which of the following correctly initializes a while loop that runs as long as x is less than 10?,while x < 10:,for x < 10:,repeat while x < 10:,A,Python,control flow,multiple choice
+6,Which of the following is the correct syntax for an else if condition?,elif condition:,else if condition:,elseif condition:,A,Python,control flow,multiple choice
+7,What does the continue keyword do in a loop?,Stops and exits the loop.,Skips the current iteration and continues to the next.,Pauses the loop until a user input is received.,B,Python,control flow,multiple choice
+8,"What does the following code output? x = 10
+if x > 10:
+    print(""Greater"")
+elif x < 10:
+    print(""Lesser"")
+else:
+    print(""Equal"")",Greater,Lesser,Equal,C,Python,control flow,multiple choice
+9,"To iterate over a range of numbers from 1 to 5 (inclusive), which of the following would you use?","for i in range(1, 5):",for i in range(5):,"for i in range(1, 6):",C,Python,control flow,multiple choice
+10,How can you handle exceptions using control flow?,Using the except block.,Using the handle keyword.,Using the try block alone.,A,Python,control flow,multiple choice
+11,Which keyword is used to handle exceptions?,catch,try,except,C,Python,control flow,multiple choice
+12,"Which of the following is used to ensure a block of code always runs, regardless of exceptions?",finally:,always:,ensure:,A,Python,control flow,multiple choice
+13,Which statement correctly checks multiple conditions using the and operator?,if x > 5 & y < 10:,if x > 5 and y < 10:,if x > 5 && y < 10:,B,Python,control flow,multiple choice
+14,What does the pass statement do in Python?,Skips the current iteration of the loop.,Exits the program immediately.,Does nothing and acts as a placeholder.,C,Python,control flow,multiple choice
+15,"In a try...except block, what does the else block do?",Runs if an exception occurs.,Runs if no exception occurs.,Runs regardless of whether an exception occurs or not.,B,Python,control flow,multiple choice
+16,Which of the following correctly checks if a variable x is not equal to 5?,if x != 5:,if x =! 5:,if x <> 5:,A,Python,control flow,multiple choice
+17,"To iterate over the characters in a string word, which syntax would you use?",for char in word:,for word as char:,for char from word:,A,Python,control flow,multiple choice
+18,Which of the following will print numbers 0 to 4?,for i in range(4): print(i),"for i in range(1, 5): print(i)",for i in range(5): print(i),C,Python,control flow,multiple choice
+19,Which operator checks if both conditions are false?,or,not,nor,B,Python,control flow,multiple choice
+20,What does the in keyword do in a for loop?,Checks for membership in a collection.,Defines the iteration variable.,Declares a new variable.,A,Python,control flow,multiple choice
+21,"What is the correct way to assign a value of 5 to a variable named ""x"" in Python?",x = 5,5 = x,assign x 5,A,Python,declaration,multiple choice
+22,How do you declare a constant variable in Python?,"Using ""const"" keyword",Constants cannot be declared in Python,Use uppercase letters for the variable name,B,Python,declaration,multiple choice
+23,Which of the following is a valid Python function declaration?,def function_name(parameters):,function_name def(parameters):,function_name(parameters):,A,Python,declaration,multiple choice
+24,"To declare and initialize an empty list in Python, you should use:",my_list = list(),my_list = new List(),my_list = [],C,Python,declaration,multiple choice
+25,Which keyword is used to declare a function in Python?,func,def,function,B,Python,declaration,multiple choice
+26,What is the correct way to declare an empty set in Python?,my_set = set(),my_set = {},my_set = [],B,Python,declaration,multiple choice
+27,How can you declare an empty dictionary (key-value pair) in Python?,my_dict = hasmap(),my_dict = map(),my_dict = {},C,Python,declaration,multiple choice
+28,"To declare and use a Python lambda function that adds two numbers, you would write:"," lambda (a, b): a + b","def lambda_function(a, b): return a + b","lambda_function(a, b): a + b",A,Python,declaration,multiple choice
+29,Which keyword is used to declare a function with no explicit return value in Python?,null,void,None of these,C,Python,declaration,multiple choice
+30,"To declare and use a Python generator that yields numbers, which keyword would you primarily use?",return ,yield,generate,B,Python,declaration,multiple choice
+31,Which symbol or marker Python uses to denote a comment?,%%,##,# ,C,Python,declaration,multiple choice
+32,"In Python, which of the following is used to indicate a block of code?",{},[],Indentation,C,Python,declaration,multiple choice
+33,Which command is used to define a function in Python?,define,func,def,C,Python,declaration,multiple choice
+34,"In Python, how do you declare a variable?",variable_name = value,var variable_name = value,declare variable_name = value,A,Python,declaration,multiple choice
+35,What keyword is used to create a class in Python?,class,Class,def,A,Python,declaration,multiple choice
+36,How do you indicate the end of a line of code in Python?,;,Nothing; Python automatically knows when a line of code ends.,\,B,Python,declaration,multiple choice
+37,How do you declare a list in Python?,list = [],list(),list:[] ,A,Python,declaration,multiple choice
+38,What is the proper way to import a module in Python?,import module,using module,load module,A,Python,declaration,multiple choice
+39,How do you declare a constant in Python?,Python doesn’t support constants.,const variable = value,constant variable = value,A,Python,declaration,multiple choice
+40,Which of the following is the correct way to declare a variable in Python?,var: integer = 5,int var = 5,myVar = 5,C,Python,declaration,multiple choice
+41,Which of the following initializes an empty list?,list{},list[],[],C,Python,data structures,multiple choice
+42,How do you initialize an empty set?,set(),{},set{},A,Python,data structures,multiple choice
+43,Which of the following creates a dictionary with keys 'a' and 'b' having values 1 and 2 respectively?,"{'a': 1, 'b': 2}","['a': 1, 'b': 2]","('a': 1, 'b': 2)",A,Python,data structures,multiple choice
+44,Which method is used to add an element to a set in Python?,append(),add(),insert(),B,Python,data structures,multiple choice
+45," How do you access the value associated with the key 'a' in the dictionary dict = {'a': 1, 'b': 2}?",dict('a'),dict.a,dict['a'],C,Python,data structures,multiple choice
+46,How can you remove the last element from a list named lst?,lst.pop(),lst.remove(),lst.delete(),A,Python,data structures,multiple choice
+47,Which of these creates a list of numbers from 0 to 4?,range(4),"range(0, 4)",list(range(5)),C,Python,data structures,multiple choice
+48,Which syntax is used to get all keys from a dictionary named dict?,dict.keys,dict.keys(),dict.getkeys(),B,Python,data structures,multiple choice
+49,"How can you add multiple items ('c', 'd', and 'e') to a set named my_set?","my_set.add(['c', 'd', 'e'])","my_set.update(['c', 'd', 'e'])","my_set.append(['c', 'd', 'e'])",B,Python,data structures,multiple choice
+50,"What will lst[-1] return if lst = [1, 2, 3, 4, 5]?",1,5,Error,B,Python,data structures,multiple choice
+51,Which is the correct syntax to declare an empty tuple?,tuple(),(),tuple{},B,Python,data structures,multiple choice
+52,How do you check if a list named lst contains the value 3?,3 in lst,lst.contains(3),lst.find(3),A,Python,data structures,multiple choice
+53,Which of these will return the number of elements in a list named lst?,len(lst),lst.len(),lst.size(),A,Python,data structures,multiple choice
+54,"What does list(set([1,2,2,3,4,4])) return?","[1,2,2,3,4,4]","[1,2,3,4]",Error,B,Python,data structures,multiple choice
+55,How can you sort a list named lst in descending order?,lst.sort(reverse=True),lst.sort(descending=True),"sorted(lst, descending=True)",A,Python,data structures,multiple choice
+56,Which function is used to randomly shuffle a list named lst?,random.shuffle(lst),lst.shuffle(),lst.randomize(),A,Python,data structures,multiple choice
+57,Which of these statements correctly checks if a dictionary named dict has the key 'a'?,a' in dict,dict.has_key('a'),a' in dict.keys,A,Python,data structures,multiple choice
+58,"How do you initialize a list with the same value, let's say 7, five times?","[7, 5]", [7] * 5,5 * [7],B,Python,data structures,multiple choice
+59,"Which of the following is NOT a valid way to initialize a set with values 1, 2, and 3?","{1, 2, 3}","set(1, 2, 3)","set([1, 2, 3])",B,Python,data structures,multiple choice
+60," If lst = [1, 2, 3], what will lst[1:2] return?",[2],"[1, 2]","[2, 3]",A,Python,data structures,multiple choice
