@@ -1,0 +1,96 @@
+.home__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* gap: 40px; */
+  margin-top: 50px;
+}
+
+.topics__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#sub__header {
+  margin-top: 30px;
+}
+
+.topic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  line-height: 40px;
+  background-color: lightgrey;
+  width: 510px;
+  height: 80px;
+  margin-top: 15px;
+  cursor: pointer;
+
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+}
+
+.home__modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 100;
+}
+
+.modal {
+  position: fixed;
+  top: 50%; /* moves the top edge of the modal to the middle of the viewport */
+  left: 50%; /* same idea, but for horizontal centering */
+  transform: translate(-50%, -50%); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  /* padding: 100px 50px 100px 50px; */
+  /* top: -50vh; */
+  height: 450px;
+  width: 600px;
+  z-index: 200;
+  border-radius: 10px;
+}
+
+/* #modal__header {
+  margin-bottom: 
+} */
+
+.review__methods {
+  display: flex;
+  justify-content: space-between;
+  width: 525px;
+}
+
+.method {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bolder;
+  width: 250px;
+  height: 70px;
+}
+
+#back__button {
+  background-color: transparent;
+}

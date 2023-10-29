@@ -1,3 +1,11 @@
+/* app/javascript/components/Header.css */
+.header__container {
+  display: flex;
+  background-color: #ff663b;
+  align-items: center;
+  height: 70px;
+}
+
 /* app/javascript/components/App.css */
 body,
 html,
@@ -32,27 +40,14 @@ ul,
 ol {
   list-style: none;
 }
-body {
-  font-family: Roboto;
-  font-size: 16px;
-  line-height: 28px;
-}
-header {
-  background: #f57011;
-  height: 60px;
-}
-header h1,
-header h1 a {
-  display: inline-block;
+body,
+button {
   font-family: "Maven Pro";
-  font-size: 28px;
-  font-weight: 500;
-  color: white;
-  padding: 14px 5%;
-  text-decoration: none;
+  background-color: #EEF4ED;
 }
-header h1:hover {
-  text-decoration: underline;
+a {
+  text-decoration: none;
+  color: black;
 }
 .grid {
   display: grid;
@@ -189,4 +184,83 @@ input.search {
   display: grid;
   justify-content: center;
   align-content: center;
+}
+
+/* app/javascript/components/Problems.css */
+.problems__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.progress__container {
+  width: 500px;
+  height: 20px;
+  background-color: lightgrey;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 70px;
+}
+.progress__bar {
+  height: 20px;
+  background-color: #FF6B35;
+  transition: width 0.5s;
+}
+.question {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.answer__choices {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.answer__choice {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 500px;
+  height: 80px;
+  border-radius: 10px;
+  border: none;
+  background-color: lightgrey;
+  cursor: pointer;
+  font-size: 30px;
+}
+.answer__choice span {
+  width: 50px;
+  height: 50px;
+  background-color: #FF6B35;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  margin-left: 15px;
+  font-size: 30px;
+}
+
+/* app/javascript/components/Results.css */
+.results__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.user__score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.results__buttons {
+  font-size: 26px;
+  font-weight: bolder;
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
 }
