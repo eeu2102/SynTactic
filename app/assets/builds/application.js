@@ -28891,6 +28891,8 @@
       }).catch((error2) => console.error("Error fetching questions:", error2));
     }, []);
     const handleAnswerChoice = (selectedChoice) => {
+      if (showCorrectnessModal)
+        return;
       setSelectedAnswer(selectedChoice);
       if (selectedChoice === questionData.correctAnswer) {
         setAnswerCorrect(true);
@@ -28935,16 +28937,13 @@
       className: "answer__choices"
     }, /* @__PURE__ */ import_react6.default.createElement("button", {
       onClick: () => handleAnswerChoice("A"),
-      className: `answer__choice ${selectedAnswer === "A" ? "selected__choice" : ""}`,
-      disabled: showCorrectnessModal
+      className: `answer__choice ${selectedAnswer === "A" ? "selected__choice" : ""}`
     }, /* @__PURE__ */ import_react6.default.createElement("span", null, "A"), questionData.choices[0]), /* @__PURE__ */ import_react6.default.createElement("button", {
       onClick: () => handleAnswerChoice("B"),
-      className: `answer__choice ${selectedAnswer === "B" ? "selected__choice" : ""}`,
-      disabled: showCorrectnessModal
+      className: `answer__choice ${selectedAnswer === "B" ? "selected__choice" : ""}`
     }, /* @__PURE__ */ import_react6.default.createElement("span", null, "B"), questionData.choices[1]), /* @__PURE__ */ import_react6.default.createElement("button", {
       onClick: () => handleAnswerChoice("C"),
-      className: `answer__choice ${selectedAnswer === "C" ? "selected__choice" : ""}`,
-      disabled: showCorrectnessModal
+      className: `answer__choice ${selectedAnswer === "C" ? "selected__choice" : ""}`
     }, /* @__PURE__ */ import_react6.default.createElement("span", null, "C"), questionData.choices[2])), showCorrectnessModal && /* @__PURE__ */ import_react6.default.createElement("div", {
       className: `problems__modal ${isAnswerCorrect ? "correct" : "incorrect"}`
     }, isAnswerCorrect ? /* @__PURE__ */ import_react6.default.createElement("p", {
@@ -28957,7 +28956,11 @@
       className: "next__button",
       onClick: handleNextQuestion
     }, "Next")), showResultModal && /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "results__container"
+      className: "results__modal"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "overlay"
+    }), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "results"
     }, /* @__PURE__ */ import_react6.default.createElement("h1", null, "Practice Complete!"), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "user__score"
     }, /* @__PURE__ */ import_react6.default.createElement("h2", null, "Your Score: ", score, " out of ", totalQuestions), /* @__PURE__ */ import_react6.default.createElement("h2", null, "Questions Solved: +", score, "!")), /* @__PURE__ */ import_react6.default.createElement("div", {
@@ -28966,7 +28969,7 @@
       href: ""
     }, "Home"), /* @__PURE__ */ import_react6.default.createElement("a", {
       href: ""
-    }, "Again"))));
+    }, "Again")))));
   };
   var Problems_default = Problems;
 

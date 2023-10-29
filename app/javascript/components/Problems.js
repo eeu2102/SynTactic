@@ -20,7 +20,7 @@ const Problems = () => {
   const [isAnswerCorrect, setAnswerCorrect] = useState(false);
 
   useEffect(() => {
-    fetch("/questions") // Adjust if you have a different endpoint
+    fetch("/questions") 
       .then((response) => response.json())
       .then((data) => {
         setQuestionArray(data);
@@ -43,6 +43,7 @@ const Problems = () => {
   }, []);
 
   const handleAnswerChoice = (selectedChoice) => {
+    if (showCorrectnessModal) return;
     setSelectedAnswer(selectedChoice);
     if (selectedChoice === questionData.correctAnswer) {
       setAnswerCorrect(true);
@@ -92,29 +93,26 @@ const Problems = () => {
       <div className="answer__choices">
         <button
           onClick={() => handleAnswerChoice("A")}
-          className={`answer__choice ${selectedAnswer === "A" ? "selected__choice" : ""}`}
-          disabled={showCorrectnessModal}>
+          className={`answer__choice ${selectedAnswer === "A" ? "selected__choice" : ""}`}>
           <span>A</span>
           {questionData.choices[0]}
         </button>
         <button
           onClick={() => handleAnswerChoice("B")}
-          className={`answer__choice ${selectedAnswer === "B" ? "selected__choice" : ""}`}
-          disabled={showCorrectnessModal}>
+          className={`answer__choice ${selectedAnswer === "B" ? "selected__choice" : ""}`}>
+            {/* disabled={showCorrectnessModal} */}
           <span>B</span>
           {questionData.choices[1]}
         </button>
         <button
           onClick={() => handleAnswerChoice("C")}
-          className={`answer__choice ${selectedAnswer === "C" ? "selected__choice" : ""}`}
-          disabled={showCorrectnessModal}>
+          className={`answer__choice ${selectedAnswer === "C" ? "selected__choice" : ""}`}>
           <span>C</span>
           {questionData.choices[2]}
         </button>
       </div>
 
       {showCorrectnessModal && (
-        // <div className="problems__modal">
         <div className={`problems__modal ${isAnswerCorrect ? "correct" : "incorrect"}`}>  
         {isAnswerCorrect ? (
             <p className="correctness__modal" id="correct__answer">Correct!</p>
@@ -130,17 +128,20 @@ const Problems = () => {
       )}
 
       {showResultModal && (
-        <div className="results__container">
-          <h1>Practice Complete!</h1>
-          <div className="user__score">
-            <h2>
-              Your Score: {score} out of {totalQuestions}
-            </h2>
-            <h2>Questions Solved: +{score}!</h2>
-          </div>
-          <div className="results__buttons">
-            <a href="">Home</a>
-            <a href="">Again</a>
+        <div className="results__modal">
+          <div className="overlay"></div>
+          <div className="results">
+            <h1>Practice Complete!</h1>
+            <div className="user__score">
+              <h2>
+                Your Score: {score} out of {totalQuestions}
+              </h2>
+              <h2>Questions Solved: +{score}!</h2>
+            </div>
+            <div className="results__buttons">
+              <a href="">Home</a>
+              <a href="">Again</a>
+            </div>
           </div>
         </div>
       )}
