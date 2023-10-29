@@ -3813,3 +3813,29 @@ Processing by SiteController#index as HTML
 Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 2052)
 
 
+Started GET "/" for ::1 at 2023-10-28 21:51:37 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/home" for ::1 at 2023-10-28 21:51:37 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 455)
+  Rendered layout layouts/application.html.erb (Duration: 54.2ms | Allocations: 36002)
+Completed 200 OK in 58ms (Views: 55.4ms | ActiveRecord: 0.0ms | Allocations: 41943)
+
+
+Started GET "/questions" for ::1 at 2023-10-28 21:51:38 -0400
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 12801)
+
+
+Started GET "/questions" for ::1 at 2023-10-28 21:51:38 -0400
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 963)
+
+
