@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "./HomePage.css";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   const [showModal, setShowModal] = useState(false);
   const [selectedTopic, setSelectedTopic] = useState(null);
   const [selectedMethod, setSelectedMethod] = useState(null);
@@ -9,24 +12,38 @@ const HomePage = () => {
   const handleTopicClick = (topic) => {
     setSelectedTopic(topic);
     setShowModal(true);
-  }
-
+  };
 
   return (
     <div className="home__container">
-      <h1>Welcome to SynTactic</h1> 
+      <h1>Welcome to SynTactic</h1>
       <h2 id="sub__header">Pick a Review Topic</h2>
       <div className="topics__container">
-        <button className="topic" onClick={(e) => { handleTopicClick('Declaration and Instantiation') }}>
+        <button
+          className="topic"
+          onClick={(e) => {
+            handleTopicClick("declarations");
+          }}
+        >
           Declaration and Instantiation
         </button>
-        <button className="topic" onClick={(e) => { handleTopicClick('Control Flow') }}>
+        <button
+          className="topic"
+          onClick={(e) => {
+            handleTopicClick("control flow");
+          }}
+        >
           Control Flow
         </button>
-        <button className="topic" onClick={(e) => { handleTopicClick('Data Structures') }}>
+        <button
+          className="topic"
+          onClick={(e) => {
+            handleTopicClick("data structures");
+          }}
+        >
           Data Structures
         </button>
-      </div> 
+      </div>
 
       {showModal && (
         <div className="home__modal">
@@ -34,15 +51,35 @@ const HomePage = () => {
           <div className="modal">
             <h1 id="modal__header">Pick a Review Method:</h1>
             <div className="review__methods">
-              <button className="method" onClick={() => { /*navigate depending on selected topic */}}>Multiple Choice</button>
-              <button className="method" onClick={() => { /*navigate depending on selected topic */}}>Flash Cards</button>
+              <button
+                className="method"
+                onClick={() =>
+                  navigate(
+                    `/problems?category=${selectedTopic}&method=multiple choice`
+                  )
+                }
+              >
+                Multiple Choice
+              </button>
+              <button
+                className="method"
+                onClick={() =>
+                  navigate(
+                    `/problems?category=${selectedTopic}&method=flash cards`
+                  )
+                }
+              >
+                Flash Cards
+              </button>
             </div>
-            <button id="back__button" onClick={() => setShowModal(false)}>Back</button>
+            <button id="back__button" onClick={() => setShowModal(false)}>
+              Back
+            </button>
           </div>
         </div>
       )}
     </div>
-  ) 
-}
+  );
+};
 
 export default HomePage;

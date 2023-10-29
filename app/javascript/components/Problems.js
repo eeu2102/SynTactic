@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Problems.css";
+import { useSearchParams } from "react-router-dom";
 
 const Problems = () => {
+  const [searchParams] = useSearchParams();
+  const category = searchParams.get("category");
+  const method = searchParams.get("method");
+
   const [questionArray, setQuestionArray] = useState([]);
   const [totalQuestions, setTotalQuestions] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -20,27 +25,27 @@ const Problems = () => {
   const [isAnswerCorrect, setAnswerCorrect] = useState(false);
 
   useEffect(() => {
-    fetch("/questions") 
-      .then((response) => response.json())
-      .then((data) => {
-        setQuestionArray(data);
-        setTotalQuestions(data.length);
-        if (data[0]) {
-          // If there's data, set the first question
-          const firstQuestion = data[0];
-          setQuestionData({
-            question: firstQuestion.question,
-            choices: [
-              firstQuestion.choice_a,
-              firstQuestion.choice_b,
-              firstQuestion.choice_c,
-            ],
-            correctAnswer: firstQuestion.answer,
-          });
-        }
-      })
-      .catch((error) => console.error("Error fetching questions:", error));
-  }, []);
+    if (category && method) {
+      fetch(`/questions?category=${category}&method=${method}`)
+        .then((response) => response.json())
+        .then((data) => {
+          setQuestionArray(data);
+          setTotalQuestions(data.length);
+          if (data[0]) {
+            const firstQuestion = data[0];
+            setQuestionData({
+              question: firstQuestion.question,
+              choices: [
+                firstQuestion.choice_a,
+                firstQuestion.choice_b,
+                firstQuestion.choice_c,
+              ],
+              correctAnswer: firstQuestion.answer,
+            });
+          }
+        });
+    }
+  }, [category, method]);
 
   const handleAnswerChoice = (selectedChoice) => {
     if (showCorrectnessModal) return;
@@ -93,29 +98,44 @@ const Problems = () => {
       <div className="answer__choices">
         <button
           onClick={() => handleAnswerChoice("A")}
-          className={`answer__choice ${selectedAnswer === "A" ? "selected__choice" : ""}`}>
+          className={`answer__choice ${
+            selectedAnswer === "A" ? "selected__choice" : ""
+          }`}
+        >
           <span>A</span>
           {questionData.choices[0]}
         </button>
         <button
           onClick={() => handleAnswerChoice("B")}
-          className={`answer__choice ${selectedAnswer === "B" ? "selected__choice" : ""}`}>
-            {/* disabled={showCorrectnessModal} */}
+          className={`answer__choice ${
+            selectedAnswer === "B" ? "selected__choice" : ""
+          }`}
+        >
+          {/* disabled={showCorrectnessModal} */}
           <span>B</span>
           {questionData.choices[1]}
         </button>
         <button
           onClick={() => handleAnswerChoice("C")}
-          className={`answer__choice ${selectedAnswer === "C" ? "selected__choice" : ""}`}>
+          className={`answer__choice ${
+            selectedAnswer === "C" ? "selected__choice" : ""
+          }`}
+        >
           <span>C</span>
           {questionData.choices[2]}
         </button>
       </div>
 
       {showCorrectnessModal && (
-        <div className={`problems__modal ${isAnswerCorrect ? "correct" : "incorrect"}`}>  
-        {isAnswerCorrect ? (
-            <p className="correctness__modal" id="correct__answer">Correct!</p>
+        <div
+          className={`problems__modal ${
+            isAnswerCorrect ? "correct" : "incorrect"
+          }`}
+        >
+          {isAnswerCorrect ? (
+            <p className="correctness__modal" id="correct__answer">
+              Correct!
+            </p>
           ) : (
             <p className="correctness__modal" id="incorrect__answer">
               Incorrect. The correct answer is: {questionData.correctAnswer}

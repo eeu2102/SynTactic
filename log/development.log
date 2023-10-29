@@ -5056,3 +5056,47 @@ Processing by QuestionsController#index as */*
 Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.3ms | Allocations: 11766)
 
 
+Started GET "/problems?category=data%20structures&method=multiple%20choice" for ::1 at 2023-10-29 17:20:03 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/problems"):
+  
+Started GET "/home/" for ::1 at 2023-10-29 17:20:06 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 279.3ms | Allocations: 69427)
+Completed 200 OK in 284ms (Views: 280.6ms | ActiveRecord: 0.0ms | Allocations: 73414)
+
+
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for ::1 at 2023-10-29 17:20:09 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 25ms (Views: 13.2ms | ActiveRecord: 0.9ms | Allocations: 18595)
+
+
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for ::1 at 2023-10-29 17:20:09 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 4685)
+
+
+Started GET "/problems?category=control%20flow&method=multiple%20choice" for ::1 at 2023-10-29 17:20:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/problems"):
+  
+Started GET "/home/" for ::1 at 2023-10-29 17:20:56 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 1697)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 1959)
+
+
