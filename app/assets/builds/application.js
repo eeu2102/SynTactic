@@ -1569,7 +1569,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect2(create, deps) {
+          function useEffect3(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -2349,7 +2349,7 @@
           exports.useContext = useContext2;
           exports.useDebugValue = useDebugValue;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect2;
+          exports.useEffect = useEffect3;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useInsertionEffect = useInsertionEffect;
@@ -28859,10 +28859,10 @@
   var import_react6 = __toESM(require_react());
   var Problems = () => {
     const [questionArray, setQuestionArray] = (0, import_react6.useState)([]);
-    const totalQuestions = questionArray.length;
-    const [questionIndex, setQuestionIndex] = (0, import_react6.useState)(1);
+    const [totalQuestions, setTotalQuestions] = (0, import_react6.useState)(0);
+    const [questionIndex, setQuestionIndex] = (0, import_react6.useState)(0);
     const [score, setScore] = (0, import_react6.useState)(0);
-    const progressPercentage = questionIndex / totalQuestions * 100;
+    const progressPercentage = (questionIndex + 1) / totalQuestions * 100;
     const [questionData, setQuestionData] = (0, import_react6.useState)({
       question: "",
       choices: ["", "", ""],
@@ -28872,21 +28872,51 @@
     const [showResultModal, setShowResultModal] = (0, import_react6.useState)(false);
     const [selectedAnswer, setSelectedAnswer] = (0, import_react6.useState)(null);
     const [isAnswerCorrect, setAnswerCorrect] = (0, import_react6.useState)(false);
+    (0, import_react6.useEffect)(() => {
+      fetch("/questions").then((response) => response.json()).then((data) => {
+        setQuestionArray(data);
+        setTotalQuestions(data.length);
+        if (data[0]) {
+          const firstQuestion = data[0];
+          setQuestionData({
+            question: firstQuestion.question,
+            choices: [
+              firstQuestion.choice_a,
+              firstQuestion.choice_b,
+              firstQuestion.choice_c
+            ],
+            correctAnswer: firstQuestion.answer
+          });
+        }
+      }).catch((error2) => console.error("Error fetching questions:", error2));
+    }, []);
     const handleAnswerChoice = (selectedChoice) => {
+      setSelectedAnswer(selectedChoice);
       if (selectedChoice === questionData.correctAnswer) {
         setAnswerCorrect(true);
         setScore(score + 1);
       } else {
         setAnswerCorrect(false);
       }
-      showCorrectnessModal(true);
+      setShowCorrectnessModal(true);
     };
     const handleNextQuestion = () => {
-      if (questionIndex + 1 < totalQuestions) {
+      const nextIndex = questionIndex + 1;
+      if (nextIndex < totalQuestions) {
         setShowCorrectnessModal(false);
         setAnswerCorrect(false);
         setSelectedAnswer(null);
-        setQuestionIndex(questionIndex + 1);
+        setQuestionIndex(nextIndex);
+        const nextQuestion = questionArray[nextIndex];
+        setQuestionData({
+          question: nextQuestion.question,
+          choices: [
+            nextQuestion.choice_a,
+            nextQuestion.choice_b,
+            nextQuestion.choice_c
+          ],
+          correctAnswer: nextQuestion.answer
+        });
       } else {
         setShowCorrectnessModal(false);
         setShowResultModal(true);
@@ -28904,19 +28934,24 @@
     }, /* @__PURE__ */ import_react6.default.createElement("h1", null, questionData.question)), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "answer__choices"
     }, /* @__PURE__ */ import_react6.default.createElement("button", {
-      className: "answer__choice",
-      onClick: () => handleAnswerChoice("A")
+      onClick: () => handleAnswerChoice("A"),
+      className: `answer__choice ${selectedAnswer === "A" ? "selected__choice" : ""}`,
+      disabled: showCorrectnessModal
     }, /* @__PURE__ */ import_react6.default.createElement("span", null, "A"), questionData.choices[0]), /* @__PURE__ */ import_react6.default.createElement("button", {
-      className: "answer__choice",
-      onClick: () => handleAnswerChoice("B")
+      onClick: () => handleAnswerChoice("B"),
+      className: `answer__choice ${selectedAnswer === "B" ? "selected__choice" : ""}`,
+      disabled: showCorrectnessModal
     }, /* @__PURE__ */ import_react6.default.createElement("span", null, "B"), questionData.choices[1]), /* @__PURE__ */ import_react6.default.createElement("button", {
-      className: "answer__choice",
-      onClick: () => handleAnswerChoice("C")
+      onClick: () => handleAnswerChoice("C"),
+      className: `answer__choice ${selectedAnswer === "C" ? "selected__choice" : ""}`,
+      disabled: showCorrectnessModal
     }, /* @__PURE__ */ import_react6.default.createElement("span", null, "C"), questionData.choices[2])), showCorrectnessModal && /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "problems__modal"
+      className: `problems__modal ${isAnswerCorrect ? "correct" : "incorrect"}`
     }, isAnswerCorrect ? /* @__PURE__ */ import_react6.default.createElement("p", {
+      className: "correctness__modal",
       id: "correct__answer"
     }, "Correct!") : /* @__PURE__ */ import_react6.default.createElement("p", {
+      className: "correctness__modal",
       id: "incorrect__answer"
     }, "Incorrect. The correct answer is: ", questionData.correctAnswer), /* @__PURE__ */ import_react6.default.createElement("button", {
       className: "next__button",
@@ -28925,7 +28960,7 @@
       className: "results__container"
     }, /* @__PURE__ */ import_react6.default.createElement("h1", null, "Practice Complete!"), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "user__score"
-    }, /* @__PURE__ */ import_react6.default.createElement("h2", null, "Your Score: ", score, " out of 5???"), /* @__PURE__ */ import_react6.default.createElement("h2", null, "Questions Solved: +", score, "!")), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react6.default.createElement("h2", null, "Your Score: ", score, " out of ", totalQuestions), /* @__PURE__ */ import_react6.default.createElement("h2", null, "Questions Solved: +", score, "!")), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "results__buttons"
     }, /* @__PURE__ */ import_react6.default.createElement("a", {
       href: ""

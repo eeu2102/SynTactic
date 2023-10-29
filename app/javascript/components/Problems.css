@@ -58,3 +58,40 @@
   margin-left: 15px;
   font-size: 30px;
 }
+
+.answer__choice.selected__choice {
+  background-color: blue;
+}
+
+.problems__modal {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: lightgrey; */
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  bottom: 0px;
+}
+
+.correctness__modal {
+  margin-left: 25px;
+  display: inline;
+}
+
+.problems__modal.correct {
+  background-color: green; /* or any desired color for a correct answer */
+}
+
+.problems__modal.incorrect {
+  background-color: red; /* or any desired color for a correct answer */
+}
+
+.next__button {
+  font-size: 26px;
+  font-weight: bolder;
+  width: 100px;
+  height: 40px;
+  margin-right: 25px;
+}
