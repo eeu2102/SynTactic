@@ -4,4 +4,3 @@ class QuestionsController < ApplicationController
       render json: questions
     end
   end
-  

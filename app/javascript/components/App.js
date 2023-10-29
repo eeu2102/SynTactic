@@ -3,8 +3,8 @@ import Header from "./Header";
 import "./App.css";
 import HomePage from "./HomePage";
 // import Profile from "./Profile";
-import Problems from "./Problems"
-import Results from "./Results"
+import Problems from "./Problems";
+import Results from "./Results";
 
 const App = () => (
   <div>
