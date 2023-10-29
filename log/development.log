@@ -4305,3 +4305,145 @@ Processing by QuestionsController#index as */*
 Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 11843)
 
 
+Started GET "/" for ::1 at 2023-10-29 16:51:27 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/home" for ::1 at 2023-10-29 16:51:27 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 455)
+  Rendered layout layouts/application.html.erb (Duration: 218.5ms | Allocations: 70107)
+Completed 200 OK in 223ms (Views: 219.8ms | ActiveRecord: 0.0ms | Allocations: 76048)
+
+
+Started GET "/questions?category=declarations&method=flash%20cards" for ::1 at 2023-10-29 16:51:30 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declarations", "method"=>"flash cards"}
+  [1m[36mQuestion Load (1.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 19.4ms | ActiveRecord: 2.3ms | Allocations: 24589)
+
+
+Started GET "/questions?category=declarations&method=flash%20cards" for ::1 at 2023-10-29 16:51:30 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declarations", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.3ms | Allocations: 11843)
+
+
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for ::1 at 2023-10-29 16:51:43 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.5ms | Allocations: 11779)
+
+
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for ::1 at 2023-10-29 16:51:43 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 11765)
+
+
+Started GET "/questions?category=data%20structures&method=multiple%20choice" for ::1 at 2023-10-29 16:52:03 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"data structures", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.5ms | Allocations: 11777)
+
+
+Started GET "/questions?category=data%20structures&method=multiple%20choice" for ::1 at 2023-10-29 16:52:03 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"data structures", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 11765)
+
+
+Started GET "/problems?category=declarations&method=multiple%20choice" for ::1 at 2023-10-29 16:53:17 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/problems"):
+  
+Started GET "/problems?category=declarations&method=multiple%20choice" for ::1 at 2023-10-29 16:53:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/problems"):
+  
+Started GET "/home" for ::1 at 2023-10-29 16:53:21 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 191)
+  Rendered layout layouts/application.html.erb (Duration: 217.8ms | Allocations: 68252)
+Completed 200 OK in 221ms (Views: 218.8ms | ActiveRecord: 0.0ms | Allocations: 72228)
+
+
+Started GET "/questions?category=declarations&method=multiple%20choice" for ::1 at 2023-10-29 16:53:25 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declarations", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 17.0ms | ActiveRecord: 1.0ms | Allocations: 24585)
+
+
+Started GET "/questions?category=declarations&method=multiple%20choice" for ::1 at 2023-10-29 16:53:25 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declarations", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 11843)
+
+
+Started GET "/questions?category=data%20structures&method=multiple%20choice" for ::1 at 2023-10-29 16:53:36 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"data structures", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.6ms | Allocations: 11779)
+
+
+Started GET "/questions?category=data%20structures&method=multiple%20choice" for ::1 at 2023-10-29 16:53:36 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"data structures", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.3ms | Allocations: 11765)
+
+
+Started GET "/problems?category=data%20structures&method=multiple%20choice" for ::1 at 2023-10-29 16:55:36 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/problems"):
+  
+Started GET "/home" for ::1 at 2023-10-29 16:55:38 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 191)
+  Rendered layout layouts/application.html.erb (Duration: 79.6ms | Allocations: 35536)
+Completed 200 OK in 88ms (Views: 81.2ms | ActiveRecord: 0.0ms | Allocations: 39512)
+
+
+Started GET "/questions?category=data%20structures&method=multiple%20choice" for ::1 at 2023-10-29 16:55:41 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"data structures", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "data structures"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:14:in `index'
+Completed 200 OK in 29ms (Views: 24.9ms | ActiveRecord: 1.1ms | Allocations: 18447)
+
+
+Started GET "/questions?category=data%20structures&method=multiple%20choice" for ::1 at 2023-10-29 16:55:41 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"data structures", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "data structures"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 4576)
+
+

@@ -2853,9 +2853,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React7 = require_react();
+          var React8 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React7.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React8.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -4251,7 +4251,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React7.Children.forEach(props.children, function(child) {
+                  React8.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11798,7 +11798,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React7.Component().refs;
+          var emptyRefsObject = new React8.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -28134,7 +28134,7 @@
   application.register("hello", hello_controller_default);
 
   // app/javascript/application.js
-  var import_react9 = __toESM(require_react());
+  var import_react10 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/index.js
@@ -28399,7 +28399,7 @@
     return parsedPath;
   }
 
-  // node_modules/react-router/index.js
+  // node_modules/react-router-dom/node_modules/react-router/index.js
   var import_react = __toESM(require_react());
   function invariant(cond, message) {
     if (!cond)
@@ -28413,6 +28413,13 @@
         throw new Error(message);
       } catch (e) {
       }
+    }
+  }
+  var alreadyWarned = {};
+  function warningOnce(key, cond, message) {
+    if (!cond && !alreadyWarned[key]) {
+      alreadyWarned[key] = true;
+      true ? warning2(false, message) : void 0;
     }
   }
   var NavigationContext = /* @__PURE__ */ (0, import_react.createContext)(null);
@@ -28429,6 +28436,9 @@
   });
   if (true) {
     RouteContext.displayName = "Route";
+  }
+  function Route(_props) {
+    true ? invariant(false, "A <Route> is only ever to be used as the child of <Routes> element, never rendered directly. Please wrap your <Route> in a <Routes>.") : invariant(false);
   }
   function Router2(_ref3) {
     let {
@@ -28482,6 +28492,13 @@
         navigationType
       }
     }));
+  }
+  function Routes(_ref4) {
+    let {
+      children,
+      location: location2
+    } = _ref4;
+    return useRoutes(createRoutesFromChildren(children), location2);
   }
   function useHref(to) {
     !useInRouterContext() ? true ? invariant(false, "useHref() may be used only in the context of a <Router> component.") : invariant(false) : void 0;
@@ -28558,6 +28575,259 @@
     } = useLocation();
     let routePathnamesJson = JSON.stringify(matches.map((match) => match.pathnameBase));
     return (0, import_react.useMemo)(() => resolveTo(to, JSON.parse(routePathnamesJson), locationPathname), [to, routePathnamesJson, locationPathname]);
+  }
+  function useRoutes(routes, locationArg) {
+    !useInRouterContext() ? true ? invariant(false, "useRoutes() may be used only in the context of a <Router> component.") : invariant(false) : void 0;
+    let {
+      matches: parentMatches
+    } = (0, import_react.useContext)(RouteContext);
+    let routeMatch = parentMatches[parentMatches.length - 1];
+    let parentParams = routeMatch ? routeMatch.params : {};
+    let parentPathname = routeMatch ? routeMatch.pathname : "/";
+    let parentPathnameBase = routeMatch ? routeMatch.pathnameBase : "/";
+    let parentRoute = routeMatch && routeMatch.route;
+    if (true) {
+      let parentPath = parentRoute && parentRoute.path || "";
+      warningOnce(parentPathname, !parentRoute || parentPath.endsWith("*"), "You rendered descendant <Routes> (or called `useRoutes()`) at " + ('"' + parentPathname + '" (under <Route path="' + parentPath + '">) but the ') + `parent route path has no trailing "*". This means if you navigate deeper, the parent won't match anymore and therefore the child routes will never render.
+
+` + ('Please change the parent <Route path="' + parentPath + '"> to <Route ') + ('path="' + (parentPath === "/" ? "*" : parentPath + "/*") + '">.'));
+    }
+    let locationFromContext = useLocation();
+    let location2;
+    if (locationArg) {
+      var _parsedLocationArg$pa;
+      let parsedLocationArg = typeof locationArg === "string" ? parsePath(locationArg) : locationArg;
+      !(parentPathnameBase === "/" || ((_parsedLocationArg$pa = parsedLocationArg.pathname) == null ? void 0 : _parsedLocationArg$pa.startsWith(parentPathnameBase))) ? true ? invariant(false, "When overriding the location using `<Routes location>` or `useRoutes(routes, location)`, the location pathname must begin with the portion of the URL pathname that was " + ('matched by all parent routes. The current pathname base is "' + parentPathnameBase + '" ') + ('but pathname "' + parsedLocationArg.pathname + '" was given in the `location` prop.')) : invariant(false) : void 0;
+      location2 = parsedLocationArg;
+    } else {
+      location2 = locationFromContext;
+    }
+    let pathname = location2.pathname || "/";
+    let remainingPathname = parentPathnameBase === "/" ? pathname : pathname.slice(parentPathnameBase.length) || "/";
+    let matches = matchRoutes(routes, {
+      pathname: remainingPathname
+    });
+    if (true) {
+      true ? warning2(parentRoute || matches != null, 'No routes matched location "' + location2.pathname + location2.search + location2.hash + '" ') : void 0;
+      true ? warning2(matches == null || matches[matches.length - 1].route.element !== void 0, 'Matched leaf route at location "' + location2.pathname + location2.search + location2.hash + '" does not have an element. This means it will render an <Outlet /> with a null value by default resulting in an "empty" page.') : void 0;
+    }
+    return _renderMatches(matches && matches.map((match) => Object.assign({}, match, {
+      params: Object.assign({}, parentParams, match.params),
+      pathname: joinPaths([parentPathnameBase, match.pathname]),
+      pathnameBase: match.pathnameBase === "/" ? parentPathnameBase : joinPaths([parentPathnameBase, match.pathnameBase])
+    })), parentMatches);
+  }
+  function createRoutesFromChildren(children) {
+    let routes = [];
+    import_react.Children.forEach(children, (element) => {
+      if (!/* @__PURE__ */ (0, import_react.isValidElement)(element)) {
+        return;
+      }
+      if (element.type === import_react.Fragment) {
+        routes.push.apply(routes, createRoutesFromChildren(element.props.children));
+        return;
+      }
+      !(element.type === Route) ? true ? invariant(false, "[" + (typeof element.type === "string" ? element.type : element.type.name) + "] is not a <Route> component. All component children of <Routes> must be a <Route> or <React.Fragment>") : invariant(false) : void 0;
+      let route = {
+        caseSensitive: element.props.caseSensitive,
+        element: element.props.element,
+        index: element.props.index,
+        path: element.props.path
+      };
+      if (element.props.children) {
+        route.children = createRoutesFromChildren(element.props.children);
+      }
+      routes.push(route);
+    });
+    return routes;
+  }
+  function matchRoutes(routes, locationArg, basename) {
+    if (basename === void 0) {
+      basename = "/";
+    }
+    let location2 = typeof locationArg === "string" ? parsePath(locationArg) : locationArg;
+    let pathname = stripBasename(location2.pathname || "/", basename);
+    if (pathname == null) {
+      return null;
+    }
+    let branches = flattenRoutes(routes);
+    rankRouteBranches(branches);
+    let matches = null;
+    for (let i = 0; matches == null && i < branches.length; ++i) {
+      matches = matchRouteBranch(branches[i], pathname);
+    }
+    return matches;
+  }
+  function flattenRoutes(routes, branches, parentsMeta, parentPath) {
+    if (branches === void 0) {
+      branches = [];
+    }
+    if (parentsMeta === void 0) {
+      parentsMeta = [];
+    }
+    if (parentPath === void 0) {
+      parentPath = "";
+    }
+    routes.forEach((route, index) => {
+      let meta = {
+        relativePath: route.path || "",
+        caseSensitive: route.caseSensitive === true,
+        childrenIndex: index,
+        route
+      };
+      if (meta.relativePath.startsWith("/")) {
+        !meta.relativePath.startsWith(parentPath) ? true ? invariant(false, 'Absolute route path "' + meta.relativePath + '" nested under path ' + ('"' + parentPath + '" is not valid. An absolute child route path ') + "must start with the combined path of all its parent routes.") : invariant(false) : void 0;
+        meta.relativePath = meta.relativePath.slice(parentPath.length);
+      }
+      let path = joinPaths([parentPath, meta.relativePath]);
+      let routesMeta = parentsMeta.concat(meta);
+      if (route.children && route.children.length > 0) {
+        !(route.index !== true) ? true ? invariant(false, "Index routes must not have child routes. Please remove " + ('all child routes from route path "' + path + '".')) : invariant(false) : void 0;
+        flattenRoutes(route.children, branches, routesMeta, path);
+      }
+      if (route.path == null && !route.index) {
+        return;
+      }
+      branches.push({
+        path,
+        score: computeScore(path, route.index),
+        routesMeta
+      });
+    });
+    return branches;
+  }
+  function rankRouteBranches(branches) {
+    branches.sort((a, b) => a.score !== b.score ? b.score - a.score : compareIndexes(a.routesMeta.map((meta) => meta.childrenIndex), b.routesMeta.map((meta) => meta.childrenIndex)));
+  }
+  var paramRe = /^:\w+$/;
+  var dynamicSegmentValue = 3;
+  var indexRouteValue = 2;
+  var emptySegmentValue = 1;
+  var staticSegmentValue = 10;
+  var splatPenalty = -2;
+  var isSplat = (s) => s === "*";
+  function computeScore(path, index) {
+    let segments = path.split("/");
+    let initialScore = segments.length;
+    if (segments.some(isSplat)) {
+      initialScore += splatPenalty;
+    }
+    if (index) {
+      initialScore += indexRouteValue;
+    }
+    return segments.filter((s) => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
+  }
+  function compareIndexes(a, b) {
+    let siblings = a.length === b.length && a.slice(0, -1).every((n, i) => n === b[i]);
+    return siblings ? a[a.length - 1] - b[b.length - 1] : 0;
+  }
+  function matchRouteBranch(branch, pathname) {
+    let {
+      routesMeta
+    } = branch;
+    let matchedParams = {};
+    let matchedPathname = "/";
+    let matches = [];
+    for (let i = 0; i < routesMeta.length; ++i) {
+      let meta = routesMeta[i];
+      let end = i === routesMeta.length - 1;
+      let remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/";
+      let match = matchPath({
+        path: meta.relativePath,
+        caseSensitive: meta.caseSensitive,
+        end
+      }, remainingPathname);
+      if (!match)
+        return null;
+      Object.assign(matchedParams, match.params);
+      let route = meta.route;
+      matches.push({
+        params: matchedParams,
+        pathname: joinPaths([matchedPathname, match.pathname]),
+        pathnameBase: normalizePathname(joinPaths([matchedPathname, match.pathnameBase])),
+        route
+      });
+      if (match.pathnameBase !== "/") {
+        matchedPathname = joinPaths([matchedPathname, match.pathnameBase]);
+      }
+    }
+    return matches;
+  }
+  function _renderMatches(matches, parentMatches) {
+    if (parentMatches === void 0) {
+      parentMatches = [];
+    }
+    if (matches == null)
+      return null;
+    return matches.reduceRight((outlet, match, index) => {
+      return /* @__PURE__ */ (0, import_react.createElement)(RouteContext.Provider, {
+        children: match.route.element !== void 0 ? match.route.element : outlet,
+        value: {
+          outlet,
+          matches: parentMatches.concat(matches.slice(0, index + 1))
+        }
+      });
+    }, null);
+  }
+  function matchPath(pattern, pathname) {
+    if (typeof pattern === "string") {
+      pattern = {
+        path: pattern,
+        caseSensitive: false,
+        end: true
+      };
+    }
+    let [matcher, paramNames] = compilePath(pattern.path, pattern.caseSensitive, pattern.end);
+    let match = pathname.match(matcher);
+    if (!match)
+      return null;
+    let matchedPathname = match[0];
+    let pathnameBase = matchedPathname.replace(/(.)\/+$/, "$1");
+    let captureGroups = match.slice(1);
+    let params = paramNames.reduce((memo, paramName, index) => {
+      if (paramName === "*") {
+        let splatValue = captureGroups[index] || "";
+        pathnameBase = matchedPathname.slice(0, matchedPathname.length - splatValue.length).replace(/(.)\/+$/, "$1");
+      }
+      memo[paramName] = safelyDecodeURIComponent(captureGroups[index] || "", paramName);
+      return memo;
+    }, {});
+    return {
+      params,
+      pathname: matchedPathname,
+      pathnameBase,
+      pattern
+    };
+  }
+  function compilePath(path, caseSensitive, end) {
+    if (caseSensitive === void 0) {
+      caseSensitive = false;
+    }
+    if (end === void 0) {
+      end = true;
+    }
+    true ? warning2(path === "*" || !path.endsWith("*") || path.endsWith("/*"), 'Route path "' + path + '" will be treated as if it were ' + ('"' + path.replace(/\*$/, "/*") + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + ('please change the route path to "' + path.replace(/\*$/, "/*") + '".')) : void 0;
+    let paramNames = [];
+    let regexpSource = "^" + path.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^$?{}|()[\]]/g, "\\$&").replace(/:(\w+)/g, (_, paramName) => {
+      paramNames.push(paramName);
+      return "([^\\/]+)";
+    });
+    if (path.endsWith("*")) {
+      paramNames.push("*");
+      regexpSource += path === "*" || path === "/*" ? "(.*)$" : "(?:\\/(.+)|\\/*)$";
+    } else {
+      regexpSource += end ? "\\/*$" : "(?:(?=[.~-]|%[0-9A-F]{2})|\\b|\\/|$)";
+    }
+    let matcher = new RegExp(regexpSource, caseSensitive ? void 0 : "i");
+    return [matcher, paramNames];
+  }
+  function safelyDecodeURIComponent(value, paramName) {
+    try {
+      return decodeURIComponent(value);
+    } catch (error2) {
+      true ? warning2(false, 'The value for the URL param "' + paramName + '" will not be decoded because' + (' the string "' + value + '" is a malformed URL segment. This is probably') + (" due to a bad percent encoding (" + error2 + ").")) : void 0;
+      return value;
+    }
   }
   function resolvePath(to, fromPathname) {
     if (fromPathname === void 0) {
@@ -28663,6 +28933,16 @@
   }
   var _excluded = ["onClick", "reloadDocument", "replace", "state", "target", "to"];
   var _excluded2 = ["aria-current", "caseSensitive", "className", "end", "style", "to", "children"];
+  function warning3(cond, message) {
+    if (!cond) {
+      if (typeof console !== "undefined")
+        console.warn(message);
+      try {
+        throw new Error(message);
+      } catch (e) {
+      }
+    }
+  }
   function BrowserRouter(_ref) {
     let {
       basename,
@@ -28810,9 +29090,39 @@
       }
     }, [location2, navigate, path, replaceProp, state, target, to]);
   }
+  function useSearchParams(defaultInit) {
+    true ? warning3(typeof URLSearchParams !== "undefined", "You cannot use the `useSearchParams` hook in a browser that does not support the URLSearchParams API. If you need to support Internet Explorer 11, we recommend you load a polyfill such as https://github.com/ungap/url-search-params\n\nIf you're unsure how to load polyfills, we recommend you check out https://polyfill.io/v3/ which provides some recommendations about how to load polyfills only for users that need them, instead of for every user.") : void 0;
+    let defaultSearchParamsRef = (0, import_react2.useRef)(createSearchParams(defaultInit));
+    let location2 = useLocation();
+    let searchParams = (0, import_react2.useMemo)(() => {
+      let searchParams2 = createSearchParams(location2.search);
+      for (let key of defaultSearchParamsRef.current.keys()) {
+        if (!searchParams2.has(key)) {
+          defaultSearchParamsRef.current.getAll(key).forEach((value) => {
+            searchParams2.append(key, value);
+          });
+        }
+      }
+      return searchParams2;
+    }, [location2.search]);
+    let navigate = useNavigate();
+    let setSearchParams = (0, import_react2.useCallback)((nextInit, navigateOptions) => {
+      navigate("?" + createSearchParams(nextInit), navigateOptions);
+    }, [navigate]);
+    return [searchParams, setSearchParams];
+  }
+  function createSearchParams(init) {
+    if (init === void 0) {
+      init = "";
+    }
+    return new URLSearchParams(typeof init === "string" || Array.isArray(init) || init instanceof URLSearchParams ? init : Object.keys(init).reduce((memo, key) => {
+      let value = init[key];
+      return memo.concat(Array.isArray(value) ? value.map((v) => [key, v]) : [[key, value]]);
+    }, []));
+  }
 
   // app/javascript/components/App.js
-  var import_react8 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
 
   // app/javascript/components/Header.js
   var import_react3 = __toESM(require_react());
@@ -28854,43 +29164,106 @@
 
   // app/javascript/components/HomePage.js
   var import_react5 = __toESM(require_react());
+  var HomePage = () => {
+    const navigate = useNavigate();
+    const [showModal, setShowModal] = (0, import_react5.useState)(false);
+    const [selectedTopic, setSelectedTopic] = (0, import_react5.useState)(null);
+    const [selectedMethod, setSelectedMethod] = (0, import_react5.useState)(null);
+    const handleTopicClick = (topic) => {
+      setSelectedTopic(topic);
+      setShowModal(true);
+    };
+    return /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "home__container"
+    }, /* @__PURE__ */ import_react5.default.createElement("h1", null, "Welcome to SynTactic"), /* @__PURE__ */ import_react5.default.createElement("h2", {
+      id: "sub__header"
+    }, "Pick a Review Topic"), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "topics__container"
+    }, /* @__PURE__ */ import_react5.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("declarations");
+      }
+    }, "Declaration and Instantiation"), /* @__PURE__ */ import_react5.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("control flow");
+      }
+    }, "Control Flow"), /* @__PURE__ */ import_react5.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("data structures");
+      }
+    }, "Data Structures")), showModal && /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "home__modal"
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "overlay",
+      onClick: () => setShowModal(false)
+    }), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "modal"
+    }, /* @__PURE__ */ import_react5.default.createElement("h1", {
+      id: "modal__header"
+    }, "Pick a Review Method:"), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "review__methods"
+    }, /* @__PURE__ */ import_react5.default.createElement("button", {
+      className: "method",
+      onClick: () => navigate(`/problems?category=${selectedTopic}&method=multiple choice`)
+    }, "Multiple Choice"), /* @__PURE__ */ import_react5.default.createElement("button", {
+      className: "method",
+      onClick: () => navigate(`/problems?category=${selectedTopic}&method=flash cards`)
+    }, "Flash Cards")), /* @__PURE__ */ import_react5.default.createElement("button", {
+      id: "back__button",
+      onClick: () => setShowModal(false)
+    }, "Back"))));
+  };
+  var HomePage_default = HomePage;
+
+  // app/javascript/components/Profile.js
+  var import_react6 = __toESM(require_react());
 
   // app/javascript/components/Problems.js
-  var import_react6 = __toESM(require_react());
+  var import_react7 = __toESM(require_react());
   var Problems = () => {
-    const [questionArray, setQuestionArray] = (0, import_react6.useState)([]);
-    const [totalQuestions, setTotalQuestions] = (0, import_react6.useState)(0);
-    const [questionIndex, setQuestionIndex] = (0, import_react6.useState)(0);
-    const [score, setScore] = (0, import_react6.useState)(0);
+    const [searchParams] = useSearchParams();
+    const category = searchParams.get("category");
+    const method = searchParams.get("method");
+    const [questionArray, setQuestionArray] = (0, import_react7.useState)([]);
+    const [totalQuestions, setTotalQuestions] = (0, import_react7.useState)(0);
+    const [questionIndex, setQuestionIndex] = (0, import_react7.useState)(0);
+    const [score, setScore] = (0, import_react7.useState)(0);
     const progressPercentage = (questionIndex + 1) / totalQuestions * 100;
-    const [questionData, setQuestionData] = (0, import_react6.useState)({
+    const [questionData, setQuestionData] = (0, import_react7.useState)({
       question: "",
       choices: ["", "", ""],
       correctAnswer: ""
     });
-    const [showCorrectnessModal, setShowCorrectnessModal] = (0, import_react6.useState)(false);
-    const [showResultModal, setShowResultModal] = (0, import_react6.useState)(false);
-    const [selectedAnswer, setSelectedAnswer] = (0, import_react6.useState)(null);
-    const [isAnswerCorrect, setAnswerCorrect] = (0, import_react6.useState)(false);
-    (0, import_react6.useEffect)(() => {
-      fetch("/questions").then((response) => response.json()).then((data) => {
-        setQuestionArray(data);
-        setTotalQuestions(data.length);
-        if (data[0]) {
-          const firstQuestion = data[0];
-          setQuestionData({
-            question: firstQuestion.question,
-            choices: [
-              firstQuestion.choice_a,
-              firstQuestion.choice_b,
-              firstQuestion.choice_c
-            ],
-            correctAnswer: firstQuestion.answer
-          });
-        }
-      }).catch((error2) => console.error("Error fetching questions:", error2));
-    }, []);
+    const [showCorrectnessModal, setShowCorrectnessModal] = (0, import_react7.useState)(false);
+    const [showResultModal, setShowResultModal] = (0, import_react7.useState)(false);
+    const [selectedAnswer, setSelectedAnswer] = (0, import_react7.useState)(null);
+    const [isAnswerCorrect, setAnswerCorrect] = (0, import_react7.useState)(false);
+    (0, import_react7.useEffect)(() => {
+      if (category && method) {
+        fetch(`/questions?category=${category}&method=${method}`).then((response) => response.json()).then((data) => {
+          setQuestionArray(data);
+          setTotalQuestions(data.length);
+          if (data[0]) {
+            const firstQuestion = data[0];
+            setQuestionData({
+              question: firstQuestion.question,
+              choices: [
+                firstQuestion.choice_a,
+                firstQuestion.choice_b,
+                firstQuestion.choice_c
+              ],
+              correctAnswer: firstQuestion.answer
+            });
+          }
+        });
+      }
+    }, [category, method]);
     const handleAnswerChoice = (selectedChoice) => {
+      if (showCorrectnessModal)
+        return;
       setSelectedAnswer(selectedChoice);
       if (selectedChoice === questionData.correctAnswer) {
         setAnswerCorrect(true);
@@ -28922,66 +29295,73 @@
         setShowResultModal(true);
       }
     };
-    return /* @__PURE__ */ import_react6.default.createElement("div", {
+    return /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "problems__container"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "progress__container"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "progress__bar",
       style: { width: `${progressPercentage}%` }
-    })), /* @__PURE__ */ import_react6.default.createElement("div", {
+    })), /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "question"
-    }, /* @__PURE__ */ import_react6.default.createElement("h1", null, questionData.question)), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react7.default.createElement("h1", null, questionData.question)), /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "answer__choices"
-    }, /* @__PURE__ */ import_react6.default.createElement("button", {
+    }, /* @__PURE__ */ import_react7.default.createElement("button", {
       onClick: () => handleAnswerChoice("A"),
-      className: `answer__choice ${selectedAnswer === "A" ? "selected__choice" : ""}`,
-      disabled: showCorrectnessModal
-    }, /* @__PURE__ */ import_react6.default.createElement("span", null, "A"), questionData.choices[0]), /* @__PURE__ */ import_react6.default.createElement("button", {
+      className: `answer__choice ${selectedAnswer === "A" ? "selected__choice" : ""}`
+    }, /* @__PURE__ */ import_react7.default.createElement("span", null, "A"), questionData.choices[0]), /* @__PURE__ */ import_react7.default.createElement("button", {
       onClick: () => handleAnswerChoice("B"),
-      className: `answer__choice ${selectedAnswer === "B" ? "selected__choice" : ""}`,
-      disabled: showCorrectnessModal
-    }, /* @__PURE__ */ import_react6.default.createElement("span", null, "B"), questionData.choices[1]), /* @__PURE__ */ import_react6.default.createElement("button", {
+      className: `answer__choice ${selectedAnswer === "B" ? "selected__choice" : ""}`
+    }, /* @__PURE__ */ import_react7.default.createElement("span", null, "B"), questionData.choices[1]), /* @__PURE__ */ import_react7.default.createElement("button", {
       onClick: () => handleAnswerChoice("C"),
-      className: `answer__choice ${selectedAnswer === "C" ? "selected__choice" : ""}`,
-      disabled: showCorrectnessModal
-    }, /* @__PURE__ */ import_react6.default.createElement("span", null, "C"), questionData.choices[2])), showCorrectnessModal && /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: `answer__choice ${selectedAnswer === "C" ? "selected__choice" : ""}`
+    }, /* @__PURE__ */ import_react7.default.createElement("span", null, "C"), questionData.choices[2])), showCorrectnessModal && /* @__PURE__ */ import_react7.default.createElement("div", {
       className: `problems__modal ${isAnswerCorrect ? "correct" : "incorrect"}`
-    }, isAnswerCorrect ? /* @__PURE__ */ import_react6.default.createElement("p", {
+    }, isAnswerCorrect ? /* @__PURE__ */ import_react7.default.createElement("p", {
       className: "correctness__modal",
       id: "correct__answer"
-    }, "Correct!") : /* @__PURE__ */ import_react6.default.createElement("p", {
+    }, "Correct!") : /* @__PURE__ */ import_react7.default.createElement("p", {
       className: "correctness__modal",
       id: "incorrect__answer"
-    }, "Incorrect. The correct answer is: ", questionData.correctAnswer), /* @__PURE__ */ import_react6.default.createElement("button", {
+    }, "Incorrect. The correct answer is: ", questionData.correctAnswer), /* @__PURE__ */ import_react7.default.createElement("button", {
       className: "next__button",
       onClick: handleNextQuestion
-    }, "Next")), showResultModal && /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "results__container"
-    }, /* @__PURE__ */ import_react6.default.createElement("h1", null, "Practice Complete!"), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, "Next")), showResultModal && /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "results__modal"
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "overlay"
+    }), /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "results"
+    }, /* @__PURE__ */ import_react7.default.createElement("h1", null, "Practice Complete!"), /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "user__score"
-    }, /* @__PURE__ */ import_react6.default.createElement("h2", null, "Your Score: ", score, " out of ", totalQuestions), /* @__PURE__ */ import_react6.default.createElement("h2", null, "Questions Solved: +", score, "!")), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react7.default.createElement("h2", null, "Your Score: ", score, " out of ", totalQuestions), /* @__PURE__ */ import_react7.default.createElement("h2", null, "Questions Solved: +", score, "!")), /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "results__buttons"
-    }, /* @__PURE__ */ import_react6.default.createElement("a", {
+    }, /* @__PURE__ */ import_react7.default.createElement("a", {
       href: ""
-    }, "Home"), /* @__PURE__ */ import_react6.default.createElement("a", {
+    }, "Home"), /* @__PURE__ */ import_react7.default.createElement("a", {
       href: ""
-    }, "Again"))));
+    }, "Again")))));
   };
   var Problems_default = Problems;
 
   // app/javascript/components/Results.js
-  var import_react7 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
 
   // app/javascript/components/App.js
-  var App = () => /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement(Header_default, null), /* @__PURE__ */ import_react8.default.createElement(Problems_default, null));
+  var App = () => /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement(Header_default, null), /* @__PURE__ */ import_react9.default.createElement(Routes, null, /* @__PURE__ */ import_react9.default.createElement(Route, {
+    path: "/home",
+    element: /* @__PURE__ */ import_react9.default.createElement(HomePage_default, null)
+  }), /* @__PURE__ */ import_react9.default.createElement(Route, {
+    path: "/problems",
+    element: /* @__PURE__ */ import_react9.default.createElement(Problems_default, null)
+  })));
   var App_default = App;
 
   // app/javascript/application.js
   var container = document.getElementById("root");
   var root = (0, import_client.createRoot)(container);
   document.addEventListener("DOMContentLoaded", () => {
-    root.render(/* @__PURE__ */ import_react9.default.createElement(import_react9.StrictMode, null, /* @__PURE__ */ import_react9.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react9.default.createElement(App_default, null))));
+    root.render(/* @__PURE__ */ import_react10.default.createElement(import_react10.StrictMode, null, /* @__PURE__ */ import_react10.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react10.default.createElement(App_default, null))));
   });
 })();
 /**
