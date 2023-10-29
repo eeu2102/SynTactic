@@ -1,0 +1,23 @@
+# Ignore all .log files
+*.log
+
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore the build directory (if you have one)
+build/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore files related to your text editor or IDE
+.vscode/
+.idea/
+
+# Ignore Ruby on Rails specific files
+log/*
+!log/.keep
+tmp/*
+!tmp/.keep
+storage/*
+!storage/.keep

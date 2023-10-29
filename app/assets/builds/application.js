@@ -28934,19 +28934,24 @@
     }, /* @__PURE__ */ import_react6.default.createElement("h1", null, questionData.question)), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "answer__choices"
     }, /* @__PURE__ */ import_react6.default.createElement("button", {
-      className: "answer__choice",
-      onClick: () => handleAnswerChoice("A")
+      onClick: () => handleAnswerChoice("A"),
+      className: `answer__choice ${selectedAnswer === "A" ? "selected__choice" : ""}`,
+      disabled: showCorrectnessModal
     }, /* @__PURE__ */ import_react6.default.createElement("span", null, "A"), questionData.choices[0]), /* @__PURE__ */ import_react6.default.createElement("button", {
-      className: "answer__choice",
-      onClick: () => handleAnswerChoice("B")
+      onClick: () => handleAnswerChoice("B"),
+      className: `answer__choice ${selectedAnswer === "B" ? "selected__choice" : ""}`,
+      disabled: showCorrectnessModal
     }, /* @__PURE__ */ import_react6.default.createElement("span", null, "B"), questionData.choices[1]), /* @__PURE__ */ import_react6.default.createElement("button", {
-      className: "answer__choice",
-      onClick: () => handleAnswerChoice("C")
+      onClick: () => handleAnswerChoice("C"),
+      className: `answer__choice ${selectedAnswer === "C" ? "selected__choice" : ""}`,
+      disabled: showCorrectnessModal
     }, /* @__PURE__ */ import_react6.default.createElement("span", null, "C"), questionData.choices[2])), showCorrectnessModal && /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "problems__modal"
+      className: `problems__modal ${isAnswerCorrect ? "correct" : "incorrect"}`
     }, isAnswerCorrect ? /* @__PURE__ */ import_react6.default.createElement("p", {
+      className: "correctness__modal",
       id: "correct__answer"
     }, "Correct!") : /* @__PURE__ */ import_react6.default.createElement("p", {
+      className: "correctness__modal",
       id: "incorrect__answer"
     }, "Incorrect. The correct answer is: ", questionData.correctAnswer), /* @__PURE__ */ import_react6.default.createElement("button", {
       className: "next__button",
