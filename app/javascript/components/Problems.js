@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Problems.css";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 
 const Problems = () => {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const category = searchParams.get("category");
   const method = searchParams.get("method");
 
@@ -84,6 +85,29 @@ const Problems = () => {
     }
   };
 
+  const handleHomeClick = () => {
+    navigate("/home/");
+  };
+
+  const handleAgainClick = () => {
+    setQuestionIndex(0);
+    setScore(0);
+    setShowResultModal(false);
+    // Reset the questionData to the first question
+    const firstQuestion = questionArray[0];
+    if (firstQuestion) {
+      setQuestionData({
+        question: firstQuestion.question,
+        choices: [
+          firstQuestion.choice_a,
+          firstQuestion.choice_b,
+          firstQuestion.choice_c,
+        ],
+        correctAnswer: firstQuestion.answer,
+      });
+    }
+  };
+
   return (
     <div className="problems__container">
       <div className="progress__container">
@@ -159,8 +183,8 @@ const Problems = () => {
               <h2>Questions Solved: +{score}!</h2>
             </div>
             <div className="results__buttons">
-              <a href="">Home</a>
-              <a href="">Again</a>
+              <button onClick={handleHomeClick}>Home</button>
+              <button onClick={handleAgainClick}>Again</button>
             </div>
           </div>
         </div>
