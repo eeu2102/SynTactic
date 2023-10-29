@@ -1557,7 +1557,7 @@
             }
             return dispatcher.useContext(Context2);
           }
-          function useState5(initialState) {
+          function useState6(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1569,7 +1569,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect3(create, deps) {
+          function useEffect2(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -2349,7 +2349,7 @@
           exports.useContext = useContext2;
           exports.useDebugValue = useDebugValue;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect3;
+          exports.useEffect = useEffect2;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useInsertionEffect = useInsertionEffect;
@@ -2357,7 +2357,7 @@
           exports.useMemo = useMemo3;
           exports.useReducer = useReducer;
           exports.useRef = useRef3;
-          exports.useState = useState5;
+          exports.useState = useState6;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -2853,9 +2853,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React6 = require_react();
+          var React7 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React6.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React7.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -4251,7 +4251,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React6.Children.forEach(props.children, function(child) {
+                  React7.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11798,7 +11798,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React6.Component().refs;
+          var emptyRefsObject = new React7.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -28134,7 +28134,7 @@
   application.register("hello", hello_controller_default);
 
   // app/javascript/application.js
-  var import_react8 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/index.js
@@ -28549,13 +28549,6 @@
     }, [basename, navigator2, routePathnamesJson, locationPathname]);
     return navigate;
   }
-  function useParams() {
-    let {
-      matches
-    } = (0, import_react.useContext)(RouteContext);
-    let routeMatch = matches[matches.length - 1];
-    return routeMatch ? routeMatch.params : {};
-  }
   function useResolvedPath(to) {
     let {
       matches
@@ -28819,7 +28812,7 @@
   }
 
   // app/javascript/components/App.js
-  var import_react7 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
 
   // app/javascript/components/Header.js
   var import_react3 = __toESM(require_react());
@@ -28859,94 +28852,101 @@
   };
   var Header_default = Header;
 
-  // app/javascript/components/Problems.js
+  // app/javascript/components/HomePage.js
   var import_react5 = __toESM(require_react());
+
+  // app/javascript/components/Problems.js
+  var import_react6 = __toESM(require_react());
   var Problems = () => {
-    const [questionArray, setQuestionArray] = (0, import_react5.useState)([]);
-    const totalQuestions = 5;
-    const [questionIndex, setQuestionIndex] = (0, import_react5.useState)(1);
+    const [questionArray, setQuestionArray] = (0, import_react6.useState)([]);
+    const totalQuestions = questionArray.length;
+    const [questionIndex, setQuestionIndex] = (0, import_react6.useState)(1);
+    const [score, setScore] = (0, import_react6.useState)(0);
     const progressPercentage = questionIndex / totalQuestions * 100;
-    const [questionData, setQuestionData] = (0, import_react5.useState)({
+    const [questionData, setQuestionData] = (0, import_react6.useState)({
       question: "",
       choices: ["", "", ""],
-      answer: ""
+      correctAnswer: ""
     });
-    const [showModal, setShowModal] = (0, import_react5.useState)(false);
-    const [selectedAnswer, setSelectedAnswer] = (0, import_react5.useState)(null);
-    const [isAnswerCorrect, setAnswerCorrect] = (0, import_react5.useState)(false);
+    const [showCorrectnessModal, setShowCorrectnessModal] = (0, import_react6.useState)(false);
+    const [showResultModal, setShowResultModal] = (0, import_react6.useState)(false);
+    const [selectedAnswer, setSelectedAnswer] = (0, import_react6.useState)(null);
+    const [isAnswerCorrect, setAnswerCorrect] = (0, import_react6.useState)(false);
     const handleAnswerChoice = (selectedChoice) => {
       if (selectedChoice === questionData.correctAnswer) {
         setAnswerCorrect(true);
+        setScore(score + 1);
       } else {
         setAnswerCorrect(false);
       }
-      showModal(true);
+      showCorrectnessModal(true);
     };
     const handleNextQuestion = () => {
-      handleNext = () => {
-        setShowModal(false);
+      if (questionIndex + 1 < totalQuestions) {
+        setShowCorrectnessModal(false);
         setAnswerCorrect(false);
         setSelectedAnswer(null);
         setQuestionIndex(questionIndex + 1);
-      };
+      } else {
+        setShowCorrectnessModal(false);
+        setShowResultModal(true);
+      }
     };
-    return /* @__PURE__ */ import_react5.default.createElement("div", {
+    return /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "problems__container"
-    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "progress__container"
-    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "progress__bar",
       style: { width: `${progressPercentage}%` }
-    })), /* @__PURE__ */ import_react5.default.createElement("div", {
+    })), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "question"
-    }, /* @__PURE__ */ import_react5.default.createElement("h1", null, "Enter Question Text")), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, /* @__PURE__ */ import_react6.default.createElement("h1", null, questionData.question)), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "answer__choices"
-    }, /* @__PURE__ */ import_react5.default.createElement("button", {
-      className: "answer__choice"
-    }, /* @__PURE__ */ import_react5.default.createElement("span", null, "A"), "Answer Choice"), /* @__PURE__ */ import_react5.default.createElement("button", {
-      className: "answer__choice"
-    }, /* @__PURE__ */ import_react5.default.createElement("span", null, "B"), "Answer Choice"), /* @__PURE__ */ import_react5.default.createElement("button", {
-      className: "answer__choice"
-    }, /* @__PURE__ */ import_react5.default.createElement("span", null, "C"), "Answer Choice")), showModal && /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, /* @__PURE__ */ import_react6.default.createElement("button", {
+      className: "answer__choice",
+      onClick: () => handleAnswerChoice("A")
+    }, /* @__PURE__ */ import_react6.default.createElement("span", null, "A"), questionData.choices[0]), /* @__PURE__ */ import_react6.default.createElement("button", {
+      className: "answer__choice",
+      onClick: () => handleAnswerChoice("B")
+    }, /* @__PURE__ */ import_react6.default.createElement("span", null, "B"), questionData.choices[1]), /* @__PURE__ */ import_react6.default.createElement("button", {
+      className: "answer__choice",
+      onClick: () => handleAnswerChoice("C")
+    }, /* @__PURE__ */ import_react6.default.createElement("span", null, "C"), questionData.choices[2])), showCorrectnessModal && /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "problems__modal"
-    }, isAnswerCorrect ? /* @__PURE__ */ import_react5.default.createElement("p", {
+    }, isAnswerCorrect ? /* @__PURE__ */ import_react6.default.createElement("p", {
       id: "correct__answer"
-    }, "Correct!") : /* @__PURE__ */ import_react5.default.createElement("p", {
+    }, "Correct!") : /* @__PURE__ */ import_react6.default.createElement("p", {
       id: "incorrect__answer"
-    }, "Incorrect. The correct answer is: ", questionData.correctAnswer), /* @__PURE__ */ import_react5.default.createElement("button", {
+    }, "Incorrect. The correct answer is: ", questionData.correctAnswer), /* @__PURE__ */ import_react6.default.createElement("button", {
       className: "next__button",
-      onClick: handleNextQuestion()
-    }, "Next")));
+      onClick: handleNextQuestion
+    }, "Next")), showResultModal && /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "results__container"
+    }, /* @__PURE__ */ import_react6.default.createElement("h1", null, "Practice Complete!"), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "user__score"
+    }, /* @__PURE__ */ import_react6.default.createElement("h2", null, "Your Score: ", score, " out of 5???"), /* @__PURE__ */ import_react6.default.createElement("h2", null, "Questions Solved: +", score, "!")), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "results__buttons"
+    }, /* @__PURE__ */ import_react6.default.createElement("a", {
+      href: ""
+    }, "Home"), /* @__PURE__ */ import_react6.default.createElement("a", {
+      href: ""
+    }, "Again"))));
   };
   var Problems_default = Problems;
 
   // app/javascript/components/Results.js
-  var import_react6 = __toESM(require_react());
-  var Results = () => {
-    const { score, questionsSolved } = useParams();
-    return /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "results__container"
-    }, /* @__PURE__ */ import_react6.default.createElement("h1", null, "Practice Complete!"), /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "user__score"
-    }, /* @__PURE__ */ import_react6.default.createElement("h2", null, "Your Score: ", score, " out of 5???"), /* @__PURE__ */ import_react6.default.createElement("h2", null, "Questions Solved: +", questionsSolved, "!")), /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "results__buttons"
-    }, /* @__PURE__ */ import_react6.default.createElement("a", {
-      href: "\\home\\"
-    }, "Home"), /* @__PURE__ */ import_react6.default.createElement("a", {
-      href: ""
-    }, "Again")));
-  };
-  var Results_default = Results;
+  var import_react7 = __toESM(require_react());
 
   // app/javascript/components/App.js
-  var App = () => /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement(Header_default, null), /* @__PURE__ */ import_react7.default.createElement(Problems_default, null), /* @__PURE__ */ import_react7.default.createElement(Results_default, null));
+  var App = () => /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement(Header_default, null), /* @__PURE__ */ import_react8.default.createElement(Problems_default, null));
   var App_default = App;
 
   // app/javascript/application.js
   var container = document.getElementById("root");
   var root = (0, import_client.createRoot)(container);
   document.addEventListener("DOMContentLoaded", () => {
-    root.render(/* @__PURE__ */ import_react8.default.createElement(import_react8.StrictMode, null, /* @__PURE__ */ import_react8.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react8.default.createElement(App_default, null))));
+    root.render(/* @__PURE__ */ import_react9.default.createElement(import_react9.StrictMode, null, /* @__PURE__ */ import_react9.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react9.default.createElement(App_default, null))));
   });
 })();
 /**
