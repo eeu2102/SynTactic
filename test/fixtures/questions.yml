@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  question: MyText
+  choice_a: MyText
+  choice_b: MyText
+  choice_c: MyText
+  answer: MyText
+  coding_language: MyString
+  category: MyString
+
+two:
+  question: MyText
+  choice_a: MyText
+  choice_b: MyText
+  choice_c: MyText
+  answer: MyText
+  coding_language: MyString
+  category: MyString
