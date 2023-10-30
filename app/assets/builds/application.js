@@ -2853,9 +2853,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React9 = require_react();
+          var React8 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React9.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React8.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -4251,7 +4251,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React9.Children.forEach(props.children, function(child) {
+                  React8.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11798,7 +11798,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React9.Component().refs;
+          var emptyRefsObject = new React8.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -28134,7 +28134,7 @@
   application.register("hello", hello_controller_default);
 
   // app/javascript/application.js
-  var import_react7 = __toESM(require_react());
+  var import_react6 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/dist/index.js
@@ -29932,7 +29932,7 @@
   }
 
   // app/javascript/components/App.js
-  var import_react6 = __toESM(require_react());
+  var import_react5 = __toESM(require_react());
 
   // app/javascript/components/Header.js
   var import_react = __toESM(require_react());
@@ -30166,26 +30166,27 @@
       className: "results"
     }, /* @__PURE__ */ import_react4.default.createElement("h1", null, "Practice Complete!"), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "user__score"
-    }, /* @__PURE__ */ import_react4.default.createElement("h2", null, "Your Score: ", score, " out of ", totalQuestions), /* @__PURE__ */ import_react4.default.createElement("h2", null, "Questions Solved: +", score, "!")), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react4.default.createElement("h2", {
+      id: "score"
+    }, "Your Score: ", score, " out of ", totalQuestions), /* @__PURE__ */ import_react4.default.createElement("h2", null, "Questions Solved: +", score, "!")), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "results__buttons"
     }, /* @__PURE__ */ import_react4.default.createElement("button", {
-      onClick: handleHomeClick
+      onClick: handleHomeClick,
+      id: "home__button"
     }, "Home"), /* @__PURE__ */ import_react4.default.createElement("button", {
-      onClick: handleAgainClick
+      onClick: handleAgainClick,
+      id: "again__button"
     }, "Again")))));
   };
   var Problems_default = Problems;
 
-  // app/javascript/components/Results.js
-  var import_react5 = __toESM(require_react());
-
   // app/javascript/components/App.js
-  var App = () => /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement(Header_default, null), /* @__PURE__ */ import_react6.default.createElement(Routes, null, /* @__PURE__ */ import_react6.default.createElement(Route, {
+  var App = () => /* @__PURE__ */ import_react5.default.createElement("div", null, /* @__PURE__ */ import_react5.default.createElement(Header_default, null), /* @__PURE__ */ import_react5.default.createElement(Routes, null, /* @__PURE__ */ import_react5.default.createElement(Route, {
     path: "/home",
-    element: /* @__PURE__ */ import_react6.default.createElement(HomePage_default, null)
-  }), /* @__PURE__ */ import_react6.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react5.default.createElement(HomePage_default, null)
+  }), /* @__PURE__ */ import_react5.default.createElement(Route, {
     path: "/problems",
-    element: /* @__PURE__ */ import_react6.default.createElement(Problems_default, null)
+    element: /* @__PURE__ */ import_react5.default.createElement(Problems_default, null)
   })));
   var App_default = App;
 
@@ -30193,7 +30194,7 @@
   var container = document.getElementById("root");
   var root = (0, import_client.createRoot)(container);
   document.addEventListener("DOMContentLoaded", () => {
-    root.render(/* @__PURE__ */ import_react7.default.createElement(import_react7.StrictMode, null, /* @__PURE__ */ import_react7.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react7.default.createElement(App_default, null))));
+    root.render(/* @__PURE__ */ import_react6.default.createElement(import_react6.StrictMode, null, /* @__PURE__ */ import_react6.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react6.default.createElement(App_default, null))));
   });
 })();
 /**

@@ -386,26 +386,21 @@ button {
   z-index: 200;
   border-radius: 10px;
 }
-
-/* app/javascript/components/Results.css */
-.results__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
+.user_score {
+  width: 525px;
 }
-.user__score {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+#score {
+  margin-bottom: 20px;
 }
 .results__buttons {
-  font-size: 26px;
-  font-weight: bolder;
   display: flex;
-  width: 200px;
   justify-content: space-between;
+  width: 350px;
+}
+#home__button,
+#again__button {
+  font-size: 24px;
+  font-weight: bolder;
+  width: 150px;
+  height: 70px;
 }

@@ -137,17 +137,21 @@
   width: 525px;
 }
 
+#score {
+  margin-bottom: 20px;
+}
+
 .results__buttons {
   display: flex;
   justify-content: space-between;
-  width: 525px;
+  width: 350px;
 }
 
 #home__button,
 #again__button {
   font-size: 24px;
   font-weight: bolder;
-  width: 100px;
+  width: 150px;
   height: 70px;
 }
 

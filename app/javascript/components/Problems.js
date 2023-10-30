@@ -201,9 +201,7 @@ const Problems = () => {
           <div className="results">
             <h1>Practice Complete!</h1>
             <div className="user__score">
-              <h2>
-                Your Score: {score} out of {totalQuestions}
-              </h2>
+              <h2 id="score">Your Score: {score} out of {totalQuestions}</h2>
               <h2>Questions Solved: +{score}!</h2>
             </div>
             <div className="results__buttons">
