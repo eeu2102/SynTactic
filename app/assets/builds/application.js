@@ -29960,15 +29960,10 @@
     }, "Java"), /* @__PURE__ */ import_react.default.createElement("option", {
       value: "option3"
     }, "C"))), /* @__PURE__ */ import_react.default.createElement("div", {
-      className: "profile__link"
-    }, /* @__PURE__ */ import_react.default.createElement("a", {
-      href: "",
-      target: "__blank",
-      id: "nav__ig"
-    }, /* @__PURE__ */ import_react.default.createElement("img", {
-      src: "",
-      id: "profile__pic"
-    }))));
+      className: "user__profile"
+    }, /* @__PURE__ */ import_react.default.createElement("button", {
+      id: "user__dashboard"
+    }, "Dashboard")));
   };
   var Header_default = Header;
 
