@@ -43,19 +43,25 @@ const Problems = () => {
       fetch(`/questions?category=${category}&method=${method}`)
         .then((response) => response.json())
         .then((data) => {
-          setQuestionArray(data);
-          setTotalQuestions(data.length);
-          if (data[0]) {
-            const firstQuestion = data[0];
-            setQuestionData({
-              question: firstQuestion.question,
-              choices: [
-                firstQuestion.choice_a,
-                firstQuestion.choice_b,
-                firstQuestion.choice_c,
+          if (data.length) {
+            const shuffled = data.sort(() => 0.5 - Math.random());
+            let selected = shuffled.slice(0, 5);
+  
+            setQuestionArray(selected);
+            setTotalQuestions(selected.length);
+
+            if (selected[0]) {
+              const firstQuestion = selected[0];
+              setQuestionData({
+                question: firstQuestion.question,
+                choices: [
+                  firstQuestion.choice_a,
+                  firstQuestion.choice_b,
+                  firstQuestion.choice_c,
               ],
               correctAnswer: firstQuestion.answer,
-            });
+              });
+            }
           }
         });
     }
@@ -107,22 +113,39 @@ const Problems = () => {
   };
 
   //if the user wants to go through the same set of questions again 
-  const handleAgainClick = () => {
+  const handleAgainClick = async () => {
     setQuestionIndex(0);
     setScore(0);
     setShowResultModal(false);
     // Reset the questionData to the first question
-    const firstQuestion = questionArray[0];
-    if (firstQuestion) {
-      setQuestionData({
-        question: firstQuestion.question,
-        choices: [
-          firstQuestion.choice_a,
-          firstQuestion.choice_b,
-          firstQuestion.choice_c,
-        ],
-        correctAnswer: firstQuestion.answer,
-      });
+    if (category && method) {
+      const response = await fetch(`/questions?category=${category}&method=${method}`);
+      const data = await response.json();
+
+      if (data.length) {
+        const shuffled = data.sort(() => 0.5 - Math.random());
+        let selected = shuffled.slice(0, 5);
+
+        setQuestionArray(selected);
+        setTotalQuestions(selected.length);
+        setScore(0);
+        setShowResultModal(false);
+
+        if (selected[0]) {
+          const firstQuestion = selected[0];
+          setQuestionData({
+            question: firstQuestion.question,
+            choices: [
+              firstQuestion.choice_a,
+              firstQuestion.choice_b,
+              firstQuestion.choice_c,
+            ],
+            correctAnswer: firstQuestion.answer,
+          });
+
+          setQuestionIndex(0);
+        }
+      }
     }
   };
 
@@ -195,14 +218,12 @@ const Problems = () => {
           <div className="results">
             <h1>Practice Complete!</h1>
             <div className="user__score">
-              <h2>
-                Your Score: {score} out of {totalQuestions}
-              </h2>
+              <h2 id="score">Your Score: {score} out of {totalQuestions}</h2>
               <h2>Questions Solved: +{score}!</h2>
             </div>
             <div className="results__buttons">
-              <button onClick={handleHomeClick}>Home</button>
-              <button onClick={handleAgainClick}>Again</button>
+              <button onClick={handleHomeClick} id="home__button">Home</button>
+              <button onClick={handleAgainClick} id="again__button">Again</button>
             </div>
           </div>
         </div>
