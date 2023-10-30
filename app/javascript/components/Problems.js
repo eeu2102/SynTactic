@@ -1,8 +1,15 @@
+//////////////
+// About 10/30/2023:
+// This file contains JS for the problem pages 
+// Logic contained: user interacts with questions, show the correctness of answers,  show the results modal at end of a set
+//////////////
+
 import React, { useState, useEffect } from "react";
 import "./Problems.css";
 import { useSearchParams, useNavigate } from "react-router-dom";
 
 const Problems = () => {
+  //initializing variables
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const category = searchParams.get("category");
@@ -14,17 +21,23 @@ const Problems = () => {
   const [score, setScore] = useState(0);
   const progressPercentage = ((questionIndex + 1) / totalQuestions) * 100;
 
+  //initializing variables to hold question data
   const [questionData, setQuestionData] = useState({
     question: "",
     choices: ["", "", ""],
     correctAnswer: "",
   });
 
+  //initializing variables (cont)
   const [showCorrectnessModal, setShowCorrectnessModal] = useState(false);
   const [showResultModal, setShowResultModal] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isAnswerCorrect, setAnswerCorrect] = useState(false);
 
+  //depending on the category + method, fetch a question accordingly
+  //parse through the question's features, assign to variables
+  // NOTE: we still have some issues with getting it to exactly how we want it
+  //eventually, this section should fetch random questions and go through the question database randomly
   useEffect(() => {
     if (category && method) {
       fetch(`/questions?category=${category}&method=${method}`)
@@ -48,6 +61,7 @@ const Problems = () => {
     }
   }, [category, method]);
 
+  //handling cases if it was the last question, answer was right, answer was wrong
   const handleAnswerChoice = (selectedChoice) => {
     if (showCorrectnessModal) return;
     setSelectedAnswer(selectedChoice);
@@ -60,6 +74,8 @@ const Problems = () => {
     setShowCorrectnessModal(true);
   };
 
+  //continuing through question set, showing next question if not done
+  //else, showing the results modal
   const handleNextQuestion = () => {
     const nextIndex = questionIndex + 1;
     if (nextIndex < totalQuestions) {
@@ -85,10 +101,12 @@ const Problems = () => {
     }
   };
 
+  //if the user clicks the home icon
   const handleHomeClick = () => {
     navigate("/home/");
   };
 
+  //if the user wants to go through the same set of questions again 
   const handleAgainClick = () => {
     setQuestionIndex(0);
     setScore(0);

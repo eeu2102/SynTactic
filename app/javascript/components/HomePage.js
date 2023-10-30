@@ -1,3 +1,10 @@
+//////////////
+// About 10/30/2023:
+// This file contains JS for the homepage page
+// Displays header, lets user select their question category and question format
+//////////////
+
+
 import React, { useState } from "react";
 import "./HomePage.css";
 import { useNavigate } from "react-router-dom";

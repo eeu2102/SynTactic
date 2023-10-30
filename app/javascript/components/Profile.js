@@ -1,3 +1,9 @@
+//////////////
+// About 10/30/2023:
+// This file contains JS for the profile page
+// --> Still yet to set up
+//////////////
+
 import React from "react";
 import './Profile.css';
 

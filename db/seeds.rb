@@ -1,3 +1,7 @@
+# About - 10/30/2023
+# This file parses the csv containing problem data, assigning them into local variables
+
+
 # frozen_string_literal: true
 
 require 'csv'
