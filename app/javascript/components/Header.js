@@ -1,3 +1,10 @@
+//////////////
+// About 10/30/2023:
+// This file contains JS for rendering the header strip at the top of every screen 
+// Includes the 'SynTactic' logo, dropdown options for languages, and profile link
+//////////////
+
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from 'react';
