@@ -113,22 +113,39 @@ const Problems = () => {
   };
 
   //if the user wants to go through the same set of questions again 
-  const handleAgainClick = () => {
+  const handleAgainClick = async () => {
     setQuestionIndex(0);
     setScore(0);
     setShowResultModal(false);
     // Reset the questionData to the first question
-    const firstQuestion = questionArray[0];
-    if (firstQuestion) {
-      setQuestionData({
-        question: firstQuestion.question,
-        choices: [
-          firstQuestion.choice_a,
-          firstQuestion.choice_b,
-          firstQuestion.choice_c,
-        ],
-        correctAnswer: firstQuestion.answer,
-      });
+    if (category && method) {
+      const response = await fetch(`/questions?category=${category}&method=${method}`);
+      const data = await response.json();
+
+      if (data.length) {
+        const shuffled = data.sort(() => 0.5 - Math.random());
+        let selected = shuffled.slice(0, 5);
+
+        setQuestionArray(selected);
+        setTotalQuestions(selected.length);
+        setScore(0);
+        setShowResultModal(false);
+
+        if (selected[0]) {
+          const firstQuestion = selected[0];
+          setQuestionData({
+            question: firstQuestion.question,
+            choices: [
+              firstQuestion.choice_a,
+              firstQuestion.choice_b,
+              firstQuestion.choice_c,
+            ],
+            correctAnswer: firstQuestion.answer,
+          });
+
+          setQuestionIndex(0);
+        }
+      }
     }
   };
 
