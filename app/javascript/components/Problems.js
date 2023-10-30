@@ -207,8 +207,8 @@ const Problems = () => {
               <h2>Questions Solved: +{score}!</h2>
             </div>
             <div className="results__buttons">
-              <button onClick={handleHomeClick}>Home</button>
-              <button onClick={handleAgainClick}>Again</button>
+              <button onClick={handleHomeClick} id="home__button">Home</button>
+              <button onClick={handleAgainClick} id="again__button">Again</button>
             </div>
           </div>
         </div>
