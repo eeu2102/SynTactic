@@ -29,7 +29,7 @@ const HomePage = () => {
         <button
           className="topic"
           onClick={(e) => {
-            handleTopicClick("declarations");
+            handleTopicClick("declaration");
           }}
         >
           Declaration and Instantiation

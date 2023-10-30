@@ -43,19 +43,25 @@ const Problems = () => {
       fetch(`/questions?category=${category}&method=${method}`)
         .then((response) => response.json())
         .then((data) => {
-          setQuestionArray(data);
-          setTotalQuestions(data.length);
-          if (data[0]) {
-            const firstQuestion = data[0];
-            setQuestionData({
-              question: firstQuestion.question,
-              choices: [
-                firstQuestion.choice_a,
-                firstQuestion.choice_b,
-                firstQuestion.choice_c,
+          if (data.length) {
+            const shuffled = data.sort(() => 0.5 - Math.random());
+            let selected = shuffled.slice(0, 5);
+  
+            setQuestionArray(selected);
+            setTotalQuestions(selected.length);
+
+            if (selected[0]) {
+              const firstQuestion = selected[0];
+              setQuestionData({
+                question: firstQuestion.question,
+                choices: [
+                  firstQuestion.choice_a,
+                  firstQuestion.choice_b,
+                  firstQuestion.choice_c,
               ],
               correctAnswer: firstQuestion.answer,
-            });
+              });
+            }
           }
         });
     }
