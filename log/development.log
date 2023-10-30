@@ -5969,3 +5969,172 @@ Processing by QuestionsController#index as */*
 Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 1.3ms | Allocations: 8002)
 
 
+Started GET "/" for 127.0.0.1 at 2023-10-30 15:05:47 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/home" for 127.0.0.1 at 2023-10-30 15:05:47 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 197.3ms | Allocations: 37554)
+Completed 200 OK in 206ms (Views: 200.3ms | ActiveRecord: 0.0ms | Allocations: 41600)
+
+
+Started GET "/questions?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-10-30 15:05:49 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 33ms (Views: 12.9ms | ActiveRecord: 2.1ms | Allocations: 17601)
+
+
+Started GET "/questions?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-10-30 15:05:49 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 8130)
+
+
+Started GET "/problems?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-10-30 15:06:47 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 461.2ms | Allocations: 68809)
+Completed 200 OK in 470ms (Views: 463.9ms | ActiveRecord: 0.0ms | Allocations: 72865)
+
+
+Started GET "/questions?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-10-30 15:06:48 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 27ms (Views: 19.8ms | ActiveRecord: 1.9ms | Allocations: 17582)
+
+
+Started GET "/questions?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-10-30 15:06:48 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 8130)
+
+
+Started GET "/questions?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-10-30 15:06:58 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 8018)
+
+
+Started GET "/questions?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-10-30 15:07:09 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 8013)
+
+
+Started GET "/home/" for 127.0.0.1 at 2023-10-30 15:07:51 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 343.9ms | Allocations: 33407)
+Completed 200 OK in 345ms (Views: 344.6ms | ActiveRecord: 0.0ms | Allocations: 33676)
+
+
+Started GET "/home/" for 127.0.0.1 at 2023-10-30 15:09:22 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 3317)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms | Allocations: 3556)
+
+
+Started GET "/home/" for 127.0.0.1 at 2023-10-30 15:09:30 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 317.6ms | Allocations: 33219)
+Completed 200 OK in 319ms (Views: 318.2ms | ActiveRecord: 0.0ms | Allocations: 33460)
+
+
+Started GET "/home/" for 127.0.0.1 at 2023-10-30 15:09:42 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 3298)
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.0ms | Allocations: 3539)
+
+
+Started GET "/home/" for 127.0.0.1 at 2023-10-30 15:09:55 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 3286)
+Completed 200 OK in 32ms (Views: 31.9ms | ActiveRecord: 0.0ms | Allocations: 3528)
+
+
+Started GET "/home/" for 127.0.0.1 at 2023-10-30 15:10:09 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 3309)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.0ms | Allocations: 3548)
+
+
+Started GET "/home/" for 127.0.0.1 at 2023-10-30 15:10:31 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 3303)
+Completed 200 OK in 23ms (Views: 22.8ms | ActiveRecord: 0.0ms | Allocations: 3542)
+
+
+Started GET "/home/" for 127.0.0.1 at 2023-10-30 15:10:51 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 3301)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms | Allocations: 3540)
+
+
+Started GET "/home/" for 127.0.0.1 at 2023-10-30 15:11:02 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 3283)
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.0ms | Allocations: 3522)
+
+
+Started GET "/home/" for 127.0.0.1 at 2023-10-30 15:11:34 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 3307)
+Completed 200 OK in 24ms (Views: 23.8ms | ActiveRecord: 0.0ms | Allocations: 3546)
+
+
+Started GET "/home/" for 127.0.0.1 at 2023-10-30 15:11:58 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 3291)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms | Allocations: 3530)
+
+

@@ -34,11 +34,14 @@ const Header = () => {
           <option value="option3">C</option>
         </select>  
       </div> 
-      <div className="profile__link">
+      {/* <div className="profile__link">
         <a href="" target="__blank" id="nav__ig">
           <img src="" id="profile__pic" />
         </a>
-      </div> 
+      </div>  */}
+      <div className="user__profile">
+        <button id="user__dashboard">Dashboard</button>
+      </div>
        
       {/* </header> */}
     </div>
