@@ -156,7 +156,9 @@ const Problems = () => {
           className="progress__bar"
           style={{ width: `${progressPercentage}%` }}
         ></div>
+        <p className="progress__number">{questionIndex + 1}/{totalQuestions}</p>
       </div>
+      
       <div className="question">
         <h1>{questionData.question}</h1>
       </div>
@@ -233,3 +235,4 @@ const Problems = () => {
 };
 
 export default Problems;
+
