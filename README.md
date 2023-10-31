@@ -1,5 +1,12 @@
-# SynTactic
+# SynTactic: Your Shortcut To Syntax Mastery
 ESaaS Fall '23 Project
+
+# Team Members
+
+- **Charles Liu**: crl2157
+- **Dorothy Zhang**: dcz2114
+- **Markus Tran**: ht2573
+- **Eki Uzamere**: eeu2102
 
 # Installation
 
