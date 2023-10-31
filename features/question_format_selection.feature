@@ -4,7 +4,7 @@ Feature: choosing the question format
 
 Scenario: Choose Multiple Choice method 
     Given I am on the home page
-    When I press the "Declaration" button
+    When I press the "Declaration and Instantiation" button
     When I press the "Multiple Choice" button
     Then I should be taken to the problems page
     And I should see "A"
@@ -13,7 +13,7 @@ Scenario: Choose Multiple Choice method
 
 Scenario: Choose Flash Cards method
     Given I am on the home page
-    When I press the "Declaration" button
+    When I press the "Declaration and Instantiation" button
     When I press the "Flash Cards" button
     Then I should be taken to the problems page
     And I should see "A"

@@ -4,7 +4,7 @@ Feature: choosing the question category
 
 Scenario: Select Declaration problem category
     Given I am on the home page
-    When I press "Declaration and Instantiation"
+    When I press "Declaration and Instantiation" button
     Then I should see "Pick a Review Method" 
     And I should see "Multiple Choice"
     And I should see "Flash Cards"
