@@ -4,7 +4,7 @@ Feature: solving a problem
 
 
 Scenario: Answer a question correctly
-   Given I am on the "Problem Modal"
+   Given I am on the problems page
    And it is not the last question
    Then I should see a practice problem 
    When I select the correct answer
@@ -13,7 +13,7 @@ Scenario: Answer a question correctly
    Then I should see another practice problem
 
 Scenario: Answer a question incorrectly
-   Given I am on the "Problem Modal"
+   Given I am on the problems page
    And it is not the last question
    Then I should see a practice problem 
    When I select the incorrect answer
@@ -22,7 +22,7 @@ Scenario: Answer a question incorrectly
    And I should see another practice problem
 
 Scenario: Answer a last question correctly
-   Given I am on the "Problem Modal"
+   Given I am on the problems page
    And it is the last question
    Then I should see a practice problem 
    When I select the correct answer
