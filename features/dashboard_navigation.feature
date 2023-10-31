@@ -5,7 +5,7 @@ Feature: navigating to and from the dashboard page
 Scenario: Navigate from Home Page to Dashboard Page
   Given I am on the home page
   When I press the "Dashboard" button
-  Then I should be taken to the dashboard page
+  Then I should be on the dashboard page
   And I should see "Hi"
   And I should see "Questions Solved:"
   And I should see "Home"
@@ -13,7 +13,7 @@ Scenario: Navigate from Home Page to Dashboard Page
 Scenario: Navigate from Profile Page to Home Page
    Given I am on the dashboard page
    When I press the "Home" button
-   Then I should be taken to the home page
+   Then I should be on the home page
    And I should see "Declaration and Instantiation"
    And I should see "Control Flow"
    And I should see "Data Structures"

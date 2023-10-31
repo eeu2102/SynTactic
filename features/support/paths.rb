@@ -15,6 +15,8 @@ module NavigationHelpers
   
       when /^the home\s?page$/ then '/home'
       when /^the problems\s?page$/ then '/problems'
+      when /^the dashboard\s?page$/ then '/dashboard'
+
       
   
       # Add more mappings here.
