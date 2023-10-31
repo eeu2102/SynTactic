@@ -17,7 +17,7 @@ Background: questions have been added to database
 
 Scenario: Answer a question correctly
    Given I am on the home page
-   When I press "Control Flow" button
+   When I press the "Control Flow" button
    When I press the "Multiple Choice" button
    Then I should be taken to the problems page
    And I do not see "5/5"
@@ -31,7 +31,7 @@ Scenario: Answer a question correctly
 
 Scenario: Answer a question incorrectly
    Given I am on the home page
-   When I press "Control Flow" button
+   When I press the "Control Flow" button
    When I press the "Multiple Choice" button
    Then I should be taken to the problems page
    And I do not see "5/5"
@@ -45,7 +45,7 @@ Scenario: Answer a question incorrectly
 
 Scenario: Answer a last question correctly
    Given I am on the home page
-   When I press "Control Flow" button
+   When I press the "Control Flow" button
    When I press the "Multiple Choice" button
    Then I should be taken to the problems page
    And I see "5/5"
@@ -59,7 +59,7 @@ Scenario: Answer a last question correctly
 
 Scenario: Answer a last question incorrectly
    Given I am on the home page
-   When I press "Control Flow" button
+   When I press the "Control Flow" button
    When I press the "Multiple Choice" button
    Then I should be taken to the problems page
    And I see "5/5"

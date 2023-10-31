@@ -8,6 +8,6 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
     visit path_to(page_name)
 end
 
-When /^I press "(.*)" button/ do |button|
+When /^I press the "(.*)" button/ do |button|
     click_button button
 end

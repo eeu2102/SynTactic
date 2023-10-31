@@ -6408,3 +6408,30 @@ Processing by SiteController#index as HTML
 Completed 200 OK in 36ms (Views: 32.1ms | ActiveRecord: 0.0ms | Allocations: 24166)
 
 
+Started GET "/" for 127.0.0.1 at 2023-10-31 10:27:21 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/home" for 127.0.0.1 at 2023-10-31 10:27:21 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 1019.0ms | Allocations: 108401)
+Completed 200 OK in 1080ms (Views: 1036.4ms | ActiveRecord: 0.0ms | Allocations: 114943)
+
+
+Started GET "/questions?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-10-31 10:27:26 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (1.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 56ms (Views: 37.6ms | ActiveRecord: 2.8ms | Allocations: 18079)
+
+
+Started GET "/questions?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-10-31 10:27:26 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.4ms | Allocations: 8130)
+
+

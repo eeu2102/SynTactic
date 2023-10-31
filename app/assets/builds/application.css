@@ -304,13 +304,30 @@ button {
   height: 20px;
   background-color: lightgrey;
   border-radius: 10px;
-  overflow: hidden;
   margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .progress__bar {
   height: 20px;
   background-color: #FF6B35;
   transition: width 0.5s;
+  border-radius: 10px;
+}
+.progress__number {
+  color: black;
+  position: absolute;
+  top: -5px;
+  right: -50px;
+  font-weight: bolder;
+  font-size: 25px;
 }
 .question {
   margin-bottom: 50px;
