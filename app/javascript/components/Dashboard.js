@@ -5,16 +5,16 @@
 //////////////
 
 import React from "react";
-import './Profile.css';
+import "./Dashboard.css";
 
-const Profile = () => {
+const Dashboard = () => {
   return (
     <div className="profile__container">
       <h1>Hi Jessica</h1>
       {/* <img id="profile__pic"></img> */}
       <p id="progress__tracker">Questions Solved: </p>
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Dashboard;
