@@ -2,6 +2,18 @@ Feature: solving a problem
     As a user, I want to answer questions.
     So that I can test my knowledge and receive feedback.
 
+Background: questions have been added to database
+
+  Given the following questions exist:
+  | ID | question     | choice_a | choice_b | choice_c | answer | coding_language | category     | method          |
+  | 1  | Answer is B  | choice 1 | choice 2 | choice 3 | B      | Python          | control flow | multiple choice |
+  | 2  | Answer is A  | choice 1 | choice 2 | choice 3 | A      | Python          | control flow | multiple choice |
+  | 3  | Answer is C  | choice 1 | choice 2 | choice 3 | C      | Python          | control flow | multiple choice |
+  | 4  | Answer is C  | choice 1 | choice 2 | choice 3 | C      | Python          | control flow | multiple choice |
+  | 5  | Answer is A  | choice 1 | choice 2 | choice 3 | A      | Python          | control flow | multiple choice |
+
+  And I am on the home page
+  Then 5 seed questions should exist
 
 Scenario: Answer a question correctly
    Given I am on the home page
