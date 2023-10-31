@@ -4,15 +4,24 @@ Feature: choosing the question category
 
 Scenario: Select Declaration problem category
     Given I am on the home page
-    When I press "Declaration"
-    Then I should be taken to the "Home Page Modal" to select a method.
+    When I press "Declaration and Instantiation"
+    Then I should see "Pick a Review Method" 
+    And I should see "Multiple Choice"
+    And I should see "Flash Cards"
+    And I should see "Back"
 
 Scenario: Select Control Flow problem category
     Given I am on the home page
     When I press "Control Flow"
-    Then I should be taken to the "Home Page Modal" to select a method.
+    Then I should see "Pick a Review Method" 
+    And I should see "Multiple Choice"
+    And I should see "Flash Cards"
+    And I should see "Back"
 
 Scenario: Select Data Structures problem category
     Given I am on the home page
     When I press "Data Structures"
-    Then I should be taken to the "Home Page Modal" to select a method.
+    Then I should see "Pick a Review Method" 
+    And I should see "Multiple Choice"
+    And I should see "Flash Cards"
+    And I should see "Back"
