@@ -6138,3 +6138,13 @@ Processing by SiteController#index as HTML
 Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms | Allocations: 3530)
 
 
+Started GET "/home/" for ::1 at 2023-10-30 16:15:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 316.9ms | Allocations: 70850)
+Completed 200 OK in 322ms (Views: 318.2ms | ActiveRecord: 0.0ms | Allocations: 74904)
+
+

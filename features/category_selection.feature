@@ -4,7 +4,7 @@ Feature: choosing the question category
 
 Scenario: Select Declaration problem category
     Given I am on the home page
-    When I press "Declaration and Instantiation"
+    When I press "Declaration"
     Then I should be taken to the "Home Page Modal" to select a method.
 
 Scenario: Select Control Flow problem category

@@ -14,6 +14,7 @@ module NavigationHelpers
       case page_name
   
       when /^the home\s?page$/ then '/home'
+      when /^the problems\s?page$/ then '/problems'
       
   
       # Add more mappings here.
