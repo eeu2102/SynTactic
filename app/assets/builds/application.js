@@ -30508,11 +30508,18 @@
   // app/javascript/components/Dashboard.js
   var import_react3 = __toESM(require_react());
   var Dashboard = () => {
+    const handleHomeClick = () => {
+      navigate("/home/");
+    };
+    const navigate = useNavigate();
     return /* @__PURE__ */ import_react3.default.createElement("div", {
       className: "profile__container"
-    }, /* @__PURE__ */ import_react3.default.createElement("h1", null, "Hi Jessica"), /* @__PURE__ */ import_react3.default.createElement("p", {
+    }, /* @__PURE__ */ import_react3.default.createElement("h1", null, "Hi Jessica\uFF01"), /* @__PURE__ */ import_react3.default.createElement("h2", {
       id: "progress__tracker"
-    }, "Questions Solved: "));
+    }, "Questions Solved: "), /* @__PURE__ */ import_react3.default.createElement("button", {
+      onClick: handleHomeClick,
+      className: "home__button"
+    }, "Home"));
   };
   var Dashboard_default = Dashboard;
 
