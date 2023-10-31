@@ -276,6 +276,14 @@ button {
   background-color: transparent;
 }
 
+/* app/javascript/components/Dashboard.css */
+.profile__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* app/javascript/components/Problems.css */
 .problems__container {
   display: flex;
