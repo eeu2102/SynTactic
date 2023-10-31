@@ -3,4 +3,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 50px;
+  margin-top: 150px;
+}
+
+.home__button {
+  height: 45px;
+  width: 130px;
+  font-size: 24px;
+  background-color: lightgrey;
 }
