@@ -4,18 +4,19 @@ Feature: choosing the question format
 
 Scenario: Choose Multiple Choice method 
     Given I am on the home page
-    When I press "Declaration"
-    When I click on "Multiple Choice"
-    Then I should be taken to the "Problem Modal" to select a coding language.
-
-Scenario: Choose Multiple Choice method 
-    Given I am on the home page
-    When I press "Declaration"
-    When I click on "Multiple Choice"
-    When I click on "Multiple Choice"
-    Then I should be taken to the "Problem Modal" to select a coding language.
+    When I press the "Declaration" button
+    When I press the "Multiple Choice" button
+    Then I should be taken to the problems page
+    And I should see "A"
+    And I should see "B"
+    And I should see "C"
 
 Scenario: Choose Flash Cards method
-    Given I am on the "Home Page Modal"
-    When I click on "Flash Cards"
-    Then I should be taken to the "Problem Modal" to select a coding language.
+    Given I am on the home page
+    When I press the "Declaration" button
+    When I press the "Flash Cards" button
+    Then I should be taken to the problems page
+    And I should see "A"
+    And I should see "B"
+    And I should see "C"
+

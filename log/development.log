@@ -6372,3 +6372,39 @@ Processing by SiteController#index as HTML
 Completed 200 OK in 272ms (Views: 272.0ms | ActiveRecord: 0.0ms | Allocations: 33892)
 
 
+Started GET "/home/" for ::1 at 2023-10-30 22:44:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 443)
+  Rendered layout layouts/application.html.erb (Duration: 398.9ms | Allocations: 109821)
+Completed 200 OK in 411ms (Views: 402.0ms | ActiveRecord: 0.0ms | Allocations: 116370)
+
+
+Started GET "/questions?category=declaration&method=multiple%20choice" for ::1 at 2023-10-30 22:44:06 -0400
+Started GET "/questions?category=declaration&method=multiple%20choice" for ::1 at 2023-10-30 22:44:06 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 31ms (Views: 21.4ms | ActiveRecord: 1.8ms | Allocations: 19864)
+
+
+Completed 200 OK in 34ms (Views: 25.0ms | ActiveRecord: 0.5ms | Allocations: 26198)
+
+
+Started GET "/home/" for ::1 at 2023-10-30 22:46:23 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 20111)
+Completed 200 OK in 36ms (Views: 32.1ms | ActiveRecord: 0.0ms | Allocations: 24166)
+
+
