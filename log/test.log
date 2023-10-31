@@ -2415,3 +2415,183 @@ Processing by SiteController#index as HTML
   Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
   Rendered layout layouts/application.html.erb (Duration: 0.5ms | Allocations: 866)
 Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1122)
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/home" for 127.0.0.1 at 2023-10-31 11:20:51 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 326)
+  Rendered layout layouts/application.html.erb (Duration: 107.9ms | Allocations: 19203)
+Completed 200 OK in 126ms (Views: 117.5ms | ActiveRecord: 0.0ms | Allocations: 23142)
+Started GET "/assets/application-a27a62e1c286df6a262a57c412a36e8e62abe1fb794125b90407a9f037aada70.css" for 127.0.0.1 at 2023-10-31 11:20:51 -0400
+Started GET "/assets/application-011a1abdade4da1e8eaa24d34f7d0b93d4408404d2ea1c9a1c3a4bf6f881381e.js" for 127.0.0.1 at 2023-10-31 11:20:51 -0400
+Started GET "/home" for 127.0.0.1 at 2023-10-31 11:20:52 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1123)
+Started GET "/home" for 127.0.0.1 at 2023-10-31 11:20:52 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1122)
+Started GET "/home" for 127.0.0.1 at 2023-10-31 11:20:53 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | Allocations: 868)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 1124)
+Started GET "/dashboard" for 127.0.0.1 at 2023-10-31 11:20:53 -0400
+Processing by SiteController#index as HTML
+  Parameters: {"path"=>"dashboard"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1122)
+Started GET "/home" for 127.0.0.1 at 2023-10-31 11:20:53 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 1123)
+Started GET "/questions?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-10-31 11:20:53 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 3043)
+Started GET "/questions?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-10-31 11:20:53 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 273)
+Started GET "/home" for 127.0.0.1 at 2023-10-31 11:20:53 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 1122)
+Started GET "/questions?category=declaration&method=flash%20cards" for 127.0.0.1 at 2023-10-31 11:20:53 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 427)
+Started GET "/questions?category=declaration&method=flash%20cards" for 127.0.0.1 at 2023-10-31 11:20:53 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 264)
+Started GET "/problems" for 127.0.0.1 at 2023-10-31 11:20:53 -0400
+Processing by SiteController#index as HTML
+  Parameters: {"path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 1122)
+Started GET "/problems" for 127.0.0.1 at 2023-10-31 11:20:53 -0400
+Processing by SiteController#index as HTML
+  Parameters: {"path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 1122)
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/home" for 127.0.0.1 at 2023-10-31 11:23:14 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 326)
+  Rendered layout layouts/application.html.erb (Duration: 111.5ms | Allocations: 19210)
+Completed 200 OK in 129ms (Views: 114.4ms | ActiveRecord: 0.0ms | Allocations: 23149)
+Started GET "/assets/application-a27a62e1c286df6a262a57c412a36e8e62abe1fb794125b90407a9f037aada70.css" for 127.0.0.1 at 2023-10-31 11:23:14 -0400
+Started GET "/assets/application-011a1abdade4da1e8eaa24d34f7d0b93d4408404d2ea1c9a1c3a4bf6f881381e.js" for 127.0.0.1 at 2023-10-31 11:23:14 -0400
+Started GET "/home" for 127.0.0.1 at 2023-10-31 11:23:15 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 866)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 1123)
+Started GET "/home" for 127.0.0.1 at 2023-10-31 11:23:15 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 1122)
+Started GET "/home" for 127.0.0.1 at 2023-10-31 11:23:16 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 1122)
+Started GET "/dashboard" for 127.0.0.1 at 2023-10-31 11:23:16 -0400
+Processing by SiteController#index as HTML
+  Parameters: {"path"=>"dashboard"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | Allocations: 867)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 1123)
+Started GET "/home" for 127.0.0.1 at 2023-10-31 11:23:16 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 1122)
+Started GET "/questions?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-10-31 11:23:16 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+Completed 200 OK in 18ms (Views: 1.0ms | ActiveRecord: 5.1ms | Allocations: 3031)
+Started GET "/questions?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-10-31 11:23:16 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 273)
+Started GET "/home" for 127.0.0.1 at 2023-10-31 11:23:16 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 866)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 1122)
+Started GET "/questions?category=declaration&method=flash%20cards" for 127.0.0.1 at 2023-10-31 11:23:16 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 385)
+Started GET "/questions?category=declaration&method=flash%20cards" for 127.0.0.1 at 2023-10-31 11:23:16 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 264)
+Started GET "/problems" for 127.0.0.1 at 2023-10-31 11:23:17 -0400
+Processing by SiteController#index as HTML
+  Parameters: {"path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 1122)
+Started GET "/problems" for 127.0.0.1 at 2023-10-31 11:23:17 -0400
+Processing by SiteController#index as HTML
+  Parameters: {"path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 1122)
