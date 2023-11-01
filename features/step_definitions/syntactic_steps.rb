@@ -18,6 +18,7 @@ end
 
 When /^I press the "(.*)" button/ do |button|
     click_button button
+    #puts page.body
 end
 
 Then /^(?:|I )should be on (.+)$/ do |page_name|

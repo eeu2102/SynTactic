@@ -25,3 +25,15 @@ Scenario: Select Data Structures problem category
     And I should see "Multiple Choice"
     And I should see "Flash Cards"
     And I should see "Back"
+
+Scenario: Select Data Structures problem category, then click back
+    Given I am on the home page
+    When I press the "Data Structures" button
+    Then I should see "Pick a Review Method" 
+    And I should see "Multiple Choice"
+    And I should see "Flash Cards"
+    And I should see "Back"
+    When I press the "Back" button
+    Then I should see "Declaration and Instantiation"
+    And I should see "Control Flow"
+    And I should see "Data Structures"
