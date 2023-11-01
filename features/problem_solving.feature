@@ -6,11 +6,11 @@ Background: questions in database
 
   Given the following questions exist:
   | question     | choice_a  | choice_b  | choice_c  | answer | coding_language | category     | method          |
-  | Answer is B  | incorrect | correct   | choice 3  | B      | Python          | control flow | multiple choice |
-  | Answer is A  | correct   | incorrect | choice 3  | A      | Python          | control flow | multiple choice |
-  | Answer is C  | incorrect | choice 2  | correct   | C      | Python          | control flow | multiple choice |
-  | Answer is C  | choice 1  | incorrect | correct   | C      | Python          | control flow | multiple choice |
-  | Answer is A  | correct   | choice 2  | incorrect | A      | Python          | control flow | multiple choice |
+  | Answer is B  | wrong     | correct   | choice 3  | B      | Python          | control flow | multiple choice |
+  | Answer is A  | correct   | wrong     | choice 3  | A      | Python          | control flow | multiple choice |
+  | Answer is C  | wrong     | choice 2  | correct   | C      | Python          | control flow | multiple choice |
+  | Answer is C  | choice 1  | wrong     | correct   | C      | Python          | control flow | multiple choice |
+  | Answer is A  | correct   | choice 2  | wrong     | A      | Python          | control flow | multiple choice |
 
 Scenario: Answer a question correctly
    Given I am on the home page
@@ -35,7 +35,7 @@ Scenario: Answer a question incorrectly
    Then I should see "A"
    Then I should see "B"
    Then I should see "C"
-   When I press the "incorrect" button
+   When I press the "wrong" button
    Then I should see "Incorrect. The correct answer is: correct”.
    When I press the "Next" button 
    Then I should be on the problems page
@@ -52,13 +52,13 @@ Scenario: Answer all the questions and see the results
    Then I press the "correct" button
    Then I press the "next" button
    And I see "2/5"
-   Then I press the "incorrect" button
+   Then I press the "wrong" button
    Then I press the "next" button
    And I see "3/5"
    Then I press the "correct" button
    Then I press the "next" button
    And I see "4/5"
-   Then I press the "incorrect" button
+   Then I press the "wrong" button
    Then I press the "next" button
    And I see "5/5"
    Then I press the "correct" button
@@ -79,13 +79,13 @@ Scenario: Answer all the questions then choose to do another round of practice
    Then I press the "correct" button
    Then I press the "next" button
    And I see "2/5"
-   Then I press the "incorrect" button
+   Then I press the "wrong" button
    Then I press the "next" button
    And I see "3/5"
    Then I press the "correct" button
    Then I press the "next" button
    And I see "4/5"
-   Then I press the "incorrect" button
+   Then I press the "wrong" button
    Then I press the "next" button
    And I see "5/5"
    Then I should see "A"

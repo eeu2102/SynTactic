@@ -12906,3 +12906,508 @@ Processing by SiteController#index as HTML
   Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
   Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 866)
 Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1122)
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/home" for 127.0.0.1 at 2023-11-01 00:45:17 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 410)
+  Rendered layout layouts/application.html.erb (Duration: 302.5ms | Allocations: 111342)
+Completed 200 OK in 310ms (Views: 304.5ms | ActiveRecord: 0.0ms | Allocations: 117439)
+Started GET "/assets/application-a27a62e1c286df6a262a57c412a36e8e62abe1fb794125b90407a9f037aada70.css" for 127.0.0.1 at 2023-11-01 00:45:17 -0400
+Started GET "/assets/application-011a1abdade4da1e8eaa24d34f7d0b93d4408404d2ea1c9a1c3a4bf6f881381e.js" for 127.0.0.1 at 2023-11-01 00:45:17 -0400
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started GET "/home" for 127.0.0.1 at 2023-11-01 00:45:18 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | Allocations: 867)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1125)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started GET "/home" for 127.0.0.1 at 2023-11-01 00:45:18 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1122)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started GET "/home" for 127.0.0.1 at 2023-11-01 00:45:18 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1122)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started GET "/home" for 127.0.0.1 at 2023-11-01 00:45:18 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 867)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1123)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started GET "/dashboard" for 127.0.0.1 at 2023-11-01 00:45:18 -0400
+Processing by SiteController#index as HTML
+  Parameters: {"path"=>"dashboard"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1122)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started GET "/problems" for 127.0.0.1 at 2023-11-01 00:45:18 -0400
+Processing by SiteController#index as HTML
+  Parameters: {"path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1122)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started GET "/problems" for 127.0.0.1 at 2023-11-01 00:45:18 -0400
+Processing by SiteController#index as HTML
+  Parameters: {"path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1122)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started GET "/dashboard" for 127.0.0.1 at 2023-11-01 00:45:18 -0400
+Processing by SiteController#index as HTML
+  Parameters: {"path"=>"dashboard"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1122)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is B"], ["choice_a", "wrong"], ["choice_b", "correct"], ["choice_c", "choice 3"], ["answer", "B"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:18.856287"], ["updated_at", "2023-11-01 04:45:18.856287"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is A"], ["choice_a", "correct"], ["choice_b", "wrong"], ["choice_c", "choice 3"], ["answer", "A"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:18.857511"], ["updated_at", "2023-11-01 04:45:18.857511"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is C"], ["choice_a", "wrong"], ["choice_b", "choice 2"], ["choice_c", "correct"], ["answer", "C"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:18.858164"], ["updated_at", "2023-11-01 04:45:18.858164"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is C"], ["choice_a", "choice 1"], ["choice_b", "wrong"], ["choice_c", "correct"], ["answer", "C"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:18.858794"], ["updated_at", "2023-11-01 04:45:18.858794"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is A"], ["choice_a", "correct"], ["choice_b", "choice 2"], ["choice_c", "wrong"], ["answer", "A"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:18.859438"], ["updated_at", "2023-11-01 04:45:18.859438"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/home" for 127.0.0.1 at 2023-11-01 00:45:18 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 865)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 1120)
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for 127.0.0.1 at 2023-11-01 00:45:18 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "multiple choice"]]
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 2208)
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for 127.0.0.1 at 2023-11-01 00:45:18 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "multiple choice"]]
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1166)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is B"], ["choice_a", "wrong"], ["choice_b", "correct"], ["choice_c", "choice 3"], ["answer", "B"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.014663"], ["updated_at", "2023-11-01 04:45:19.014663"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is A"], ["choice_a", "correct"], ["choice_b", "wrong"], ["choice_c", "choice 3"], ["answer", "A"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.015665"], ["updated_at", "2023-11-01 04:45:19.015665"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is C"], ["choice_a", "wrong"], ["choice_b", "choice 2"], ["choice_c", "correct"], ["answer", "C"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.016359"], ["updated_at", "2023-11-01 04:45:19.016359"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is C"], ["choice_a", "choice 1"], ["choice_b", "wrong"], ["choice_c", "correct"], ["answer", "C"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.017073"], ["updated_at", "2023-11-01 04:45:19.017073"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is A"], ["choice_a", "correct"], ["choice_b", "choice 2"], ["choice_c", "wrong"], ["answer", "A"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.017719"], ["updated_at", "2023-11-01 04:45:19.017719"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/home" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1121)
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "multiple choice"]]
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1349)
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "multiple choice"]]
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 1165)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is B"], ["choice_a", "wrong"], ["choice_b", "correct"], ["choice_c", "choice 3"], ["answer", "B"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.161846"], ["updated_at", "2023-11-01 04:45:19.161846"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is A"], ["choice_a", "correct"], ["choice_b", "wrong"], ["choice_c", "choice 3"], ["answer", "A"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.162694"], ["updated_at", "2023-11-01 04:45:19.162694"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is C"], ["choice_a", "wrong"], ["choice_b", "choice 2"], ["choice_c", "correct"], ["answer", "C"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.163287"], ["updated_at", "2023-11-01 04:45:19.163287"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is C"], ["choice_a", "choice 1"], ["choice_b", "wrong"], ["choice_c", "correct"], ["answer", "C"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.163860"], ["updated_at", "2023-11-01 04:45:19.163860"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is A"], ["choice_a", "correct"], ["choice_b", "choice 2"], ["choice_c", "wrong"], ["answer", "A"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.164471"], ["updated_at", "2023-11-01 04:45:19.164471"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/home" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1121)
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "multiple choice"]]
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1399)
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "multiple choice"]]
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 1165)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is B"], ["choice_a", "wrong"], ["choice_b", "correct"], ["choice_c", "choice 3"], ["answer", "B"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.272715"], ["updated_at", "2023-11-01 04:45:19.272715"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is A"], ["choice_a", "correct"], ["choice_b", "wrong"], ["choice_c", "choice 3"], ["answer", "A"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.273614"], ["updated_at", "2023-11-01 04:45:19.273614"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is C"], ["choice_a", "wrong"], ["choice_b", "choice 2"], ["choice_c", "correct"], ["answer", "C"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.274221"], ["updated_at", "2023-11-01 04:45:19.274221"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is C"], ["choice_a", "choice 1"], ["choice_b", "wrong"], ["choice_c", "correct"], ["answer", "C"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.274799"], ["updated_at", "2023-11-01 04:45:19.274799"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("question", "choice_a", "choice_b", "choice_c", "answer", "coding_language", "category", "created_at", "updated_at", "method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["question", "Answer is A"], ["choice_a", "correct"], ["choice_b", "choice 2"], ["choice_c", "wrong"], ["answer", "A"], ["coding_language", "Python"], ["category", "control flow"], ["created_at", "2023-11-01 04:45:19.275401"], ["updated_at", "2023-11-01 04:45:19.275401"], ["method", "multiple choice"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/home" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1121)
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "multiple choice"]]
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1559)
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "multiple choice"]]
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 1180)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started GET "/home" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 867)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1125)
+Started GET "/questions?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 543)
+Started GET "/questions?category=declaration&method=multiple%20choice" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 264)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started GET "/home" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1122)
+Started GET "/questions?category=declaration&method=flash%20cards" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 530)
+Started GET "/questions?category=declaration&method=flash%20cards" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 264)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started GET "/home" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 866)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1122)
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "multiple choice"]]
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 851)
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "multiple choice"]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 265)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+Started GET "/home" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 868)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1126)
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "multiple choice"]]
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 538)
+Started GET "/questions?category=control%20flow&method=multiple%20choice" for 127.0.0.1 at 2023-11-01 00:45:19 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "multiple choice"]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 617)
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'events';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "questions"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'questions';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
