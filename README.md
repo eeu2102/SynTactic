@@ -32,6 +32,7 @@ ESaaS Fall '23 Project
 
 - Currently, we have a drop-down coding language selector. Right now, no matter which language you select, the problem sets are based on Python. We will iterate lessons for more languages in Iteration 2.
 - Currently, we only offer one method for Syntax learning (multiple choice). The 'Flashcards' button is not yet functional. We will introduce this feature in Iteration 2.
+- The profile page is presently in a static state, displaying a fixed name and lacking any user-specific data on performance. We plan to revitalize this section in Iteration 2, introducing dynamic user data and a login system to personalize the learning experience.
 
 # Thanks to Raphael Sofaer
 
