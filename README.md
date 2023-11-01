@@ -32,3 +32,11 @@ ESaaS Fall '23 Project
 
 - Currently, we have a drop-down coding language selector. Right now, no matter which language you select, the problem sets are based on Python. We will iterate lessons for more languages in Iteration 2.
 - Currently, we only offer one method for Syntax learning (multiple choice). The 'Flashcards' button is not yet functional. We will introduce this feature in Iteration 2.
+
+# Thanks to Raphael Sofaer
+
+- Special thanks to Raphael Sofaer for helping us debug a very annoying Webpacker error. You may see some of his commits from our (11/1/2023) Office Hour Session where we were trying different methods of deleting and reinstalling configuration files. Thankfully we found a solution in deleting the following line from our Gemfile: 
+
+```ruby
+gem 'webpacker', '~> 5.4', '>= 5.4.4'
+```
