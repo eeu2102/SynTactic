@@ -1,30 +1,39 @@
 require 'rails_helper'
 
-RSpec.describe Movie, type: :model do
-  
-  describe 'movies by the same director' do
-    before do
-      @movie_with_director = Movie.create(title: 'Star Wars', director: 'George Lucas')
-      @other_movie_with_same_director = Movie.create(title: 'THX-1138', director: 'George Lucas')
-      @movie_with_different_director = Movie.create(title: 'Blade Runner', director: 'Ridley Scott')
-      @movie_without_director = Movie.create(title: 'Inception')
+RSpec.describe QuestionsController, type: :controller do
+  describe 'GET #index' do
+    let!(:question1) do
+      Question.create(question: 'Answer is B', choice_a: 'incorrect', choice_b: 'correct', choice_c: 'choice 3', answer: 'B', coding_language: 'Python', category: 'control flow', method: 'multiple choice')
     end
 
-    context 'when there are movies by the same director' do
-      it 'returns correct matches' do
-        expect(@movie_with_director.others_by_same_director).to include(@other_movie_with_same_director)
-        expect(@movie_with_director.others_by_same_director).not_to include(@movie_with_director)
-      end
-
-      it 'does not return movies by different directors' do
-        expect(@movie_with_director.others_by_same_director).not_to include(@movie_with_different_director)
-      end
+    let!(:question2) do
+      Question.create(question: 'Answer is A', choice_a: 'correct', choice_b: 'incorrect', choice_c: 'choice 3', answer: 'A', coding_language: 'Python', category: 'control flow', method: 'multiple choice')
     end
 
-    context 'when no other movies exist by the same director' do
-      it 'returns an empty array' do
-        expect(@movie_with_different_director.others_by_same_director).to be_empty
+    context 'when no parameters are provided' do
+      it 'returns all questions' do
+        get :index
+        expect(response).to have_http_status(:ok)
+        expect(JSON.parse(response.body).size).to eq(2)
+        expect(JSON.parse(response.body).map { |q| q['id'] }).to include(question1.id, question2.id)
+      end
+    end
+    
+    context 'when both category and method parameters are provided' do
+      it 'returns questions that match both category and method' do
+        get :index, params: { category: 'control flow', method: 'multiple choice' }
+        expect(response).to have_http_status(:ok)
+        parsed_response = JSON.parse(response.body)
+        expect(parsed_response.size).to eq(2)
+        expect(parsed_response.map { |q| q['id'] }).to include(question1.id, question2.id)
       end
     end
   end
 end
+
+
+
+
+
+
+
