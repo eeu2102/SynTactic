@@ -72,6 +72,21 @@ Scenario: Answer all the questions then choose to do another round of practice
    When I press the "Control Flow" button
    When I press the "Multiple Choice" button
    Then I should be on the problems page
+   Then I should see "A"
+   Then I should see "B"
+   Then I should see "C"
+   And I see "1/5"
+   Then I press the "correct" button
+   Then I press the "next" button
+   And I see "2/5"
+   Then I press the "incorrect" button
+   Then I press the "next" button
+   And I see "3/5"
+   Then I press the "correct" button
+   Then I press the "next" button
+   And I see "4/5"
+   Then I press the "incorrect" button
+   Then I press the "next" button
    And I see "5/5"
    Then I should see "A"
    Then I should see "B"
