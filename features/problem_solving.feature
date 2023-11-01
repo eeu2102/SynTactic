@@ -22,7 +22,7 @@ Scenario: Answer a question correctly
    Then I should see "B"
    Then I should see "C"
    When I press the "correct" button
-   Then I should see "Correct!”.
+   Then I should see "Correct!"
    When I press the "Next" button 
    Then I should be on the problems page
 
@@ -36,7 +36,7 @@ Scenario: Answer a question incorrectly
    Then I should see "B"
    Then I should see "C"
    When I press the "wrong" button
-   Then I should see "Incorrect. The correct answer is: correct”.
+   Then I should see "Incorrect. The correct answer is:"
    When I press the "Next" button 
    Then I should be on the problems page
 
@@ -48,24 +48,24 @@ Scenario: Answer all the questions and see the results
    Then I should see "A"
    Then I should see "B"
    Then I should see "C"
-   And I see "1/5"
+   And I should see "1/5"
    Then I press the "correct" button
-   Then I press the "next" button
-   And I see "2/5"
+   Then I press the "Next" button
+   And I should see "2/5"
    Then I press the "wrong" button
-   Then I press the "next" button
-   And I see "3/5"
+   Then I press the "Next" button
+   And I should see "3/5"
    Then I press the "correct" button
-   Then I press the "next" button
-   And I see "4/5"
+   Then I press the "Next" button
+   And I should see "4/5"
    Then I press the "wrong" button
-   Then I press the "next" button
-   And I see "5/5"
+   Then I press the "Next" button
+   And I should see "5/5"
    Then I press the "correct" button
-   Then I press the "next" button
+   Then I press the "Next" button
    Then I should see "Practice Complete!"
    And I should see "Your Score: 3 out of 5"
-   And I should see "Questions Solved: +3“
+   And I should see "Questions Solved: +3"
 
 Scenario: Answer all the questions then choose to do another round of practice
    Given I am on the home page
@@ -75,25 +75,25 @@ Scenario: Answer all the questions then choose to do another round of practice
    Then I should see "A"
    Then I should see "B"
    Then I should see "C"
-   And I see "1/5"
+   And I should see "1/5"
    Then I press the "correct" button
-   Then I press the "next" button
-   And I see "2/5"
+   Then I press the "Next" button
+   And I should see "2/5"
    Then I press the "wrong" button
-   Then I press the "next" button
-   And I see "3/5"
+   Then I press the "Next" button
+   And I should see "3/5"
    Then I press the "correct" button
-   Then I press the "next" button
-   And I see "4/5"
+   Then I press the "Next" button
+   And I should see "4/5"
    Then I press the "wrong" button
-   Then I press the "next" button
-   And I see "5/5"
+   Then I press the "Next" button
+   And I should see "5/5"
    Then I should see "A"
    Then I should see "B"
    Then I should see "C"
-   When I select the incorrect answer
-   Then I should see "Incorrect. The answer is “” ”.
-   When I press "Next"
+   Then I press the "wrong" button
+   Then I should see "Incorrect. The correct answer is:"
+   When I press the "Next" button
    Then I should see "Practice Complete!"
    And I should see "Your Score:"
    And I should see "Questions Solved:"

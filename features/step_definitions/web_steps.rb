@@ -104,13 +104,14 @@ end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   expect(page).to have_content(text)
+  #puts page.body
 end
 
-Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
-  regexp = Regexp.new(regexp)
+# Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
+#   regexp = Regexp.new(regexp)
 
-  assert page.has_xpath?('//*', :text => regexp)
-end
+#   assert page.has_xpath?('//*', :text => regexp)
+# end
 
 Then /^(?:|I )should not see "([^"]*)"$/ do |text|
     expect(page).not_to have_content(text)

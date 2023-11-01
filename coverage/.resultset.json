@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/Users/ekiuzamere/Desktop/SynTactic/app/controllers/site_controller.rb": {
+      "/Users/dorothyzhang/SynTactic/app/controllers/site_controller.rb": {
         "lines": [
           null,
           null,
@@ -10,7 +10,7 @@
           null
         ]
       },
-      "/Users/ekiuzamere/Desktop/SynTactic/app/controllers/application_controller.rb": {
+      "/Users/dorothyzhang/SynTactic/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -19,7 +19,7 @@
           null
         ]
       },
-      "/Users/ekiuzamere/Desktop/SynTactic/app/helpers/application_helper.rb": {
+      "/Users/dorothyzhang/SynTactic/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -27,13 +27,13 @@
           null
         ]
       },
-      "/Users/ekiuzamere/Desktop/SynTactic/app/helpers/questions_helper.rb": {
+      "/Users/dorothyzhang/SynTactic/app/helpers/questions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/ekiuzamere/Desktop/SynTactic/app/helpers/site_helper.rb": {
+      "/Users/dorothyzhang/SynTactic/app/helpers/site_helper.rb": {
         "lines": [
           null,
           null,
@@ -41,13 +41,13 @@
           null
         ]
       },
-      "/Users/ekiuzamere/Desktop/SynTactic/app/models/question.rb": {
+      "/Users/dorothyzhang/SynTactic/app/models/question.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/ekiuzamere/Desktop/SynTactic/app/models/application_record.rb": {
+      "/Users/dorothyzhang/SynTactic/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -56,26 +56,26 @@
           null
         ]
       },
-      "/Users/ekiuzamere/Desktop/SynTactic/app/controllers/questions_controller.rb": {
+      "/Users/dorothyzhang/SynTactic/app/controllers/questions_controller.rb": {
         "lines": [
           1,
           1,
           null,
-          16,
-          16,
+          17,
+          17,
           null,
           null,
-          16,
-          16,
+          17,
+          17,
           null,
           0,
           null,
-          16,
+          17,
           null,
           null
         ]
       }
     },
-    "timestamp": 1698813920
+    "timestamp": 1698815783
   }
 }
