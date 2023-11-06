@@ -10,12 +10,20 @@ import "./Header.css";
 // import profilePic from "../../assets/images/profile.png"
 
 const Header = () => {
-  const [selectedOption, setSelectedOption] = useState("option1");
-  const navigate = useNavigate();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("Python");
 
-  const handleOptionChange = (e) => {
-    setSelectedOption(e.target.value);
-  };
+  const handleToggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  }
+
+  const handleSelect = (language) => {
+    setSelectedLanguage(language);
+    setIsDropdownOpen(false);
+
+  }
+  
+  const navigate = useNavigate();
 
   const goToDashboard = () => {
     navigate("/dashboard");
@@ -29,23 +37,25 @@ const Header = () => {
           <h1>SynTactic</h1>
         </Link>
       </div>
-      <div className="drop__down">
-        <select value={selectedOption} onChange={handleOptionChange}>
-          <option value="option1">Python</option>
-          <option value="option2">Java</option>
-          <option value="option3">C</option>
-        </select>
+      <div className="header__buttons">
+        <div className={`dropdown ${isDropdownOpen ? 'open' : ''}`} >
+        <div className="selected__language" onClick={handleToggleDropdown}>
+          {selectedLanguage}
+        </div>
+        {isDropdownOpen && (
+          <div className="dropdown__content">
+            <div onClick={() => handleSelect('Python')} className="dropdown__item">Python</div>
+            <div onClick={() => handleSelect('Java')}  className="dropdown__item">Java</div>
+            <div onClick={() => handleSelect('Ruby')} className="dropdown__item">Ruby</div>
+          </div> )}
+        </div>
+        <div className="user__profile">
+          <button id="user__dashboard" onClick={goToDashboard}>
+            Dashboard
+          </button>
+        </div>
       </div>
-      {/* <div className="profile__link">
-        <a href="" target="__blank" id="nav__ig">
-          <img src="" id="profile__pic" />
-        </a>
-      </div>  */}
-      <div className="user__profile">
-        <button id="user__dashboard" onClick={goToDashboard}>
-          Dashboard
-        </button>
-      </div>
+
 
       {/* </header> */}
     </div>

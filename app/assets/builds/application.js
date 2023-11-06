@@ -31721,11 +31721,16 @@
   // app/javascript/components/Header.js
   var import_react = __toESM(require_react());
   var Header = () => {
-    const [selectedOption, setSelectedOption] = (0, import_react.useState)("option1");
-    const navigate = useNavigate();
-    const handleOptionChange = (e) => {
-      setSelectedOption(e.target.value);
+    const [isDropdownOpen, setIsDropdownOpen] = (0, import_react.useState)(false);
+    const [selectedLanguage, setSelectedLanguage] = (0, import_react.useState)("Python");
+    const handleToggleDropdown = () => {
+      setIsDropdownOpen(!isDropdownOpen);
     };
+    const handleSelect = (language) => {
+      setSelectedLanguage(language);
+      setIsDropdownOpen(false);
+    };
+    const navigate = useNavigate();
     const goToDashboard = () => {
       navigate("/dashboard");
     };
@@ -31736,22 +31741,29 @@
     }, /* @__PURE__ */ import_react.default.createElement(Link, {
       to: "/home/"
     }, /* @__PURE__ */ import_react.default.createElement("h1", null, "SynTactic"))), /* @__PURE__ */ import_react.default.createElement("div", {
-      className: "drop__down"
-    }, /* @__PURE__ */ import_react.default.createElement("select", {
-      value: selectedOption,
-      onChange: handleOptionChange
-    }, /* @__PURE__ */ import_react.default.createElement("option", {
-      value: "option1"
-    }, "Python"), /* @__PURE__ */ import_react.default.createElement("option", {
-      value: "option2"
-    }, "Java"), /* @__PURE__ */ import_react.default.createElement("option", {
-      value: "option3"
-    }, "C"))), /* @__PURE__ */ import_react.default.createElement("div", {
+      className: "header__buttons"
+    }, /* @__PURE__ */ import_react.default.createElement("div", {
+      className: `dropdown ${isDropdownOpen ? "open" : ""}`
+    }, /* @__PURE__ */ import_react.default.createElement("div", {
+      className: "selected__language",
+      onClick: handleToggleDropdown
+    }, selectedLanguage), isDropdownOpen && /* @__PURE__ */ import_react.default.createElement("div", {
+      className: "dropdown__content"
+    }, /* @__PURE__ */ import_react.default.createElement("div", {
+      onClick: () => handleSelect("Python"),
+      className: "dropdown__item"
+    }, "Python"), /* @__PURE__ */ import_react.default.createElement("div", {
+      onClick: () => handleSelect("Java"),
+      className: "dropdown__item"
+    }, "Java"), /* @__PURE__ */ import_react.default.createElement("div", {
+      onClick: () => handleSelect("Ruby"),
+      className: "dropdown__item"
+    }, "Ruby"))), /* @__PURE__ */ import_react.default.createElement("div", {
       className: "user__profile"
     }, /* @__PURE__ */ import_react.default.createElement("button", {
       id: "user__dashboard",
       onClick: goToDashboard
-    }, "Dashboard")));
+    }, "Dashboard"))));
   };
   var Header_default = Header;
 
