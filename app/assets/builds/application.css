@@ -405,6 +405,36 @@ button {
   align-items: center;
   gap: 35px;
 }
+.card__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card__face {
+  background-color: #FF6B35;
+  border-radius: 10px;
+  height: 400px;
+  width: 800px;
+  transition: transform .7s;
+  transform-style: preserve-3d;
+  position: absolute;
+  backface-visibility: hidden;
+  bottom: 200px;
+}
+.card__container.flipped .card__front {
+  transform: rotateY(180deg);
+}
+.card__container.flipped .card__back {
+  transform: rotateY(0deg);
+}
+.card__back {
+  transform: rotateY(180deg);
+}
+#next__card {
+  bottom: 100px;
+  position: absolute;
+  background-color: lightgrey;
+}
 .overlay {
   position: fixed;
   top: 0;
