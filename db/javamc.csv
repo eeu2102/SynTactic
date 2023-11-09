@@ -1,0 +1,72 @@
+ID,question,choice_a,choice_b,choice_c,answer,coding_language,category,method
+181,"What is the output of the following code snippet?
+int i = 0;
+while (i < 5) {
+    System.out.print(i);
+    i++;
+}",01234,54321,012345,A,Java,control flow,multiple choice
+182,"In Java, which loop is suitable for situations where the loop body needs to execute at least once?",for loop,while loop,do-while loop,C,Java,control flow,multiple choice
+183,What is the primary purpose of the break statement in Java?,To terminate the program,To exit the current loop or switch statement,To skip the current iteration of a loop,B,Java,control flow,multiple choice
+184,"When a variable is declared inside a method, in what scope is it accessible?",Class scope,Global scope,Method scope,C,Java,control flow,multiple choice
+185,Which of the following statements is true about recursion in Java?,Recursion is always more efficient than iterative solutions.,Recursion can lead to a stack overflow if not handled properly.,Recursion cannot be used in Java; only iteration is allowed.,B,Java,control flow,multiple choice
+186,"What is the output of the following code snippet?
+for (int i = 0; i < 5; i++) {
+    if (i % 2 == 0) {
+        continue;
+    }
+    System.out.print(i);
+}",13,024,135,A,Java,control flow,multiple choice
+187,"In Java, which statement is used to define a constant variable?",const,final,static,B,Java,control flow,multiple choice
+188,What is the purpose of the default case in a Java switch statement?,It specifies the case that is executed first.,It defines the default value of the variable being switched.,It is executed when none of the cases match.,C,Java,control flow,multiple choice
+189,What does the this keyword refer to in Java?,The current class instance,The next class in the inheritance hierarchy,The superclass of the current class,A,Java,control flow,multiple choice
+190,Which loop construct is used for iterating over elements in an array or collection in Java?,for-each loop,while loop,do-while loop,A,Java,control flow,multiple choice
+191,What is the main difference between the while loop and the do-while loop in Java?,The do-while loop always executes its body at least once.,The while loop is used for infinite loops.,The do-while loop is deprecated and should not be used.,A,Java,control flow,multiple choice
+192,What is the scope of a local variable declared inside a for loop in Java?,Class scope,Global scope,Block scope,C,Java,control flow,multiple choice
+193,"In Java, what is the purpose of the continue statement within a loop?",To exit the loop completely,To skip the current iteration and continue with the next,To terminate the program,B,Java,control flow,multiple choice
+194,Which keyword is used to exit from a loop prematurely in Java?,exit,break,return,B,Java,control flow,multiple choice
+195,"In a Java for loop, what are the three components usually separated by semicolons?","Initialization, condition, increment","Condition, body, increment","Initialization, condition, body",A,Java,control flow,multiple choice
+196,Which of the following is true about the switch statement in Java?,It can only be used to compare integers.,The order of cases doesn't matter.,Each case block requires a break statement.,C,Java,control flow,multiple choice
+197,What does the void keyword represent in Java?,It indicates a variable's type.,It represents an empty string.,It indicates a method returns nothing.,C,Java,control flow,multiple choice
+198,"In Java, what is the primary role of the else keyword in an if-else statement?",To specify a condition that must be met.,To define an alternative set of actions if the if condition is false.,To terminate the program.,B,Java,control flow,multiple choice
+199,Which of the following is true about labeled break and continue statements in Java?,They are commonly used in Java programs.,They can only be used in switch statements.,They allow you to specify which loop to break or continue in nested loops.,C,Java,control flow,multiple choice
+200,What is the main difference between the if statement and the switch statement in Java?,"The if statement allows complex comparisons, while the switch statement doesn't.","The switch statement can be used for logical comparisons, while the if statement cannot.","The switch statement evaluates a variable against a list of possible values, while the if statement allows more complex conditions.",C,Java,control flow,multiple choice
+201,Which data structure in Java is typically used to implement a Last-In-First-Out (LIFO) behavior?,LinkedList,Queue,Stack,C,Java,declaration,multiple choice
+202,What is the correct way to declare and initialize an integer variable in Java?,int x;,integer x;,int x = 5;,C,Java,declaration,multiple choice
+203,How do you declare an empty array of integers in Java?,int[] arr;,int arr[];,array<int> arr = {};,A,Java,declaration,multiple choice
+204,What is the correct way to declare a generic ArrayList that stores strings in Java?,ArrayList list = new ArrayList();,ArrayList<String> list = new ArrayList<String>();,ArrayList list = new ArrayList<String>();,B,Java,declaration,multiple choice
+205,"To declare a constant variable in Java, you should use the keyword:",static,final,constant,B,Java,declaration,multiple choice
+206,How would you declare a two-dimensional array of integers in Java with dimensions 3x4?,"int[][] matrix = new int[3, 4];",int[3][4] matrix;,int[][] matrix = new int[3][4];,C,Java,declaration,multiple choice
+207,Which keyword is used to declare a class in Java?,new,class,declare,B,Java,declaration,multiple choice
+208,"To declare and initialize a constant string in Java, you would use the keyword:",final,static,constant,A,Java,declaration,multiple choice
+209,What is the correct way to declare and initialize a double variable with the value 3.14 in Java?,double pi = 3.14;,double pi;,pi = 3.14;,A,Java,declaration,multiple choice
+210,How do you declare an empty HashSet of integers in Java?,Set<Integer> set = new HashSet<Integer>();,HashSet<Integer> set = new HashSet<Integer>();,HashSet set = new HashSet<Integer>();,B,Java,declaration,multiple choice
+211,"To declare a constant float in Java, you should use the keyword:",constant,final,static,B,Java,declaration,multiple choice
+212,Which keyword is used to declare an interface in Java?,class,interface,implement,B,Java,declaration,multiple choice
+213,How do you declare and initialize a constant long in Java?,const long num = 42L;,final long num;,static long num = 42L;,A,Java,declaration,multiple choice
+214,"To declare an empty TreeMap that maps strings to integers in Java, you would use:","TreeMap<String, Integer> map = new TreeMap();","TreeMap map = new TreeMap<String, Integer>();","TreeMap<String, Integer> map;",C,Java,declaration,multiple choice
+215,What is the correct way to declare a constant character in Java?,const char letter = 'A';,final char letter;,static char letter = 'A';,B,Java,declaration,multiple choice
+216,How do you declare an empty array list of strings in Java?,ArrayList<String> list = new ArrayList<String>;,ArrayList<String> list = new ArrayList();,ArrayList list = new ArrayList();,B,Java,declaration,multiple choice
+217,What is the correct way to declare a double array in Java?,double[] arr = new double[];,double[] arr = new double[10];,double[10] arr = new double[10];,B,Java,declaration,multiple choice
+218,How do you declare an empty linked list of integers in Java?,LinkedList list = new LinkedList<int>();,LinkedList<Integer> list = new LinkedList();,LinkedList list = new LinkedList<Integer>();,C,Java,declaration,multiple choice
+219,"To declare a constant byte in Java, you should use the keyword:",final,static,constant,A,Java,declaration,multiple choice
+220,What is the correct way to declare an array of strings in Java with initial values?,String[] names = new String[];,"String names[] = new String[]{""Alice"", ""Bob"", ""Charlie""};","String[] names = {""Alice"", ""Bob"", ""Charlie""};",C,Java,declaration,multiple choice
+221,What is the correct way to initialize an array of integers in Java?,int[] arr = new int[];, int[] arr = new int[10];,"int arr[] = {1, 2, 3};",B,Java,data structures,multiple choice
+222,Which data structure in Java is typically used to implement a First-In-First-Out (FIFO) behavior?,Stack,LinkedList,Queue,C,Java,data structures,multiple choice
+223,"To add an element to the end of an ArrayList in Java, you would use:",addFirst(),append(),add(),C,Java,data structures,multiple choice
+224,What is the time complexity of adding an element to the end of an ArrayList in Java?,O(1),O(log N),O(N),A,Java,data structures,multiple choice
+225,"In a binary search tree, which type of traversal visits the nodes in ascending order?",In-order,Pre-order,Post-order,A,Java,data structures,multiple choice
+226,What is the correct way to remove an element at a specific index from an ArrayList in Java?,arr.delete(index);,arr.remove(index);,arr.removeElement(index);,B,Java,data structures,multiple choice
+227,Which data structure in Java is implemented as a resizable array?,LinkedList,Stack,ArrayList,C,Java,data structures,multiple choice
+228,What is the data structure in Java that can be used to represent a hierarchical structure with parent-child relationships?,Stack,Queue,Tree,C,Java,data structures,multiple choice
+229,"To search for an element in a binary search tree, what is the time complexity in the average case?",O(1),O(log N),O(N),B,Java,data structures,multiple choice
+230,"What data structure is used to represent a graph in Java, where each node can have multiple connections to other nodes?",BinaryTree,ArrayList,LinkedList,C,Java,data structures,multiple choice
+231,"To find the number of elements in a LinkedList in Java, you would use which method?",size(),length(),getSize(),A,Java,data structures,multiple choice
+232,"To find the number of elements in a LinkedList in Java, you would use which method?",size(),length(),count(),A,Java,data structures,multiple choice
+233,What is the time complexity of searching for an element in an ArrayList in Java using the contains method?,O(1),O(log N),O(N),C,Java,data structures,multiple choice
+234,"In a linked list, which operation allows you to insert a new element at the beginning efficiently?",append(),insertFirst(),addToEnd(),B,Java,data structures,multiple choice
+235,"Which data structure in Java is used to store key-value pairs, allowing for fast retrieval of values based on their associated keys?",ArrayList,HashSet,HashMap,C,Java,data structures,multiple choice
+236,"To remove the last element from a LinkedList in Java, you would use which method?",removeLast(),pop(),remove(),A,Java,data structures,multiple choice
+237,What data structure in Java is used to ensure that elements are stored in sorted order?,HashSet,TreeSet,PriorityQueue,B,Java,data structures,multiple choice
+238,What is the time complexity of adding an element to the beginning of an ArrayList in Java?,O(1),O(log N),O(N),C,Java,data structures,multiple choice
+239,"Which data structure in Java is used to represent a collection of unique elements, and it does not allow duplicate values?",ArrayList,LinkedList,HashSet,C,Java,data structures,multiple choice
+240,Which data structure in Java is typically used to implement a First-In-First-Out (FIFO) behavior?,LinkedList,Stack,Queue,C,Java,data structures,multiple choice

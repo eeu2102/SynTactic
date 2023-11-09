@@ -1,0 +1,67 @@
+ID,question,choice_a,choice_b,choice_c,answer,coding_language,category,method
+61,Which of the following correctly checks if the value of x is between 5 and 10 (inclusive)?,null,null,null,if 5 <= x <= 10:,Python,control flow,flash card
+62,How do you begin a for-loop that iterates over a list my_list?,null,null,null,for item in my_list:,Python,control flow,flash card
+63,Which keyword is used to exit a loop prematurely?,null,null,null,break,Python,control flow,flash card
+64,Which keyword lets you test a default condition if the previous conditions were not met?,null,null,null,else,Python,control flow,flash card
+65,Which of the following correctly initializes a while loop that runs as long as x is less than 10?,null,null,null,while x < 10:,Python,control flow,flash card
+66,Which of the following is the correct syntax for an else if condition?,null,null,null,elif condition:,Python,control flow,flash card
+67,What does the continue keyword do in a loop?,null,null,null,Skips the current iteration and continues to the next.,Python,control flow,flash card
+68,"What does the following code output? x = 10
+if x > 10:
+    print(""Greater"")
+elif x < 10:
+    print(""Lesser"")
+else:
+    print(""Equal"")",null,null,null,Equal,Python,control flow,flash card
+69,"To iterate over a range of numbers from 1 to 5 (inclusive), which of the following would you use?",null,null,null,"for i in range(1, 6):",Python,control flow,flash card
+70,How can you handle exceptions using control flow?,null,null,null,Using the except block.,Python,control flow,flash card
+71,Which keyword is used to handle exceptions?,null,null,null,except,Python,control flow,flash card
+72,"Which of the following is used to ensure a block of code always runs, regardless of exceptions?",null,null,null,finally:,Python,control flow,flash card
+73,Which statement correctly checks multiple conditions using the and operator?,null,null,null,if x > 5 and y < 10:,Python,control flow,flash card
+74,What does the pass statement do in Python?,null,null,null,Does nothing and acts as a placeholder.,Python,control flow,flash card
+75,"In a try...except block, what does the else block do?",null,null,null,Runs if no exception occurs.,Python,control flow,flash card
+76,Which of the following correctly checks if a variable x is not equal to 5?,null,null,null,if x != 5:,Python,control flow,flash card
+77,"To iterate over the characters in a string word, which syntax would you use?",null,null,null,for char in word:,Python,control flow,flash card
+78,Which of the following will print numbers 0 to 4?,null,null,null,for i in range(5): print(i),Python,control flow,flash card
+79,Which operator checks if both conditions are false?,null,null,null,not,Python,control flow,flash card
+80,What does the in keyword do in a for loop?,null,null,null,Checks for membership in a collection.,Python,control flow,flash card
+81,"What is the correct way to assign a value of 5 to a variable named ""x"" in Python?",null,null,null,x = 5,Python,declaration,flash card
+82,How do you declare a constant variable in Python?,null,null,null,Constants cannot be declared in Python,Python,declaration,flash card
+83,Which of the following is a valid Python function declaration?,null,null,null,def function_name(parameters):,Python,declaration,flash card
+84,"To declare and initialize an empty list in Python, you should use:",null,null,null,my_list = [],Python,declaration,flash card
+85,Which keyword is used to declare a function in Python?,null,null,null,def,Python,declaration,flash card
+86,What is the correct way to declare an empty set in Python?,null,null,null,my_set = {},Python,declaration,flash card
+87,How can you declare an empty dictionary (key-value pair) in Python?,null,null,null,my_dict = {},Python,declaration,flash card
+88,"To declare and use a Python lambda function that adds two numbers, you would write:",null,null,null," lambda (a, b): a + b",Python,declaration,flash card
+89,Which keyword is used to declare a function with no explicit return value in Python?,null,null,null,None of these,Python,declaration,flash card
+90,"To declare and use a Python generator that yields numbers, which keyword would you primarily use?",null,null,null,yield,Python,declaration,flash card
+91,Which symbol or marker Python uses to denote a comment?,null,null,null,# ,Python,declaration,flash card
+92,"In Python, which of the following is used to indicate a block of code?",null,null,null,Indentation,Python,declaration,flash card
+93,Which command is used to define a function in Python?,null,null,null,def,Python,declaration,flash card
+94,"In Python, how do you declare a variable?",null,null,null,variable_name = value,Python,declaration,flash card
+95,What keyword is used to create a class in Python?,null,null,null,class,Python,declaration,flash card
+96,How do you indicate the end of a line of code in Python?,null,null,null,Nothing; Python automatically knows when a line of code ends.,Python,declaration,flash card
+97,How do you declare a list in Python?,null,null,null,list = [],Python,declaration,flash card
+98,What is the proper way to import a module in Python?,null,null,null,import module,Python,declaration,flash card
+99,How do you declare a constant in Python?,null,null,null,Python doesn’t support constants.,Python,declaration,flash card
+100,Which of the following is the correct way to declare a variable in Python?,null,null,null,myVar = 5,Python,declaration,flash card
+101,Which of the following initializes an empty list?,null,null,null,[],Python,data structures,flash card
+102,How do you initialize an empty set?,null,null,null,set(),Python,data structures,flash card
+103,Which of the following creates a dictionary with keys 'a' and 'b' having values 1 and 2 respectively?,null,null,null,"{'a': 1, 'b': 2}",Python,data structures,flash card
+104,Which method is used to add an element to a set in Python?,null,null,null,add(),Python,data structures,flash card
+105," How do you access the value associated with the key 'a' in the dictionary dict = {'a': 1, 'b': 2}?",null,null,null,dict['a'],Python,data structures,flash card
+106,How can you remove the last element from a list named lst?,null,null,null,lst.pop(),Python,data structures,flash card
+107,Which of these creates a list of numbers from 0 to 4?,null,null,null,list(range(5)),Python,data structures,flash card
+108,Which syntax is used to get all keys from a dictionary named dict?,null,null,null,dict.keys(),Python,data structures,flash card
+109,"How can you add multiple items ('c', 'd', and 'e') to a set named my_set?",null,null,null,"my_set.update(['c', 'd', 'e'])",Python,data structures,flash card
+110,"What will lst[-1] return if lst = [1, 2, 3, 4, 5]?",null,null,null,5,Python,data structures,flash card
+111,Which is the correct syntax to declare an empty tuple?,null,null,null,(),Python,data structures,flash card
+112,How do you check if a list named lst contains the value 3?,null,null,null,3 in lst,Python,data structures,flash card
+113,Which of these will return the number of elements in a list named lst?,null,null,null,len(lst),Python,data structures,flash card
+114,"What does list(set([1,2,2,3,4,4])) return?",null,null,null,"[1,2,3,4]",Python,data structures,flash card
+115,How can you sort a list named lst in descending order?,null,null,null,lst.sort(reverse=True),Python,data structures,flash card
+116,Which function is used to randomly shuffle a list named lst?,null,null,null,random.shuffle(lst),Python,data structures,flash card
+117,Which of these statements correctly checks if a dictionary named dict has the key 'a'?,null,null,null,a' in dict,Python,data structures,flash card
+118,"How do you initialize a list with the same value, let's say 7, five times?",null,null,null, [7] * 5,Python,data structures,flash card
+119,"Which of the following is NOT a valid way to initialize a set with values 1, 2, and 3?",null,null,null,"set(1, 2, 3)",Python,data structures,flash card
+120," If lst = [1, 2, 3], what will lst[1:2] return?",null,null,null,[2],Python,data structures,flash card

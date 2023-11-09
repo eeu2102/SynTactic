@@ -6,7 +6,7 @@
 
 require 'csv'
 
-csv_text = File.read(Rails.root.join('db', 'new_questions.csv'))
+csv_text = File.read(Rails.root.join('db', 'pythonflash.csv'))
 csv = CSV.parse(csv_text, headers: true, encoding: 'UTF-8')
 csv.each do |row|
   Question.create!(
