@@ -5,17 +5,22 @@ import HomePage from "./HomePage";
 import Dashboard from "./Dashboard";
 import Problems from "./Problems";
 import Welcome from "./Welcome";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WelcomeHeader from "./WelcomeHeader";
+import Landing from "./Landing";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => (
   <div>
     <Routes>
       <Route path="/home" element={<>
+          <Landing />
+        </>
+      } />
+      {/* <Route path="/home" element={<>
           <Header />
           <HomePage />
         </>
-      } />
+      } /> */}
       {/* <Route path="/home" element={
         <>
           <WelcomeHeader />

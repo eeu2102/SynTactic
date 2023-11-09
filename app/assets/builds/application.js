@@ -1589,7 +1589,7 @@
             }
             return dispatcher.useContext(Context2);
           }
-          function useState6(initialState) {
+          function useState7(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -2389,7 +2389,7 @@
           exports.useMemo = useMemo3;
           exports.useReducer = useReducer;
           exports.useRef = useRef3;
-          exports.useState = useState6;
+          exports.useState = useState7;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -2885,9 +2885,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React11 = require_react();
+          var React12 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React11.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -4408,7 +4408,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React11.Children.forEach(props.children, function(child) {
+                  React12.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -12569,7 +12569,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React11.Component().refs;
+          var emptyRefsObject = new React12.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -29863,7 +29863,7 @@
   application.register("hello", hello_controller_default);
 
   // app/javascript/application.js
-  var import_react8 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/dist/index.js
@@ -31716,7 +31716,7 @@
   }
 
   // app/javascript/components/App.js
-  var import_react7 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
 
   // app/javascript/components/Header.js
   var import_react = __toESM(require_react());
@@ -31769,62 +31769,6 @@
 
   // app/javascript/components/HomePage.js
   var import_react2 = __toESM(require_react());
-  var HomePage = () => {
-    const navigate = useNavigate();
-    const [showModal, setShowModal] = (0, import_react2.useState)(false);
-    const [selectedTopic, setSelectedTopic] = (0, import_react2.useState)(null);
-    const handleTopicClick = (topic) => {
-      setSelectedTopic(topic);
-      setShowModal(true);
-    };
-    return /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "home__container"
-    }, /* @__PURE__ */ import_react2.default.createElement("h1", null, "Welcome to SynTactic"), /* @__PURE__ */ import_react2.default.createElement("h2", {
-      id: "sub__header"
-    }, "Pick a Review Topic"), /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "topics__container"
-    }, /* @__PURE__ */ import_react2.default.createElement("button", {
-      className: "topic",
-      onClick: (e) => {
-        handleTopicClick("declaration");
-      }
-    }, "Declaration and Instantiation"), /* @__PURE__ */ import_react2.default.createElement("button", {
-      className: "topic",
-      onClick: (e) => {
-        handleTopicClick("control flow");
-      }
-    }, "Control Flow"), /* @__PURE__ */ import_react2.default.createElement("button", {
-      className: "topic",
-      onClick: (e) => {
-        handleTopicClick("data structures");
-      }
-    }, "Data Structures")), showModal && /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "home__modal"
-    }, /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "overlay",
-      onClick: () => setShowModal(false)
-    }), /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "modal"
-    }, /* @__PURE__ */ import_react2.default.createElement("h1", {
-      id: "modal__header"
-    }, "Pick a Review Method:"), /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "review__methods"
-    }, /* @__PURE__ */ import_react2.default.createElement("button", {
-      className: "method",
-      onClick: () => navigate(
-        `/problems?category=${selectedTopic}&method=multiple choice`
-      )
-    }, "Multiple Choice"), /* @__PURE__ */ import_react2.default.createElement("button", {
-      className: "method",
-      onClick: () => navigate(
-        `/problems?category=${selectedTopic}&method=flash cards`
-      )
-    }, "Flash Cards")), /* @__PURE__ */ import_react2.default.createElement("button", {
-      id: "back__button",
-      onClick: () => setShowModal(false)
-    }, "Back"))));
-  };
-  var HomePage_default = HomePage;
 
   // app/javascript/components/Dashboard.js
   var import_react3 = __toESM(require_react());
@@ -32125,16 +32069,91 @@
   // app/javascript/components/WelcomeHeader.js
   var import_react6 = __toESM(require_react());
 
+  // app/javascript/components/Landing.js
+  var import_react7 = __toESM(require_react());
+  var Landing = () => {
+    const [showSignUpModal, setShowSignUpModal] = (0, import_react7.useState)(false);
+    const [showLoginModal, setShowLoginModal] = (0, import_react7.useState)(false);
+    const [username, setUsername] = (0, import_react7.useState)("");
+    const [password, setPassword] = (0, import_react7.useState)("");
+    const handleSignUp = async (event) => {
+    };
+    return /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "landing__container"
+    }, /* @__PURE__ */ import_react7.default.createElement("button", {
+      onClick: () => setShowSignUpModal(true),
+      className: "landing__button",
+      id: "signup__button"
+    }, "Sign Up"), /* @__PURE__ */ import_react7.default.createElement("button", {
+      onClick: () => setShowLoginModal(true),
+      className: "landing__button",
+      id: "login_button"
+    }, "Login"), showSignUpModal && /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "signup__modal"
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "signup__content"
+    }, /* @__PURE__ */ import_react7.default.createElement("form", {
+      className: "signup__form",
+      onSubmit: handleSignUp
+    }, /* @__PURE__ */ import_react7.default.createElement("input", {
+      type: "text",
+      placeholder: "Username",
+      required: true,
+      className: "signup__input",
+      id: "signup__username",
+      value: username,
+      onChange: (e) => setUsername(e.target.value)
+    }), /* @__PURE__ */ import_react7.default.createElement("input", {
+      type: "password",
+      placeholder: "Password",
+      required: true,
+      className: "signup__input",
+      id: "signup__password",
+      value: password,
+      onChange: (e) => setPassword(e.target.value)
+    }), /* @__PURE__ */ import_react7.default.createElement("button", {
+      type: "submit",
+      className: "signup__submit"
+    }, "Sign Up")))), showLoginModal && /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "login__modal"
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "signup__content"
+    }, /* @__PURE__ */ import_react7.default.createElement("form", {
+      className: "signup__form",
+      onSubmit: handleSignUp
+    }, /* @__PURE__ */ import_react7.default.createElement("input", {
+      type: "text",
+      placeholder: "Username",
+      required: true,
+      className: "signup__input",
+      id: "signup__username",
+      value: username,
+      onChange: (e) => setUsername(e.target.value)
+    }), /* @__PURE__ */ import_react7.default.createElement("input", {
+      type: "password",
+      placeholder: "Password",
+      required: true,
+      className: "signup__input",
+      id: "signup__password",
+      value: password,
+      onChange: (e) => setPassword(e.target.value)
+    }), /* @__PURE__ */ import_react7.default.createElement("button", {
+      type: "submit",
+      className: "signup__submit"
+    }, "Sign Up")))));
+  };
+  var Landing_default = Landing;
+
   // app/javascript/components/App.js
-  var App = () => /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement(Routes, null, /* @__PURE__ */ import_react7.default.createElement(Route, {
+  var App = () => /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement(Routes, null, /* @__PURE__ */ import_react8.default.createElement(Route, {
     path: "/home",
-    element: /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, /* @__PURE__ */ import_react7.default.createElement(Header_default, null), /* @__PURE__ */ import_react7.default.createElement(HomePage_default, null))
-  }), /* @__PURE__ */ import_react7.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Landing_default, null))
+  }), /* @__PURE__ */ import_react8.default.createElement(Route, {
     path: "/problems",
-    element: /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, /* @__PURE__ */ import_react7.default.createElement(Header_default, null), /* @__PURE__ */ import_react7.default.createElement(Problems_default, null))
-  }), /* @__PURE__ */ import_react7.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Header_default, null), /* @__PURE__ */ import_react8.default.createElement(Problems_default, null))
+  }), /* @__PURE__ */ import_react8.default.createElement(Route, {
     path: "/dashboard",
-    element: /* @__PURE__ */ import_react7.default.createElement(Dashboard_default, null)
+    element: /* @__PURE__ */ import_react8.default.createElement(Dashboard_default, null)
   })));
   var App_default = App;
 
@@ -32143,7 +32162,7 @@
   var root = (0, import_client.createRoot)(container);
   document.addEventListener("DOMContentLoaded", () => {
     root.render(
-      /* @__PURE__ */ import_react8.default.createElement(import_react8.StrictMode, null, /* @__PURE__ */ import_react8.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react8.default.createElement(App_default, null)))
+      /* @__PURE__ */ import_react9.default.createElement(import_react9.StrictMode, null, /* @__PURE__ */ import_react9.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react9.default.createElement(App_default, null)))
     );
   });
 })();
