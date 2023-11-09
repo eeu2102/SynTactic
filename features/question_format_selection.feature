@@ -16,7 +16,7 @@ Scenario: Choose Flash Cards method
     When I press the "Declaration and Instantiation" button
     When I press the "Flash Cards" button
     Then I should be on the problems page
-    And I should see "A"
-    And I should see "B"
-    And I should see "C"
+    And I should see "Question"
+    And I should see "Flip Over"
+    And I should see "Next"
 
