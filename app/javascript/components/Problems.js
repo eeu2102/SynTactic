@@ -47,38 +47,6 @@ const Problems = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isAnswerCorrect, setAnswerCorrect] = useState(false);
 
-  //depending on the category + method, fetch a question accordingly
-  //parse through the question's features, assign to variables
-  // useEffect(() => {
-  //   if (category && method ===  `multiple choice`) {
-  //     setMultipleChoice(true);
-  //     setFlashcards(false);
-  //     fetch(`/questions?category=${category}&method=${method}`)
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         if (data.length) {
-  //           const shuffled = data.sort(() => 0.5 - Math.random());
-  //           let selected = shuffled.slice(0, 5);
-  
-  //           setQuestionArray(selected);
-  //           setTotalQuestions(selected.length);
-
-  //           if (selected[0]) {
-  //             const firstQuestion = selected[0];
-  //             setQuestionData({
-  //               question: firstQuestion.question,
-  //               choices: [
-  //                 firstQuestion.choice_a,
-  //                 firstQuestion.choice_b,
-  //                 firstQuestion.choice_c,
-  //             ],
-  //             correctAnswer: firstQuestion.answer,
-  //             });
-  //           }
-  //         }
-  //       });
-    
-
   useEffect(() => {
     if (category && method ===  `multiple choice`) {
         console.log("MC");
@@ -111,13 +79,15 @@ const Problems = () => {
       }
 
     else if (category && method ===  `flash cards`) {      
-      // console.log("FC");
+      console.log("FC");
       setMultipleChoice(false);
       setFlashcards(true);
-      fetch(`/questions?category=${category}&method=${method}`)
+      console.log(method);
+      fetch(`/questions?category=${category}&method=flash card`)
       .then((response) => response.json())
       .then((data) => {
         if (data.length) {
+
           const shuffled = data.sort(() => 0.5 - Math.random());
           let selected = shuffled.slice(0, 5);
 
@@ -344,11 +314,13 @@ const Problems = () => {
           <div className={`card__container ${isFlipped ? 'flipped' : ''}`}
           onClick={() => setIsFlipped(!isFlipped)}>
             <div className="card__face card__front" id="card__front">
-              <h2>Question: {cardData.question}</h2> 
+              <h1>Question</h1>
+              <h2 className="card__text">{cardData.question}</h2> 
               <button className="flip__button" onClick={() => setIsFlipped(!isFlipped)}>Flip Over</button>
             </div>
             <div className="card__face card__back" id="card__back">
-              <h2>Answer: {cardData.answer}</h2>
+              <h1>Answer</h1>
+              <h2 className="card__text">{cardData.answer}</h2>
               <button className="flip__button" onClick={() => setIsFlipped(!isFlipped)}>Flip Over</button>
             </div>
           </div>
