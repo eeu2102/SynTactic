@@ -31,7 +31,6 @@ const Header = () => {
 
   return (
     <div className="header__container">
-      {/* <header> */}
       <div className="home__link">
         <Link to="/home/">
           <h1>SynTactic</h1>
@@ -55,9 +54,6 @@ const Header = () => {
           </button>
         </div>
       </div>
-
-
-      {/* </header> */}
     </div>
   );
 };

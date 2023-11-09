@@ -11178,3 +11178,91 @@ Processing by SiteController#index as HTML
 Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.0ms | Allocations: 3680)
 
 
+Started GET "/home" for ::1 at 2023-11-08 22:09:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 176.7ms | Allocations: 42081)
+Completed 200 OK in 185ms (Views: 179.6ms | ActiveRecord: 0.0ms | Allocations: 46138)
+
+
+Started GET "/home" for ::1 at 2023-11-08 22:09:23 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 212.5ms | Allocations: 35370)
+Completed 200 OK in 213ms (Views: 213.0ms | ActiveRecord: 0.0ms | Allocations: 35667)
+
+
+Started GET "/questions?category=declaration&method=multiple%20choice" for ::1 at 2023-11-08 22:09:31 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (3.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 69ms (Views: 35.5ms | ActiveRecord: 4.3ms | Allocations: 17601)
+
+
+Started GET "/questions?category=declaration&method=multiple%20choice" for ::1 at 2023-11-08 22:09:31 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 8128)
+
+
+Started GET "/problems?category=declaration&method=multiple%20choice" for ::1 at 2023-11-08 22:15:07 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 293.9ms | Allocations: 37017)
+Completed 200 OK in 303ms (Views: 299.1ms | ActiveRecord: 0.0ms | Allocations: 37283)
+
+
+Started GET "/questions?category=declaration&method=multiple%20choice" for ::1 at 2023-11-08 22:15:08 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (1.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 33ms (Views: 24.6ms | ActiveRecord: 3.8ms | Allocations: 8209)
+
+
+Started GET "/questions?category=declaration&method=multiple%20choice" for ::1 at 2023-11-08 22:15:08 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"multiple choice"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "multiple choice"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.2ms | Allocations: 7999)
+
+
+Started GET "/home/" for ::1 at 2023-11-08 22:16:03 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 257.3ms | Allocations: 35056)
+Completed 200 OK in 258ms (Views: 257.8ms | ActiveRecord: 0.0ms | Allocations: 35299)
+
+
+Started GET "/home/" for ::1 at 2023-11-08 22:16:36 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 239.1ms | Allocations: 35112)
+Completed 200 OK in 240ms (Views: 239.5ms | ActiveRecord: 0.0ms | Allocations: 35352)
+
+
+Started GET "/home/" for ::1 at 2023-11-08 22:16:54 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 226.0ms | Allocations: 35070)
+Completed 200 OK in 230ms (Views: 228.2ms | ActiveRecord: 0.0ms | Allocations: 35309)
+
+
