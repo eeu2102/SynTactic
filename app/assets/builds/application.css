@@ -9,6 +9,42 @@
 .home__link {
   margin-left: 30px;
 }
+.header__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+.dropdown {
+  font-size: 20px;
+  background-color: lightgrey;
+  text-align: center;
+  border-radius: 10px;
+  width: 95px;
+  height: 45px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-bottom: 3px transparent solid;
+  box-sizing: border-box;
+}
+.dropdown.open {
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: 3px black solid;
+}
+.dropdown__content {
+  background-color: lightgrey;
+  font-size: 20px;
+  position: absolute;
+  top: 103%;
+  width: 95px;
+  border-radius: 0 0 10px 10px;
+  padding-bottom: 10px;
+}
+.dropdown__item {
+  padding-top: 5px;
+}
 #user__dashboard {
   height: 45px;
   width: 160px;
@@ -404,6 +440,36 @@ button {
   justify-content: center;
   align-items: center;
   gap: 35px;
+}
+.card__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card__face {
+  background-color: #FF6B35;
+  border-radius: 10px;
+  height: 400px;
+  width: 800px;
+  transition: transform .7s;
+  transform-style: preserve-3d;
+  position: absolute;
+  backface-visibility: hidden;
+  bottom: 200px;
+}
+.card__container.flipped .card__front {
+  transform: rotateY(180deg);
+}
+.card__container.flipped .card__back {
+  transform: rotateY(0deg);
+}
+.card__back {
+  transform: rotateY(180deg);
+}
+#next__card {
+  bottom: 100px;
+  position: absolute;
+  background-color: lightgrey;
 }
 .overlay {
   position: fixed;

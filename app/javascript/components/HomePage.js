@@ -14,7 +14,6 @@ const HomePage = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [selectedTopic, setSelectedTopic] = useState(null);
-  const [selectedMethod, setSelectedMethod] = useState(null);
 
   const handleTopicClick = (topic) => {
     setSelectedTopic(topic);
