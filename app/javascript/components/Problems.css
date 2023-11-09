@@ -144,6 +144,12 @@
   position: absolute;
   backface-visibility: hidden;
   bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  text-align: center;
 }
 
 .card__container.flipped .card__front {
@@ -154,11 +160,9 @@
   transform: rotateY(0deg);
 }
 
-.card__face {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.card__text {
+  width: 700px;
+  /* margin-left: 50px; */
 }
 
 .flip__button {
@@ -170,6 +174,7 @@
 .card__back {
   transform: rotateY(180deg);
 }
+
 
 #next__card {
   bottom: 100px;

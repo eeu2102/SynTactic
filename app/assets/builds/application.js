@@ -2885,9 +2885,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React10 = require_react();
+          var React11 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React11.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -4408,7 +4408,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React10.Children.forEach(props.children, function(child) {
+                  React11.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -12569,7 +12569,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React10.Component().refs;
+          var emptyRefsObject = new React11.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -29863,7 +29863,7 @@
   application.register("hello", hello_controller_default);
 
   // app/javascript/application.js
-  var import_react7 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/dist/index.js
@@ -31716,7 +31716,7 @@
   }
 
   // app/javascript/components/App.js
-  var import_react6 = __toESM(require_react());
+  var import_react7 = __toESM(require_react());
 
   // app/javascript/components/Header.js
   var import_react = __toESM(require_react());
@@ -31769,6 +31769,62 @@
 
   // app/javascript/components/HomePage.js
   var import_react2 = __toESM(require_react());
+  var HomePage = () => {
+    const navigate = useNavigate();
+    const [showModal, setShowModal] = (0, import_react2.useState)(false);
+    const [selectedTopic, setSelectedTopic] = (0, import_react2.useState)(null);
+    const handleTopicClick = (topic) => {
+      setSelectedTopic(topic);
+      setShowModal(true);
+    };
+    return /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "home__container"
+    }, /* @__PURE__ */ import_react2.default.createElement("h1", null, "Welcome to SynTactic"), /* @__PURE__ */ import_react2.default.createElement("h2", {
+      id: "sub__header"
+    }, "Pick a Review Topic"), /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "topics__container"
+    }, /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("declaration");
+      }
+    }, "Declaration and Instantiation"), /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("control flow");
+      }
+    }, "Control Flow"), /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("data structures");
+      }
+    }, "Data Structures")), showModal && /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "home__modal"
+    }, /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "overlay",
+      onClick: () => setShowModal(false)
+    }), /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "modal"
+    }, /* @__PURE__ */ import_react2.default.createElement("h1", {
+      id: "modal__header"
+    }, "Pick a Review Method:"), /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "review__methods"
+    }, /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "method",
+      onClick: () => navigate(
+        `/problems?category=${selectedTopic}&method=multiple choice`
+      )
+    }, "Multiple Choice"), /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "method",
+      onClick: () => navigate(
+        `/problems?category=${selectedTopic}&method=flash cards`
+      )
+    }, "Flash Cards")), /* @__PURE__ */ import_react2.default.createElement("button", {
+      id: "back__button",
+      onClick: () => setShowModal(false)
+    }, "Back"))));
+  };
+  var HomePage_default = HomePage;
 
   // app/javascript/components/Dashboard.js
   var import_react3 = __toESM(require_react());
@@ -31842,9 +31898,11 @@
           }
         });
       } else if (category && method === `flash cards`) {
+        console.log("FC");
         setMultipleChoice(false);
         setFlashcards(true);
-        fetch(`/questions?category=${category}&method=${method}`).then((response) => response.json()).then((data) => {
+        console.log(method);
+        fetch(`/questions?category=${category}&method=flash card`).then((response) => response.json()).then((data) => {
           if (data.length) {
             const shuffled = data.sort(() => 0.5 - Math.random());
             let selected = shuffled.slice(0, 5);
@@ -32008,13 +32066,17 @@
     }, /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "card__face card__front",
       id: "card__front"
-    }, /* @__PURE__ */ import_react4.default.createElement("h2", null, "Question: ", cardData.question), /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, /* @__PURE__ */ import_react4.default.createElement("h1", null, "Question"), /* @__PURE__ */ import_react4.default.createElement("h2", {
+      className: "card__text"
+    }, cardData.question), /* @__PURE__ */ import_react4.default.createElement("button", {
       className: "flip__button",
       onClick: () => setIsFlipped(!isFlipped)
     }, "Flip Over")), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "card__face card__back",
       id: "card__back"
-    }, /* @__PURE__ */ import_react4.default.createElement("h2", null, "Answer: ", cardData.answer), /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, /* @__PURE__ */ import_react4.default.createElement("h1", null, "Answer"), /* @__PURE__ */ import_react4.default.createElement("h2", {
+      className: "card__text"
+    }, cardData.answer), /* @__PURE__ */ import_react4.default.createElement("button", {
       className: "flip__button",
       onClick: () => setIsFlipped(!isFlipped)
     }, "Flip Over"))), /* @__PURE__ */ import_react4.default.createElement("button", {
@@ -32059,41 +32121,20 @@
 
   // app/javascript/components/Welcome.js
   var import_react5 = __toESM(require_react());
-  var Welcome = () => {
-    return /* @__PURE__ */ import_react5.default.createElement("div", {
-      className: "welcome__container"
-    }, /* @__PURE__ */ import_react5.default.createElement("div", {
-      className: "welcome__message"
-    }, /* @__PURE__ */ import_react5.default.createElement("h1", null, "Welcome to Syntactic"), /* @__PURE__ */ import_react5.default.createElement("h2", null, "Syntactic is going to win $5k from fastpitch and go out to eatttttt")), /* @__PURE__ */ import_react5.default.createElement("div", {
-      className: "language__selection"
-    }, /* @__PURE__ */ import_react5.default.createElement("div", {
-      className: "selection__text"
-    }, /* @__PURE__ */ import_react5.default.createElement("h2", {
-      id: "select__language"
-    }, "Select a Language:"), /* @__PURE__ */ import_react5.default.createElement("p", {
-      id: "change__language"
-    }, "You can always change your practice language later!")), /* @__PURE__ */ import_react5.default.createElement("div", {
-      className: "language__options"
-    }, /* @__PURE__ */ import_react5.default.createElement("button", {
-      className: "language__choice"
-    }, "Java"), /* @__PURE__ */ import_react5.default.createElement("button", {
-      className: "language__choice"
-    }, "Python"), /* @__PURE__ */ import_react5.default.createElement("button", {
-      className: "language__choice"
-    }, "Ruby"))));
-  };
-  var Welcome_default = Welcome;
+
+  // app/javascript/components/WelcomeHeader.js
+  var import_react6 = __toESM(require_react());
 
   // app/javascript/components/App.js
-  var App = () => /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement(Header_default, null), /* @__PURE__ */ import_react6.default.createElement(Routes, null, /* @__PURE__ */ import_react6.default.createElement(Route, {
+  var App = () => /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement(Routes, null, /* @__PURE__ */ import_react7.default.createElement(Route, {
     path: "/home",
-    element: /* @__PURE__ */ import_react6.default.createElement(Welcome_default, null)
-  }), /* @__PURE__ */ import_react6.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, /* @__PURE__ */ import_react7.default.createElement(Header_default, null), /* @__PURE__ */ import_react7.default.createElement(HomePage_default, null))
+  }), /* @__PURE__ */ import_react7.default.createElement(Route, {
     path: "/problems",
-    element: /* @__PURE__ */ import_react6.default.createElement(Problems_default, null)
-  }), /* @__PURE__ */ import_react6.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, /* @__PURE__ */ import_react7.default.createElement(Header_default, null), /* @__PURE__ */ import_react7.default.createElement(Problems_default, null))
+  }), /* @__PURE__ */ import_react7.default.createElement(Route, {
     path: "/dashboard",
-    element: /* @__PURE__ */ import_react6.default.createElement(Dashboard_default, null)
+    element: /* @__PURE__ */ import_react7.default.createElement(Dashboard_default, null)
   })));
   var App_default = App;
 
@@ -32102,7 +32143,7 @@
   var root = (0, import_client.createRoot)(container);
   document.addEventListener("DOMContentLoaded", () => {
     root.render(
-      /* @__PURE__ */ import_react7.default.createElement(import_react7.StrictMode, null, /* @__PURE__ */ import_react7.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react7.default.createElement(App_default, null)))
+      /* @__PURE__ */ import_react8.default.createElement(import_react8.StrictMode, null, /* @__PURE__ */ import_react8.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react8.default.createElement(App_default, null)))
     );
   });
 })();
