@@ -10458,3 +10458,723 @@ Processing by QuestionsController#index as */*
 Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 787)
 
 
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 20:52:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 10ms (Views: 2.6ms | ActiveRecord: 1.3ms | Allocations: 4736)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 20:52:34 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 926)
+
+
+Started GET "/questions?category=control%20flow&method=flash%20cards" for ::1 at 2023-11-08 20:52:42 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.4ms | Allocations: 788)
+
+
+Started GET "/questions?category=control%20flow&method=flash%20cards" for ::1 at 2023-11-08 20:52:42 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"control flow", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "control flow"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 768)
+
+
+Started GET "/" for ::1 at 2023-11-08 20:53:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/home" for ::1 at 2023-11-08 20:53:39 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 122.7ms | Allocations: 40409)
+Completed 200 OK in 137ms (Views: 125.8ms | ActiveRecord: 0.0ms | Allocations: 44458)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 20:53:42 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 18ms (Views: 3.2ms | ActiveRecord: 1.5ms | Allocations: 3492)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 20:53:42 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 786)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 20:54:05 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 782)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 20:59:16 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 337.7ms | Allocations: 35380)
+Completed 200 OK in 342ms (Views: 340.2ms | ActiveRecord: 0.0ms | Allocations: 35649)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 20:59:17 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 767)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 20:59:17 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:03:03 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 3412)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 3654)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:03:03 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 778)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:03:03 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:05:21 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 3412)
+Completed 200 OK in 34ms (Views: 33.5ms | ActiveRecord: 0.0ms | Allocations: 3653)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:05:21 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.5ms | Allocations: 767)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:05:21 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:05:27 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 3411)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.0ms | Allocations: 3650)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:05:27 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 768)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:05:27 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:05:47 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 3394)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.0ms | Allocations: 3633)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:05:47 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 767)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:05:47 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:06:08 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 3403)
+Completed 200 OK in 23ms (Views: 23.0ms | ActiveRecord: 0.0ms | Allocations: 3642)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:06:08 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 11ms (Views: 5.7ms | ActiveRecord: 0.7ms | Allocations: 778)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:06:08 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:06:32 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 3396)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.0ms | Allocations: 3635)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:06:32 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 1.0ms | Allocations: 767)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:06:32 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:06:46 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 3406)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 3647)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:06:46 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 767)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:06:46 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:07 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 3417)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 3656)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:07 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 767)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:07 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:08 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1675)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 1914)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:09 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 767)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:09 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:15 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 3416)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 3655)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:16 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 9ms (Views: 4.6ms | ActiveRecord: 0.8ms | Allocations: 767)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:16 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:26 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 3410)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 3649)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:26 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 0.4ms | Allocations: 767)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:26 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:33 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 3400)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.0ms | Allocations: 3639)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:34 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 767)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:07:34 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 767)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:08:21 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.7ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:09:30 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 254.0ms | Allocations: 36718)
+Completed 200 OK in 255ms (Views: 254.4ms | ActiveRecord: 0.0ms | Allocations: 36957)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:09:30 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 780)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:09:30 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:09:38 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 227.3ms | Allocations: 35093)
+Completed 200 OK in 228ms (Views: 227.8ms | ActiveRecord: 0.0ms | Allocations: 35332)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:09:38 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.4ms | Allocations: 767)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:09:38 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:10:12 -0500
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 250.9ms | Allocations: 35068)
+Completed 200 OK in 252ms (Views: 251.3ms | ActiveRecord: 0.0ms | Allocations: 35308)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:10:12 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.7ms | Allocations: 767)
+
+
+Started GET "/questions?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:10:12 -0500
+Processing by QuestionsController#index as */*
+  Parameters: {"category"=>"declaration", "method"=>"flash cards"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category" = ? AND "questions"."method" = ?[0m  [["category", "declaration"], ["method", "flash cards"]]
+  ↳ app/controllers/questions_controller.rb:13:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 767)
+
+
+Started GET "/problems?category=declaration&method=flash%20cards" for ::1 at 2023-11-08 21:40:18 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  Parameters: {"category"=>"declaration", "method"=>"flash cards", "path"=>"problems"}
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 562.1ms | Allocations: 74252)
+Completed 200 OK in 571ms (Views: 565.3ms | ActiveRecord: 0.0ms | Allocations: 78309)
+
+
+Started GET "/" for ::1 at 2023-11-08 21:40:26 -0500
+Started GET "/home" for ::1 at 2023-11-08 21:40:26 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 1765)
+Completed 200 OK in 26ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 2061)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:40:55 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 266.5ms | Allocations: 36817)
+Completed 200 OK in 267ms (Views: 266.8ms | ActiveRecord: 0.0ms | Allocations: 37059)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:47:52 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 95.6ms | Allocations: 3502)
+Completed 200 OK in 98ms (Views: 96.9ms | ActiveRecord: 0.0ms | Allocations: 3745)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:48:13 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 67.5ms | Allocations: 3420)
+Completed 200 OK in 70ms (Views: 68.9ms | ActiveRecord: 0.0ms | Allocations: 3659)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:48:54 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 3422)
+Completed 200 OK in 39ms (Views: 38.8ms | ActiveRecord: 0.0ms | Allocations: 3664)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:49:18 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 3409)
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.0ms | Allocations: 3648)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:49:26 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 3457)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 3696)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:49:47 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 3420)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 3659)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:50:03 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 3442)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 3681)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:50:13 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 3426)
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.0ms | Allocations: 3665)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:50:53 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 3436)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.0ms | Allocations: 3676)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:51:05 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 3427)
+Completed 200 OK in 31ms (Views: 30.7ms | ActiveRecord: 0.0ms | Allocations: 3666)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:52:07 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 3445)
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.0ms | Allocations: 3684)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:52:09 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 1681)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 1920)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:52:21 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 3445)
+Completed 200 OK in 33ms (Views: 32.7ms | ActiveRecord: 0.0ms | Allocations: 3684)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:53:11 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 3441)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.0ms | Allocations: 3680)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:53:18 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 3445)
+Completed 200 OK in 20ms (Views: 19.9ms | ActiveRecord: 0.0ms | Allocations: 3685)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:53:31 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 3443)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 3682)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:55:42 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 286.0ms | Allocations: 36738)
+Completed 200 OK in 287ms (Views: 286.4ms | ActiveRecord: 0.0ms | Allocations: 36977)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:55:46 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 3461)
+Completed 200 OK in 19ms (Views: 18.8ms | ActiveRecord: 0.0ms | Allocations: 3701)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:56:37 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 355.8ms | Allocations: 35046)
+Completed 200 OK in 360ms (Views: 358.6ms | ActiveRecord: 0.0ms | Allocations: 35285)
+
+
+Started GET "/home" for ::1 at 2023-11-08 21:59:21 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 1770)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 2009)
+
+
+Started GET "/home" for ::1 at 2023-11-08 22:00:02 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 3463)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.0ms | Allocations: 3702)
+
+
+Started GET "/home" for ::1 at 2023-11-08 22:00:06 -0500
+Processing by SiteController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering site/index.html.erb within layouts/application
+  Rendered site/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 32.3ms | Allocations: 3441)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.0ms | Allocations: 3680)
+
+
