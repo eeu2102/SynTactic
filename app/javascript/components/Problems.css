@@ -116,7 +116,7 @@
   font-weight: bolder;
   width: 100px;
   height: 40px;
-  margin-right: 25px;
+  /* margin-right: 25px; */
 }
 
 .results {
@@ -152,6 +152,19 @@
 
 .card__container.flipped .card__back {
   transform: rotateY(0deg);
+}
+
+.card__face {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip__button {
+  font-size: 26px;
+  font-weight: bolder;
+  padding: 10px;
 }
 
 .card__back {

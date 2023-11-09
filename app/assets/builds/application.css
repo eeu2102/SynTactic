@@ -432,7 +432,6 @@ button {
   font-weight: bolder;
   width: 100px;
   height: 40px;
-  margin-right: 25px;
 }
 .results {
   display: flex;
@@ -462,6 +461,17 @@ button {
 }
 .card__container.flipped .card__back {
   transform: rotateY(0deg);
+}
+.card__face {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flip__button {
+  font-size: 26px;
+  font-weight: bolder;
+  padding: 10px;
 }
 .card__back {
   transform: rotateY(180deg);
@@ -512,4 +522,52 @@ button {
   font-weight: bolder;
   width: 150px;
   height: 70px;
+}
+
+/* app/javascript/components/Welcome.css */
+.welcome__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10vh;
+  margin-top: 50px;
+}
+.welcome__message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.language__selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.selection__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.language__choice {
+  background-color: red;
+  font-size: 30px;
+  line-height: 40px;
+  background-color: lightgrey;
+  width: 250px;
+  height: 80px;
+  cursor: pointer;
+}
+.language__options {
+  gap: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#change__language {
+  margin-top: 15px;
 }

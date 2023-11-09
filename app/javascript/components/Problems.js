@@ -329,22 +329,6 @@ const Problems = () => {
               </button>
             </div>
           )}
-          {/* {showResultModal && (
-            <div className="results__modal">
-              <div className="overlay"></div>
-              <div className="results">
-                <h1>Practice Complete!</h1>
-                <div className="user__score">
-                  <h2 id="score">Your Score: {score} out of {totalQuestions}</h2>
-                  <h2>Questions Solved: +{score}!</h2>
-                </div>
-                <div className="results__buttons">
-                  <button onClick={handleHomeClick} id="home__button">Home</button>
-                  <button onClick={handleAgainClick} id="again__button">Again</button>
-                </div>
-              </div>
-            </div>
-          )} */}
         </div>
       )}
 
@@ -360,10 +344,12 @@ const Problems = () => {
           <div className={`card__container ${isFlipped ? 'flipped' : ''}`}
           onClick={() => setIsFlipped(!isFlipped)}>
             <div className="card__face card__front" id="card__front">
-              {cardData.question}
+              <h2>Question: {cardData.question}</h2> 
+              <button className="flip__button" onClick={() => setIsFlipped(!isFlipped)}>Flip Over</button>
             </div>
             <div className="card__face card__back" id="card__back">
-              {cardData.answer}
+              <h2>Answer: {cardData.answer}</h2>
+              <button className="flip__button" onClick={() => setIsFlipped(!isFlipped)}>Flip Over</button>
             </div>
           </div>
           <button className="next__button" id="next__card" onClick={handleNextQuestion}>
