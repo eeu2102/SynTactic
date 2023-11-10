@@ -31774,12 +31774,32 @@
   var import_react3 = __toESM(require_react());
   var Dashboard = () => {
     const navigate = useNavigate();
+    const handleLogout = async () => {
+      try {
+        const response = await fetch("/logout", {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        });
+        if (response.ok) {
+          navigate("/home");
+        } else {
+          console.error("Logout failed:", response.statusText);
+        }
+      } catch (error2) {
+        console.error("There was an error during logout:", error2);
+      }
+    };
     const handleHomeClick = () => {
       navigate("/home/");
     };
     return /* @__PURE__ */ import_react3.default.createElement("div", {
       className: "profile__container"
-    }, /* @__PURE__ */ import_react3.default.createElement("h1", null, "Hi Jessica\uFF01"), /* @__PURE__ */ import_react3.default.createElement("h2", {
+    }, /* @__PURE__ */ import_react3.default.createElement("button", {
+      onClick: handleLogout,
+      className: "logout__button"
+    }, "Logout"), /* @__PURE__ */ import_react3.default.createElement("h1", null, "Hi Jessica\uFF01"), /* @__PURE__ */ import_react3.default.createElement("h2", {
       id: "progress__tracker"
     }, "Questions Solved: "), /* @__PURE__ */ import_react3.default.createElement("button", {
       onClick: handleHomeClick,
@@ -32065,9 +32085,57 @@
 
   // app/javascript/components/Welcome.js
   var import_react5 = __toESM(require_react());
+  var Welcome = () => {
+    return /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "welcome__container"
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "welcome__message"
+    }, /* @__PURE__ */ import_react5.default.createElement("h1", null, "Welcome to Syntactic"), /* @__PURE__ */ import_react5.default.createElement("h2", null, "Syntactic is going to win $5k from fastpitch and go out to eatttttt")), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "language__selection"
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "selection__text"
+    }, /* @__PURE__ */ import_react5.default.createElement("h2", {
+      id: "select__language"
+    }, "Select a Language:"), /* @__PURE__ */ import_react5.default.createElement("p", {
+      id: "change__language"
+    }, "You can always change your practice language later!")), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "language__options"
+    }, /* @__PURE__ */ import_react5.default.createElement("button", {
+      className: "language__choice"
+    }, "Java"), /* @__PURE__ */ import_react5.default.createElement("button", {
+      className: "language__choice"
+    }, "Python"), /* @__PURE__ */ import_react5.default.createElement("button", {
+      className: "language__choice"
+    }, "Ruby"))));
+  };
+  var Welcome_default = Welcome;
 
   // app/javascript/components/WelcomeHeader.js
   var import_react6 = __toESM(require_react());
+  var Welcome2 = () => {
+    return /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "welcome__container"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "welcome__message"
+    }, /* @__PURE__ */ import_react6.default.createElement("h1", null, "Welcome to Syntactic"), /* @__PURE__ */ import_react6.default.createElement("h2", null, "Syntactic is going to win $5k from fastpitch and go out to eatttttt")), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "language__selection"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "selection__text"
+    }, /* @__PURE__ */ import_react6.default.createElement("h2", {
+      id: "select__language"
+    }, "Select a Language:"), /* @__PURE__ */ import_react6.default.createElement("p", {
+      id: "change__language"
+    }, "You can always change your practice language later!")), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "language__options"
+    }, /* @__PURE__ */ import_react6.default.createElement("button", {
+      className: "language__choice"
+    }, "Java"), /* @__PURE__ */ import_react6.default.createElement("button", {
+      className: "language__choice"
+    }, "Python"), /* @__PURE__ */ import_react6.default.createElement("button", {
+      className: "language__choice"
+    }, "Ruby"))));
+  };
+  var WelcomeHeader_default = Welcome2;
 
   // app/javascript/components/Landing.js
   var import_react7 = __toESM(require_react());
@@ -32076,7 +32144,19 @@
     const [showLoginModal, setShowLoginModal] = (0, import_react7.useState)(false);
     const [username, setUsername] = (0, import_react7.useState)("");
     const [password, setPassword] = (0, import_react7.useState)("");
+    const [errorMessage, setErrorMessage] = (0, import_react7.useState)("");
+    const navigate = useNavigate();
+    const handleShowSignUp = () => {
+      setShowLoginModal(false);
+      setShowSignUpModal(true);
+    };
+    const handleShowLogin = () => {
+      setShowSignUpModal(false);
+      setShowLoginModal(true);
+    };
     const handleSignUp = async (event) => {
+      setShowLoginModal(false);
+      setShowSignUpModal(true);
       event.preventDefault();
       try {
         const response = await fetch("/users", {
@@ -32090,7 +32170,11 @@
         if (response.ok) {
           console.log("Signup successful:", data);
           setShowSignUpModal(false);
+          navigate("/welcome");
         } else {
+          setErrorMessage("Username already exists. Please try another one.");
+          setUsername("");
+          setPassword("");
           console.error("Signup failed:", data.errors);
         }
       } catch (error2) {
@@ -32100,7 +32184,7 @@
     const handleLogin = async (event) => {
       event.preventDefault();
       try {
-        const response = await fetch("/users", {
+        const response = await fetch("/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -32111,10 +32195,12 @@
           const data = await response.json();
           console.log("Login successful:", data);
           setShowLoginModal(false);
-          history.push("/problems");
+          navigate("/problems");
         } else {
           console.error("Login failed:", response.statusText);
         }
+        setUsername("");
+        setPassword("");
       } catch (error2) {
         console.error("There was an error during login:", error2);
       }
@@ -32122,11 +32208,11 @@
     return /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "landing__container"
     }, /* @__PURE__ */ import_react7.default.createElement("button", {
-      onClick: () => setShowSignUpModal(true),
+      onClick: () => handleShowSignUp(),
       className: "landing__button",
       id: "signup__button"
     }, "Sign Up"), /* @__PURE__ */ import_react7.default.createElement("button", {
-      onClick: () => setShowLoginModal(true),
+      onClick: () => handleShowLogin(),
       className: "landing__button",
       id: "login_button"
     }, "Login"), showSignUpModal && /* @__PURE__ */ import_react7.default.createElement("div", {
@@ -32155,7 +32241,9 @@
     }), /* @__PURE__ */ import_react7.default.createElement("button", {
       type: "submit",
       className: "signup__submit"
-    }, "Sign Up")))), showLoginModal && /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, "Sign Up")), errorMessage && /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "error-message"
+    }, errorMessage), " ")), showLoginModal && /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "login__modal"
     }, /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "login__content"
@@ -32189,6 +32277,9 @@
   var App = () => /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement(Routes, null, /* @__PURE__ */ import_react8.default.createElement(Route, {
     path: "/home",
     element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Landing_default, null))
+  }), /* @__PURE__ */ import_react8.default.createElement(Route, {
+    path: "/welcome",
+    element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(WelcomeHeader_default, null), /* @__PURE__ */ import_react8.default.createElement(Welcome_default, null))
   }), /* @__PURE__ */ import_react8.default.createElement(Route, {
     path: "/problems",
     element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Header_default, null), /* @__PURE__ */ import_react8.default.createElement(Problems_default, null))

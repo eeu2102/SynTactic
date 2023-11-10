@@ -21,12 +21,12 @@ const App = () => (
           <HomePage />
         </>
       } /> */}
-      {/* <Route path="/home" element={
+      <Route path="/welcome" element={
         <>
           <WelcomeHeader />
           <Welcome />
         </>
-      } /> */}
+      } />
       <Route path="/problems" element={
         <>
           <Header />

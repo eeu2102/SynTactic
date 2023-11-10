@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :questions, only: [:index]
 
   resources :users, only: [:index, :create]
+
+  post 'login', to: 'sessions#create'
+delete 'logout', to: 'sessions#destroy'
+
   root to: redirect('/home')
 
   get 'home', to: 'site#index'
