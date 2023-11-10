@@ -32175,6 +32175,7 @@
   // app/javascript/components/Welcome.js
   var import_react5 = __toESM(require_react());
   var Welcome = () => {
+    const navigate = useNavigate();
     return /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "welcome__container"
     }, /* @__PURE__ */ import_react5.default.createElement("div", {
@@ -32190,10 +32191,19 @@
     }, "You can always change your practice language later!")), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "language__options"
     }, /* @__PURE__ */ import_react5.default.createElement("button", {
+      onClick: () => {
+        navigate("/home");
+      },
       className: "language__choice"
     }, "Java"), /* @__PURE__ */ import_react5.default.createElement("button", {
+      onClick: () => {
+        navigate("/home");
+      },
       className: "language__choice"
     }, "Python"), /* @__PURE__ */ import_react5.default.createElement("button", {
+      onClick: () => {
+        navigate("/home");
+      },
       className: "language__choice"
     }, "Ruby"))));
   };
@@ -32242,6 +32252,11 @@
           body: JSON.stringify({ user: { username, password } })
         });
         const data = await response.json();
+        if (data.token) {
+          localStorage.setItem("authToken", data.token);
+        } else {
+          console.log("No token received");
+        }
         if (response.ok) {
           console.log("Signup successful:", data);
           setShowSignUpModal(false);
