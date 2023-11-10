@@ -16,17 +16,17 @@ const App = () => (
           <Landing />
         </>
       } />
-      {/* <Route path="/home" element={<>
+      {/* <Route path="/home/" element={<>
           <Header />
           <HomePage />
         </>
       } /> */}
-      {/* <Route path="/home" element={
+      <Route path="/welcome" element={
         <>
           <WelcomeHeader />
           <Welcome />
         </>
-      } /> */}
+      } />
       <Route path="/problems" element={
         <>
           <Header />
