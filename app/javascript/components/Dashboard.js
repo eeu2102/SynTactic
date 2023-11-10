@@ -51,7 +51,7 @@ const Dashboard = () => {
 
       if (response.ok) {
         // Session terminated, now redirect to the login page
-        navigate('/home'); // Assuming '/' is your landing page where the login button exists
+        navigate('/landing'); // Assuming '/' is your landing page where the login button exists
       } else {
         // Handle any errors if the server couldn't terminate the session
         console.error('Logout failed:', response.statusText);

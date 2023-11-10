@@ -31769,6 +31769,62 @@
 
   // app/javascript/components/HomePage.js
   var import_react2 = __toESM(require_react());
+  var HomePage = () => {
+    const navigate = useNavigate();
+    const [showModal, setShowModal] = (0, import_react2.useState)(false);
+    const [selectedTopic, setSelectedTopic] = (0, import_react2.useState)(null);
+    const handleTopicClick = (topic) => {
+      setSelectedTopic(topic);
+      setShowModal(true);
+    };
+    return /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "home__container"
+    }, /* @__PURE__ */ import_react2.default.createElement("h1", null, "Welcome to SynTactic"), /* @__PURE__ */ import_react2.default.createElement("h2", {
+      id: "sub__header"
+    }, "Pick a Review Topic"), /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "topics__container"
+    }, /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("declaration");
+      }
+    }, "Declaration and Instantiation"), /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("control flow");
+      }
+    }, "Control Flow"), /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("data structures");
+      }
+    }, "Data Structures")), showModal && /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "home__modal"
+    }, /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "overlay",
+      onClick: () => setShowModal(false)
+    }), /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "modal"
+    }, /* @__PURE__ */ import_react2.default.createElement("h1", {
+      id: "modal__header"
+    }, "Pick a Review Method:"), /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "review__methods"
+    }, /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "method",
+      onClick: () => navigate(
+        `/problems?category=${selectedTopic}&method=multiple choice`
+      )
+    }, "Multiple Choice"), /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "method",
+      onClick: () => navigate(
+        `/problems?category=${selectedTopic}&method=flash cards`
+      )
+    }, "Flash Cards")), /* @__PURE__ */ import_react2.default.createElement("button", {
+      id: "back__button",
+      onClick: () => setShowModal(false)
+    }, "Back"))));
+  };
+  var HomePage_default = HomePage;
 
   // app/javascript/components/Dashboard.js
   var import_react3 = __toESM(require_react());
@@ -31783,7 +31839,7 @@
           }
         });
         if (response.ok) {
-          navigate("/home");
+          navigate("/landing");
         } else {
           console.error("Logout failed:", response.statusText);
         }
@@ -32112,30 +32168,12 @@
 
   // app/javascript/components/WelcomeHeader.js
   var import_react6 = __toESM(require_react());
-  var Welcome2 = () => {
+  var WelcomeHeader = () => {
     return /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "welcome__container"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "welcome__message"
-    }, /* @__PURE__ */ import_react6.default.createElement("h1", null, "Welcome to Syntactic"), /* @__PURE__ */ import_react6.default.createElement("h2", null, "Syntactic is going to win $5k from fastpitch and go out to eatttttt")), /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "language__selection"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "selection__text"
-    }, /* @__PURE__ */ import_react6.default.createElement("h2", {
-      id: "select__language"
-    }, "Select a Language:"), /* @__PURE__ */ import_react6.default.createElement("p", {
-      id: "change__language"
-    }, "You can always change your practice language later!")), /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "language__options"
-    }, /* @__PURE__ */ import_react6.default.createElement("button", {
-      className: "language__choice"
-    }, "Java"), /* @__PURE__ */ import_react6.default.createElement("button", {
-      className: "language__choice"
-    }, "Python"), /* @__PURE__ */ import_react6.default.createElement("button", {
-      className: "language__choice"
-    }, "Ruby"))));
+    }, /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement("h1", null, "SynTactic")));
   };
-  var WelcomeHeader_default = Welcome2;
+  var WelcomeHeader_default = WelcomeHeader;
 
   // app/javascript/components/Landing.js
   var import_react7 = __toESM(require_react());
@@ -32149,10 +32187,14 @@
     const handleShowSignUp = () => {
       setShowLoginModal(false);
       setShowSignUpModal(true);
+      setUsername("");
+      setPassword("");
     };
     const handleShowLogin = () => {
       setShowSignUpModal(false);
       setShowLoginModal(true);
+      setUsername("");
+      setPassword("");
     };
     const handleSignUp = async (event) => {
       setShowLoginModal(false);
@@ -32195,7 +32237,7 @@
           const data = await response.json();
           console.log("Login successful:", data);
           setShowLoginModal(false);
-          navigate("/problems");
+          navigate("/home");
         } else {
           console.error("Login failed:", response.statusText);
         }
@@ -32275,8 +32317,11 @@
 
   // app/javascript/components/App.js
   var App = () => /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement(Routes, null, /* @__PURE__ */ import_react8.default.createElement(Route, {
-    path: "/home",
+    path: "/landing",
     element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Landing_default, null))
+  }), /* @__PURE__ */ import_react8.default.createElement(Route, {
+    path: "/home/",
+    element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Header_default, null), /* @__PURE__ */ import_react8.default.createElement(HomePage_default, null))
   }), /* @__PURE__ */ import_react8.default.createElement(Route, {
     path: "/welcome",
     element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(WelcomeHeader_default, null), /* @__PURE__ */ import_react8.default.createElement(Welcome_default, null))
