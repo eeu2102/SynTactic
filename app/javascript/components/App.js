@@ -16,7 +16,7 @@ const App = () => (
           <Landing />
         </>
       } />
-      {/* <Route path="/home" element={<>
+      {/* <Route path="/home/" element={<>
           <Header />
           <HomePage />
         </>

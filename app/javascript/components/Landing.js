@@ -8,33 +8,54 @@ const Landing = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  // const handleSignUp = async (event) => {
-  //   event.preventDefault(); // Prevent the form from submitting traditionally
-  //   try {
-  //     const response = await fetch('your-backend-api-url/signup', { // Replace with your actual API endpoint
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({ username, password }),
-  //     });
-
-  //     if (response.ok) {
-  //       // Handle successful signup
-  //       console.log('Signup successful');
-  //       setShowSignUpModal(false);
-  //     } else {
-  //       // Handle errors, for example show an error message
-  //       console.log('Signup failed');
-  //     }
-  //   } catch (error) {
-  //     // Handle network errors or other unexpected issues
-  //     console.error('There was an error!', error);
-  //   }
-  // };
-
   const handleSignUp = async (event) => {
-    
+    event.preventDefault();
+    try {
+      const response = await fetch('/users', { // Make sure to use the correct endpoint
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ user: { username, password } }), // Rails expects user parameters to be nested under user key
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        // You can store the received token in localStorage or context API and redirect the user
+        console.log('Signup successful:', data);
+        setShowSignUpModal(false); // Close the signup modal
+      } else {
+        // If there are errors (like a non-unique username), handle them here
+        console.error('Signup failed:', data.errors);
+      }
+    } catch (error) {
+      console.error('There was an error during sign up:', error);
+    }
+  }
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch('/users', { // Adjust this to your backend login route
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }), // Adjust according to your backend expectations
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // Store the token and update state as needed
+        console.log('Login successful:', data);
+        setShowLoginModal(false); // Close the login modal
+        history.push('/problems'); // Redirect to the problems page
+      } else {
+        console.error('Login failed:', response.statusText);
+      }
+    } catch (error) {
+      console.error('There was an error during login:', error);
+    }
   }
 
   return (
@@ -72,23 +93,23 @@ const Landing = () => {
       {showLoginModal && (
         <div className="login__modal">
           {/* <div className="overlay" onClick={() => setShowLoginModal(false)}></div> */}
-          <div className="signup__content">
-            <form className="signup__form" onSubmit={handleSignUp}>
+          <div className="login__content">
+            <form className="login__form" onSubmit={handleLogin}>
                 <input 
                   type="text" 
                   placeholder="Username" 
-                  required className="signup__input" 
-                  id="signup__username"
+                  required className="login__input" 
+                  id="login__username"
                   value={username} 
                   onChange={(e) => setUsername(e.target.value)}/>
                 <input 
                   type="password" 
                   placeholder="Password" 
-                  required className="signup__input" 
-                  id="signup__password" 
+                  required className="login__input" 
+                  id="login__password" 
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}/>
-                <button type="submit" className="signup__submit">Sign Up</button>
+                <button type="submit" className="login__submit">Login</button>
             </form>
 
           </div>

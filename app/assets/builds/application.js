@@ -32077,6 +32077,47 @@
     const [username, setUsername] = (0, import_react7.useState)("");
     const [password, setPassword] = (0, import_react7.useState)("");
     const handleSignUp = async (event) => {
+      event.preventDefault();
+      try {
+        const response = await fetch("/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ user: { username, password } })
+        });
+        const data = await response.json();
+        if (response.ok) {
+          console.log("Signup successful:", data);
+          setShowSignUpModal(false);
+        } else {
+          console.error("Signup failed:", data.errors);
+        }
+      } catch (error2) {
+        console.error("There was an error during sign up:", error2);
+      }
+    };
+    const handleLogin = async (event) => {
+      event.preventDefault();
+      try {
+        const response = await fetch("/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ username, password })
+        });
+        if (response.ok) {
+          const data = await response.json();
+          console.log("Login successful:", data);
+          setShowLoginModal(false);
+          history.push("/problems");
+        } else {
+          console.error("Login failed:", response.statusText);
+        }
+      } catch (error2) {
+        console.error("There was an error during login:", error2);
+      }
     };
     return /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "landing__container"
@@ -32117,30 +32158,30 @@
     }, "Sign Up")))), showLoginModal && /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "login__modal"
     }, /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "signup__content"
+      className: "login__content"
     }, /* @__PURE__ */ import_react7.default.createElement("form", {
-      className: "signup__form",
-      onSubmit: handleSignUp
+      className: "login__form",
+      onSubmit: handleLogin
     }, /* @__PURE__ */ import_react7.default.createElement("input", {
       type: "text",
       placeholder: "Username",
       required: true,
-      className: "signup__input",
-      id: "signup__username",
+      className: "login__input",
+      id: "login__username",
       value: username,
       onChange: (e) => setUsername(e.target.value)
     }), /* @__PURE__ */ import_react7.default.createElement("input", {
       type: "password",
       placeholder: "Password",
       required: true,
-      className: "signup__input",
-      id: "signup__password",
+      className: "login__input",
+      id: "login__password",
       value: password,
       onChange: (e) => setPassword(e.target.value)
     }), /* @__PURE__ */ import_react7.default.createElement("button", {
       type: "submit",
-      className: "signup__submit"
-    }, "Sign Up")))));
+      className: "login__submit"
+    }, "Login")))));
   };
   var Landing_default = Landing;
 
