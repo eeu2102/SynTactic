@@ -1589,7 +1589,7 @@
             }
             return dispatcher.useContext(Context2);
           }
-          function useState7(initialState) {
+          function useState8(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1601,7 +1601,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect4(create, deps) {
+          function useEffect5(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -2381,7 +2381,7 @@
           exports.useContext = useContext3;
           exports.useDebugValue = useDebugValue;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect4;
+          exports.useEffect = useEffect5;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useInsertionEffect = useInsertionEffect;
@@ -2389,7 +2389,7 @@
           exports.useMemo = useMemo3;
           exports.useReducer = useReducer;
           exports.useRef = useRef3;
-          exports.useState = useState7;
+          exports.useState = useState8;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -31829,23 +31829,56 @@
   // app/javascript/components/Dashboard.js
   var import_react3 = __toESM(require_react());
   var Dashboard = () => {
+    const [username, setUsername] = (0, import_react3.useState)("");
     const navigate = useNavigate();
+    (0, import_react3.useEffect)(() => {
+      const getCurrentUser = async () => {
+        const token = localStorage.getItem("authToken");
+        if (token) {
+          try {
+            const response = await fetch("/current_user", {
+              headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+              }
+            });
+            const data = await response.json();
+            if (response.ok) {
+              setUsername(data.username);
+            } else {
+              console.log("PROBLEM");
+              navigate("/login");
+            }
+          } catch (error2) {
+            console.error("Error fetching current user:", error2);
+          }
+        } else {
+          console.log("No token found");
+          navigate("/login");
+        }
+      };
+      getCurrentUser();
+    }, [navigate]);
     const handleLogout = async () => {
+      const token = localStorage.getItem("authToken");
+      console.log(token);
+      console.log("RARIWRNO");
+      localStorage.removeItem("authToken");
       try {
         const response = await fetch("/logout", {
           method: "DELETE",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
           }
         });
-        if (response.ok) {
-          navigate("/landing");
-        } else {
-          console.error("Logout failed:", response.statusText);
+        if (!response.ok) {
+          console.error("Failed to invalidate token on the server.");
         }
       } catch (error2) {
         console.error("There was an error during logout:", error2);
       }
+      navigate("/landing");
     };
     const handleHomeClick = () => {
       navigate("/home/");
@@ -31855,7 +31888,7 @@
     }, /* @__PURE__ */ import_react3.default.createElement("button", {
       onClick: handleLogout,
       className: "logout__button"
-    }, "Logout"), /* @__PURE__ */ import_react3.default.createElement("h1", null, "Hi Jessica\uFF01"), /* @__PURE__ */ import_react3.default.createElement("h2", {
+    }, "Logout"), /* @__PURE__ */ import_react3.default.createElement("h1", null, "Hi ", username, "!"), /* @__PURE__ */ import_react3.default.createElement("h2", {
       id: "progress__tracker"
     }, "Questions Solved: "), /* @__PURE__ */ import_react3.default.createElement("button", {
       onClick: handleHomeClick,
@@ -32231,11 +32264,15 @@
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ username, password })
+          body: JSON.stringify({ username, password }),
+          credentials: "include"
         });
         if (response.ok) {
           const data = await response.json();
           console.log("Login successful:", data);
+          if (data.token) {
+            localStorage.setItem("authToken", data.token);
+          }
           setShowLoginModal(false);
           navigate("/home");
         } else {

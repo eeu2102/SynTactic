@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_09_220230) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_10_164928) do
   create_table "events", force: :cascade do |t|
     t.string "event_type"
     t.date "event_date"
@@ -40,6 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_09_220230) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "auth_token"
   end
 
 end

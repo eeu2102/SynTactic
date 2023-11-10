@@ -3,13 +3,14 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(username: params[:username])
     if user&.authenticate(params[:password])
-      # If you're using cookie-based sessions:
-      session[:user_id] = user.id
-      render json: { logged_in: true, user: user }
+      user.generate_token # Generate a new token
+      render json: { logged_in: true, token: user.auth_token }
     else
       render json: { message: 'Invalid credentials' }, status: :unauthorized
     end
   end
+
+  
 
   # DELETE /logout
   def destroy
@@ -17,10 +18,28 @@ class SessionsController < ApplicationController
     # Additional logic to handle logout
   end
 
-  # def destroy
-  #   session.delete(:user_id)
-  #   # Or if you're using a token in the session:
-  #   # reset_session
-  #   head :no_content
-  # end
+  def get_current_user
+    token = get_token_from_header
+
+    if token
+      user = User.find_by(auth_token: token)
+      if user
+        render json: { username: user.username }
+      else
+        render json: { error: 'Invalid token' }, status: :unauthorized
+      end
+    else
+      render json: { error: 'No token provided' }, status: :unauthorized
+    end
+  end
+
+  private
+
+  # Extracts the token from the Authorization header
+  def get_token_from_header
+    if request.headers['Authorization'].present?
+      request.headers['Authorization'].split(' ').last
+    end
+  end
+
 end

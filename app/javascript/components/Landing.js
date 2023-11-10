@@ -61,34 +61,42 @@ const Landing = () => {
     }
   }
 
-
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('/login', { // Adjust this to your backend login route
+      const response = await fetch('/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }), // Adjust according to your backend expectations
+        body: JSON.stringify({ username, password }),
+        credentials: 'include', // Include credentials if using cookies
       });
-
+  
       if (response.ok) {
         const data = await response.json();
-        // Store the token and update state as needed
         console.log('Login successful:', data);
-        setShowLoginModal(false); // Close the login modal
-        navigate('/home'); // Redirect to the problems page
+  
+        // If token-based, store the token. Adjust according to your API response
+        if (data.token) {
+          localStorage.setItem('authToken', data.token);
+        }
+  
+        setShowLoginModal(false); 
+        navigate('/home'); 
       } else {
         console.error('Login failed:', response.statusText);
       }
-      setUsername(''); // Clear the username state
+  
+      // Clear the form fields
+      setUsername(''); 
       setPassword('');
     } catch (error) {
       console.error('There was an error during login:', error);
     }
-  }
-
+  };
+  
+  
   return (
     <div className="landing__container">
       <button onClick={() => handleShowSignUp()} className="landing__button" id="signup__button">Sign Up</button>
