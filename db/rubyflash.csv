@@ -1,0 +1,61 @@
+ID,question,choice_a,choice_b,choice_c,answer,coding_language,category,method
+301,Which of the following keywords is used to define a loop in Ruby?,null,null,null,while,Ruby,control flow,multiple choice
+302,What does the break keyword do in a loop in Ruby?,null,null,null,Exits the loop prematurely.,Ruby,control flow,multiple choice
+303,"In Ruby, which keyword is used to define a conditional branch?",null,null,null,if,Ruby,control flow,multiple choice
+304,What is the purpose of the else clause in an if statement in Ruby?,null,null,null,To execute a block of code if the condition is false.,Ruby,control flow,multiple choice
+305,"In Ruby, what is the scope of a local variable defined inside a block or method?",null,null,null,Block or method scope,Ruby,control flow,multiple choice
+306,Which of the following loops in Ruby will always execute at least once?,null,null,null,until,Ruby,control flow,multiple choice
+307,What is the purpose of the next keyword in a loop in Ruby?,null,null,null,Skips the current iteration and continues with the next.,Ruby,control flow,multiple choice
+308,"In Ruby, what does the elsif keyword allow you to do in an if statement?",null,null,null,Combine multiple conditions in a single if statement.,Ruby,control flow,multiple choice
+309,Which keyword is used to define a method in Ruby?,null,null,null,def,Ruby,control flow,multiple choice
+310,What does the case keyword allow you to do in Ruby?,null,null,null,Create a switch statement for multiple conditional branches.,Ruby,control flow,multiple choice
+311,"In Ruby, which loop is used to iterate over a collection of elements like an array or a range?",null,null,null,each,Ruby,control flow,multiple choice
+312,What does the unless keyword do in Ruby?,null,null,null,It reverses the meaning of an if condition.,Ruby,control flow,multiple choice
+313,When is the unless clause executed in Ruby?,null,null,null,When the condition is false.,Ruby,control flow,multiple choice
+314,What is the purpose of the retry keyword in Ruby?,null,null,null,It repeats the loop from the beginning.,Ruby,control flow,multiple choice
+315,How do you define a one-line conditional statement in Ruby?,null,null,null,code if condition,Ruby,control flow,multiple choice
+316,What does the unless keyword in Ruby typically work well with?,null,null,null,Negative conditions,Ruby,control flow,multiple choice
+317,"In Ruby, which keyword is used to prematurely exit a loop iteration and jump to the next iteration?",null,null,null,next,Ruby,control flow,multiple choice
+318,What is the purpose of the while keyword in Ruby?,null,null,null,"It specifies a condition that, if true, allows code to execute.",Ruby,control flow,multiple choice
+319,Which keyword is used in Ruby to catch and handle exceptions?,null,null,null,begin,Ruby,control flow,multiple choice
+320,What is the purpose of the case statement in Ruby?,null,null,null,It creates a switch statement to select between multiple code blocks.,Ruby,control flow,multiple choice
+321,How do you create an empty array in Ruby?,null,null,null,array = [],Ruby,declaration,multiple choice
+322,What is the correct way to declare a variable in Ruby?,null,null,null,x = 5,Ruby,declaration,multiple choice
+323,Which of the following is a valid way to declare an empty array in Ruby?,null,null,null,array = [],Ruby,declaration,multiple choice
+324,How do you declare a constant variable in Ruby?,null,null,null,ConstantVar = 42,Ruby,declaration,multiple choice
+325,What is the correct syntax for declaring and initializing a Ruby hash (dictionary)?,null,null,null,hash = {},Ruby,declaration,multiple choice
+326,"To declare a variable in Ruby with global scope, you would prefix the variable name with:",null,null,null,$,Ruby,declaration,multiple choice
+327,How do you declare a local variable in Ruby within a method or block?,null,null,null,local_var,Ruby,declaration,multiple choice
+328,What is the correct way to declare a class variable in Ruby?,null,null,null,@@class_var,Ruby,declaration,multiple choice
+329,"In Ruby, how would you declare a string containing special characters without interpreting them?",null,null,null,raw_string',Ruby,declaration,multiple choice
+330,"To declare a range of numbers from 1 to 10 in Ruby, you would use:",null,null,null,(1..10),Ruby,declaration,multiple choice
+331,"When declaring a symbol in Ruby, which syntax is typically used?",null,null,null,:SymbolName,Ruby,declaration,multiple choice
+332,How do you declare a variable in Ruby with instance scope within a class or module?,null,null,null,@instance_var,Ruby,declaration,multiple choice
+333,Which syntax is used to declare a new instance of a class in Ruby?,null,null,null,ClassName.new(),Ruby,declaration,multiple choice
+334,What is the correct way to declare an empty set (a unique collection of elements) in Ruby?,null,null,null,set = Set.new,Ruby,declaration,multiple choice
+335,"To declare a multi-line string in Ruby without interpreting escape sequences, which syntax should you use?",null,null,null,<<-EOT ... EOT,Ruby,declaration,multiple choice
+336,"When declaring a local variable in a method or block, which character is used to scope the variable to the block?",null,null,null,#,Ruby,declaration,multiple choice
+337,"In Ruby, which data structure allows you to associate keys with values and is similar to a Python dictionary?",null,null,null,Hash,Ruby,declaration,multiple choice
+338,"To declare an empty array and assign it to a variable named ""my_array"" in a single line, you would write:",null,null,null,my_array = [],Ruby,declaration,multiple choice
+339,How do you declare a constant variable within a class or module in Ruby?,null,null,null,CONSTANT_VAR = 42,Ruby,declaration,multiple choice
+340,"To declare a string containing interpolation (variable substitution) in Ruby, which syntax is commonly used?",null,null,null,"""String with #{variable} interpolation""",Ruby,declaration,multiple choice
+341,"To add an element to the end of an array in Ruby, you would use:",null,null,null,array << element,Ruby,data structures,multiple choice
+342,"In a singly linked list, what is the name of the reference to the next node?",null,null,null,next_node,Ruby,data structures,multiple choice
+343,How can you remove the last element from an array in Ruby?,null,null,null,array.pop,Ruby,data structures,multiple choice
+344,"In a binary tree, the top node is commonly referred to as the:",null,null,null,Root,Ruby,data structures,multiple choice
+345,What data structure in Ruby is similar to a stack and follows the Last-In-First-Out (LIFO) principle?,null,null,null,Array,Ruby,data structures,multiple choice
+346,Which Ruby data structure allows key-value pairs and does not allow duplicate keys?,null,null,null,Hash,Ruby,data structures,multiple choice
+347,What method is used to add an element to the beginning of an array in Ruby?,null,null,null,array.unshift(element),Ruby,data structures,multiple choice
+348,Which data structure is used to represent a collection of elements with no specific order or duplicates in Ruby?,null,null,null,Set,Ruby,data structures,multiple choice
+349,How do you check if a key exists in a Ruby hash?,null,null,null,hash.key?(key),Ruby,data structures,multiple choice
+350,What is the primary data structure in Ruby for storing key-value pairs?,null,null,null,Hash,Ruby,data structures,multiple choice
+351,Which method is used to remove the first element from an array in Ruby?,null,null,null,array.shift,Ruby,data structures,multiple choice
+352,"In a singly linked list, which node is typically used as the entry point to traverse the list?",null,null,null,Head,Ruby,data structures,multiple choice
+353,What is the Ruby data structure that represents an ordered collection of elements with duplicates allowed?,null,null,null,Array,Ruby,data structures,multiple choice
+354,Which data structure in Ruby is used to implement a First-In-First-Out (FIFO) order?,null,null,null,Queue,Ruby,data structures,multiple choice
+355,"To add an element to the end of an array in Ruby, which method is commonly used?",null,null,null,array.push(element),Ruby,data structures,multiple choice
+356,"In a binary tree, what is the maximum number of children a node can have in a typical binary tree?",null,null,null,2,Ruby,data structures,multiple choice
+357,Which Ruby data structure is used to represent an unordered collection of unique elements?,null,null,null,Set,Ruby,data structures,multiple choice
+358,What method is used to check if an element is included in an array in Ruby?,null,null,null,array.include?(element),Ruby,data structures,multiple choice
+359,"In a linked list, what is the time complexity for inserting an element at the end of the list?",null,null,null,O(1),Ruby,data structures,multiple choice
+360,"In a binary search tree, which property ensures that all nodes in the left subtree are less than the root node, and all nodes in the right subtree are greater than the root node?",null,null,null,Binary search tree property,Ruby,data structures,multiple choice
