@@ -4,7 +4,7 @@ Feature: User Registration
     So that I can access personalized syntax learning features
 
 Scenario: User Registration and Login
-    Given I am on the landing page
+    Given I am on the login page
     When I press on the "Sign Up" button
     And I fill in "Username" with "User1"
     And I fill in "Password" with "Password1"
@@ -15,7 +15,7 @@ Scenario: User Registration and Login
     When I press the "Dashboard" button 
     Then I should be on the dashboard page
     When I click on the "Logout" button
-    Then I should be on the landing page
+    Then I should be on the login page
     When I press the "Login" button
     And I fill in "Username" with "User1" 
     And I fill in "Password" with "Password1"
