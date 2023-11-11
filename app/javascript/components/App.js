@@ -16,11 +16,11 @@ const App = () => (
           <Landing />
         </>
       } />
-      {/* <Route path="/home/" element={<>
+      <Route path="/homepage" element={<>
           <Header />
           <HomePage />
         </>
-      } /> */}
+      } />
       <Route path="/welcome" element={
         <>
           <WelcomeHeader />

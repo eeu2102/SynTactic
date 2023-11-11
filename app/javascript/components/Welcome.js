@@ -17,9 +17,9 @@ const Welcome = () => {
           <p id="change__language">You can always change your practice language later!</p>
         </div>
         <div className="language__options">
-          <button onClick={() => {navigate('/home')}}className="language__choice">Java</button>
-          <button onClick={() => {navigate('/home')}} className="language__choice">Python</button>
-          <button onClick={() => {navigate('/home')}} className="language__choice">Ruby</button>
+          <button onClick={() => {navigate('/homepage')}}className="language__choice">Java</button>
+          <button onClick={() => {navigate('/homepage')}} className="language__choice">Python</button>
+          <button onClick={() => {navigate('/homepage')}} className="language__choice">Ruby</button>
         </div>
       </div>
     </div>

@@ -1589,7 +1589,7 @@
             }
             return dispatcher.useContext(Context2);
           }
-          function useState7(initialState) {
+          function useState8(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1601,7 +1601,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect4(create, deps) {
+          function useEffect5(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -2381,7 +2381,7 @@
           exports.useContext = useContext3;
           exports.useDebugValue = useDebugValue;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect4;
+          exports.useEffect = useEffect5;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useInsertionEffect = useInsertionEffect;
@@ -2389,7 +2389,7 @@
           exports.useMemo = useMemo3;
           exports.useReducer = useReducer;
           exports.useRef = useRef3;
-          exports.useState = useState7;
+          exports.useState = useState8;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -31769,27 +31769,116 @@
 
   // app/javascript/components/HomePage.js
   var import_react2 = __toESM(require_react());
+  var HomePage = () => {
+    const navigate = useNavigate();
+    const [showModal, setShowModal] = (0, import_react2.useState)(false);
+    const [selectedTopic, setSelectedTopic] = (0, import_react2.useState)(null);
+    const handleTopicClick = (topic) => {
+      setSelectedTopic(topic);
+      setShowModal(true);
+    };
+    return /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "home__container"
+    }, /* @__PURE__ */ import_react2.default.createElement("h1", null, "Welcome to SynTactic"), /* @__PURE__ */ import_react2.default.createElement("h2", {
+      id: "sub__header"
+    }, "Pick a Review Topic"), /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "topics__container"
+    }, /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("declaration");
+      }
+    }, "Declaration and Instantiation"), /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("control flow");
+      }
+    }, "Control Flow"), /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "topic",
+      onClick: (e) => {
+        handleTopicClick("data structures");
+      }
+    }, "Data Structures")), showModal && /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "home__modal"
+    }, /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "overlay",
+      onClick: () => setShowModal(false)
+    }), /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "modal"
+    }, /* @__PURE__ */ import_react2.default.createElement("h1", {
+      id: "modal__header"
+    }, "Pick a Review Method:"), /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "review__methods"
+    }, /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "method",
+      onClick: () => navigate(
+        `/problems?category=${selectedTopic}&method=multiple choice`
+      )
+    }, "Multiple Choice"), /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "method",
+      onClick: () => navigate(
+        `/problems?category=${selectedTopic}&method=flash cards`
+      )
+    }, "Flash Cards")), /* @__PURE__ */ import_react2.default.createElement("button", {
+      id: "back__button",
+      onClick: () => setShowModal(false)
+    }, "Back"))));
+  };
+  var HomePage_default = HomePage;
 
   // app/javascript/components/Dashboard.js
   var import_react3 = __toESM(require_react());
   var Dashboard = () => {
+    const [username, setUsername] = (0, import_react3.useState)("");
     const navigate = useNavigate();
+    (0, import_react3.useEffect)(() => {
+      const getCurrentUser = async () => {
+        const token = localStorage.getItem("authToken");
+        if (token) {
+          try {
+            const response = await fetch("/current_user", {
+              headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+              }
+            });
+            const data = await response.json();
+            if (response.ok) {
+              setUsername(data.username);
+            } else {
+              console.log("PROBLEM");
+              navigate("/login");
+            }
+          } catch (error2) {
+            console.error("Error fetching current user:", error2);
+          }
+        } else {
+          console.log("No token found");
+          navigate("/home");
+        }
+      };
+      getCurrentUser();
+    }, [navigate]);
     const handleLogout = async () => {
+      const token = localStorage.getItem("authToken");
+      console.log(token);
+      console.log("RARIWRNO");
+      localStorage.removeItem("authToken");
       try {
         const response = await fetch("/logout", {
           method: "DELETE",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
           }
         });
-        if (response.ok) {
-          navigate("/home");
-        } else {
-          console.error("Logout failed:", response.statusText);
+        if (!response.ok) {
+          console.error("Failed to invalidate token on the server.");
         }
       } catch (error2) {
         console.error("There was an error during logout:", error2);
       }
+      navigate("/home");
     };
     const handleHomeClick = () => {
       navigate("/home/");
@@ -31799,7 +31888,7 @@
     }, /* @__PURE__ */ import_react3.default.createElement("button", {
       onClick: handleLogout,
       className: "logout__button"
-    }, "Logout"), /* @__PURE__ */ import_react3.default.createElement("h1", null, "Hi Jessica\uFF01"), /* @__PURE__ */ import_react3.default.createElement("h2", {
+    }, "Logout"), /* @__PURE__ */ import_react3.default.createElement("h1", null, "Hi ", username, "!"), /* @__PURE__ */ import_react3.default.createElement("h2", {
       id: "progress__tracker"
     }, "Questions Solved: "), /* @__PURE__ */ import_react3.default.createElement("button", {
       onClick: handleHomeClick,
@@ -32086,6 +32175,7 @@
   // app/javascript/components/Welcome.js
   var import_react5 = __toESM(require_react());
   var Welcome = () => {
+    const navigate = useNavigate();
     return /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "welcome__container"
     }, /* @__PURE__ */ import_react5.default.createElement("div", {
@@ -32101,10 +32191,19 @@
     }, "You can always change your practice language later!")), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "language__options"
     }, /* @__PURE__ */ import_react5.default.createElement("button", {
+      onClick: () => {
+        navigate("/homepage");
+      },
       className: "language__choice"
     }, "Java"), /* @__PURE__ */ import_react5.default.createElement("button", {
+      onClick: () => {
+        navigate("/homepage");
+      },
       className: "language__choice"
     }, "Python"), /* @__PURE__ */ import_react5.default.createElement("button", {
+      onClick: () => {
+        navigate("/homepage");
+      },
       className: "language__choice"
     }, "Ruby"))));
   };
@@ -32112,30 +32211,14 @@
 
   // app/javascript/components/WelcomeHeader.js
   var import_react6 = __toESM(require_react());
-  var Welcome2 = () => {
+  var WelcomeHeader = () => {
     return /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "welcome__container"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "welcome__message"
-    }, /* @__PURE__ */ import_react6.default.createElement("h1", null, "Welcome to Syntactic"), /* @__PURE__ */ import_react6.default.createElement("h2", null, "Syntactic is going to win $5k from fastpitch and go out to eatttttt")), /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "language__selection"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "selection__text"
-    }, /* @__PURE__ */ import_react6.default.createElement("h2", {
-      id: "select__language"
-    }, "Select a Language:"), /* @__PURE__ */ import_react6.default.createElement("p", {
-      id: "change__language"
-    }, "You can always change your practice language later!")), /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "language__options"
-    }, /* @__PURE__ */ import_react6.default.createElement("button", {
-      className: "language__choice"
-    }, "Java"), /* @__PURE__ */ import_react6.default.createElement("button", {
-      className: "language__choice"
-    }, "Python"), /* @__PURE__ */ import_react6.default.createElement("button", {
-      className: "language__choice"
-    }, "Ruby"))));
+      className: "welcome__header__container"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement("h1", {
+      className: "welcome__header__text"
+    }, "SynTactic")));
   };
-  var WelcomeHeader_default = Welcome2;
+  var WelcomeHeader_default = WelcomeHeader;
 
   // app/javascript/components/Landing.js
   var import_react7 = __toESM(require_react());
@@ -32149,10 +32232,14 @@
     const handleShowSignUp = () => {
       setShowLoginModal(false);
       setShowSignUpModal(true);
+      setUsername("");
+      setPassword("");
     };
     const handleShowLogin = () => {
       setShowSignUpModal(false);
       setShowLoginModal(true);
+      setUsername("");
+      setPassword("");
     };
     const handleSignUp = async (event) => {
       setShowLoginModal(false);
@@ -32167,6 +32254,11 @@
           body: JSON.stringify({ user: { username, password } })
         });
         const data = await response.json();
+        if (data.token) {
+          localStorage.setItem("authToken", data.token);
+        } else {
+          console.log("No token received");
+        }
         if (response.ok) {
           console.log("Signup successful:", data);
           setShowSignUpModal(false);
@@ -32189,13 +32281,17 @@
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ username, password })
+          body: JSON.stringify({ username, password }),
+          credentials: "include"
         });
         if (response.ok) {
           const data = await response.json();
           console.log("Login successful:", data);
+          if (data.token) {
+            localStorage.setItem("authToken", data.token);
+          }
           setShowLoginModal(false);
-          navigate("/problems");
+          navigate("/homepage");
         } else {
           console.error("Login failed:", response.statusText);
         }
@@ -32277,6 +32373,9 @@
   var App = () => /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement(Routes, null, /* @__PURE__ */ import_react8.default.createElement(Route, {
     path: "/home",
     element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Landing_default, null))
+  }), /* @__PURE__ */ import_react8.default.createElement(Route, {
+    path: "/homepage",
+    element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Header_default, null), /* @__PURE__ */ import_react8.default.createElement(HomePage_default, null))
   }), /* @__PURE__ */ import_react8.default.createElement(Route, {
     path: "/welcome",
     element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(WelcomeHeader_default, null), /* @__PURE__ */ import_react8.default.createElement(Welcome_default, null))

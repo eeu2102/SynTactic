@@ -575,4 +575,16 @@ button {
   margin-top: 15px;
 }
 
+/* app/javascript/components/WelcomeHeader.css */
+.welcome__header__container {
+  display: flex;
+  background-color: #ff663b;
+  align-items: center;
+  height: 70px;
+  justify-content: space-between;
+}
+.welcome__header__text {
+  margin-left: 30px;
+}
+
 /* app/javascript/components/Landing.css */

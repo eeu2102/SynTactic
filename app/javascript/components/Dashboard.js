@@ -38,7 +38,7 @@ const Dashboard = () => {
         }
       } else {
         console.log('No token found');
-        navigate('/login'); // Redirect to login page if there's no token
+        navigate('/home'); // Redirect to login page if there's no token
       }
     };
   
@@ -73,7 +73,7 @@ const Dashboard = () => {
     }
   
     // Redirect to the landing page
-    navigate('/landing');
+    navigate('/home');
   };
   
 

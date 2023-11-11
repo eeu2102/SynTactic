@@ -123,7 +123,7 @@ const Landing = () => {
         }
   
         setShowLoginModal(false); 
-        navigate('/home'); 
+        navigate('/homepage'); 
       } else {
         console.error('Login failed:', response.statusText);
       }
