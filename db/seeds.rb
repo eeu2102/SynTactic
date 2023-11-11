@@ -6,7 +6,7 @@
 
 require 'csv'
 
-csv_text = File.read(Rails.root.join('db', ''))
+csv_text = File.read(Rails.root.join('db', 'allquestions.csv'))
 csv = CSV.parse(csv_text, headers: true, encoding: 'UTF-8')
 csv.each do |row|
   Question.create!(
