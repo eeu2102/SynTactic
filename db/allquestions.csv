@@ -1,0 +1,806 @@
+ID,question,choice_a,choice_b,choice_c,answer,coding_language,category,method
+1,Which of the following correctly checks if the value of x is between 5 and 10 (inclusive)?,if 5 < x < 10:,if 5 <= x <= 10:,if x > 5 and x < 10:,B,Python,control flow,multiple choice
+2,How do you begin a for-loop that iterates over a list my_list?,for item in my_list:,for my_list as item:,loop item in my_list:,A,Python,control flow,multiple choice
+3,Which keyword is used to exit a loop prematurely?,break,exit,return,A,Python,control flow,multiple choice
+4,Which keyword lets you test a default condition if the previous conditions were not met?,elsif,otherwise,else,C,Python,control flow,multiple choice
+5,Which of the following correctly initializes a while loop that runs as long as x is less than 10?,while x < 10:,for x < 10:,repeat while x < 10:,A,Python,control flow,multiple choice
+6,Which of the following is the correct syntax for an else if condition?,elif condition:,else if condition:,elseif condition:,A,Python,control flow,multiple choice
+7,What does the continue keyword do in a loop?,Stops and exits the loop.,Skips the current iteration and continues to the next.,Pauses the loop until a user input is received.,B,Python,control flow,multiple choice
+8,"What does the following code output? x = 10
+if x > 10:
+    print(""Greater"")
+elif x < 10:
+    print(""Lesser"")
+else:
+    print(""Equal"")",Greater,Lesser,Equal,C,Python,control flow,multiple choice
+9,"To iterate over a range of numbers from 1 to 5 (inclusive), which of the following would you use?","for i in range(1, 5):",for i in range(5):,"for i in range(1, 6):",C,Python,control flow,multiple choice
+10,How can you handle exceptions using control flow?,Using the except block.,Using the handle keyword.,Using the try block alone.,A,Python,control flow,multiple choice
+11,Which keyword is used to handle exceptions?,catch,try,except,C,Python,control flow,multiple choice
+12,"Which of the following is used to ensure a block of code always runs, regardless of exceptions?",finally:,always:,ensure:,A,Python,control flow,multiple choice
+13,Which statement correctly checks multiple conditions using the and operator?,if x > 5 & y < 10:,if x > 5 and y < 10:,if x > 5 && y < 10:,B,Python,control flow,multiple choice
+14,What does the pass statement do in Python?,Skips the current iteration of the loop.,Exits the program immediately.,Does nothing and acts as a placeholder.,C,Python,control flow,multiple choice
+15,"In a try...except block, what does the else block do?",Runs if an exception occurs.,Runs if no exception occurs.,Runs regardless of whether an exception occurs or not.,B,Python,control flow,multiple choice
+16,Which of the following correctly checks if a variable x is not equal to 5?,if x != 5:,if x =! 5:,if x <> 5:,A,Python,control flow,multiple choice
+17,"To iterate over the characters in a string word, which syntax would you use?",for char in word:,for word as char:,for char from word:,A,Python,control flow,multiple choice
+18,Which of the following will print numbers 0 to 4?,for i in range(4): print(i),"for i in range(1, 5): print(i)",for i in range(5): print(i),C,Python,control flow,multiple choice
+19,Which operator checks if both conditions are false?,or,not,nor,B,Python,control flow,multiple choice
+20,What does the in keyword do in a for loop?,Checks for membership in a collection.,Defines the iteration variable.,Declares a new variable.,A,Python,control flow,multiple choice
+21,"What is the correct way to assign a value of 5 to a variable named ""x"" in Python?",x = 5,5 = x,assign x 5,A,Python,declaration,multiple choice
+22,How do you declare a constant variable in Python?,"Using ""const"" keyword",Constants cannot be declared in Python,Use uppercase letters for the variable name,B,Python,declaration,multiple choice
+23,Which of the following is a valid Python function declaration?,def function_name(parameters):,function_name def(parameters):,function_name(parameters):,A,Python,declaration,multiple choice
+24,"To declare and initialize an empty list in Python, you should use:",my_list = list(),my_list = new List(),my_list = [],C,Python,declaration,multiple choice
+25,Which keyword is used to declare a function in Python?,func,def,function,B,Python,declaration,multiple choice
+26,What is the correct way to declare an empty set in Python?,my_set = set(),my_set = {},my_set = [],B,Python,declaration,multiple choice
+27,How can you declare an empty dictionary (key-value pair) in Python?,my_dict = hasmap(),my_dict = map(),my_dict = {},C,Python,declaration,multiple choice
+28,"To declare and use a Python lambda function that adds two numbers, you would write:"," lambda (a, b): a + b","def lambda_function(a, b): return a + b","lambda_function(a, b): a + b",A,Python,declaration,multiple choice
+29,Which keyword is used to declare a function with no explicit return value in Python?,null,void,None of these,C,Python,declaration,multiple choice
+30,"To declare and use a Python generator that yields numbers, which keyword would you primarily use?",return ,yield,generate,B,Python,declaration,multiple choice
+31,Which symbol or marker Python uses to denote a comment?,%%,##,# ,C,Python,declaration,multiple choice
+32,"In Python, which of the following is used to indicate a block of code?",{},[],Indentation,C,Python,declaration,multiple choice
+33,Which command is used to define a function in Python?,define,func,def,C,Python,declaration,multiple choice
+34,"In Python, how do you declare a variable?",variable_name = value,var variable_name = value,declare variable_name = value,A,Python,declaration,multiple choice
+35,What keyword is used to create a class in Python?,class,Class,def,A,Python,declaration,multiple choice
+36,How do you indicate the end of a line of code in Python?,;,Nothing; Python automatically knows when a line of code ends.,\,B,Python,declaration,multiple choice
+37,How do you declare a list in Python?,list = [],list(),list:[] ,A,Python,declaration,multiple choice
+38,What is the proper way to import a module in Python?,import module,using module,load module,A,Python,declaration,multiple choice
+39,How do you declare a constant in Python?,Python doesn’t support constants.,const variable = value,constant variable = value,A,Python,declaration,multiple choice
+40,Which of the following is the correct way to declare a variable in Python?,var: integer = 5,int var = 5,myVar = 5,C,Python,declaration,multiple choice
+41,Which of the following initializes an empty list?,list{},list[],[],C,Python,data structures,multiple choice
+42,How do you initialize an empty set?,set(),{},set{},A,Python,data structures,multiple choice
+43,Which of the following creates a dictionary with keys 'a' and 'b' having values 1 and 2 respectively?,"{'a': 1, 'b': 2}","['a': 1, 'b': 2]","('a': 1, 'b': 2)",A,Python,data structures,multiple choice
+44,Which method is used to add an element to a set in Python?,append(),add(),insert(),B,Python,data structures,multiple choice
+45," How do you access the value associated with the key 'a' in the dictionary dict = {'a': 1, 'b': 2}?",dict('a'),dict.a,dict['a'],C,Python,data structures,multiple choice
+46,How can you remove the last element from a list named lst?,lst.pop(),lst.remove(),lst.delete(),A,Python,data structures,multiple choice
+47,Which of these creates a list of numbers from 0 to 4?,range(4),"range(0, 4)",list(range(5)),C,Python,data structures,multiple choice
+48,Which syntax is used to get all keys from a dictionary named dict?,dict.keys,dict.keys(),dict.getkeys(),B,Python,data structures,multiple choice
+49,"How can you add multiple items ('c', 'd', and 'e') to a set named my_set?","my_set.add(['c', 'd', 'e'])","my_set.update(['c', 'd', 'e'])","my_set.append(['c', 'd', 'e'])",B,Python,data structures,multiple choice
+50,"What will lst[-1] return if lst = [1, 2, 3, 4, 5]?",1,5,Error,B,Python,data structures,multiple choice
+51,Which is the correct syntax to declare an empty tuple?,tuple(),(),tuple{},B,Python,data structures,multiple choice
+52,How do you check if a list named lst contains the value 3?,3 in lst,lst.contains(3),lst.find(3),A,Python,data structures,multiple choice
+53,Which of these will return the number of elements in a list named lst?,len(lst),lst.len(),lst.size(),A,Python,data structures,multiple choice
+54,"What does list(set([1,2,2,3,4,4])) return?","[1,2,2,3,4,4]","[1,2,3,4]",Error,B,Python,data structures,multiple choice
+55,How can you sort a list named lst in descending order?,lst.sort(reverse=True),lst.sort(descending=True),"sorted(lst, descending=True)",A,Python,data structures,multiple choice
+56,Which function is used to randomly shuffle a list named lst?,random.shuffle(lst),lst.shuffle(),lst.randomize(),A,Python,data structures,multiple choice
+57,Which of these statements correctly checks if a dictionary named dict has the key 'a'?,a' in dict,dict.has_key('a'),a' in dict.keys,A,Python,data structures,multiple choice
+58,"How do you initialize a list with the same value, let's say 7, five times?","[7, 5]", [7] * 5,5 * [7],B,Python,data structures,multiple choice
+59,"Which of the following is NOT a valid way to initialize a set with values 1, 2, and 3?","{1, 2, 3}","set(1, 2, 3)","set([1, 2, 3])",B,Python,data structures,multiple choice
+60," If lst = [1, 2, 3], what will lst[1:2] return?",[2],"[1, 2]","[2, 3]",A,Python,data structures,multiple choice
+61,Which of the following correctly checks if the value of x is between 5 and 10 (inclusive)?,null,null,null,if 5 <= x <= 10:,Python,control flow,flash card
+62,How do you begin a for-loop that iterates over a list my_list?,null,null,null,for item in my_list:,Python,control flow,flash card
+63,Which keyword is used to exit a loop prematurely?,null,null,null,break,Python,control flow,flash card
+64,Which keyword lets you test a default condition if the previous conditions were not met?,null,null,null,else,Python,control flow,flash card
+65,Which of the following correctly initializes a while loop that runs as long as x is less than 10?,null,null,null,while x < 10:,Python,control flow,flash card
+66,Which of the following is the correct syntax for an else if condition?,null,null,null,elif condition:,Python,control flow,flash card
+67,What does the continue keyword do in a loop?,null,null,null,Skips the current iteration and continues to the next.,Python,control flow,flash card
+68,"What does the following code output? x = 10
+if x > 10:
+    print(""Greater"")
+elif x < 10:
+    print(""Lesser"")
+else:
+    print(""Equal"")",null,null,null,Equal,Python,control flow,flash card
+69,"To iterate over a range of numbers from 1 to 5 (inclusive), which of the following would you use?",null,null,null,"for i in range(1, 6):",Python,control flow,flash card
+70,How can you handle exceptions using control flow?,null,null,null,Using the except block.,Python,control flow,flash card
+71,Which keyword is used to handle exceptions?,null,null,null,except,Python,control flow,flash card
+72,"Which of the following is used to ensure a block of code always runs, regardless of exceptions?",null,null,null,finally:,Python,control flow,flash card
+73,Which statement correctly checks multiple conditions using the and operator?,null,null,null,if x > 5 and y < 10:,Python,control flow,flash card
+74,What does the pass statement do in Python?,null,null,null,Does nothing and acts as a placeholder.,Python,control flow,flash card
+75,"In a try...except block, what does the else block do?",null,null,null,Runs if no exception occurs.,Python,control flow,flash card
+76,Which of the following correctly checks if a variable x is not equal to 5?,null,null,null,if x != 5:,Python,control flow,flash card
+77,"To iterate over the characters in a string word, which syntax would you use?",null,null,null,for char in word:,Python,control flow,flash card
+78,Which of the following will print numbers 0 to 4?,null,null,null,for i in range(5): print(i),Python,control flow,flash card
+79,Which operator checks if both conditions are false?,null,null,null,not,Python,control flow,flash card
+80,What does the in keyword do in a for loop?,null,null,null,Checks for membership in a collection.,Python,control flow,flash card
+81,"What is the correct way to assign a value of 5 to a variable named ""x"" in Python?",null,null,null,x = 5,Python,declaration,flash card
+82,How do you declare a constant variable in Python?,null,null,null,Constants cannot be declared in Python,Python,declaration,flash card
+83,Which of the following is a valid Python function declaration?,null,null,null,def function_name(parameters):,Python,declaration,flash card
+84,"To declare and initialize an empty list in Python, you should use:",null,null,null,my_list = [],Python,declaration,flash card
+85,Which keyword is used to declare a function in Python?,null,null,null,def,Python,declaration,flash card
+86,What is the correct way to declare an empty set in Python?,null,null,null,my_set = {},Python,declaration,flash card
+87,How can you declare an empty dictionary (key-value pair) in Python?,null,null,null,my_dict = {},Python,declaration,flash card
+88,"To declare and use a Python lambda function that adds two numbers, you would write:",null,null,null," lambda (a, b): a + b",Python,declaration,flash card
+89,Which keyword is used to declare a function with no explicit return value in Python?,null,null,null,None of these,Python,declaration,flash card
+90,"To declare and use a Python generator that yields numbers, which keyword would you primarily use?",null,null,null,yield,Python,declaration,flash card
+91,Which symbol or marker Python uses to denote a comment?,null,null,null,# ,Python,declaration,flash card
+92,"In Python, which of the following is used to indicate a block of code?",null,null,null,Indentation,Python,declaration,flash card
+93,Which command is used to define a function in Python?,null,null,null,def,Python,declaration,flash card
+94,"In Python, how do you declare a variable?",null,null,null,variable_name = value,Python,declaration,flash card
+95,What keyword is used to create a class in Python?,null,null,null,class,Python,declaration,flash card
+96,How do you indicate the end of a line of code in Python?,null,null,null,Nothing; Python automatically knows when a line of code ends.,Python,declaration,flash card
+97,How do you declare a list in Python?,null,null,null,list = [],Python,declaration,flash card
+98,What is the proper way to import a module in Python?,null,null,null,import module,Python,declaration,flash card
+99,How do you declare a constant in Python?,null,null,null,Python doesn’t support constants.,Python,declaration,flash card
+100,Which of the following is the correct way to declare a variable in Python?,null,null,null,myVar = 5,Python,declaration,flash card
+101,Which of the following initializes an empty list?,null,null,null,[],Python,data structures,flash card
+102,How do you initialize an empty set?,null,null,null,set(),Python,data structures,flash card
+103,Which of the following creates a dictionary with keys 'a' and 'b' having values 1 and 2 respectively?,null,null,null,"{'a': 1, 'b': 2}",Python,data structures,flash card
+104,Which method is used to add an element to a set in Python?,null,null,null,add(),Python,data structures,flash card
+105," How do you access the value associated with the key 'a' in the dictionary dict = {'a': 1, 'b': 2}?",null,null,null,dict['a'],Python,data structures,flash card
+106,How can you remove the last element from a list named lst?,null,null,null,lst.pop(),Python,data structures,flash card
+107,Which of these creates a list of numbers from 0 to 4?,null,null,null,list(range(5)),Python,data structures,flash card
+108,Which syntax is used to get all keys from a dictionary named dict?,null,null,null,dict.keys(),Python,data structures,flash card
+109,"How can you add multiple items ('c', 'd', and 'e') to a set named my_set?",null,null,null,"my_set.update(['c', 'd', 'e'])",Python,data structures,flash card
+110,"What will lst[-1] return if lst = [1, 2, 3, 4, 5]?",null,null,null,5,Python,data structures,flash card
+111,Which is the correct syntax to declare an empty tuple?,null,null,null,(),Python,data structures,flash card
+112,How do you check if a list named lst contains the value 3?,null,null,null,3 in lst,Python,data structures,flash card
+113,Which of these will return the number of elements in a list named lst?,null,null,null,len(lst),Python,data structures,flash card
+114,"What does list(set([1,2,2,3,4,4])) return?",null,null,null,"[1,2,3,4]",Python,data structures,flash card
+115,How can you sort a list named lst in descending order?,null,null,null,lst.sort(reverse=True),Python,data structures,flash card
+116,Which function is used to randomly shuffle a list named lst?,null,null,null,random.shuffle(lst),Python,data structures,flash card
+117,Which of these statements correctly checks if a dictionary named dict has the key 'a'?,null,null,null,a' in dict,Python,data structures,flash card
+118,"How do you initialize a list with the same value, let's say 7, five times?",null,null,null, [7] * 5,Python,data structures,flash card
+119,"Which of the following is NOT a valid way to initialize a set with values 1, 2, and 3?",null,null,null,"set(1, 2, 3)",Python,data structures,flash card
+120," If lst = [1, 2, 3], what will lst[1:2] return?",null,null,null,[2],Python,data structures,flash card
+121,Which of the following correctly checks if the value of x is between 5 and 10 (inclusive)?,if 5 <= x <= 10:,null,null,TRUE,Python,control flow,truefalse
+122,How do you begin a for-loop that iterates over a list my_list?,for item in my_list:,null,null,TRUE,Python,control flow,truefalse
+123,Which keyword is used to exit a loop prematurely?,break,null,null,TRUE,Python,control flow,truefalse
+124,Which keyword lets you test a default condition if the previous conditions were not met?,else,null,null,TRUE,Python,control flow,truefalse
+125,Which of the following correctly initializes a while loop that runs as long as x is less than 10?,while x < 10:,null,null,TRUE,Python,control flow,truefalse
+126,Which of the following is the correct syntax for an else if condition?,elif condition:,null,null,TRUE,Python,control flow,truefalse
+127,What does the continue keyword do in a loop?,Skips the current iteration and continues to the next.,null,null,TRUE,Python,control flow,truefalse
+128,"What does the following code output? x = 10
+if x > 10:
+    print(""Greater"")
+elif x < 10:
+    print(""Lesser"")
+else:
+    print(""Equal"")",Equal,null,null,TRUE,Python,control flow,truefalse
+129,"To iterate over a range of numbers from 1 to 5 (inclusive), which of the following would you use?","for i in range(1, 6):",null,null,TRUE,Python,control flow,truefalse
+130,How can you handle exceptions using control flow?,Using the except block.,null,null,TRUE,Python,control flow,truefalse
+131,Which of the following correctly checks if the value of x is between 5 and 10 (inclusive)?,if 5 < x < 10:,null,null,FALSE,Python,control flow,truefalse
+132,How do you begin a for-loop that iterates over a list my_list?,loop item in my_list:,null,null,FALSE,Python,control flow,truefalse
+133,Which keyword is used to exit a loop prematurely?,return,null,null,FALSE,Python,control flow,truefalse
+134,Which keyword lets you test a default condition if the previous conditions were not met?,elsif,null,null,FALSE,Python,control flow,truefalse
+135,Which of the following correctly initializes a while loop that runs as long as x is less than 10?,repeat while x < 10:,null,null,FALSE,Python,control flow,truefalse
+136,Which of the following is the correct syntax for an else if condition?,elseif condition:,null,null,FALSE,Python,control flow,truefalse
+137,What does the continue keyword do in a loop?,Stops and exits the loop.,null,null,FALSE,Python,control flow,truefalse
+138,"What does the following code output? x = 10
+if x > 10:
+    print(""Greater"")
+elif x < 10:
+    print(""Lesser"")
+else:
+    print(""Equal"")",Greater,null,null,FALSE,Python,control flow,truefalse
+139,"To iterate over a range of numbers from 1 to 5 (inclusive), which of the following would you use?","for i in range(1, 5):",null,null,FALSE,Python,control flow,truefalse
+140,How can you handle exceptions using control flow?,Using the try block alone.,null,null,FALSE,Python,control flow,truefalse
+141,"What is the correct way to assign a value of 5 to a variable named ""x"" in Python?",x = 5,null,null,TRUE,Python,declaration,truefalse
+142,How do you declare a constant variable in Python?,Constants cannot be declared in Python,null,null,TRUE,Python,declaration,truefalse
+143,Which of the following is a valid Python function declaration?,def function_name(parameters):,null,null,TRUE,Python,declaration,truefalse
+144,"To declare and initialize an empty list in Python, you should use:",my_list = [],null,null,TRUE,Python,declaration,truefalse
+145,Which keyword is used to declare a function in Python?,def,null,null,TRUE,Python,declaration,truefalse
+146,What is the correct way to declare an empty set in Python?,my_set = {},null,null,TRUE,Python,declaration,truefalse
+147,How can you declare an empty dictionary (key-value pair) in Python?,my_dict = {},null,null,TRUE,Python,declaration,truefalse
+148,"To declare and use a Python lambda function that adds two numbers, you would write:"," lambda (a, b): a + b",null,null,TRUE,Python,declaration,truefalse
+149,Which keyword is used to declare a function with no explicit return value in Python?,None of these,null,null,TRUE,Python,declaration,truefalse
+150,"To declare and use a Python generator that yields numbers, which keyword would you primarily use?",yield,null,null,TRUE,Python,declaration,truefalse
+151,"What is the correct way to assign a value of 5 to a variable named ""x"" in Python?",assign x 5,null,null,FALSE,Python,declaration,truefalse
+152,How do you declare a constant variable in Python?,"Using ""const"" keyword",null,null,FALSE,Python,declaration,truefalse
+153,Which of the following is a valid Python function declaration?,function_name(parameters):,null,null,FALSE,Python,declaration,truefalse
+154,"To declare and initialize an empty list in Python, you should use:",my_list = list(),null,null,FALSE,Python,declaration,truefalse
+155,Which keyword is used to declare a function in Python?,func,null,null,FALSE,Python,declaration,truefalse
+156,What is the correct way to declare an empty set in Python?,my_set = set(),null,null,FALSE,Python,declaration,truefalse
+157,How can you declare an empty dictionary (key-value pair) in Python?,my_dict = hasmap(),null,null,FALSE,Python,declaration,truefalse
+158,"To declare and use a Python lambda function that adds two numbers, you would write:","lambda_function(a, b): a + b",null,null,FALSE,Python,declaration,truefalse
+159,Which keyword is used to declare a function with no explicit return value in Python?,null,null,null,FALSE,Python,declaration,truefalse
+160,"To declare and use a Python generator that yields numbers, which keyword would you primarily use?",return ,null,null,FALSE,Python,declaration,truefalse
+161,Which of the following initializes an empty list?,[],null,null,TRUE,Python,data structures,truefalse
+162,How do you initialize an empty set?,set(),null,null,TRUE,Python,data structures,truefalse
+163,Which of the following creates a dictionary with keys 'a' and 'b' having values 1 and 2 respectively?,"{'a': 1, 'b': 2}",null,null,TRUE,Python,data structures,truefalse
+164,Which method is used to add an element to a set in Python?,add(),null,null,TRUE,Python,data structures,truefalse
+165," How do you access the value associated with the key 'a' in the dictionary dict = {'a': 1, 'b': 2}?",dict['a'],null,null,TRUE,Python,data structures,truefalse
+166,How can you remove the last element from a list named lst?,lst.pop(),null,null,TRUE,Python,data structures,truefalse
+167,Which of these creates a list of numbers from 0 to 4?,list(range(5)),null,null,TRUE,Python,data structures,truefalse
+168,Which syntax is used to get all keys from a dictionary named dict?,dict.keys(),null,null,TRUE,Python,data structures,truefalse
+169,"How can you add multiple items ('c', 'd', and 'e') to a set named my_set?","my_set.update(['c', 'd', 'e'])",null,null,TRUE,Python,data structures,truefalse
+170,"What will lst[-1] return if lst = [1, 2, 3, 4, 5]?",5,null,null,TRUE,Python,data structures,truefalse
+171,Which of the following initializes an empty list?,list{},null,null,FALSE,Python,data structures,truefalse
+172,How do you initialize an empty set?,set{},null,null,FALSE,Python,data structures,truefalse
+173,Which of the following creates a dictionary with keys 'a' and 'b' having values 1 and 2 respectively?,"('a': 1, 'b': 2)",null,null,FALSE,Python,data structures,truefalse
+174,Which method is used to add an element to a set in Python?,append(),null,null,FALSE,Python,data structures,truefalse
+175," How do you access the value associated with the key 'a' in the dictionary dict = {'a': 1, 'b': 2}?",dict('a'),null,null,FALSE,Python,data structures,truefalse
+176,How can you remove the last element from a list named lst?,lst.delete(),null,null,FALSE,Python,data structures,truefalse
+177,Which of these creates a list of numbers from 0 to 4?,range(4),null,null,FALSE,Python,data structures,truefalse
+178,Which syntax is used to get all keys from a dictionary named dict?,dict.keys,null,null,FALSE,Python,data structures,truefalse
+179,"How can you add multiple items ('c', 'd', and 'e') to a set named my_set?","my_set.add(['c', 'd', 'e'])",null,null,FALSE,Python,data structures,truefalse
+180,"What will lst[-1] return if lst = [1, 2, 3, 4, 5]?",1,null,null,FALSE,Python,data structures,truefalse
+181,Which of the following correctly checks if the value of x is between 5 and 10 (inclusive)?,null,null,null,if 5 <= x <= 10:,Python,control flow,fill in the blank
+182,How do you begin a for-loop that iterates over a list my_list?,null,null,null,for item in my_list:,Python,control flow,fill in the blank
+183,Which keyword is used to exit a loop prematurely?,null,null,null,break,Python,control flow,fill in the blank
+184,Which keyword lets you test a default condition if the previous conditions were not met?,null,null,null,else,Python,control flow,fill in the blank
+185,Which of the following correctly initializes a while loop that runs as long as x is less than 10?,null,null,null,while x < 10:,Python,control flow,fill in the blank
+186,Which of the following is the correct syntax for an else if condition?,null,null,null,elif condition:,Python,control flow,fill in the blank
+187,What does the continue keyword do in a loop?,null,null,null,Skips the current iteration and continues to the next.,Python,control flow,fill in the blank
+188,"What does the following code output? x = 10
+if x > 10:
+    print(""Greater"")
+elif x < 10:
+    print(""Lesser"")
+else:
+    print(""Equal"")",null,null,null,Equal,Python,control flow,fill in the blank
+189,"To iterate over a range of numbers from 1 to 5 (inclusive), which of the following would you use?",null,null,null,"for i in range(1, 6):",Python,control flow,fill in the blank
+190,How can you handle exceptions using control flow?,null,null,null,Using the except block.,Python,control flow,fill in the blank
+191,Which keyword is used to handle exceptions?,null,null,null,except,Python,control flow,fill in the blank
+192,"Which of the following is used to ensure a block of code always runs, regardless of exceptions?",null,null,null,finally:,Python,control flow,fill in the blank
+193,Which statement correctly checks multiple conditions using the and operator?,null,null,null,if x > 5 and y < 10:,Python,control flow,fill in the blank
+194,What does the pass statement do in Python?,null,null,null,Does nothing and acts as a placeholder.,Python,control flow,fill in the blank
+195,"In a try...except block, what does the else block do?",null,null,null,Runs if no exception occurs.,Python,control flow,fill in the blank
+196,Which of the following correctly checks if a variable x is not equal to 5?,null,null,null,if x != 5:,Python,control flow,fill in the blank
+197,"To iterate over the characters in a string word, which syntax would you use?",null,null,null,for char in word:,Python,control flow,fill in the blank
+198,Which of the following will print numbers 0 to 4?,null,null,null,for i in range(5): print(i),Python,control flow,fill in the blank
+199,Which operator checks if both conditions are false?,null,null,null,not,Python,control flow,fill in the blank
+200,What does the in keyword do in a for loop?,null,null,null,Checks for membership in a collection.,Python,control flow,fill in the blank
+201,"What is the correct way to assign a value of 5 to a variable named ""x"" in Python?",null,null,null,x = 5,Python,declaration,fill in the blank
+202,How do you declare a constant variable in Python?,null,null,null,Constants cannot be declared in Python,Python,declaration,fill in the blank
+203,Which of the following is a valid Python function declaration?,null,null,null,def function_name(parameters):,Python,declaration,fill in the blank
+204,"To declare and initialize an empty list in Python, you should use:",null,null,null,my_list = [],Python,declaration,fill in the blank
+205,Which keyword is used to declare a function in Python?,null,null,null,def,Python,declaration,fill in the blank
+206,What is the correct way to declare an empty set in Python?,null,null,null,my_set = {},Python,declaration,fill in the blank
+207,How can you declare an empty dictionary (key-value pair) in Python?,null,null,null,my_dict = {},Python,declaration,fill in the blank
+208,"To declare and use a Python lambda function that adds two numbers, you would write:",null,null,null," lambda (a, b): a + b",Python,declaration,fill in the blank
+209,Which keyword is used to declare a function with no explicit return value in Python?,null,null,null,None of these,Python,declaration,fill in the blank
+210,"To declare and use a Python generator that yields numbers, which keyword would you primarily use?",null,null,null,yield,Python,declaration,fill in the blank
+211,Which symbol or marker Python uses to denote a comment?,null,null,null,# ,Python,declaration,fill in the blank
+212,"In Python, which of the following is used to indicate a block of code?",null,null,null,Indentation,Python,declaration,fill in the blank
+213,Which command is used to define a function in Python?,null,null,null,def,Python,declaration,fill in the blank
+214,"In Python, how do you declare a variable?",null,null,null,variable_name = value,Python,declaration,fill in the blank
+215,What keyword is used to create a class in Python?,null,null,null,class,Python,declaration,fill in the blank
+216,How do you indicate the end of a line of code in Python?,null,null,null,Nothing; Python automatically knows when a line of code ends.,Python,declaration,fill in the blank
+217,How do you declare a list in Python?,null,null,null,list = [],Python,declaration,fill in the blank
+218,What is the proper way to import a module in Python?,null,null,null,import module,Python,declaration,fill in the blank
+219,How do you declare a constant in Python?,null,null,null,Python doesn’t support constants.,Python,declaration,fill in the blank
+220,Which of the following is the correct way to declare a variable in Python?,null,null,null,myVar = 5,Python,declaration,fill in the blank
+221,Which of the following initializes an empty list?,null,null,null,[],Python,data structures,fill in the blank
+222,How do you initialize an empty set?,null,null,null,set(),Python,data structures,fill in the blank
+223,Which of the following creates a dictionary with keys 'a' and 'b' having values 1 and 2 respectively?,null,null,null,"{'a': 1, 'b': 2}",Python,data structures,fill in the blank
+224,Which method is used to add an element to a set in Python?,null,null,null,add(),Python,data structures,fill in the blank
+225," How do you access the value associated with the key 'a' in the dictionary dict = {'a': 1, 'b': 2}?",null,null,null,dict['a'],Python,data structures,fill in the blank
+226,How can you remove the last element from a list named lst?,null,null,null,lst.pop(),Python,data structures,fill in the blank
+227,Which of these creates a list of numbers from 0 to 4?,null,null,null,list(range(5)),Python,data structures,fill in the blank
+228,Which syntax is used to get all keys from a dictionary named dict?,null,null,null,dict.keys(),Python,data structures,fill in the blank
+229,"How can you add multiple items ('c', 'd', and 'e') to a set named my_set?",null,null,null,"my_set.update(['c', 'd', 'e'])",Python,data structures,fill in the blank
+230,"What will lst[-1] return if lst = [1, 2, 3, 4, 5]?",null,null,null,5,Python,data structures,fill in the blank
+231,Which is the correct syntax to declare an empty tuple?,null,null,null,(),Python,data structures,fill in the blank
+232,How do you check if a list named lst contains the value 3?,null,null,null,3 in lst,Python,data structures,fill in the blank
+233,Which of these will return the number of elements in a list named lst?,null,null,null,len(lst),Python,data structures,fill in the blank
+234,"What does list(set([1,2,2,3,4,4])) return?",null,null,null,"[1,2,3,4]",Python,data structures,fill in the blank
+235,How can you sort a list named lst in descending order?,null,null,null,lst.sort(reverse=True),Python,data structures,fill in the blank
+236,Which function is used to randomly shuffle a list named lst?,null,null,null,random.shuffle(lst),Python,data structures,fill in the blank
+237,Which of these statements correctly checks if a dictionary named dict has the key 'a'?,null,null,null,a' in dict,Python,data structures,fill in the blank
+238,"How do you initialize a list with the same value, let's say 7, five times?",null,null,null, [7] * 5,Python,data structures,fill in the blank
+239,"Which of the following is NOT a valid way to initialize a set with values 1, 2, and 3?",null,null,null,"set(1, 2, 3)",Python,data structures,fill in the blank
+240," If lst = [1, 2, 3], what will lst[1:2] return?",null,null,null,[2],Python,data structures,fill in the blank
+241,"What is the output of the following code snippet?
+int i = 0;
+while (i < 5) {
+    System.out.print(i);
+    i++;
+}",null,null,null,01234,Java,control flow,flash card
+242,"In Java, which loop is suitable for situations where the loop body needs to execute at least once?",null,null,null,do-while loop,Java,control flow,flash card
+243,What is the primary purpose of the break statement in Java?,null,null,null,To exit the current loop or switch statement,Java,control flow,flash card
+244,"When a variable is declared inside a method, in what scope is it accessible?",null,null,null,Method scope,Java,control flow,flash card
+245,Which of the following statements is true about recursion in Java?,null,null,null,Recursion can lead to a stack overflow if not handled properly.,Java,control flow,flash card
+246,"What is the output of the following code snippet?
+for (int i = 0; i < 5; i++) {
+    if (i % 2 == 0) {
+        continue;
+    }
+    System.out.print(i);
+}",null,null,null,135,Java,control flow,flash card
+247,"In Java, which statement is used to define a constant variable?",null,null,null,final,Java,control flow,flash card
+248,What is the purpose of the default case in a Java switch statement?,null,null,null,It is executed when none of the cases match.,Java,control flow,flash card
+249,What does the this keyword refer to in Java?,null,null,null,The current class instance,Java,control flow,flash card
+250,Which loop construct is used for iterating over elements in an array or collection in Java?,null,null,null,for-each loop,Java,control flow,flash card
+251,What is the main difference between the while loop and the do-while loop in Java?,null,null,null,The do-while loop always executes its body at least once.,Java,control flow,flash card
+252,What is the scope of a local variable declared inside a for loop in Java?,null,null,null,Block scope,Java,control flow,flash card
+253,"In Java, what is the purpose of the continue statement within a loop?",null,null,null,To skip the current iteration and continue with the next,Java,control flow,flash card
+254,Which keyword is used to exit from a loop prematurely in Java?,null,null,null,break,Java,control flow,flash card
+255,"In a Java for loop, what are the three components usually separated by semicolons?",null,null,null,"Initialization, condition, increment",Java,control flow,flash card
+256,Which of the following is true about the switch statement in Java?,null,null,null,Each case block requires a break statement.,Java,control flow,flash card
+257,What does the void keyword represent in Java?,null,null,null,It indicates a method returns nothing.,Java,control flow,flash card
+258,"In Java, what is the primary role of the else keyword in an if-else statement?",null,null,null,To define an alternative set of actions if the if condition is false.,Java,control flow,flash card
+259,Which of the following is true about labeled break and continue statements in Java?,null,null,null,They allow you to specify which loop to break or continue in nested loops.,Java,control flow,flash card
+260,What is the main difference between the if statement and the switch statement in Java?,null,null,null,"The switch statement evaluates a variable against a list of possible values, while the if statement allows more complex conditions.",Java,control flow,flash card
+261,Which data structure in Java is typically used to implement a Last-In-First-Out (LIFO) behavior?,null,null,null,Stack,Java,declaration,flash card
+262,What is the correct way to declare and initialize an integer variable in Java?,null,null,null,int x = 5;,Java,declaration,flash card
+263,How do you declare an empty array of integers in Java?,null,null,null,int[] arr;,Java,declaration,flash card
+264,What is the correct way to declare a generic ArrayList that stores strings in Java?,null,null,null,ArrayList<String> list = new ArrayList<String>();,Java,declaration,flash card
+265,"To declare a constant variable in Java, you should use the keyword:",null,null,null,final,Java,declaration,flash card
+266,How would you declare a two-dimensional array of integers in Java with dimensions 3x4?,null,null,null,int[][] matrix = new int[3][4];,Java,declaration,flash card
+267,Which keyword is used to declare a class in Java?,null,null,null,class,Java,declaration,flash card
+268,"To declare and initialize a constant string in Java, you would use the keyword:",null,null,null,final,Java,declaration,flash card
+269,What is the correct way to declare and initialize a double variable with the value 3.14 in Java?,null,null,null,double pi = 3.14;,Java,declaration,flash card
+270,How do you declare an empty HashSet of integers in Java?,null,null,null,HashSet<Integer> set = new HashSet<Integer>();,Java,declaration,flash card
+271,"To declare a constant float in Java, you should use the keyword:",null,null,null,final,Java,declaration,flash card
+272,Which keyword is used to declare an interface in Java?,null,null,null,interface,Java,declaration,flash card
+273,How do you declare and initialize a constant long in Java?,null,null,null,const long num = 42L;,Java,declaration,flash card
+274,"To declare an empty TreeMap that maps strings to integers in Java, you would use:",null,null,null,"TreeMap<String, Integer> map;",Java,declaration,flash card
+275,What is the correct way to declare a constant character in Java?,null,null,null,final char letter;,Java,declaration,flash card
+276,How do you declare an empty array list of strings in Java?,null,null,null,ArrayList<String> list = new ArrayList();,Java,declaration,flash card
+277,What is the correct way to declare a double array in Java?,null,null,null,double[] arr = new double[10];,Java,declaration,flash card
+278,How do you declare an empty linked list of integers in Java?,null,null,null,LinkedList list = new LinkedList<Integer>();,Java,declaration,flash card
+279,"To declare a constant byte in Java, you should use the keyword:",null,null,null,final,Java,declaration,flash card
+280,What is the correct way to declare an array of strings in Java with initial values?,null,null,null,"String[] names = {""Alice"", ""Bob"", ""Charlie""};",Java,declaration,flash card
+281,What is the correct way to initialize an array of integers in Java?,null,null,null, int[] arr = new int[10];,Java,data structures,flash card
+282,Which data structure in Java is typically used to implement a First-In-First-Out (FIFO) behavior?,null,null,null,Queue,Java,data structures,flash card
+283,"To add an element to the end of an ArrayList in Java, you would use:",null,null,null,add(),Java,data structures,flash card
+284,What is the time complexity of adding an element to the end of an ArrayList in Java?,null,null,null,O(1),Java,data structures,flash card
+285,"In a binary search tree, which type of traversal visits the nodes in ascending order?",null,null,null,In-order,Java,data structures,flash card
+286,What is the correct way to remove an element at a specific index from an ArrayList in Java?,null,null,null,arr.remove(index);,Java,data structures,flash card
+287,Which data structure in Java is implemented as a resizable array?,null,null,null,ArrayList,Java,data structures,flash card
+288,What is the data structure in Java that can be used to represent a hierarchical structure with parent-child relationships?,null,null,null,Tree,Java,data structures,flash card
+289,"To search for an element in a binary search tree, what is the time complexity in the average case?",null,null,null,O(log N),Java,data structures,flash card
+290,"What data structure is used to represent a graph in Java, where each node can have multiple connections to other nodes?",null,null,null,LinkedList,Java,data structures,flash card
+291,"To find the number of elements in a LinkedList in Java, you would use which method?",null,null,null,size(),Java,data structures,flash card
+292,"To find the number of elements in a LinkedList in Java, you would use which method?",null,null,null,size(),Java,data structures,flash card
+293,What is the time complexity of searching for an element in an ArrayList in Java using the contains method?,null,null,null,O(N),Java,data structures,flash card
+294,"In a linked list, which operation allows you to insert a new element at the beginning efficiently?",null,null,null,insertFirst(),Java,data structures,flash card
+295,"Which data structure in Java is used to store key-value pairs, allowing for fast retrieval of values based on their associated keys?",null,null,null,HashMap,Java,data structures,flash card
+296,"To remove the last element from a LinkedList in Java, you would use which method?",null,null,null,removeLast(),Java,data structures,flash card
+297,What data structure in Java is used to ensure that elements are stored in sorted order?,null,null,null,TreeSet,Java,data structures,flash card
+298,What is the time complexity of adding an element to the beginning of an ArrayList in Java?,null,null,null,O(N),Java,data structures,flash card
+299,"Which data structure in Java is used to represent a collection of unique elements, and it does not allow duplicate values?",null,null,null,HashSet,Java,data structures,flash card
+300,Which data structure in Java is typically used to implement a First-In-First-Out (FIFO) behavior?,null,null,null,Queue,Java,data structures,flash card
+301,"What is the output of the following code snippet?
+int i = 0;
+while (i < 5) {
+    System.out.print(i);
+    i++;
+}",01234,54321,012345,A,Java,control flow,multiple choice
+302,"In Java, which loop is suitable for situations where the loop body needs to execute at least once?",for loop,while loop,do-while loop,C,Java,control flow,multiple choice
+303,What is the primary purpose of the break statement in Java?,To terminate the program,To exit the current loop or switch statement,To skip the current iteration of a loop,B,Java,control flow,multiple choice
+304,"When a variable is declared inside a method, in what scope is it accessible?",Class scope,Global scope,Method scope,C,Java,control flow,multiple choice
+305,Which of the following statements is true about recursion in Java?,Recursion is always more efficient than iterative solutions.,Recursion can lead to a stack overflow if not handled properly.,Recursion cannot be used in Java; only iteration is allowed.,B,Java,control flow,multiple choice
+306,"What is the output of the following code snippet?
+for (int i = 0; i < 5; i++) {
+    if (i % 2 == 0) {
+        continue;
+    }
+    System.out.print(i);
+}",13,024,135,A,Java,control flow,multiple choice
+307,"In Java, which statement is used to define a constant variable?",const,final,static,B,Java,control flow,multiple choice
+308,What is the purpose of the default case in a Java switch statement?,It specifies the case that is executed first.,It defines the default value of the variable being switched.,It is executed when none of the cases match.,C,Java,control flow,multiple choice
+309,What does the this keyword refer to in Java?,The current class instance,The next class in the inheritance hierarchy,The superclass of the current class,A,Java,control flow,multiple choice
+310,Which loop construct is used for iterating over elements in an array or collection in Java?,for-each loop,while loop,do-while loop,A,Java,control flow,multiple choice
+311,What is the main difference between the while loop and the do-while loop in Java?,The do-while loop always executes its body at least once.,The while loop is used for infinite loops.,The do-while loop is deprecated and should not be used.,A,Java,control flow,multiple choice
+312,What is the scope of a local variable declared inside a for loop in Java?,Class scope,Global scope,Block scope,C,Java,control flow,multiple choice
+313,"In Java, what is the purpose of the continue statement within a loop?",To exit the loop completely,To skip the current iteration and continue with the next,To terminate the program,B,Java,control flow,multiple choice
+314,Which keyword is used to exit from a loop prematurely in Java?,exit,break,return,B,Java,control flow,multiple choice
+315,"In a Java for loop, what are the three components usually separated by semicolons?","Initialization, condition, increment","Condition, body, increment","Initialization, condition, body",A,Java,control flow,multiple choice
+316,Which of the following is true about the switch statement in Java?,It can only be used to compare integers.,The order of cases doesn't matter.,Each case block requires a break statement.,C,Java,control flow,multiple choice
+317,What does the void keyword represent in Java?,It indicates a variable's type.,It represents an empty string.,It indicates a method returns nothing.,C,Java,control flow,multiple choice
+318,"In Java, what is the primary role of the else keyword in an if-else statement?",To specify a condition that must be met.,To define an alternative set of actions if the if condition is false.,To terminate the program.,B,Java,control flow,multiple choice
+319,Which of the following is true about labeled break and continue statements in Java?,They are commonly used in Java programs.,They can only be used in switch statements.,They allow you to specify which loop to break or continue in nested loops.,C,Java,control flow,multiple choice
+320,What is the main difference between the if statement and the switch statement in Java?,"The if statement allows complex comparisons, while the switch statement doesn't.","The switch statement can be used for logical comparisons, while the if statement cannot.","The switch statement evaluates a variable against a list of possible values, while the if statement allows more complex conditions.",C,Java,control flow,multiple choice
+321,Which data structure in Java is typically used to implement a Last-In-First-Out (LIFO) behavior?,LinkedList,Queue,Stack,C,Java,declaration,multiple choice
+322,What is the correct way to declare and initialize an integer variable in Java?,int x;,integer x;,int x = 5;,C,Java,declaration,multiple choice
+323,How do you declare an empty array of integers in Java?,int[] arr;,int arr[];,array<int> arr = {};,A,Java,declaration,multiple choice
+324,What is the correct way to declare a generic ArrayList that stores strings in Java?,ArrayList list = new ArrayList();,ArrayList<String> list = new ArrayList<String>();,ArrayList list = new ArrayList<String>();,B,Java,declaration,multiple choice
+325,"To declare a constant variable in Java, you should use the keyword:",static,final,constant,B,Java,declaration,multiple choice
+326,How would you declare a two-dimensional array of integers in Java with dimensions 3x4?,"int[][] matrix = new int[3, 4];",int[3][4] matrix;,int[][] matrix = new int[3][4];,C,Java,declaration,multiple choice
+327,Which keyword is used to declare a class in Java?,new,class,declare,B,Java,declaration,multiple choice
+328,"To declare and initialize a constant string in Java, you would use the keyword:",final,static,constant,A,Java,declaration,multiple choice
+329,What is the correct way to declare and initialize a double variable with the value 3.14 in Java?,double pi = 3.14;,double pi;,pi = 3.14;,A,Java,declaration,multiple choice
+330,How do you declare an empty HashSet of integers in Java?,Set<Integer> set = new HashSet<Integer>();,HashSet<Integer> set = new HashSet<Integer>();,HashSet set = new HashSet<Integer>();,B,Java,declaration,multiple choice
+331,"To declare a constant float in Java, you should use the keyword:",constant,final,static,B,Java,declaration,multiple choice
+332,Which keyword is used to declare an interface in Java?,class,interface,implement,B,Java,declaration,multiple choice
+333,How do you declare and initialize a constant long in Java?,const long num = 42L;,final long num;,static long num = 42L;,A,Java,declaration,multiple choice
+334,"To declare an empty TreeMap that maps strings to integers in Java, you would use:","TreeMap<String, Integer> map = new TreeMap();","TreeMap map = new TreeMap<String, Integer>();","TreeMap<String, Integer> map;",C,Java,declaration,multiple choice
+335,What is the correct way to declare a constant character in Java?,const char letter = 'A';,final char letter;,static char letter = 'A';,B,Java,declaration,multiple choice
+336,How do you declare an empty array list of strings in Java?,ArrayList<String> list = new ArrayList<String>;,ArrayList<String> list = new ArrayList();,ArrayList list = new ArrayList();,B,Java,declaration,multiple choice
+337,What is the correct way to declare a double array in Java?,double[] arr = new double[];,double[] arr = new double[10];,double[10] arr = new double[10];,B,Java,declaration,multiple choice
+338,How do you declare an empty linked list of integers in Java?,LinkedList list = new LinkedList<int>();,LinkedList<Integer> list = new LinkedList();,LinkedList list = new LinkedList<Integer>();,C,Java,declaration,multiple choice
+339,"To declare a constant byte in Java, you should use the keyword:",final,static,constant,A,Java,declaration,multiple choice
+340,What is the correct way to declare an array of strings in Java with initial values?,String[] names = new String[];,"String names[] = new String[]{""Alice"", ""Bob"", ""Charlie""};","String[] names = {""Alice"", ""Bob"", ""Charlie""};",C,Java,declaration,multiple choice
+341,What is the correct way to initialize an array of integers in Java?,int[] arr = new int[];, int[] arr = new int[10];,"int arr[] = {1, 2, 3};",B,Java,data structures,multiple choice
+342,Which data structure in Java is typically used to implement a First-In-First-Out (FIFO) behavior?,Stack,LinkedList,Queue,C,Java,data structures,multiple choice
+343,"To add an element to the end of an ArrayList in Java, you would use:",addFirst(),append(),add(),C,Java,data structures,multiple choice
+344,What is the time complexity of adding an element to the end of an ArrayList in Java?,O(1),O(log N),O(N),A,Java,data structures,multiple choice
+345,"In a binary search tree, which type of traversal visits the nodes in ascending order?",In-order,Pre-order,Post-order,A,Java,data structures,multiple choice
+346,What is the correct way to remove an element at a specific index from an ArrayList in Java?,arr.delete(index);,arr.remove(index);,arr.removeElement(index);,B,Java,data structures,multiple choice
+347,Which data structure in Java is implemented as a resizable array?,LinkedList,Stack,ArrayList,C,Java,data structures,multiple choice
+348,What is the data structure in Java that can be used to represent a hierarchical structure with parent-child relationships?,Stack,Queue,Tree,C,Java,data structures,multiple choice
+349,"To search for an element in a binary search tree, what is the time complexity in the average case?",O(1),O(log N),O(N),B,Java,data structures,multiple choice
+350,"What data structure is used to represent a graph in Java, where each node can have multiple connections to other nodes?",BinaryTree,ArrayList,LinkedList,C,Java,data structures,multiple choice
+351,"To find the number of elements in a LinkedList in Java, you would use which method?",size(),length(),getSize(),A,Java,data structures,multiple choice
+352,"To find the number of elements in a LinkedList in Java, you would use which method?",size(),length(),count(),A,Java,data structures,multiple choice
+353,What is the time complexity of searching for an element in an ArrayList in Java using the contains method?,O(1),O(log N),O(N),C,Java,data structures,multiple choice
+354,"In a linked list, which operation allows you to insert a new element at the beginning efficiently?",append(),insertFirst(),addToEnd(),B,Java,data structures,multiple choice
+355,"Which data structure in Java is used to store key-value pairs, allowing for fast retrieval of values based on their associated keys?",ArrayList,HashSet,HashMap,C,Java,data structures,multiple choice
+356,"To remove the last element from a LinkedList in Java, you would use which method?",removeLast(),pop(),remove(),A,Java,data structures,multiple choice
+357,What data structure in Java is used to ensure that elements are stored in sorted order?,HashSet,TreeSet,PriorityQueue,B,Java,data structures,multiple choice
+358,What is the time complexity of adding an element to the beginning of an ArrayList in Java?,O(1),O(log N),O(N),C,Java,data structures,multiple choice
+359,"Which data structure in Java is used to represent a collection of unique elements, and it does not allow duplicate values?",ArrayList,LinkedList,HashSet,C,Java,data structures,multiple choice
+360,Which data structure in Java is typically used to implement a First-In-First-Out (FIFO) behavior?,LinkedList,Stack,Queue,C,Java,data structures,multiple choice
+361,"What is the output of the following code snippet?
+int i = 0;
+while (i < 5) {
+    System.out.print(i);
+    i++;
+}",null,null,null,01234,Java,control flow,fill in the blank
+362,"In Java, which loop is suitable for situations where the loop body needs to execute at least once?",null,null,null,do-while loop,Java,control flow,fill in the blank
+363,What is the primary purpose of the break statement in Java?,null,null,null,To exit the current loop or switch statement,Java,control flow,fill in the blank
+364,"When a variable is declared inside a method, in what scope is it accessible?",null,null,null,Method scope,Java,control flow,fill in the blank
+365,Which of the following statements is true about recursion in Java?,null,null,null,Recursion can lead to a stack overflow if not handled properly.,Java,control flow,fill in the blank
+366,"What is the output of the following code snippet?
+for (int i = 0; i < 5; i++) {
+    if (i % 2 == 0) {
+        continue;
+    }
+    System.out.print(i);
+}",null,null,null,135,Java,control flow,fill in the blank
+367,"In Java, which statement is used to define a constant variable?",null,null,null,final,Java,control flow,fill in the blank
+368,What is the purpose of the default case in a Java switch statement?,null,null,null,It is executed when none of the cases match.,Java,control flow,fill in the blank
+369,What does the this keyword refer to in Java?,null,null,null,The current class instance,Java,control flow,fill in the blank
+370,Which loop construct is used for iterating over elements in an array or collection in Java?,null,null,null,for-each loop,Java,control flow,fill in the blank
+371,What is the main difference between the while loop and the do-while loop in Java?,null,null,null,The do-while loop always executes its body at least once.,Java,control flow,fill in the blank
+372,What is the scope of a local variable declared inside a for loop in Java?,null,null,null,Block scope,Java,control flow,fill in the blank
+373,"In Java, what is the purpose of the continue statement within a loop?",null,null,null,To skip the current iteration and continue with the next,Java,control flow,fill in the blank
+374,Which keyword is used to exit from a loop prematurely in Java?,null,null,null,break,Java,control flow,fill in the blank
+375,"In a Java for loop, what are the three components usually separated by semicolons?",null,null,null,"Initialization, condition, increment",Java,control flow,fill in the blank
+376,Which of the following is true about the switch statement in Java?,null,null,null,Each case block requires a break statement.,Java,control flow,fill in the blank
+377,What does the void keyword represent in Java?,null,null,null,It indicates a method returns nothing.,Java,control flow,fill in the blank
+378,"In Java, what is the primary role of the else keyword in an if-else statement?",null,null,null,To define an alternative set of actions if the if condition is false.,Java,control flow,fill in the blank
+379,Which of the following is true about labeled break and continue statements in Java?,null,null,null,They allow you to specify which loop to break or continue in nested loops.,Java,control flow,fill in the blank
+380,What is the main difference between the if statement and the switch statement in Java?,null,null,null,"The switch statement evaluates a variable against a list of possible values, while the if statement allows more complex conditions.",Java,control flow,fill in the blank
+381,Which data structure in Java is typically used to implement a Last-In-First-Out (LIFO) behavior?,null,null,null,Stack,Java,declaration,fill in the blank
+382,What is the correct way to declare and initialize an integer variable in Java?,null,null,null,int x = 5;,Java,declaration,fill in the blank
+383,How do you declare an empty array of integers in Java?,null,null,null,int[] arr;,Java,declaration,fill in the blank
+384,What is the correct way to declare a generic ArrayList that stores strings in Java?,null,null,null,ArrayList<String> list = new ArrayList<String>();,Java,declaration,fill in the blank
+385,"To declare a constant variable in Java, you should use the keyword:",null,null,null,final,Java,declaration,fill in the blank
+386,How would you declare a two-dimensional array of integers in Java with dimensions 3x4?,null,null,null,int[][] matrix = new int[3][4];,Java,declaration,fill in the blank
+387,Which keyword is used to declare a class in Java?,null,null,null,class,Java,declaration,fill in the blank
+388,"To declare and initialize a constant string in Java, you would use the keyword:",null,null,null,final,Java,declaration,fill in the blank
+389,What is the correct way to declare and initialize a double variable with the value 3.14 in Java?,null,null,null,double pi = 3.14;,Java,declaration,fill in the blank
+390,How do you declare an empty HashSet of integers in Java?,null,null,null,HashSet<Integer> set = new HashSet<Integer>();,Java,declaration,fill in the blank
+391,"To declare a constant float in Java, you should use the keyword:",null,null,null,final,Java,declaration,fill in the blank
+392,Which keyword is used to declare an interface in Java?,null,null,null,interface,Java,declaration,fill in the blank
+393,How do you declare and initialize a constant long in Java?,null,null,null,const long num = 42L;,Java,declaration,fill in the blank
+394,"To declare an empty TreeMap that maps strings to integers in Java, you would use:",null,null,null,"TreeMap<String, Integer> map;",Java,declaration,fill in the blank
+395,What is the correct way to declare a constant character in Java?,null,null,null,final char letter;,Java,declaration,fill in the blank
+396,How do you declare an empty array list of strings in Java?,null,null,null,ArrayList<String> list = new ArrayList();,Java,declaration,fill in the blank
+397,What is the correct way to declare a double array in Java?,null,null,null,double[] arr = new double[10];,Java,declaration,fill in the blank
+398,How do you declare an empty linked list of integers in Java?,null,null,null,LinkedList list = new LinkedList<Integer>();,Java,declaration,fill in the blank
+399,"To declare a constant byte in Java, you should use the keyword:",null,null,null,final,Java,declaration,fill in the blank
+400,What is the correct way to declare an array of strings in Java with initial values?,null,null,null,"String[] names = {""Alice"", ""Bob"", ""Charlie""};",Java,declaration,fill in the blank
+401,What is the correct way to initialize an array of integers in Java?,null,null,null, int[] arr = new int[10];,Java,data structures,fill in the blank
+402,Which data structure in Java is typically used to implement a First-In-First-Out (FIFO) behavior?,null,null,null,Queue,Java,data structures,fill in the blank
+403,"To add an element to the end of an ArrayList in Java, you would use:",null,null,null,add(),Java,data structures,fill in the blank
+404,What is the time complexity of adding an element to the end of an ArrayList in Java?,null,null,null,O(1),Java,data structures,fill in the blank
+405,"In a binary search tree, which type of traversal visits the nodes in ascending order?",null,null,null,In-order,Java,data structures,fill in the blank
+406,What is the correct way to remove an element at a specific index from an ArrayList in Java?,null,null,null,arr.remove(index);,Java,data structures,fill in the blank
+407,Which data structure in Java is implemented as a resizable array?,null,null,null,ArrayList,Java,data structures,fill in the blank
+408,What is the data structure in Java that can be used to represent a hierarchical structure with parent-child relationships?,null,null,null,Tree,Java,data structures,fill in the blank
+409,"To search for an element in a binary search tree, what is the time complexity in the average case?",null,null,null,O(log N),Java,data structures,fill in the blank
+410,"What data structure is used to represent a graph in Java, where each node can have multiple connections to other nodes?",null,null,null,LinkedList,Java,data structures,fill in the blank
+411,"To find the number of elements in a LinkedList in Java, you would use which method?",null,null,null,size(),Java,data structures,fill in the blank
+412,"To find the number of elements in a LinkedList in Java, you would use which method?",null,null,null,size(),Java,data structures,fill in the blank
+413,What is the time complexity of searching for an element in an ArrayList in Java using the contains method?,null,null,null,O(N),Java,data structures,fill in the blank
+414,"In a linked list, which operation allows you to insert a new element at the beginning efficiently?",null,null,null,insertFirst(),Java,data structures,fill in the blank
+415,"Which data structure in Java is used to store key-value pairs, allowing for fast retrieval of values based on their associated keys?",null,null,null,HashMap,Java,data structures,fill in the blank
+416,"To remove the last element from a LinkedList in Java, you would use which method?",null,null,null,removeLast(),Java,data structures,fill in the blank
+417,What data structure in Java is used to ensure that elements are stored in sorted order?,null,null,null,TreeSet,Java,data structures,fill in the blank
+418,What is the time complexity of adding an element to the beginning of an ArrayList in Java?,null,null,null,O(N),Java,data structures,fill in the blank
+419,"Which data structure in Java is used to represent a collection of unique elements, and it does not allow duplicate values?",null,null,null,HashSet,Java,data structures,fill in the blank
+420,Which data structure in Java is typically used to implement a First-In-First-Out (FIFO) behavior?,null,null,null,Queue,Java,data structures,fill in the blank
+421,"What is the output of the following code snippet?
+int i = 0;
+while (i < 5) {
+    System.out.print(i);
+    i++;
+}",01234,null,null,TRUE,Java,control flow,truefalse
+422,"In Java, which loop is suitable for situations where the loop body needs to execute at least once?",do-while loop,null,null,TRUE,Java,control flow,truefalse
+423,What is the primary purpose of the break statement in Java?,To exit the current loop or switch statement,null,null,TRUE,Java,control flow,truefalse
+424,"When a variable is declared inside a method, in what scope is it accessible?",Method scope,null,null,TRUE,Java,control flow,truefalse
+425,Which of the following statements is true about recursion in Java?,Recursion can lead to a stack overflow if not handled properly.,null,null,TRUE,Java,control flow,truefalse
+426,"What is the output of the following code snippet?
+for (int i = 0; i < 5; i++) {
+    if (i % 2 == 0) {
+        continue;
+    }
+    System.out.print(i);
+}",13,null,null,TRUE,Java,control flow,truefalse
+427,"In Java, which statement is used to define a constant variable?",final,null,null,TRUE,Java,control flow,truefalse
+428,What is the purpose of the default case in a Java switch statement?,It is executed when none of the cases match.,null,null,TRUE,Java,control flow,truefalse
+429,What does the this keyword refer to in Java?,The current class instance,null,null,TRUE,Java,control flow,truefalse
+430,Which loop construct is used for iterating over elements in an array or collection in Java?,for-each loop,null,null,TRUE,Java,control flow,truefalse
+431,"What is the output of the following code snippet?
+int i = 0;
+while (i < 5) {
+    System.out.print(i);
+    i++;
+}",012345,null,null,FALSE,Java,control flow,truefalse
+432,"In Java, which loop is suitable for situations where the loop body needs to execute at least once?",for loop,null,null,FALSE,Java,control flow,truefalse
+433,What is the primary purpose of the break statement in Java?,To terminate the program,null,null,FALSE,Java,control flow,truefalse
+434,"When a variable is declared inside a method, in what scope is it accessible?",Class scope,null,null,FALSE,Java,control flow,truefalse
+435,Which of the following statements is true about recursion in Java?,Recursion is always more efficient than iterative solutions.,null,null,FALSE,Java,control flow,truefalse
+436,"What is the output of the following code snippet?
+for (int i = 0; i < 5; i++) {
+    if (i % 2 == 0) {
+        continue;
+    }
+    System.out.print(i);
+}",135,null,null,FALSE,Java,control flow,truefalse
+437,"In Java, which statement is used to define a constant variable?",const,null,null,FALSE,Java,control flow,truefalse
+438,What is the purpose of the default case in a Java switch statement?,It specifies the case that is executed first.,null,null,FALSE,Java,control flow,truefalse
+439,What does the this keyword refer to in Java?,The superclass of the current class,null,null,FALSE,Java,control flow,truefalse
+440,Which loop construct is used for iterating over elements in an array or collection in Java?,do-while loop,null,null,FALSE,Java,control flow,truefalse
+441,Which data structure in Java is typically used to implement a Last-In-First-Out (LIFO) behavior?,Stack,null,null,TRUE,Java,declaration,truefalse
+442,What is the correct way to declare and initialize an integer variable in Java?,int x = 5;,null,null,TRUE,Java,declaration,truefalse
+443,How do you declare an empty array of integers in Java?,int[] arr;,null,null,TRUE,Java,declaration,truefalse
+444,What is the correct way to declare a generic ArrayList that stores strings in Java?,ArrayList<String> list = new ArrayList<String>();,null,null,TRUE,Java,declaration,truefalse
+445,"To declare a constant variable in Java, you should use the keyword:",final,null,null,TRUE,Java,declaration,truefalse
+446,How would you declare a two-dimensional array of integers in Java with dimensions 3x4?,int[][] matrix = new int[3][4];,null,null,TRUE,Java,declaration,truefalse
+447,Which keyword is used to declare a class in Java?,class,null,null,TRUE,Java,declaration,truefalse
+448,"To declare and initialize a constant string in Java, you would use the keyword:",final,null,null,TRUE,Java,declaration,truefalse
+449,What is the correct way to declare and initialize a double variable with the value 3.14 in Java?,double pi = 3.14;,null,null,TRUE,Java,declaration,truefalse
+450,How do you declare an empty HashSet of integers in Java?,HashSet<Integer> set = new HashSet<Integer>();,null,null,TRUE,Java,declaration,truefalse
+451,Which data structure in Java is typically used to implement a Last-In-First-Out (LIFO) behavior?,LinkedList,null,null,FALSE,Java,declaration,truefalse
+452,What is the correct way to declare and initialize an integer variable in Java?,int x;,null,null,FALSE,Java,declaration,truefalse
+453,How do you declare an empty array of integers in Java?,array<int> arr = {};,null,null,FALSE,Java,declaration,truefalse
+454,What is the correct way to declare a generic ArrayList that stores strings in Java?,ArrayList list = new ArrayList();,null,null,FALSE,Java,declaration,truefalse
+455,"To declare a constant variable in Java, you should use the keyword:",static,null,null,FALSE,Java,declaration,truefalse
+456,How would you declare a two-dimensional array of integers in Java with dimensions 3x4?,"int[][] matrix = new int[3, 4];",null,null,FALSE,Java,declaration,truefalse
+457,Which keyword is used to declare a class in Java?,new,null,null,FALSE,Java,declaration,truefalse
+458,"To declare and initialize a constant string in Java, you would use the keyword:",constant,null,null,FALSE,Java,declaration,truefalse
+459,What is the correct way to declare and initialize a double variable with the value 3.14 in Java?,pi = 3.14;,null,null,FALSE,Java,declaration,truefalse
+460,How do you declare an empty HashSet of integers in Java?,Set<Integer> set = new HashSet<Integer>();,null,null,FALSE,Java,declaration,truefalse
+461,What is the correct way to initialize an array of integers in Java?, int[] arr = new int[10];,null,null,TRUE,Java,data structures,truefalse
+462,Which data structure in Java is typically used to implement a First-In-First-Out (FIFO) behavior?,Queue,null,null,TRUE,Java,data structures,truefalse
+463,"To add an element to the end of an ArrayList in Java, you would use:",add(),null,null,TRUE,Java,data structures,truefalse
+464,What is the time complexity of adding an element to the end of an ArrayList in Java?,O(1),null,null,TRUE,Java,data structures,truefalse
+465,"In a binary search tree, which type of traversal visits the nodes in ascending order?",In-order,null,null,TRUE,Java,data structures,truefalse
+466,What is the correct way to remove an element at a specific index from an ArrayList in Java?,arr.remove(index);,null,null,TRUE,Java,data structures,truefalse
+467,Which data structure in Java is implemented as a resizable array?,ArrayList,null,null,TRUE,Java,data structures,truefalse
+468,What is the data structure in Java that can be used to represent a hierarchical structure with parent-child relationships?,Tree,null,null,TRUE,Java,data structures,truefalse
+469,"To search for an element in a binary search tree, what is the time complexity in the average case?",O(log N),null,null,TRUE,Java,data structures,truefalse
+470,"What data structure is used to represent a graph in Java, where each node can have multiple connections to other nodes?",LinkedList,null,null,TRUE,Java,data structures,truefalse
+471,What is the correct way to initialize an array of integers in Java?,int[] arr = new int[];,null,null,FALSE,Java,data structures,truefalse
+472,Which data structure in Java is typically used to implement a First-In-First-Out (FIFO) behavior?,Stack,null,null,FALSE,Java,data structures,truefalse
+473,"To add an element to the end of an ArrayList in Java, you would use:",addFirst(),null,null,FALSE,Java,data structures,truefalse
+474,What is the time complexity of adding an element to the end of an ArrayList in Java?,O(N),null,null,FALSE,Java,data structures,truefalse
+475,"In a binary search tree, which type of traversal visits the nodes in ascending order?",Post-order,null,null,FALSE,Java,data structures,truefalse
+476,What is the correct way to remove an element at a specific index from an ArrayList in Java?,arr.delete(index);,null,null,FALSE,Java,data structures,truefalse
+477,Which data structure in Java is implemented as a resizable array?,LinkedList,null,null,FALSE,Java,data structures,truefalse
+478,What is the data structure in Java that can be used to represent a hierarchical structure with parent-child relationships?,Stack,null,null,FALSE,Java,data structures,truefalse
+479,"To search for an element in a binary search tree, what is the time complexity in the average case?",O(1),null,null,FALSE,Java,data structures,truefalse
+480,"What data structure is used to represent a graph in Java, where each node can have multiple connections to other nodes?",BinaryTree,null,null,FALSE,Java,data structures,truefalse
+481,Which of the following keywords is used to define a loop in Ruby?,loop,while,execute,B,Ruby,control flow,multiple choice
+482,What does the break keyword do in a loop in Ruby?,Continues to the next iteration of the loop.,Exits the loop prematurely.,Restarts the loop from the beginning.,B,Ruby,control flow,multiple choice
+483,"In Ruby, which keyword is used to define a conditional branch?",check,if,switch,B,Ruby,control flow,multiple choice
+484,What is the purpose of the else clause in an if statement in Ruby?,To execute a block of code if the condition is true.,To handle exceptions.,To execute a block of code if the condition is false.,C,Ruby,control flow,multiple choice
+485,"In Ruby, what is the scope of a local variable defined inside a block or method?",Global scope,Class scope,Block or method scope,C,Ruby,control flow,multiple choice
+486,Which of the following loops in Ruby will always execute at least once?,while,for,until,C,Ruby,control flow,multiple choice
+487,What is the purpose of the next keyword in a loop in Ruby?,Ends the loop.,Skips the current iteration and continues with the next.,Restarts the loop from the beginning.,B,Ruby,control flow,multiple choice
+488,"In Ruby, what does the elsif keyword allow you to do in an if statement?",Combine multiple conditions in a single if statement.,Define an else block.,Define a new if statement within another if statement.,A,Ruby,control flow,multiple choice
+489,Which keyword is used to define a method in Ruby?,define,func,def,C,Ruby,control flow,multiple choice
+490,What does the case keyword allow you to do in Ruby?,Define a class.,Create a switch statement for multiple conditional branches.,Write a comment.,B,Ruby,control flow,multiple choice
+491,"In Ruby, which loop is used to iterate over a collection of elements like an array or a range?",repeat,for,each,C,Ruby,control flow,multiple choice
+492,What does the unless keyword do in Ruby?,It reverses the meaning of an if condition.,It defines a block of code that always executes.,It is used to declare a class.,A,Ruby,control flow,multiple choice
+493,When is the unless clause executed in Ruby?,When the condition is true.,When the condition is false.,It is always executed.,B,Ruby,control flow,multiple choice
+494,What is the purpose of the retry keyword in Ruby?,It repeats the loop from the beginning.,It exits the loop.,It raises an error.,A,Ruby,control flow,multiple choice
+495,How do you define a one-line conditional statement in Ruby?,if condition then code end,if condition { code },code if condition,C,Ruby,control flow,multiple choice
+496,What does the unless keyword in Ruby typically work well with?,Positive conditions,Negative conditions,Nested loops,B,Ruby,control flow,multiple choice
+497,"In Ruby, which keyword is used to prematurely exit a loop iteration and jump to the next iteration?",next,redo,break,A,Ruby,control flow,multiple choice
+498,What is the purpose of the while keyword in Ruby?,It defines a block of code that always executes.,"It specifies a condition that, if true, allows code to execute.",It defines a class.,B,Ruby,control flow,multiple choice
+499,Which keyword is used in Ruby to catch and handle exceptions?,try,exception,begin,C,Ruby,control flow,multiple choice
+500,What is the purpose of the case statement in Ruby?,It creates a switch statement to select between multiple code blocks.,It defines a class.,It combines multiple conditions in a single if statement.,A,Ruby,control flow,multiple choice
+501,How do you create an empty array in Ruby?,array = [],array = {},array = new Array(),A,Ruby,declaration,multiple choice
+502,What is the correct way to declare a variable in Ruby?,variable x;,var x = 5;,x = 5,C,Ruby,declaration,multiple choice
+503,Which of the following is a valid way to declare an empty array in Ruby?,array = new Array(),array = {},array = [],C,Ruby,declaration,multiple choice
+504,How do you declare a constant variable in Ruby?,ConstantVar = 42,constant_var: 42,constVar => 42,A,Ruby,declaration,multiple choice
+505,What is the correct syntax for declaring and initializing a Ruby hash (dictionary)?,hash = {},hash = [],hash = new Hash(),A,Ruby,declaration,multiple choice
+506,"To declare a variable in Ruby with global scope, you would prefix the variable name with:",@,#,$,C,Ruby,declaration,multiple choice
+507,How do you declare a local variable in Ruby within a method or block?,@local_var,$local_var,local_var,C,Ruby,declaration,multiple choice
+508,What is the correct way to declare a class variable in Ruby?,@class_var,@@class_var,#class_var,B,Ruby,declaration,multiple choice
+509,"In Ruby, how would you declare a string containing special characters without interpreting them?",raw_string',"""raw_string""",%q(raw_string),A,Ruby,declaration,multiple choice
+510,"To declare a range of numbers from 1 to 10 in Ruby, you would use:",(1..10),"[1, 10]","{1, 10}",A,Ruby,declaration,multiple choice
+511,"When declaring a symbol in Ruby, which syntax is typically used?",:SymbolName,"""SymbolName""",@SymbolName,A,Ruby,declaration,multiple choice
+512,How do you declare a variable in Ruby with instance scope within a class or module?,@instance_var,#instance_var,$instance_var,A,Ruby,declaration,multiple choice
+513,Which syntax is used to declare a new instance of a class in Ruby?,new ClassName(),ClassName.new(),ClassName.create(),B,Ruby,declaration,multiple choice
+514,What is the correct way to declare an empty set (a unique collection of elements) in Ruby?,set = [],set = {},set = Set.new,C,Ruby,declaration,multiple choice
+515,"To declare a multi-line string in Ruby without interpreting escape sequences, which syntax should you use?",raw_string',"""raw_string""",<<-EOT ... EOT,C,Ruby,declaration,multiple choice
+516,"When declaring a local variable in a method or block, which character is used to scope the variable to the block?",@,#,$,B,Ruby,declaration,multiple choice
+517,"In Ruby, which data structure allows you to associate keys with values and is similar to a Python dictionary?",Array,Tuple,Hash,C,Ruby,declaration,multiple choice
+518,"To declare an empty array and assign it to a variable named ""my_array"" in a single line, you would write:",my_array = [],array my_array = [],my_array = new Array(),A,Ruby,declaration,multiple choice
+519,How do you declare a constant variable within a class or module in Ruby?,constant_var: 42,constVar => 42,CONSTANT_VAR = 42,C,Ruby,declaration,multiple choice
+520,"To declare a string containing interpolation (variable substitution) in Ruby, which syntax is commonly used?",String without interpolation',"""String with #{variable} interpolation""",%q(String without interpolation),B,Ruby,declaration,multiple choice
+521,"To add an element to the end of an array in Ruby, you would use:",array.add(element),"array.insert(0, element)",array << element,C,Ruby,data structures,multiple choice
+522,"In a singly linked list, what is the name of the reference to the next node?",next_node,prev_node,next,A,Ruby,data structures,multiple choice
+523,How can you remove the last element from an array in Ruby?,array.pop,array.shift,array.delete(-1),A,Ruby,data structures,multiple choice
+524,"In a binary tree, the top node is commonly referred to as the:",Root,Leaf,Branch,A,Ruby,data structures,multiple choice
+525,What data structure in Ruby is similar to a stack and follows the Last-In-First-Out (LIFO) principle?,Queue,Array,Hash,B,Ruby,data structures,multiple choice
+526,Which Ruby data structure allows key-value pairs and does not allow duplicate keys?,Array,Hash,Set,B,Ruby,data structures,multiple choice
+527,What method is used to add an element to the beginning of an array in Ruby?,array.unshift(element),array.addFirst(element),array.push(element),A,Ruby,data structures,multiple choice
+528,Which data structure is used to represent a collection of elements with no specific order or duplicates in Ruby?,Queue,Set,Hash,B,Ruby,data structures,multiple choice
+529,How do you check if a key exists in a Ruby hash?,hash.exists?(key),hash.contains?(key),hash.key?(key),C,Ruby,data structures,multiple choice
+530,What is the primary data structure in Ruby for storing key-value pairs?,List,Hash,Stack,B,Ruby,data structures,multiple choice
+531,Which method is used to remove the first element from an array in Ruby?,array.pop,array.shift,array.delete(0),B,Ruby,data structures,multiple choice
+532,"In a singly linked list, which node is typically used as the entry point to traverse the list?",Head,Tail,Root,A,Ruby,data structures,multiple choice
+533,What is the Ruby data structure that represents an ordered collection of elements with duplicates allowed?,Set,Queue,Array,C,Ruby,data structures,multiple choice
+534,Which data structure in Ruby is used to implement a First-In-First-Out (FIFO) order?,Stack,Hash,Queue,C,Ruby,data structures,multiple choice
+535,"To add an element to the end of an array in Ruby, which method is commonly used?",array.push(element),"array.insert(-1, element)",array.last(element),A,Ruby,data structures,multiple choice
+536,"In a binary tree, what is the maximum number of children a node can have in a typical binary tree?",1,2,3,B,Ruby,data structures,multiple choice
+537,Which Ruby data structure is used to represent an unordered collection of unique elements?,Hash,Array,Set,C,Ruby,data structures,multiple choice
+538,What method is used to check if an element is included in an array in Ruby?,array.exists?(element),array.includes?(element),array.include?(element),C,Ruby,data structures,multiple choice
+539,"In a linked list, what is the time complexity for inserting an element at the end of the list?",O(1),O(Log N),O(N),A,Ruby,data structures,multiple choice
+540,"In a binary search tree, which property ensures that all nodes in the left subtree are less than the root node, and all nodes in the right subtree are greater than the root node?",Balanced property,Heap property,Binary search tree property,C,Ruby,data structures,multiple choice
+541,Which of the following keywords is used to define a loop in Ruby?,null,null,null,while,Ruby,control flow,flash card
+542,What does the break keyword do in a loop in Ruby?,null,null,null,Exits the loop prematurely.,Ruby,control flow,flash card
+543,"In Ruby, which keyword is used to define a conditional branch?",null,null,null,if,Ruby,control flow,flash card
+544,What is the purpose of the else clause in an if statement in Ruby?,null,null,null,To execute a block of code if the condition is false.,Ruby,control flow,flash card
+545,"In Ruby, what is the scope of a local variable defined inside a block or method?",null,null,null,Block or method scope,Ruby,control flow,flash card
+546,Which of the following loops in Ruby will always execute at least once?,null,null,null,until,Ruby,control flow,flash card
+547,What is the purpose of the next keyword in a loop in Ruby?,null,null,null,Skips the current iteration and continues with the next.,Ruby,control flow,flash card
+548,"In Ruby, what does the elsif keyword allow you to do in an if statement?",null,null,null,Combine multiple conditions in a single if statement.,Ruby,control flow,flash card
+549,Which keyword is used to define a method in Ruby?,null,null,null,def,Ruby,control flow,flash card
+550,What does the case keyword allow you to do in Ruby?,null,null,null,Create a switch statement for multiple conditional branches.,Ruby,control flow,flash card
+551,"In Ruby, which loop is used to iterate over a collection of elements like an array or a range?",null,null,null,each,Ruby,control flow,flash card
+552,What does the unless keyword do in Ruby?,null,null,null,It reverses the meaning of an if condition.,Ruby,control flow,flash card
+553,When is the unless clause executed in Ruby?,null,null,null,When the condition is false.,Ruby,control flow,flash card
+554,What is the purpose of the retry keyword in Ruby?,null,null,null,It repeats the loop from the beginning.,Ruby,control flow,flash card
+555,How do you define a one-line conditional statement in Ruby?,null,null,null,code if condition,Ruby,control flow,flash card
+556,What does the unless keyword in Ruby typically work well with?,null,null,null,Negative conditions,Ruby,control flow,flash card
+557,"In Ruby, which keyword is used to prematurely exit a loop iteration and jump to the next iteration?",null,null,null,next,Ruby,control flow,flash card
+558,What is the purpose of the while keyword in Ruby?,null,null,null,"It specifies a condition that, if true, allows code to execute.",Ruby,control flow,flash card
+559,Which keyword is used in Ruby to catch and handle exceptions?,null,null,null,begin,Ruby,control flow,flash card
+560,What is the purpose of the case statement in Ruby?,null,null,null,It creates a switch statement to select between multiple code blocks.,Ruby,control flow,flash card
+561,How do you create an empty array in Ruby?,null,null,null,array = [],Ruby,declaration,flash card
+562,What is the correct way to declare a variable in Ruby?,null,null,null,x = 5,Ruby,declaration,flash card
+563,Which of the following is a valid way to declare an empty array in Ruby?,null,null,null,array = [],Ruby,declaration,flash card
+564,How do you declare a constant variable in Ruby?,null,null,null,ConstantVar = 42,Ruby,declaration,flash card
+565,What is the correct syntax for declaring and initializing a Ruby hash (dictionary)?,null,null,null,hash = {},Ruby,declaration,flash card
+566,"To declare a variable in Ruby with global scope, you would prefix the variable name with:",null,null,null,$,Ruby,declaration,flash card
+567,How do you declare a local variable in Ruby within a method or block?,null,null,null,local_var,Ruby,declaration,flash card
+568,What is the correct way to declare a class variable in Ruby?,null,null,null,@@class_var,Ruby,declaration,flash card
+569,"In Ruby, how would you declare a string containing special characters without interpreting them?",null,null,null,raw_string',Ruby,declaration,flash card
+570,"To declare a range of numbers from 1 to 10 in Ruby, you would use:",null,null,null,(1..10),Ruby,declaration,flash card
+571,"When declaring a symbol in Ruby, which syntax is typically used?",null,null,null,:SymbolName,Ruby,declaration,flash card
+572,How do you declare a variable in Ruby with instance scope within a class or module?,null,null,null,@instance_var,Ruby,declaration,flash card
+573,Which syntax is used to declare a new instance of a class in Ruby?,null,null,null,ClassName.new(),Ruby,declaration,flash card
+574,What is the correct way to declare an empty set (a unique collection of elements) in Ruby?,null,null,null,set = Set.new,Ruby,declaration,flash card
+575,"To declare a multi-line string in Ruby without interpreting escape sequences, which syntax should you use?",null,null,null,<<-EOT ... EOT,Ruby,declaration,flash card
+576,"When declaring a local variable in a method or block, which character is used to scope the variable to the block?",null,null,null,#,Ruby,declaration,flash card
+577,"In Ruby, which data structure allows you to associate keys with values and is similar to a Python dictionary?",null,null,null,Hash,Ruby,declaration,flash card
+578,"To declare an empty array and assign it to a variable named ""my_array"" in a single line, you would write:",null,null,null,my_array = [],Ruby,declaration,flash card
+579,How do you declare a constant variable within a class or module in Ruby?,null,null,null,CONSTANT_VAR = 42,Ruby,declaration,flash card
+580,"To declare a string containing interpolation (variable substitution) in Ruby, which syntax is commonly used?",null,null,null,"""String with #{variable} interpolation""",Ruby,declaration,flash card
+581,"To add an element to the end of an array in Ruby, you would use:",null,null,null,array << element,Ruby,data structures,flash card
+582,"In a singly linked list, what is the name of the reference to the next node?",null,null,null,next_node,Ruby,data structures,flash card
+583,How can you remove the last element from an array in Ruby?,null,null,null,array.pop,Ruby,data structures,flash card
+584,"In a binary tree, the top node is commonly referred to as the:",null,null,null,Root,Ruby,data structures,flash card
+585,What data structure in Ruby is similar to a stack and follows the Last-In-First-Out (LIFO) principle?,null,null,null,Array,Ruby,data structures,flash card
+586,Which Ruby data structure allows key-value pairs and does not allow duplicate keys?,null,null,null,Hash,Ruby,data structures,flash card
+587,What method is used to add an element to the beginning of an array in Ruby?,null,null,null,array.unshift(element),Ruby,data structures,flash card
+588,Which data structure is used to represent a collection of elements with no specific order or duplicates in Ruby?,null,null,null,Set,Ruby,data structures,flash card
+589,How do you check if a key exists in a Ruby hash?,null,null,null,hash.key?(key),Ruby,data structures,flash card
+590,What is the primary data structure in Ruby for storing key-value pairs?,null,null,null,Hash,Ruby,data structures,flash card
+591,Which method is used to remove the first element from an array in Ruby?,null,null,null,array.shift,Ruby,data structures,flash card
+592,"In a singly linked list, which node is typically used as the entry point to traverse the list?",null,null,null,Head,Ruby,data structures,flash card
+593,What is the Ruby data structure that represents an ordered collection of elements with duplicates allowed?,null,null,null,Array,Ruby,data structures,flash card
+594,Which data structure in Ruby is used to implement a First-In-First-Out (FIFO) order?,null,null,null,Queue,Ruby,data structures,flash card
+595,"To add an element to the end of an array in Ruby, which method is commonly used?",null,null,null,array.push(element),Ruby,data structures,flash card
+596,"In a binary tree, what is the maximum number of children a node can have in a typical binary tree?",null,null,null,2,Ruby,data structures,flash card
+597,Which Ruby data structure is used to represent an unordered collection of unique elements?,null,null,null,Set,Ruby,data structures,flash card
+598,What method is used to check if an element is included in an array in Ruby?,null,null,null,array.include?(element),Ruby,data structures,flash card
+599,"In a linked list, what is the time complexity for inserting an element at the end of the list?",null,null,null,O(1),Ruby,data structures,flash card
+600,"In a binary search tree, which property ensures that all nodes in the left subtree are less than the root node, and all nodes in the right subtree are greater than the root node?",null,null,null,Binary search tree property,Ruby,data structures,flash card
+601,Which of the following keywords is used to define a loop in Ruby?,while,null,null,TRUE,Ruby,control flow,truefalse
+602,Which of the following keywords is used to define a loop in Ruby?,loop,null,null,FALSE,Ruby,control flow,truefalse
+603,What does the break keyword do in a loop in Ruby?,Exits the loop prematurely.,null,null,TRUE,Ruby,control flow,truefalse
+604,What does the break keyword do in a loop in Ruby?,Continues to the next iteration of the loop.,null,null,FALSE,Ruby,control flow,truefalse
+605,"In Ruby, which keyword is used to define a conditional branch?",if,null,null,TRUE,Ruby,control flow,truefalse
+606,"In Ruby, which keyword is used to define a conditional branch?",switch,null,null,FALSE,Ruby,control flow,truefalse
+607,What is the purpose of the else clause in an if statement in Ruby?,To execute a block of code if the condition is false.,null,null,TRUE,Ruby,control flow,truefalse
+608,What is the purpose of the else clause in an if statement in Ruby?,To execute a block of code if the condition is true.,null,null,FALSE,Ruby,control flow,truefalse
+609,"In Ruby, what is the scope of a local variable defined inside a block or method?",Block or method scope,null,null,TRUE,Ruby,control flow,truefalse
+610,"In Ruby, what is the scope of a local variable defined inside a block or method?",Global scope,null,null,FALSE,Ruby,control flow,truefalse
+611,Which of the following loops in Ruby will always execute at least once?,until,null,null,TRUE,Ruby,control flow,truefalse
+612,What is the purpose of the next keyword in a loop in Ruby?,Skips the current iteration and continues with the next.,null,null,TRUE,Ruby,control flow,truefalse
+613,"In Ruby, what does the elsif keyword allow you to do in an if statement?",Combine multiple conditions in a single if statement.,null,null,TRUE,Ruby,control flow,truefalse
+614,Which keyword is used to define a method in Ruby?,def,null,null,TRUE,Ruby,control flow,truefalse
+615,What does the case keyword allow you to do in Ruby?,Create a switch statement for multiple conditional branches.,null,null,TRUE,Ruby,control flow,truefalse
+616,Which of the following loops in Ruby will always execute at least once?,while,null,null,FALSE,Ruby,control flow,truefalse
+617,What is the purpose of the next keyword in a loop in Ruby?,Ends the loop.,null,null,FALSE,Ruby,control flow,truefalse
+618,"In Ruby, what does the elsif keyword allow you to do in an if statement?",Define a new if statement within another if statement.,null,null,FALSE,Ruby,control flow,truefalse
+619,Which keyword is used to define a method in Ruby?,define,null,null,FALSE,Ruby,control flow,truefalse
+620,What does the case keyword allow you to do in Ruby?,Define a class.,null,null,FALSE,Ruby,control flow,truefalse
+621,How do you create an empty array in Ruby?,array = [],null,null,TRUE,Ruby,declaration,truefalse
+622,What is the correct way to declare a variable in Ruby?,x = 5,null,null,TRUE,Ruby,declaration,truefalse
+623,Which of the following is a valid way to declare an empty array in Ruby?,array = [],null,null,TRUE,Ruby,declaration,truefalse
+624,How do you declare a constant variable in Ruby?,ConstantVar = 42,null,null,TRUE,Ruby,declaration,truefalse
+625,What is the correct syntax for declaring and initializing a Ruby hash (dictionary)?,hash = {},null,null,TRUE,Ruby,declaration,truefalse
+626,"To declare a variable in Ruby with global scope, you would prefix the variable name with:",$,null,null,TRUE,Ruby,declaration,truefalse
+627,How do you declare a local variable in Ruby within a method or block?,local_var,null,null,TRUE,Ruby,declaration,truefalse
+628,What is the correct way to declare a class variable in Ruby?,@@class_var,null,null,TRUE,Ruby,declaration,truefalse
+629,"In Ruby, how would you declare a string containing special characters without interpreting them?",raw_string',null,null,TRUE,Ruby,declaration,truefalse
+630,"To declare a range of numbers from 1 to 10 in Ruby, you would use:",(1..10),null,null,TRUE,Ruby,declaration,truefalse
+631,How do you create an empty array in Ruby?,array = new Array(),null,null,FALSE,Ruby,declaration,truefalse
+632,What is the correct way to declare a variable in Ruby?,variable x;,null,null,FALSE,Ruby,declaration,truefalse
+633,Which of the following is a valid way to declare an empty array in Ruby?,array = new Array(),null,null,FALSE,Ruby,declaration,truefalse
+634,How do you declare a constant variable in Ruby?,constVar => 42,null,null,FALSE,Ruby,declaration,truefalse
+635,What is the correct syntax for declaring and initializing a Ruby hash (dictionary)?,hash = new Hash(),null,null,FALSE,Ruby,declaration,truefalse
+636,"To declare a variable in Ruby with global scope, you would prefix the variable name with:",@,null,null,FALSE,Ruby,declaration,truefalse
+637,How do you declare a local variable in Ruby within a method or block?,@local_var,null,null,FALSE,Ruby,declaration,truefalse
+638,What is the correct way to declare a class variable in Ruby?,@class_var,null,null,FALSE,Ruby,declaration,truefalse
+639,"In Ruby, how would you declare a string containing special characters without interpreting them?",%q(raw_string),null,null,FALSE,Ruby,declaration,truefalse
+640,"To declare a range of numbers from 1 to 10 in Ruby, you would use:","{1, 10}",null,null,FALSE,Ruby,declaration,truefalse
+641,"To add an element to the end of an array in Ruby, you would use:",array << element,null,null,TRUE,Ruby,data structures,truefalse
+642,"In a singly linked list, what is the name of the reference to the next node?",next_node,null,null,TRUE,Ruby,data structures,truefalse
+643,How can you remove the last element from an array in Ruby?,array.pop,null,null,TRUE,Ruby,data structures,truefalse
+644,"In a binary tree, the top node is commonly referred to as the:",Root,null,null,TRUE,Ruby,data structures,truefalse
+645,What data structure in Ruby is similar to a stack and follows the Last-In-First-Out (LIFO) principle?,Array,null,null,TRUE,Ruby,data structures,truefalse
+646,Which Ruby data structure allows key-value pairs and does not allow duplicate keys?,Hash,null,null,TRUE,Ruby,data structures,truefalse
+647,What method is used to add an element to the beginning of an array in Ruby?,array.unshift(element),null,null,TRUE,Ruby,data structures,truefalse
+648,Which data structure is used to represent a collection of elements with no specific order or duplicates in Ruby?,Set,null,null,TRUE,Ruby,data structures,truefalse
+649,How do you check if a key exists in a Ruby hash?,hash.key?(key),null,null,TRUE,Ruby,data structures,truefalse
+650,What is the primary data structure in Ruby for storing key-value pairs?,Hash,null,null,TRUE,Ruby,data structures,truefalse
+651,"To add an element to the end of an array in Ruby, you would use:",array.add(element),null,null,FALSE,Ruby,data structures,truefalse
+652,"In a singly linked list, what is the name of the reference to the next node?",next,null,null,FALSE,Ruby,data structures,truefalse
+653,How can you remove the last element from an array in Ruby?,array.delete(-1),null,null,FALSE,Ruby,data structures,truefalse
+654,"In a binary tree, the top node is commonly referred to as the:",Branch,null,null,FALSE,Ruby,data structures,truefalse
+655,What data structure in Ruby is similar to a stack and follows the Last-In-First-Out (LIFO) principle?,Queue,null,null,FALSE,Ruby,data structures,truefalse
+656,Which Ruby data structure allows key-value pairs and does not allow duplicate keys?,Array,null,null,FALSE,Ruby,data structures,truefalse
+657,What method is used to add an element to the beginning of an array in Ruby?,array.push(element),null,null,FALSE,Ruby,data structures,truefalse
+658,Which data structure is used to represent a collection of elements with no specific order or duplicates in Ruby?,Queue,null,null,FALSE,Ruby,data structures,truefalse
+659,How do you check if a key exists in a Ruby hash?,hash.exists?(key),null,null,FALSE,Ruby,data structures,truefalse
+660,What is the primary data structure in Ruby for storing key-value pairs?,List,null,null,FALSE,Ruby,data structures,truefalse
+661,Which of the following keywords is used to define a loop in Ruby?,null,null,null,while,Ruby,control flow,fill in the blank
+662,What does the break keyword do in a loop in Ruby?,null,null,null,Exits the loop prematurely.,Ruby,control flow,fill in the blank
+663,"In Ruby, which keyword is used to define a conditional branch?",null,null,null,if,Ruby,control flow,fill in the blank
+664,What is the purpose of the else clause in an if statement in Ruby?,null,null,null,To execute a block of code if the condition is false.,Ruby,control flow,fill in the blank
+665,"In Ruby, what is the scope of a local variable defined inside a block or method?",null,null,null,Block or method scope,Ruby,control flow,fill in the blank
+666,Which of the following loops in Ruby will always execute at least once?,null,null,null,until,Ruby,control flow,fill in the blank
+667,What is the purpose of the next keyword in a loop in Ruby?,null,null,null,Skips the current iteration and continues with the next.,Ruby,control flow,fill in the blank
+668,"In Ruby, what does the elsif keyword allow you to do in an if statement?",null,null,null,Combine multiple conditions in a single if statement.,Ruby,control flow,fill in the blank
+669,Which keyword is used to define a method in Ruby?,null,null,null,def,Ruby,control flow,fill in the blank
+670,What does the case keyword allow you to do in Ruby?,null,null,null,Create a switch statement for multiple conditional branches.,Ruby,control flow,fill in the blank
+671,"In Ruby, which loop is used to iterate over a collection of elements like an array or a range?",null,null,null,each,Ruby,control flow,fill in the blank
+672,What does the unless keyword do in Ruby?,null,null,null,It reverses the meaning of an if condition.,Ruby,control flow,fill in the blank
+673,When is the unless clause executed in Ruby?,null,null,null,When the condition is false.,Ruby,control flow,fill in the blank
+674,What is the purpose of the retry keyword in Ruby?,null,null,null,It repeats the loop from the beginning.,Ruby,control flow,fill in the blank
+675,How do you define a one-line conditional statement in Ruby?,null,null,null,code if condition,Ruby,control flow,fill in the blank
+676,What does the unless keyword in Ruby typically work well with?,null,null,null,Negative conditions,Ruby,control flow,fill in the blank
+677,"In Ruby, which keyword is used to prematurely exit a loop iteration and jump to the next iteration?",null,null,null,next,Ruby,control flow,fill in the blank
+678,What is the purpose of the while keyword in Ruby?,null,null,null,"It specifies a condition that, if true, allows code to execute.",Ruby,control flow,fill in the blank
+679,Which keyword is used in Ruby to catch and handle exceptions?,null,null,null,begin,Ruby,control flow,fill in the blank
+680,What is the purpose of the case statement in Ruby?,null,null,null,It creates a switch statement to select between multiple code blocks.,Ruby,control flow,fill in the blank
+681,How do you create an empty array in Ruby?,null,null,null,array = [],Ruby,declaration,fill in the blank
+682,What is the correct way to declare a variable in Ruby?,null,null,null,x = 5,Ruby,declaration,fill in the blank
+683,Which of the following is a valid way to declare an empty array in Ruby?,null,null,null,array = [],Ruby,declaration,fill in the blank
+684,How do you declare a constant variable in Ruby?,null,null,null,ConstantVar = 42,Ruby,declaration,fill in the blank
+685,What is the correct syntax for declaring and initializing a Ruby hash (dictionary)?,null,null,null,hash = {},Ruby,declaration,fill in the blank
+686,"To declare a variable in Ruby with global scope, you would prefix the variable name with:",null,null,null,$,Ruby,declaration,fill in the blank
+687,How do you declare a local variable in Ruby within a method or block?,null,null,null,local_var,Ruby,declaration,fill in the blank
+688,What is the correct way to declare a class variable in Ruby?,null,null,null,@@class_var,Ruby,declaration,fill in the blank
+689,"In Ruby, how would you declare a string containing special characters without interpreting them?",null,null,null,raw_string',Ruby,declaration,fill in the blank
+690,"To declare a range of numbers from 1 to 10 in Ruby, you would use:",null,null,null,(1..10),Ruby,declaration,fill in the blank
+691,"When declaring a symbol in Ruby, which syntax is typically used?",null,null,null,:SymbolName,Ruby,declaration,fill in the blank
+692,How do you declare a variable in Ruby with instance scope within a class or module?,null,null,null,@instance_var,Ruby,declaration,fill in the blank
+693,Which syntax is used to declare a new instance of a class in Ruby?,null,null,null,ClassName.new(),Ruby,declaration,fill in the blank
+694,What is the correct way to declare an empty set (a unique collection of elements) in Ruby?,null,null,null,set = Set.new,Ruby,declaration,fill in the blank
+695,"To declare a multi-line string in Ruby without interpreting escape sequences, which syntax should you use?",null,null,null,<<-EOT ... EOT,Ruby,declaration,fill in the blank
+696,"When declaring a local variable in a method or block, which character is used to scope the variable to the block?",null,null,null,#,Ruby,declaration,fill in the blank
+697,"In Ruby, which data structure allows you to associate keys with values and is similar to a Python dictionary?",null,null,null,Hash,Ruby,declaration,fill in the blank
+698,"To declare an empty array and assign it to a variable named ""my_array"" in a single line, you would write:",null,null,null,my_array = [],Ruby,declaration,fill in the blank
+699,How do you declare a constant variable within a class or module in Ruby?,null,null,null,CONSTANT_VAR = 42,Ruby,declaration,fill in the blank
+700,"To declare a string containing interpolation (variable substitution) in Ruby, which syntax is commonly used?",null,null,null,"""String with #{variable} interpolation""",Ruby,declaration,fill in the blank
+701,"To add an element to the end of an array in Ruby, you would use:",null,null,null,array << element,Ruby,data structures,fill in the blank
+702,"In a singly linked list, what is the name of the reference to the next node?",null,null,null,next_node,Ruby,data structures,fill in the blank
+703,How can you remove the last element from an array in Ruby?,null,null,null,array.pop,Ruby,data structures,fill in the blank
+704,"In a binary tree, the top node is commonly referred to as the:",null,null,null,Root,Ruby,data structures,fill in the blank
+705,What data structure in Ruby is similar to a stack and follows the Last-In-First-Out (LIFO) principle?,null,null,null,Array,Ruby,data structures,fill in the blank
+706,Which Ruby data structure allows key-value pairs and does not allow duplicate keys?,null,null,null,Hash,Ruby,data structures,fill in the blank
+707,What method is used to add an element to the beginning of an array in Ruby?,null,null,null,array.unshift(element),Ruby,data structures,fill in the blank
+708,Which data structure is used to represent a collection of elements with no specific order or duplicates in Ruby?,null,null,null,Set,Ruby,data structures,fill in the blank
+709,How do you check if a key exists in a Ruby hash?,null,null,null,hash.key?(key),Ruby,data structures,fill in the blank
+710,What is the primary data structure in Ruby for storing key-value pairs?,null,null,null,Hash,Ruby,data structures,fill in the blank
+711,Which method is used to remove the first element from an array in Ruby?,null,null,null,array.shift,Ruby,data structures,fill in the blank
+712,"In a singly linked list, which node is typically used as the entry point to traverse the list?",null,null,null,Head,Ruby,data structures,fill in the blank
+713,What is the Ruby data structure that represents an ordered collection of elements with duplicates allowed?,null,null,null,Array,Ruby,data structures,fill in the blank
+714,Which data structure in Ruby is used to implement a First-In-First-Out (FIFO) order?,null,null,null,Queue,Ruby,data structures,fill in the blank
+715,"To add an element to the end of an array in Ruby, which method is commonly used?",null,null,null,array.push(element),Ruby,data structures,fill in the blank
+716,"In a binary tree, what is the maximum number of children a node can have in a typical binary tree?",null,null,null,2,Ruby,data structures,fill in the blank
+717,Which Ruby data structure is used to represent an unordered collection of unique elements?,null,null,null,Set,Ruby,data structures,fill in the blank
+718,What method is used to check if an element is included in an array in Ruby?,null,null,null,array.include?(element),Ruby,data structures,fill in the blank
+719,"In a linked list, what is the time complexity for inserting an element at the end of the list?",null,null,null,O(1),Ruby,data structures,fill in the blank
+720,"In a binary search tree, which property ensures that all nodes in the left subtree are less than the root node, and all nodes in the right subtree are greater than the root node?",null,null,null,Binary search tree property,Ruby,data structures,fill in the blank
