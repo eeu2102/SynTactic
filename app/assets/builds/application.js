@@ -31748,9 +31748,24 @@
     const handleToggleDropdown = () => {
       setIsDropdownOpen(!isDropdownOpen);
     };
-    const handleSelect = () => {
+    const handleSelect = async (language) => {
       setSelectedLanguage(language);
-      setIsDropdownOpen(false);
+      const token = localStorage.getItem("authToken");
+      try {
+        const response = await fetch("/update_language", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+          },
+          body: JSON.stringify({ language })
+        });
+        if (!response.ok) {
+          throw new Error("Failed to update language preference");
+        }
+      } catch (error2) {
+        console.error("There was an error updating language preference:", error2);
+      }
     };
     const navigate = useNavigate();
     const goToDashboard = () => {
@@ -32198,7 +32213,7 @@
   var import_react5 = __toESM(require_react());
   var Welcome = () => {
     const navigate = useNavigate();
-    const handleLanguageSelection = async (language2) => {
+    const handleLanguageSelection = async (language) => {
       try {
         const token = localStorage.getItem("authToken");
         const response = await fetch("/update_language", {
@@ -32207,7 +32222,7 @@
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`
           },
-          body: JSON.stringify({ language: language2 })
+          body: JSON.stringify({ language })
         });
         if (response.ok) {
           navigate("/home");

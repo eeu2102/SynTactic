@@ -43,31 +43,37 @@ const Header = () => {
     setIsDropdownOpen(!isDropdownOpen);
   }
 
-  // const handleSelect = async(language) => {
-  //   try {
-  //     const token = localStorage.getItem('authToken');
-  //     const response = await fetch('/update_language', { // Adjust the endpoint as necessary
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         'Authorization': `Bearer ${token}`,
-  //       },
-  //       body: JSON.stringify({ language }),
-  //     });
-  
-  //     if (!response.ok) {
-  //       console.error('Failed to update language preference');
-  //     }
-  //   } catch (error) {
-  //     console.error('There was an error updating language preference:', error);
-  //   }
-  //   setIsDropdownOpen(false);
-  // };
 
-  const handleSelect = () => {
-    setSelectedLanguage(language);
-    setIsDropdownOpen(false);
-  }
+  // const handleSelect = () => {
+  //   setSelectedLanguage(language);
+  //   setIsDropdownOpen(false);
+  // }
+
+  const handleSelect = async (language) => {
+    setSelectedLanguage(language);  // Update language in the frontend state
+  
+    const token = localStorage.getItem('authToken'); // Retrieve the auth token from local storage
+  
+    try {
+      const response = await fetch('/update_language', {  // Replace with your actual endpoint
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`, // Include the auth token in the request header
+        },
+        body: JSON.stringify({ language }), // Send the selected language
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to update language preference');
+      }
+  
+      // Handle the response here. You could update user context or state if needed.
+    } catch (error) {
+      console.error('There was an error updating language preference:', error);
+    }
+  };
+  
   
   
   const navigate = useNavigate();
