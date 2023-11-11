@@ -3,22 +3,71 @@ Feature: User Registration
     I want to register and log into the SynTactic platform
     So that I can access personalized syntax learning features
 
-Scenario: User Registration and Login
-    Given I am on the landing page
+Scenario: Registering a New User
+    Given I am on the login page
     When I press on the "Sign Up" button
-    And I fill in "Username" with "User1"
-    And I fill in "Password" with "Password1"
+    And I fill in "Username" with "jessicajong"
+    And I fill in "Password" with "testing123"
+    When I press the "Sign Up" button
+    Then I should be on the welcome page
+
+Scenario: Attempting to Register an Existing User
+    Given I am on the login page
+    When I press on the "Sign Up" button
+    And I fill in "Username" with "jessicajong"
+    And I fill in "Password" with "567test"
+    When I press the "Sign Up" button
+    Then I should see "Username already exists. Please try another one."
+
+Scenario: Logging In an Existing User
+    Given I am on the login page
+    When I press on the "Login" button
+    And I fill in "Username" with "jessicajong"
+    And I fill in "Password" with "testing123"
+    When I press the "Login" button
+    Then I should be on the home page
+
+Scenario: Registering another New User
+    Given I am on the login page
+    When I press on the "Sign Up" button
+    And I fill in "Username" with "jessicapong"
+    And I fill in "Password" with "testing456"
+    When I press the "Sign Up" button
+    Then I should be on the welcome page
+
+Scenario: Logging In with Wrong Password
+    Given I am on the login page
+    When I press on the "Login" button
+    And I fill in "Username" with "jessicajong"
+    And I fill in "Password" with "wrongpw"
+    When I press the "Login" button
+    Then I should see "Login failed. Please try again."
+
+Scenario: Logging In with a Nonexisting User
+    Given I am on the login page
+    When I press on the "Login" button
+    And I fill in "Username" with "jessicaong"
+    And I fill in "Password" with "testing123"
+    When I press the "Login" button
+    Then I should see "Login failed. Please try again."
+
+Scenario: Ensuring the Language Preference Persists After Signing Up
+    Given I am on the login page
+    When I press on the "Sign Up" button
+    And I fill in "Username" with "jessicaong"
+    And I fill in "Password" with "testing3"
     When I press the "Sign Up" button
     Then I should be on the welcome page
     When I press on the "Java" button
     Then I should be on the home page
     When I press the "Dashboard" button 
     Then I should be on the dashboard page
+    And I should see "Hi jessicaong!"
     When I click on the "Logout" button
-    Then I should be on the landing page
+    Then I should be on the login page
     When I press the "Login" button
-    And I fill in "Username" with "User1" 
-    And I fill in "Password" with "Password1"
+    And I fill in "Username" with "jessicaong" 
+    And I fill in "Password" with "testing3"
     When I press the "Login" button
     Then I should be on the home page
     Then I should see "Java"

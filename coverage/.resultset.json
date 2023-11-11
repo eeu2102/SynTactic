@@ -33,10 +33,22 @@
           null
         ]
       },
+      "/Users/dorothyzhang/SynTactic/app/helpers/sessions_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/dorothyzhang/SynTactic/app/helpers/site_helper.rb": {
         "lines": [
           null,
           null,
+          1,
+          null
+        ]
+      },
+      "/Users/dorothyzhang/SynTactic/app/helpers/users_helper.rb": {
+        "lines": [
           1,
           null
         ]
@@ -58,24 +70,129 @@
       },
       "/Users/dorothyzhang/SynTactic/app/controllers/questions_controller.rb": {
         "lines": [
-          1,
-          1,
+          0,
+          0,
           null,
-          17,
-          17,
+          0,
+          0,
           null,
           null,
-          17,
-          17,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/dorothyzhang/SynTactic/app/controllers/sessions_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
           null,
           0,
           null,
-          17,
+          0,
+          0,
           null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
           null
-        ]
+        ],
+        "branches": {
+        }
+      },
+      "/Users/dorothyzhang/SynTactic/app/controllers/users_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/dorothyzhang/SynTactic/app/models/user.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1698815783
+    "timestamp": 1699741241
   }
 }
