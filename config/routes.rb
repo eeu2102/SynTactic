@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :create]
 
   post 'login', to: 'sessions#create'
-delete 'logout', to: 'sessions#destroy'
+  delete 'logout', to: 'sessions#destroy'
+  get '/current_user', to: 'sessions#get_current_user'
+
 
   root to: redirect('/home')
 
