@@ -32227,7 +32227,8 @@
     const [showLoginModal, setShowLoginModal] = (0, import_react7.useState)(false);
     const [username, setUsername] = (0, import_react7.useState)("");
     const [password, setPassword] = (0, import_react7.useState)("");
-    const [errorMessage, setErrorMessage] = (0, import_react7.useState)("");
+    const [loginErrorMessage, setLoginErrorMessage] = (0, import_react7.useState)("");
+    const [signupErrorMessage, setSignupErrorMessage] = (0, import_react7.useState)("");
     const navigate = useNavigate();
     const handleShowSignUp = () => {
       setShowLoginModal(false);
@@ -32264,7 +32265,7 @@
           setShowSignUpModal(false);
           navigate("/welcome");
         } else {
-          setErrorMessage("Username already exists. Please try another one.");
+          setSignupErrorMessage("Username already exists. Please try another one.");
           setUsername("");
           setPassword("");
           console.error("Signup failed:", data.errors);
@@ -32293,7 +32294,12 @@
           setShowLoginModal(false);
           navigate("/homepage");
         } else {
-          console.error("Login failed:", response.statusText);
+          if (response.status === 404) {
+            setLoginErrorMessage("User doesn't exist. Please try again.");
+          } else {
+            console.error("Login failed:", response.statusText);
+            setLoginErrorMessage("Login failed. Please try again.");
+          }
         }
         setUsername("");
         setPassword("");
@@ -32318,7 +32324,9 @@
     }, /* @__PURE__ */ import_react7.default.createElement("form", {
       className: "signup__form",
       onSubmit: handleSignUp
-    }, /* @__PURE__ */ import_react7.default.createElement("input", {
+    }, /* @__PURE__ */ import_react7.default.createElement("label", {
+      htmlFor: "signup__username"
+    }, "Username"), /* @__PURE__ */ import_react7.default.createElement("input", {
       type: "text",
       placeholder: "Username",
       required: true,
@@ -32326,7 +32334,9 @@
       id: "signup__username",
       value: username,
       onChange: (e) => setUsername(e.target.value)
-    }), /* @__PURE__ */ import_react7.default.createElement("input", {
+    }), /* @__PURE__ */ import_react7.default.createElement("label", {
+      htmlFor: "signup__password"
+    }, "Password"), /* @__PURE__ */ import_react7.default.createElement("input", {
       type: "password",
       placeholder: "Password",
       required: true,
@@ -32337,16 +32347,18 @@
     }), /* @__PURE__ */ import_react7.default.createElement("button", {
       type: "submit",
       className: "signup__submit"
-    }, "Sign Up")), errorMessage && /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, "Sign Up")), signupErrorMessage && /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "error-message"
-    }, errorMessage), " ")), showLoginModal && /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, signupErrorMessage), " ")), showLoginModal && /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "login__modal"
     }, /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "login__content"
     }, /* @__PURE__ */ import_react7.default.createElement("form", {
       className: "login__form",
       onSubmit: handleLogin
-    }, /* @__PURE__ */ import_react7.default.createElement("input", {
+    }, /* @__PURE__ */ import_react7.default.createElement("label", {
+      htmlFor: "login__username"
+    }, "Username"), /* @__PURE__ */ import_react7.default.createElement("input", {
       type: "text",
       placeholder: "Username",
       required: true,
@@ -32354,7 +32366,9 @@
       id: "login__username",
       value: username,
       onChange: (e) => setUsername(e.target.value)
-    }), /* @__PURE__ */ import_react7.default.createElement("input", {
+    }), /* @__PURE__ */ import_react7.default.createElement("label", {
+      htmlFor: "login__password"
+    }, "Password"), /* @__PURE__ */ import_react7.default.createElement("input", {
       type: "password",
       placeholder: "Password",
       required: true,
@@ -32365,7 +32379,9 @@
     }), /* @__PURE__ */ import_react7.default.createElement("button", {
       type: "submit",
       className: "login__submit"
-    }, "Login")))));
+    }, "Login")), loginErrorMessage && /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "error-message"
+    }, loginErrorMessage))));
   };
   var Landing_default = Landing;
 

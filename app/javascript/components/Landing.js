@@ -9,8 +9,8 @@ const Landing = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const [errorMessage, setErrorMessage] = useState(''); // State to hold the error message
-
+  const [loginErrorMessage, setLoginErrorMessage] = useState(''); // State to hold the error message
+  const [signupErrorMessage, setSignupErrorMessage] = useState('');
 
   const navigate = useNavigate();
 
@@ -89,7 +89,7 @@ const Landing = () => {
         navigate('/welcome')
       } else {
         // if(data.errors && data.errors.username) {
-          setErrorMessage('Username already exists. Please try another one.');
+          setSignupErrorMessage('Username already exists. Please try another one.');
         // }
         setUsername(''); // Clear the username state
         setPassword('');
@@ -125,7 +125,12 @@ const Landing = () => {
         setShowLoginModal(false); 
         navigate('/homepage'); 
       } else {
+        if (response.status === 404) {
+          setLoginErrorMessage('User doesn\'t exist. Please try again.');
+        } else {
         console.error('Login failed:', response.statusText);
+        setLoginErrorMessage('Login failed. Please try again.');
+        }
       }
   
       // Clear the form fields
@@ -147,6 +152,7 @@ const Landing = () => {
           {/* <div className="overlay" onClick={() => setShowSignUpModal(false)}></div> */}
           <div className="signup__content">
             <form className="signup__form" onSubmit={handleSignUp}>
+                <label htmlFor="signup__username">Username</label>
                 <input 
                   type="text" 
                   placeholder="Username" 
@@ -154,6 +160,8 @@ const Landing = () => {
                   id="signup__username"
                   value={username} 
                   onChange={(e) => setUsername(e.target.value)}/>
+
+                <label htmlFor="signup__password">Password</label>
                 <input 
                   type="password" 
                   placeholder="Password" 
@@ -163,7 +171,7 @@ const Landing = () => {
                   onChange={(e) => setPassword(e.target.value)}/>
                 <button type="submit" className="signup__submit">Sign Up</button>
             </form>
-            {errorMessage && <div className="error-message">{errorMessage}</div>} {/* Display the error message */}
+            {signupErrorMessage && <div className="error-message">{signupErrorMessage}</div>} {/* Display the error message */}
 
           </div>
           
@@ -175,6 +183,7 @@ const Landing = () => {
           {/* <div className="overlay" onClick={() => setShowLoginModal(false)}></div> */}
           <div className="login__content">
             <form className="login__form" onSubmit={handleLogin}>
+                <label htmlFor="login__username">Username</label>
                 <input 
                   type="text" 
                   placeholder="Username" 
@@ -182,6 +191,8 @@ const Landing = () => {
                   id="login__username"
                   value={username} 
                   onChange={(e) => setUsername(e.target.value)}/>
+
+                <label htmlFor="login__password">Password</label>
                 <input 
                   type="password" 
                   placeholder="Password" 
@@ -191,6 +202,7 @@ const Landing = () => {
                   onChange={(e) => setPassword(e.target.value)}/>
                 <button type="submit" className="login__submit">Login</button>
             </form>
+            {loginErrorMessage && <div className="error-message">{loginErrorMessage}</div>}
 
           </div>
         </div>

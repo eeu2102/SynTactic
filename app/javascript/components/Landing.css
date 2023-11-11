@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Keeping the light grey background */
+    color: #333; /* Consistent dark text for readability */
+  }
+  
+  /* Landing Container - Flexbox Centering */
+  .landing__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  /* Buttons - Consistent with Homepage Button Style */
+  .landing__button {
+    background-color: lightgrey; /* Matching the topic background color */
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 16px;
+  }
+  
+  .landing__button:hover {
+    background-color: #bcbcbc; /* Slightly darker grey on hover */
+  }
+  
+  /* Modals - Using Styles from Modal on Homepage */
+  .signup__modal, .login__modal {
+    background-color: white;
+    width: 600px; /* Matching width from .modal */
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Forms - Flexbox Layout */
+  .signup__form, .login__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* Input Fields - Slightly Larger and More Spacing */
+  .signup__input, .login__input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Labels - Bold and Spaced */
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* Error Message - Consistent with Color Scheme */
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
