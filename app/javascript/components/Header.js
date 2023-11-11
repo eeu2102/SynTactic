@@ -72,6 +72,7 @@ const Header = () => {
     } catch (error) {
       console.error('There was an error updating language preference:', error);
     }
+    setIsDropdownOpen(false);
   };
   
   
