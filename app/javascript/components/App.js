@@ -12,15 +12,15 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 const App = () => (
   <div>
     <Routes>
-      <Route path="/home" element={<>
+      <Route path="/landing" element={<>
           <Landing />
         </>
       } />
-      {/* <Route path="/home/" element={<>
+      <Route path="/home/" element={<>
           <Header />
           <HomePage />
         </>
-      } /> */}
+      } />
       <Route path="/welcome" element={
         <>
           <WelcomeHeader />
