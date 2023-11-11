@@ -22,7 +22,7 @@ ESaaS Fall '23 Project
 # Running
 
 - Start the Rails server and esbuild with one command `./bin/dev`
-- Hit [http://localhost:3000/home/](http://localhost:3000/home/)
+- Hit [http://localhost:3000/login/](http://localhost:3000/home/)
 
 # Heroku Deployment Link
 
