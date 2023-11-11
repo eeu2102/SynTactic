@@ -1,8 +1,10 @@
 import React from 'react';
 import "./Welcome.css";
-
+import { useNavigate } from "react-router-dom";
 
 const Welcome = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="welcome__container">
       <div className="welcome__message">
@@ -15,9 +17,9 @@ const Welcome = () => {
           <p id="change__language">You can always change your practice language later!</p>
         </div>
         <div className="language__options">
-          <button className="language__choice">Java</button>
-          <button className="language__choice">Python</button>
-          <button className="language__choice">Ruby</button>
+          <button onClick={() => {navigate('/home')}}className="language__choice">Java</button>
+          <button onClick={() => {navigate('/home')}} className="language__choice">Python</button>
+          <button onClick={() => {navigate('/home')}} className="language__choice">Ruby</button>
         </div>
       </div>
     </div>
