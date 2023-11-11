@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Make sure to import Link
 import "./WelcomeHeader.css";
 
 const WelcomeHeader = () => {
   return ( // Added return statement here
-    <div className="welcome__container">
+    <div className="welcome__header__container">
       <div>
-        <h1>SynTactic</h1>
+        <h1 className="welcome__header__text">SynTactic</h1>
       </div>
-        
     </div>
   );
 }

@@ -32213,8 +32213,10 @@
   var import_react6 = __toESM(require_react());
   var WelcomeHeader = () => {
     return /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "welcome__container"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement("h1", null, "SynTactic")));
+      className: "welcome__header__container"
+    }, /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement("h1", {
+      className: "welcome__header__text"
+    }, "SynTactic")));
   };
   var WelcomeHeader_default = WelcomeHeader;
 
