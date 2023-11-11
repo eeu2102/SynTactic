@@ -19,7 +19,13 @@ Background: questions in database
 
 
 Scenario: Picking Java to practice 
-    Given I am on the welcome page
+    Given I am on the login page
+    When I press on the "Sign Up" button
+    And I fill in "Username" with "jessicajong"
+    And I fill in "Password" with "testing1"
+    When I press the "Sign Up" button
+    Then I should be on the welcome Page
+   
     When I press the "Java" button
     Then I should be on the home page
     When I press the "Control Flow" button
@@ -29,6 +35,13 @@ Scenario: Picking Java to practice
     Then I should not see "Python Question"
 
 Scenario: Picking Python to practice 
+    Given I am on the login page
+    When I press on the "Sign Up" button
+    And I fill in "Username" with "jessicapong"
+    And I fill in "Password" with "testing2"
+    When I press the "Sign Up" button
+    Then I should be on the welcome Page
+
     Given I am on the welcome page
     When I press the "Python" button
     Then I should be on the home page
@@ -36,6 +49,23 @@ Scenario: Picking Python to practice
     When I press the "Flash Cards" button
     Then I should be on the problems page
     Then I should see "Python Question"
+    Then I should not see "Java Question"
+
+Scenario: Picking Ruby to practice 
+    Given I am on the login page
+    When I press on the "Sign Up" button
+    And I fill in "Username" with "jessicaong"
+    And I fill in "Password" with "testing3"
+    When I press the "Sign Up" button
+    Then I should be on the welcome Page
+
+    Given I am on the welcome page
+    When I press the "Ruby" button
+    Then I should be on the home page
+    When I press the "Control Flow" button
+    When I press the "Flash Cards" button
+    Then I should be on the problems page
+    Then I should see "Ruby Question"
     Then I should not see "Java Question"
 
 

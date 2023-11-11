@@ -14,7 +14,15 @@ Background: questions in database
 
 
 Scenario: Navigate from results modal to Home Page
-   Given I am on the home page
+   Given I am on the login page
+   When I press on the "Sign Up" button
+   And I fill in "Username" with "jessicajong"
+   And I fill in "Password" with "testing123"
+   When I press the "Sign Up" button
+   Then I should be on the welcome page
+   When I press on the "Python" button
+   Then I should be on the home page
+
    When I press the "Control Flow" button
    When I press the "Multiple Choice" button
    Then I should be on the problems page
@@ -50,6 +58,14 @@ Scenario: Navigate from results modal to Home Page
 
 
 Scenario: Repeat the set of questions from results modal
+   Given I am on the login page
+   When I press on the "Login" button
+   And I fill in "Username" with "jessicajong"
+   And I fill in "Password" with "testing123"
+   When I press the "Login" button
+   Then I should be on the home page
+   And I should see "Python"
+
    Given I am on the home page
    When I press the "Control Flow" button
    When I press the "Multiple Choice" button

@@ -14,7 +14,15 @@ Background: questions in database
 
 
 Scenario: Flip flash card for answer 
-   Given I am on the home page
+   Given I am on the login page
+   When I press on the "Sign Up" button
+   And I fill in "Username" with "jessicajong"
+   And I fill in "Password" with "testing123"
+   When I press the "Sign Up" button
+   Then I should be on the welcome page
+   When I press on the "Python" button
+   Then I should be on the home page
+
    When I press the "Control Flow" button
    When I press the "Flash Cards" button
    Then I should be on the problems page
@@ -26,7 +34,14 @@ Scenario: Flip flash card for answer
    Then I should be on the problems page
 
 Scenario: Finish all flash cards and see results
-   Given I am on the home page
+   Given I am on the login page
+   When I press on the "Login" button
+   And I fill in "Username" with "jessicajong"
+   And I fill in "Password" with "testing123"
+   When I press the "Login" button
+   Then I should be on the home page
+   And I should see "Python" 
+   
    When I press the "Control Flow" button
    When I press the "Flash Cards" button
    Then I should be on the problems page
