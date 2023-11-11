@@ -4,24 +4,71 @@
 // Includes the 'SynTactic' logo, dropdown options for languages, and profile link
 //////////////
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 // import profilePic from "../../assets/images/profile.png"
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("Python");
+  const [selectedLanguage, setSelectedLanguage] = useState("");
+
+  useEffect(() => {
+    const getCurrentUser = async () => {
+      const token = localStorage.getItem('authToken');
+      if (token) {
+        try {
+          const response = await fetch('/current_user', {
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`,
+            },
+          });
+          const data = await response.json();
+          if (response.ok) {
+            // Set user data including language preference
+            setSelectedLanguage(data.language); // Assuming data contains the 'language' attribute
+          } 
+        } catch (error) {
+          console.error('Error fetching current user:', error);
+        }
+      }
+    };
+  
+    getCurrentUser();
+  }, []);
+  
 
   const handleToggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   }
 
-  const handleSelect = (language) => {
+  // const handleSelect = async(language) => {
+  //   try {
+  //     const token = localStorage.getItem('authToken');
+  //     const response = await fetch('/update_language', { // Adjust the endpoint as necessary
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'Authorization': `Bearer ${token}`,
+  //       },
+  //       body: JSON.stringify({ language }),
+  //     });
+  
+  //     if (!response.ok) {
+  //       console.error('Failed to update language preference');
+  //     }
+  //   } catch (error) {
+  //     console.error('There was an error updating language preference:', error);
+  //   }
+  //   setIsDropdownOpen(false);
+  // };
+
+  const handleSelect = () => {
     setSelectedLanguage(language);
     setIsDropdownOpen(false);
-
   }
+  
   
   const navigate = useNavigate();
 
@@ -33,7 +80,7 @@ const Header = () => {
     <div className="header__container">
       {/* <header> */}
       <div className="home__link">
-        <Link to="/home/">
+        <Link to="/home">
           <h1>SynTactic</h1>
         </Link>
       </div>

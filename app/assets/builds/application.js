@@ -1601,7 +1601,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect5(create, deps) {
+          function useEffect6(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -2381,7 +2381,7 @@
           exports.useContext = useContext3;
           exports.useDebugValue = useDebugValue;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect5;
+          exports.useEffect = useEffect6;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useInsertionEffect = useInsertionEffect;
@@ -31722,11 +31722,33 @@
   var import_react = __toESM(require_react());
   var Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = (0, import_react.useState)(false);
-    const [selectedLanguage, setSelectedLanguage] = (0, import_react.useState)("Python");
+    const [selectedLanguage, setSelectedLanguage] = (0, import_react.useState)("");
+    (0, import_react.useEffect)(() => {
+      const getCurrentUser = async () => {
+        const token = localStorage.getItem("authToken");
+        if (token) {
+          try {
+            const response = await fetch("/current_user", {
+              headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+              }
+            });
+            const data = await response.json();
+            if (response.ok) {
+              setSelectedLanguage(data.language);
+            }
+          } catch (error2) {
+            console.error("Error fetching current user:", error2);
+          }
+        }
+      };
+      getCurrentUser();
+    }, []);
     const handleToggleDropdown = () => {
       setIsDropdownOpen(!isDropdownOpen);
     };
-    const handleSelect = (language) => {
+    const handleSelect = () => {
       setSelectedLanguage(language);
       setIsDropdownOpen(false);
     };
@@ -31739,7 +31761,7 @@
     }, /* @__PURE__ */ import_react.default.createElement("div", {
       className: "home__link"
     }, /* @__PURE__ */ import_react.default.createElement(Link, {
-      to: "/home/"
+      to: "/home"
     }, /* @__PURE__ */ import_react.default.createElement("h1", null, "SynTactic"))), /* @__PURE__ */ import_react.default.createElement("div", {
       className: "header__buttons"
     }, /* @__PURE__ */ import_react.default.createElement("div", {
@@ -31854,7 +31876,7 @@
           }
         } else {
           console.log("No token found");
-          navigate("/home");
+          navigate("/login");
         }
       };
       getCurrentUser();
@@ -31878,10 +31900,10 @@
       } catch (error2) {
         console.error("There was an error during logout:", error2);
       }
-      navigate("/home");
+      navigate("/login");
     };
     const handleHomeClick = () => {
-      navigate("/home/");
+      navigate("/home");
     };
     return /* @__PURE__ */ import_react3.default.createElement("div", {
       className: "profile__container"
@@ -32021,7 +32043,7 @@
       }
     };
     const handleHomeClick = () => {
-      navigate("/home/");
+      navigate("/home");
     };
     const handleAgainClick = async () => {
       setQuestionIndex(0);
@@ -32176,6 +32198,26 @@
   var import_react5 = __toESM(require_react());
   var Welcome = () => {
     const navigate = useNavigate();
+    const handleLanguageSelection = async (language2) => {
+      try {
+        const token = localStorage.getItem("authToken");
+        const response = await fetch("/update_language", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+          },
+          body: JSON.stringify({ language: language2 })
+        });
+        if (response.ok) {
+          navigate("/home");
+        } else {
+          console.error("Failed to update language preference");
+        }
+      } catch (error2) {
+        console.error("There was an error updating language preference:", error2);
+      }
+    };
     return /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "welcome__container"
     }, /* @__PURE__ */ import_react5.default.createElement("div", {
@@ -32191,19 +32233,13 @@
     }, "You can always change your practice language later!")), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "language__options"
     }, /* @__PURE__ */ import_react5.default.createElement("button", {
-      onClick: () => {
-        navigate("/homepage");
-      },
+      onClick: () => handleLanguageSelection("Java"),
       className: "language__choice"
     }, "Java"), /* @__PURE__ */ import_react5.default.createElement("button", {
-      onClick: () => {
-        navigate("/homepage");
-      },
+      onClick: () => handleLanguageSelection("Python"),
       className: "language__choice"
     }, "Python"), /* @__PURE__ */ import_react5.default.createElement("button", {
-      onClick: () => {
-        navigate("/homepage");
-      },
+      onClick: () => handleLanguageSelection("Ruby"),
       className: "language__choice"
     }, "Ruby"))));
   };
@@ -32291,7 +32327,7 @@
             localStorage.setItem("authToken", data.token);
           }
           setShowLoginModal(false);
-          navigate("/homepage");
+          navigate("/home");
         } else {
           console.error("Login failed:", response.statusText);
         }
@@ -32371,10 +32407,10 @@
 
   // app/javascript/components/App.js
   var App = () => /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement(Routes, null, /* @__PURE__ */ import_react8.default.createElement(Route, {
-    path: "/home",
+    path: "/login",
     element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Landing_default, null))
   }), /* @__PURE__ */ import_react8.default.createElement(Route, {
-    path: "/homepage",
+    path: "/home",
     element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Header_default, null), /* @__PURE__ */ import_react8.default.createElement(HomePage_default, null))
   }), /* @__PURE__ */ import_react8.default.createElement(Route, {
     path: "/welcome",

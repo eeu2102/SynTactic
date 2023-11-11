@@ -11,8 +11,12 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   get '/current_user', to: 'sessions#get_current_user'
 
+  post '/update_language', to: 'users#update_language'
 
-  root to: redirect('/home')
+
+  # root to: redirect('/home')
+  root to: redirect('/login')
+
 
   get 'home', to: 'site#index'
   get 'home/new', to: 'site#index'

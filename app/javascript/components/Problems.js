@@ -167,7 +167,7 @@ const Problems = () => {
 
   //if the user clicks the home icon
   const handleHomeClick = () => {
-    navigate("/home/");
+    navigate("/home");
   };
 
   //if the user wants to go through the questions again 
