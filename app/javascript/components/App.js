@@ -7,6 +7,7 @@ import Problems from "./Problems";
 import Welcome from "./Welcome";
 import WelcomeHeader from "./WelcomeHeader";
 import Landing from "./Landing";
+import ProblemsHeader from "./ProblemsHeader";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => (
@@ -29,7 +30,7 @@ const App = () => (
       } />
       <Route path="/problems" element={
         <>
-          <Header />
+          <ProblemsHeader />
           <Problems />
         </>
       }/>

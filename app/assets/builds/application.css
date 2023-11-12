@@ -26,18 +26,17 @@
   display: flex;
   justify-content: center;
   position: relative;
-  border-bottom: 3px transparent solid;
-  box-sizing: border-box;
+  border-bottom: 1px transparent solid;
 }
 .dropdown.open {
   border-radius: 10px 10px 0px 0px;
-  border-bottom: 3px black solid;
+  border-bottom: 1px black solid;
 }
 .dropdown__content {
   background-color: lightgrey;
   font-size: 20px;
   position: absolute;
-  top: 103%;
+  top: 102%;
   width: 95px;
   border-radius: 0 0 10px 10px;
   padding-bottom: 10px;
@@ -238,7 +237,7 @@ input.search {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  height: 80vh;
 }
 .topics__container {
   display: flex;
@@ -319,7 +318,7 @@ button {
   justify-content: center;
   align-items: center;
   gap: 50px;
-  margin-top: 150px;
+  height: 80vh;
 }
 .home__button {
   height: 45px;
@@ -643,4 +642,36 @@ label {
 .error-message {
   color: red;
   margin-top: 10px;
+}
+
+/* app/javascript/components/ProblemsHeader.css */
+.problems__header__container {
+  display: flex;
+  background-color: #ff663b;
+  align-items: center;
+  height: 70px;
+  justify-content: space-between;
+}
+.problems__header__text {
+  margin-left: 30px;
+}
+.problems__header__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.selected__language {
+  font-size: 20px;
+  background-color: lightgrey;
+  text-align: center;
+  border-radius: 10px;
+  width: 95px;
+  height: 45px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-bottom: 3px transparent solid;
+  box-sizing: border-box;
 }

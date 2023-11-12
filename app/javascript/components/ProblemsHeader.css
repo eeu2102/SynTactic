@@ -1,0 +1,33 @@
+.problems__header__container {
+  display: flex;
+  background-color: #ff663b;
+  align-items: center;
+  height: 70px;
+  justify-content: space-between;
+}
+
+.problems__header__text {
+  margin-left: 30px;
+}
+
+.problems__header__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.selected__language {
+  font-size: 20px;
+  background-color: lightgrey;
+  text-align: center;
+  border-radius: 10px;
+  width: 95px;
+  height: 45px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-bottom: 3px transparent solid;
+  box-sizing: border-box;
+}

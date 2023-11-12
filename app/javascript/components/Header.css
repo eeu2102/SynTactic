@@ -17,8 +17,6 @@
   width: 300px;
 }
 
-
-
 .dropdown {
   font-size: 20px;
   background-color: lightgrey;
@@ -30,20 +28,19 @@
   display: flex;
   justify-content: center;
   position: relative;
-  border-bottom: 3px transparent solid;
-  box-sizing: border-box;
+  border-bottom: 1px transparent solid;
 }
 
 .dropdown.open {
   border-radius: 10px 10px 0px 0px;
-  border-bottom: 3px black solid;
+  border-bottom: 1px black solid;
 }
 
 .dropdown__content {
   background-color: lightgrey;
   font-size: 20px; 
   position: absolute;
-  top: 103%;
+  top: 102%;
   width: 95px;
   border-radius: 0 0 10px 10px;
   /* padding-top: 5px; */
