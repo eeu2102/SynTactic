@@ -51,6 +51,7 @@ const Header = () => {
 
   const handleSelect = async (language) => {
     setSelectedLanguage(language);  // Update language in the frontend state
+    setIsDropdownOpen(false);
   
     const token = localStorage.getItem('authToken'); // Retrieve the auth token from local storage
   

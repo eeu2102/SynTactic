@@ -31750,6 +31750,7 @@
     };
     const handleSelect = async (language) => {
       setSelectedLanguage(language);
+      setIsDropdownOpen(false);
       const token = localStorage.getItem("authToken");
       try {
         const response = await fetch("/update_language", {
@@ -31886,6 +31887,7 @@
   var import_react3 = __toESM(require_react());
   var Dashboard = () => {
     const [username, setUsername] = (0, import_react3.useState)("");
+    const [progress, setProgress] = (0, import_react3.useState)(0);
     const navigate = useNavigate();
     (0, import_react3.useEffect)(() => {
       const getCurrentUser = async () => {
@@ -31901,6 +31903,10 @@
             const data = await response.json();
             if (response.ok) {
               setUsername(data.username);
+              setProgress(data.progress);
+              console.log(data.username);
+              console.log(data.progress);
+              console.log(data);
             } else {
               console.log("PROBLEM");
               navigate("/login");
@@ -31946,7 +31952,7 @@
       className: "logout__button"
     }, "Logout"), /* @__PURE__ */ import_react3.default.createElement("h1", null, "Hi ", username, "!"), /* @__PURE__ */ import_react3.default.createElement("h2", {
       id: "progress__tracker"
-    }, "Questions Solved: "), /* @__PURE__ */ import_react3.default.createElement("button", {
+    }, "Questions Solved: ", progress, " "), /* @__PURE__ */ import_react3.default.createElement("button", {
       onClick: handleHomeClick,
       className: "home__button"
     }, "Home"));
@@ -32095,6 +32101,9 @@
       }
     };
     const handleHomeClick = () => {
+      if (method === `multiple choice`) {
+        updateProgress(score);
+      }
       navigate("/home");
     };
     const handleAgainClick = async () => {
@@ -32102,6 +32111,7 @@
       setQuestionIndex(0);
       setShowResultModal(false);
       if (method === `multiple choice`) {
+        await updateProgress(score);
         if (category && method) {
           const response = await fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`);
           const data = await response.json();
@@ -32143,6 +32153,23 @@
               });
             }
           }
+        }
+      }
+    };
+    const updateProgress = async (newScore) => {
+      const token = localStorage.getItem("authToken");
+      if (token) {
+        try {
+          await fetch("/update_progress", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({ score: newScore })
+          });
+        } catch (error2) {
+          console.error("Error updating progress:", error2);
         }
       }
     };

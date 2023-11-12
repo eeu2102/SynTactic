@@ -187,6 +187,9 @@ const Problems = () => {
 
   //if the user clicks the home icon
   const handleHomeClick = () => {
+    if (method === `multiple choice`) {
+      updateProgress(score);
+    }
     navigate("/home");
   };
 
@@ -199,6 +202,7 @@ const Problems = () => {
     
     // Reset the questionData to the first question for multiple choice
     if (method === `multiple choice`) {
+      await updateProgress(score);
       if (category && method) {
         const response = await fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`);
         const data = await response.json();
@@ -253,6 +257,25 @@ const Problems = () => {
     }
     
   };
+
+  const updateProgress = async (newScore) => {
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      try {
+        await fetch('/update_progress', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({ score: newScore })
+        });
+      } catch (error) {
+        console.error('Error updating progress:', error);
+      }
+    }
+  };
+
 
   return (
     <div>

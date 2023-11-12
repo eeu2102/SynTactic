@@ -652,9 +652,6 @@ label {
   height: 70px;
   justify-content: space-between;
 }
-.problems__header__text {
-  margin-left: 30px;
-}
 .problems__header__buttons {
   display: flex;
   justify-content: center;
