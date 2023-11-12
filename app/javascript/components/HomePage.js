@@ -5,7 +5,7 @@
 //////////////
 
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./HomePage.css";
 import { useNavigate } from "react-router-dom";
 
@@ -14,34 +14,6 @@ const HomePage = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [selectedTopic, setSelectedTopic] = useState(null);
-
-  const [userLanguage, setUserLanguage] = useState(null);
-
-  useEffect(() => {
-    const token = localStorage.getItem('authToken'); // Retrieve the auth token
-
-    if (token) {
-      fetch('/current_user', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}` // Include the token in the Authorization header
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data && data.language) {
-          setUserLanguage(data.language); // Set the user's language preference
-          console.log("YAY");
-          console.log(data.language);
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching user language:', error);
-      });
-    }
-  }, []);
-
 
   const handleTopicClick = (topic) => {
     setSelectedTopic(topic);
@@ -89,9 +61,7 @@ const HomePage = () => {
                 className="method"
                 onClick={() =>
                   navigate(
-                    // `/problems?category=${selectedTopic}&method=multiple choice`
-                    `/problems?category=${selectedTopic}&method=multiple choice&language=${userLanguage}`
-                    // navigate(`/problems?category=${topic}&method=selectedMethod&language=${userLanguage}`);
+                    `/problems?category=${selectedTopic}&method=multiple choice`
                   )
                 }
               >
@@ -101,8 +71,7 @@ const HomePage = () => {
                 className="method"
                 onClick={() =>
                   navigate(
-                    // `/problems?category=${selectedTopic}&method=flash cards`
-                    `/problems?category=${selectedTopic}&method=flash card&language=${userLanguage}`
+                    `/problems?category=${selectedTopic}&method=flash cards`
                   )
                 }
               >

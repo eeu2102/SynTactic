@@ -1601,7 +1601,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect7(create, deps) {
+          function useEffect6(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -2381,7 +2381,7 @@
           exports.useContext = useContext3;
           exports.useDebugValue = useDebugValue;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect7;
+          exports.useEffect = useEffect6;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useInsertionEffect = useInsertionEffect;
@@ -31766,7 +31766,6 @@
       } catch (error2) {
         console.error("There was an error updating language preference:", error2);
       }
-      setIsDropdownOpen(false);
     };
     const navigate = useNavigate();
     const goToDashboard = () => {
@@ -31811,27 +31810,6 @@
     const navigate = useNavigate();
     const [showModal, setShowModal] = (0, import_react2.useState)(false);
     const [selectedTopic, setSelectedTopic] = (0, import_react2.useState)(null);
-    const [userLanguage, setUserLanguage] = (0, import_react2.useState)(null);
-    (0, import_react2.useEffect)(() => {
-      const token = localStorage.getItem("authToken");
-      if (token) {
-        fetch("/current_user", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`
-          }
-        }).then((response) => response.json()).then((data) => {
-          if (data && data.language) {
-            setUserLanguage(data.language);
-            console.log("YAY");
-            console.log(data.language);
-          }
-        }).catch((error2) => {
-          console.error("Error fetching user language:", error2);
-        });
-      }
-    }, []);
     const handleTopicClick = (topic) => {
       setSelectedTopic(topic);
       setShowModal(true);
@@ -31871,12 +31849,12 @@
     }, /* @__PURE__ */ import_react2.default.createElement("button", {
       className: "method",
       onClick: () => navigate(
-        `/problems?category=${selectedTopic}&method=multiple choice&language=${userLanguage}`
+        `/problems?category=${selectedTopic}&method=multiple choice`
       )
     }, "Multiple Choice"), /* @__PURE__ */ import_react2.default.createElement("button", {
       className: "method",
       onClick: () => navigate(
-        `/problems?category=${selectedTopic}&method=flash card&language=${userLanguage}`
+        `/problems?category=${selectedTopic}&method=flash cards`
       )
     }, "Flash Cards")), /* @__PURE__ */ import_react2.default.createElement("button", {
       id: "back__button",
@@ -31965,7 +31943,6 @@
     const method = searchParams.get("method");
     const [multipleChoice, setMultipleChoice] = (0, import_react4.useState)(false);
     const [flashCards, setFlashcards] = (0, import_react4.useState)(false);
-    const [userLanguage, setUserLanguage] = (0, import_react4.useState)("");
     const [questionArray, setQuestionArray] = (0, import_react4.useState)([]);
     const [totalQuestions, setTotalQuestions] = (0, import_react4.useState)(0);
     const [questionIndex, setQuestionIndex] = (0, import_react4.useState)(0);
@@ -31986,29 +31963,11 @@
     const [selectedAnswer, setSelectedAnswer] = (0, import_react4.useState)(null);
     const [isAnswerCorrect, setAnswerCorrect] = (0, import_react4.useState)(false);
     (0, import_react4.useEffect)(() => {
-      const token = localStorage.getItem("authToken");
-      if (token) {
-        fetch("/current_user", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`
-          }
-        }).then((response) => response.json()).then((data) => {
-          if (data && data.language) {
-            setUserLanguage(data.language);
-          }
-        }).catch((error2) => {
-          console.error("Error fetching user language:", error2);
-        });
-      }
-    }, []);
-    (0, import_react4.useEffect)(() => {
-      if (category && method === "multiple choice") {
+      if (category && method === `multiple choice`) {
         console.log("MC");
         setMultipleChoice(true);
         setFlashcards(false);
-        fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`).then((response) => response.json()).then((data) => {
+        fetch(`/questions?category=${category}&method=${method}`).then((response) => response.json()).then((data) => {
           if (data.length) {
             const shuffled = data.sort(() => 0.5 - Math.random());
             let selected = shuffled.slice(0, 5);
@@ -32028,11 +31987,12 @@
             }
           }
         });
-      } else if (category && method === "flash card") {
+      } else if (category && method === `flash cards`) {
         console.log("FC");
         setMultipleChoice(false);
         setFlashcards(true);
-        fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`).then((response) => response.json()).then((data) => {
+        console.log(method);
+        fetch(`/questions?category=${category}&method=flash card`).then((response) => response.json()).then((data) => {
           if (data.length) {
             const shuffled = data.sort(() => 0.5 - Math.random());
             let selected = shuffled.slice(0, 5);
@@ -32048,7 +32008,7 @@
           }
         });
       }
-    }, [category, method, userLanguage]);
+    }, [category, method]);
     const handleAnswerChoice = (selectedChoice) => {
       if (showCorrectnessModal)
         return;
@@ -32083,7 +32043,7 @@
           setShowCorrectnessModal(false);
           setShowResultModal(true);
         }
-      } else if (method === `flash card`) {
+      } else if (method === `flash cards`) {
         if (nextIndex < totalQuestions) {
           setIsFlipped(false);
           setQuestionIndex(nextIndex);
@@ -32101,12 +32061,11 @@
       navigate("/home");
     };
     const handleAgainClick = async () => {
-      setSelectedAnswer(null);
       setQuestionIndex(0);
       setShowResultModal(false);
       if (method === `multiple choice`) {
         if (category && method) {
-          const response = await fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`);
+          const response = await fetch(`/questions?category=${category}&method=${method}`);
           const data = await response.json();
           if (data.length) {
             const shuffled = data.sort(() => 0.5 - Math.random());
@@ -32128,10 +32087,10 @@
             }
           }
         }
-      } else if (method === `flash card`) {
+      } else if (method === `flash cards`) {
         setIsFlipped(false);
         if (category && method) {
-          const response = await fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`);
+          const response = await fetch(`/questions?category=${category}&method=${method}`);
           const data = await response.json();
           if (data.length) {
             const shuffled = data.sort(() => 0.5 - Math.random());
