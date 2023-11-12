@@ -20,6 +20,7 @@ const Problems = () => {
 
   const [multipleChoice, setMultipleChoice] = useState(false);
   const [flashCards, setFlashcards] = useState(false);
+  const [userLanguage, setUserLanguage] = useState('');
 
   const [questionArray, setQuestionArray] = useState([]);
   const [totalQuestions, setTotalQuestions] = useState(0);
@@ -48,52 +49,70 @@ const Problems = () => {
   const [isAnswerCorrect, setAnswerCorrect] = useState(false);
 
   useEffect(() => {
-    if (category && method ===  `multiple choice`) {
-        console.log("MC");
-        setMultipleChoice(true);
-        setFlashcards(false);
-        fetch(`/questions?category=${category}&method=${method}`)
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.length) {
-            const shuffled = data.sort(() => 0.5 - Math.random());
-            let selected = shuffled.slice(0, 5);
-
-            setQuestionArray(selected);
-            setTotalQuestions(selected.length);
-
-            if (selected[0]) {
-              const firstQuestion = selected[0];
-              setQuestionData({
-                question: firstQuestion.question,
-                choices: [
-                  firstQuestion.choice_a,
-                  firstQuestion.choice_b,
-                  firstQuestion.choice_c,
-                ],
-                correctAnswer: firstQuestion.answer,
-              });
-            }
+    const token = localStorage.getItem('authToken'); // Retrieve the auth token
+    if (token) {
+      fetch('/current_user', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` // Include the token in the Authorization header
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data && data.language) {
+          setUserLanguage(data.language); // Set the user's language preference
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching user language:', error);
+      });
+    }
+  }, []);
+  
+  useEffect(() => {
+    if (category && method === 'multiple choice') {
+      console.log("MC");
+      setMultipleChoice(true);
+      setFlashcards(false);
+      fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.length) {
+          const shuffled = data.sort(() => 0.5 - Math.random());
+          let selected = shuffled.slice(0, 5);
+  
+          setQuestionArray(selected);
+          setTotalQuestions(selected.length);
+  
+          if (selected[0]) {
+            const firstQuestion = selected[0];
+            setQuestionData({
+              question: firstQuestion.question,
+              choices: [
+                firstQuestion.choice_a,
+                firstQuestion.choice_b,
+                firstQuestion.choice_c,
+              ],
+              correctAnswer: firstQuestion.answer,
+            });
           }
-        });
-      }
-
-    else if (category && method ===  `flash cards`) {      
+        }
+      });
+    } else if (category && method === 'flash card') {
       console.log("FC");
       setMultipleChoice(false);
       setFlashcards(true);
-      console.log(method);
-      fetch(`/questions?category=${category}&method=flash card`)
-      .then((response) => response.json())
-      .then((data) => {
+      fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`)
+      .then(response => response.json())
+      .then(data => {
         if (data.length) {
-
           const shuffled = data.sort(() => 0.5 - Math.random());
           let selected = shuffled.slice(0, 5);
-
+  
           setQuestionArray(selected);
           setTotalQuestions(selected.length);
-
+  
           if (selected[0]) {
             const firstCard = selected[0];
             setCardData({
@@ -104,7 +123,8 @@ const Problems = () => {
         }
       });
     }
-  }, [category, method]);
+  }, [category, method, userLanguage]);
+  
 
   //handling cases if it was the last question, answer was right, answer was wrong
   const handleAnswerChoice = (selectedChoice) => {
@@ -147,7 +167,7 @@ const Problems = () => {
       }
     }
 
-    else if (method === `flash cards`) {
+    else if (method === `flash card`) {
       if (nextIndex < totalQuestions) {
         setIsFlipped(false);
         setQuestionIndex(nextIndex);
@@ -173,13 +193,14 @@ const Problems = () => {
   //if the user wants to go through the questions again 
   // TODO ADD LOGIC FOR IF MC OR FC AGAIN
   const handleAgainClick = async () => {
+    setSelectedAnswer(null);
     setQuestionIndex(0);
     setShowResultModal(false);
     
     // Reset the questionData to the first question for multiple choice
     if (method === `multiple choice`) {
       if (category && method) {
-        const response = await fetch(`/questions?category=${category}&method=${method}`);
+        const response = await fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`);
         const data = await response.json();
   
         if (data.length) {
@@ -207,10 +228,10 @@ const Problems = () => {
     }
 
     // Reset the questionData to the first question for flash cards
-    else if (method === `flash cards`) {
+    else if (method === `flash card`) {
       setIsFlipped(false);
       if (category && method) {
-        const response = await fetch(`/questions?category=${category}&method=${method}`);
+        const response = await fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`);
         const data = await response.json();
   
         if (data.length) {

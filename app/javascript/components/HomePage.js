@@ -71,7 +71,7 @@ const HomePage = () => {
                 className="method"
                 onClick={() =>
                   navigate(
-                    `/problems?category=${selectedTopic}&method=flash cards`
+                    `/problems?category=${selectedTopic}&method=flash card`
                   )
                 }
               >
