@@ -1589,7 +1589,7 @@
             }
             return dispatcher.useContext(Context2);
           }
-          function useState8(initialState) {
+          function useState9(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1601,7 +1601,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect6(create, deps) {
+          function useEffect8(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -2381,7 +2381,7 @@
           exports.useContext = useContext3;
           exports.useDebugValue = useDebugValue;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect6;
+          exports.useEffect = useEffect8;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useInsertionEffect = useInsertionEffect;
@@ -2389,7 +2389,7 @@
           exports.useMemo = useMemo3;
           exports.useReducer = useReducer;
           exports.useRef = useRef3;
-          exports.useState = useState8;
+          exports.useState = useState9;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -2885,9 +2885,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React12 = require_react();
+          var React13 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React13.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -4408,7 +4408,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React12.Children.forEach(props.children, function(child) {
+                  React13.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -12569,7 +12569,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React12.Component().refs;
+          var emptyRefsObject = new React13.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -29863,7 +29863,7 @@
   application.register("hello", hello_controller_default);
 
   // app/javascript/application.js
-  var import_react9 = __toESM(require_react());
+  var import_react10 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/dist/index.js
@@ -31716,7 +31716,7 @@
   }
 
   // app/javascript/components/App.js
-  var import_react8 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
 
   // app/javascript/components/Header.js
   var import_react = __toESM(require_react());
@@ -31810,6 +31810,25 @@
     const navigate = useNavigate();
     const [showModal, setShowModal] = (0, import_react2.useState)(false);
     const [selectedTopic, setSelectedTopic] = (0, import_react2.useState)(null);
+    const [userLanguage, setUserLanguage] = (0, import_react2.useState)("");
+    (0, import_react2.useEffect)(() => {
+      const token = localStorage.getItem("authToken");
+      if (token) {
+        fetch("/current_user", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+          }
+        }).then((response) => response.json()).then((data) => {
+          if (data && data.language) {
+            setUserLanguage(data.language);
+          }
+        }).catch((error2) => {
+          console.error("Error fetching user language:", error2);
+        });
+      }
+    }, []);
     const handleTopicClick = (topic) => {
       setSelectedTopic(topic);
       setShowModal(true);
@@ -31849,12 +31868,12 @@
     }, /* @__PURE__ */ import_react2.default.createElement("button", {
       className: "method",
       onClick: () => navigate(
-        `/problems?category=${selectedTopic}&method=multiple choice`
+        `/problems?category=${selectedTopic}&method=multiple choice&language=${userLanguage}`
       )
     }, "Multiple Choice"), /* @__PURE__ */ import_react2.default.createElement("button", {
       className: "method",
       onClick: () => navigate(
-        `/problems?category=${selectedTopic}&method=flash card`
+        `/problems?category=${selectedTopic}&method=flash card&language=${userLanguage}`
       )
     }, "Flash Cards")), /* @__PURE__ */ import_react2.default.createElement("button", {
       id: "back__button",
@@ -32455,22 +32474,69 @@
   };
   var Landing_default = Landing;
 
+  // app/javascript/components/ProblemsHeader.js
+  var import_react8 = __toESM(require_react());
+  var ProblemsHeader = () => {
+    const [selectedLanguage, setSelectedLanguage] = (0, import_react8.useState)("");
+    const navigate = useNavigate();
+    const goToDashboard = () => {
+      navigate("/dashboard");
+    };
+    (0, import_react8.useEffect)(() => {
+      const token = localStorage.getItem("authToken");
+      if (token) {
+        fetch("/current_user", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+          }
+        }).then((response) => response.json()).then((data) => {
+          if (data && data.language) {
+            setSelectedLanguage(data.language);
+          }
+        }).catch((error2) => {
+          console.error("Error fetching user language:", error2);
+        });
+      }
+    }, []);
+    return /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "problems__header__container"
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "home__link"
+    }, /* @__PURE__ */ import_react8.default.createElement(Link, {
+      to: "/home"
+    }, /* @__PURE__ */ import_react8.default.createElement("h1", {
+      className: "problems__header__text"
+    }, "SynTactic"))), /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "problems__header__buttons"
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "selected__language"
+    }, selectedLanguage), /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "user__profile"
+    }, /* @__PURE__ */ import_react8.default.createElement("button", {
+      id: "user__dashboard",
+      onClick: goToDashboard
+    }, "Dashboard"))));
+  };
+  var ProblemsHeader_default = ProblemsHeader;
+
   // app/javascript/components/App.js
-  var App = () => /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement(Routes, null, /* @__PURE__ */ import_react8.default.createElement(Route, {
+  var App = () => /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement(Routes, null, /* @__PURE__ */ import_react9.default.createElement(Route, {
     path: "/login",
-    element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Landing_default, null))
-  }), /* @__PURE__ */ import_react8.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, /* @__PURE__ */ import_react9.default.createElement(Landing_default, null))
+  }), /* @__PURE__ */ import_react9.default.createElement(Route, {
     path: "/home",
-    element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Header_default, null), /* @__PURE__ */ import_react8.default.createElement(HomePage_default, null))
-  }), /* @__PURE__ */ import_react8.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, /* @__PURE__ */ import_react9.default.createElement(Header_default, null), /* @__PURE__ */ import_react9.default.createElement(HomePage_default, null))
+  }), /* @__PURE__ */ import_react9.default.createElement(Route, {
     path: "/welcome",
-    element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(WelcomeHeader_default, null), /* @__PURE__ */ import_react8.default.createElement(Welcome_default, null))
-  }), /* @__PURE__ */ import_react8.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, /* @__PURE__ */ import_react9.default.createElement(WelcomeHeader_default, null), /* @__PURE__ */ import_react9.default.createElement(Welcome_default, null))
+  }), /* @__PURE__ */ import_react9.default.createElement(Route, {
     path: "/problems",
-    element: /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Header_default, null), /* @__PURE__ */ import_react8.default.createElement(Problems_default, null))
-  }), /* @__PURE__ */ import_react8.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, /* @__PURE__ */ import_react9.default.createElement(ProblemsHeader_default, null), /* @__PURE__ */ import_react9.default.createElement(Problems_default, null))
+  }), /* @__PURE__ */ import_react9.default.createElement(Route, {
     path: "/dashboard",
-    element: /* @__PURE__ */ import_react8.default.createElement(Dashboard_default, null)
+    element: /* @__PURE__ */ import_react9.default.createElement(Dashboard_default, null)
   })));
   var App_default = App;
 
@@ -32479,7 +32545,7 @@
   var root = (0, import_client.createRoot)(container);
   document.addEventListener("DOMContentLoaded", () => {
     root.render(
-      /* @__PURE__ */ import_react9.default.createElement(import_react9.StrictMode, null, /* @__PURE__ */ import_react9.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react9.default.createElement(App_default, null)))
+      /* @__PURE__ */ import_react10.default.createElement(import_react10.StrictMode, null, /* @__PURE__ */ import_react10.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react10.default.createElement(App_default, null)))
     );
   });
 })();

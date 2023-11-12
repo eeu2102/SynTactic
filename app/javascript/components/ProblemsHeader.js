@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./ProblemsHeader.css";
+
 
 const ProblemsHeader = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("");
+
+  const navigate = useNavigate();
+
+  const goToDashboard = () => {
+    navigate("/dashboard");
+  };
 
   useEffect(() => {
     const token = localStorage.getItem('authToken'); // Retrieve the auth token
@@ -17,7 +25,7 @@ const ProblemsHeader = () => {
       .then(response => response.json())
       .then(data => {
         if (data && data.language) {
-          setSelectedLanguages(data.language); // Set the user's language preference
+          setSelectedLanguage(data.language); // Set the user's language preference
         }
       })
       .catch(error => {
@@ -27,13 +35,13 @@ const ProblemsHeader = () => {
   }, []);
 
   return (
-    <div className="header__container">
+    <div className="problems__header__container">
       <div className="home__link">
         <Link to="/home">
-          <h1>SynTactic</h1>
+          <h1 className="problems__header__text">SynTactic</h1>
         </Link>
       </div>
-      <div className="header__buttons">
+      <div className="problems__header__buttons">
         <div className="selected__language">
           {selectedLanguage}
         </div>
