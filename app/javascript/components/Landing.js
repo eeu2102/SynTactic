@@ -28,40 +28,8 @@ const Landing = () => {
     setPassword('');
   }
   
-  // const handleSignUp = async (event) => {
-  //   setShowLoginModal(false);
-  //   setShowSignUpModal(true);
-  //   event.preventDefault();
-  //   try {
-  //     const response = await fetch('/users', { // Make sure to use the correct endpoint
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({ user: { username, password } }), // Rails expects user parameters to be nested under user key
-  //     });
-
-  //     const data = await response.json();
-  //     if (response.ok) {
-  //       // You can store the received token in localStorage or context API and redirect the user
-  //       console.log('Signup successful:', data);
-  //       setShowSignUpModal(false); // Close the signup modal
-  //       navigate('/welcome')
-  //     } else {
-  //       // if(data.errors && data.errors.username) {
-  //         setErrorMessage('Username already exists. Please try another one.');
-  //       // }
-  //       setUsername(''); // Clear the username state
-  //       setPassword('');
-  //       // If there are errors (like a non-unique username), handle them here
-  //       console.error('Signup failed:', data.errors);
-  //     }
-  //   } catch (error) {
-  //     console.error('There was an error during sign up:', error);
-  //   }
-  // }
-
   const handleSignUp = async (event) => {
+
     setShowLoginModal(false);
     setShowSignUpModal(true);
     event.preventDefault();

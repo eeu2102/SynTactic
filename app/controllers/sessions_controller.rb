@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
     if token
       user = User.find_by(auth_token: token)
       if user
-        render json: { username: user.username, language: user.language }
+        render json: { username: user.username, language: user.language, progress: user.progress }
       else
         render json: { error: 'Invalid token' }, status: :unauthorized
       end

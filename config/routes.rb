@@ -10,9 +10,8 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   get '/current_user', to: 'sessions#get_current_user'
-
   post '/update_language', to: 'users#update_language'
-
+  post '/update_progress', to: 'users#update_progress'
 
   # root to: redirect('/home')
   root to: redirect('/login')

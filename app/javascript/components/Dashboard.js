@@ -11,6 +11,8 @@ import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
 
   const [username, setUsername] = useState('');
+  const [progress, setProgress] = useState(0);
+
 
   const navigate = useNavigate();
 
@@ -29,6 +31,11 @@ const Dashboard = () => {
           const data = await response.json();
           if (response.ok) {
             setUsername(data.username); // Set the username if the request was successful
+            setProgress(data.progress); // Set the progress
+            console.log(data.username);
+            console.log(data.progress);
+            console.log(data)
+
           } else {
             console.log("PROBLEM"); // Log or handle errors
             navigate('/login'); // Redirect to login page if not authenticated
@@ -44,6 +51,7 @@ const Dashboard = () => {
   
     getCurrentUser();
   }, [navigate]);
+  
   
   const handleLogout = async () => {
     // Retrieve the token from local storage
@@ -86,7 +94,7 @@ const Dashboard = () => {
       <button onClick={handleLogout} className="logout__button">Logout</button>
       {/* <h1>Hi Jessica！</h1> */}
       <h1>Hi {username}!</h1>
-      <h2 id="progress__tracker">Questions Solved: </h2>
+      <h2 id="progress__tracker">Questions Solved: {progress} </h2>
       <button onClick={handleHomeClick} className="home__button">Home</button>
     </div>
   );
