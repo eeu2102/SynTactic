@@ -4,12 +4,12 @@ Feature: choosing the question format
 
 Scenario: Choose Multiple Choice method 
    Given I am on the login page
-   When I press on the "Sign Up" button
+   When I press the "Sign Up" button
    And I fill in "Username" with "jessicajong"
    And I fill in "Password" with "testing123"
    When I press the "Sign Up" button
    Then I should be on the welcome page
-   When I press on the "Python" button
+   When I press the "Python" button
    Then I should be on the home page
 
     When I press the "Declaration and Instantiation" button
@@ -21,7 +21,7 @@ Scenario: Choose Multiple Choice method
 
 Scenario: Choose Flash Cards method
    Given I am on the login page
-   When I press on the "Login" button
+   When I press the "Login" button
    And I fill in "Username" with "jessicajong"
    And I fill in "Password" with "testing123"
    When I press the "Login" button

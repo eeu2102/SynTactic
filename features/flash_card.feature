@@ -15,12 +15,12 @@ Background: questions in database
 
 Scenario: Flip flash card for answer 
    Given I am on the login page
-   When I press on the "Sign Up" button
+   When I press the "Sign Up" button
    And I fill in "Username" with "jessicajong"
    And I fill in "Password" with "testing123"
    When I press the "Sign Up" button
    Then I should be on the welcome page
-   When I press on the "Python" button
+   When I press the "Python" button
    Then I should be on the home page
 
    When I press the "Control Flow" button
@@ -35,7 +35,7 @@ Scenario: Flip flash card for answer
 
 Scenario: Finish all flash cards and see results
    Given I am on the login page
-   When I press on the "Login" button
+   When I press the "Login" button
    And I fill in "Username" with "jessicajong"
    And I fill in "Password" with "testing123"
    When I press the "Login" button

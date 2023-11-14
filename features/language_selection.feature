@@ -20,7 +20,7 @@ Background: questions in database
 
 Scenario: Picking Java to practice 
     Given I am on the login page
-    When I press on the "Sign Up" button
+    When I press the "Sign Up" button
     And I fill in "Username" with "jessicajong"
     And I fill in "Password" with "testing1"
     When I press the "Sign Up" button
@@ -36,7 +36,7 @@ Scenario: Picking Java to practice
 
 Scenario: Picking Python to practice 
     Given I am on the login page
-    When I press on the "Sign Up" button
+    When I press the "Sign Up" button
     And I fill in "Username" with "jessicapong"
     And I fill in "Password" with "testing2"
     When I press the "Sign Up" button
@@ -53,7 +53,7 @@ Scenario: Picking Python to practice
 
 Scenario: Picking Ruby to practice 
     Given I am on the login page
-    When I press on the "Sign Up" button
+    When I press the "Sign Up" button
     And I fill in "Username" with "jessicaong"
     And I fill in "Password" with "testing3"
     When I press the "Sign Up" button

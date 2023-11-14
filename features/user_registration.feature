@@ -5,7 +5,7 @@ Feature: User Registration
 
 Scenario: Registering a New User
     Given I am on the login page
-    When I press on the "Sign Up" button
+    When I press the "Sign Up" button
     And I fill in "Username" with "jessicajong"
     And I fill in "Password" with "testing123"
     When I press the "Sign Up" button
@@ -13,7 +13,7 @@ Scenario: Registering a New User
 
 Scenario: Attempting to Register an Existing User
     Given I am on the login page
-    When I press on the "Sign Up" button
+    When I press the "Sign Up" button
     And I fill in "Username" with "jessicajong"
     And I fill in "Password" with "567test"
     When I press the "Sign Up" button
@@ -21,7 +21,7 @@ Scenario: Attempting to Register an Existing User
 
 Scenario: Logging In an Existing User
     Given I am on the login page
-    When I press on the "Login" button
+    When I press the "Login" button
     And I fill in "Username" with "jessicajong"
     And I fill in "Password" with "testing123"
     When I press the "Login" button
@@ -29,7 +29,7 @@ Scenario: Logging In an Existing User
 
 Scenario: Registering another New User
     Given I am on the login page
-    When I press on the "Sign Up" button
+    When I press the "Sign Up" button
     And I fill in "Username" with "jessicapong"
     And I fill in "Password" with "testing456"
     When I press the "Sign Up" button
@@ -37,7 +37,7 @@ Scenario: Registering another New User
 
 Scenario: Logging In with Wrong Password
     Given I am on the login page
-    When I press on the "Login" button
+    When I press the "Login" button
     And I fill in "Username" with "jessicajong"
     And I fill in "Password" with "wrongpw"
     When I press the "Login" button
@@ -45,7 +45,7 @@ Scenario: Logging In with Wrong Password
 
 Scenario: Logging In with a Nonexisting User
     Given I am on the login page
-    When I press on the "Login" button
+    When I press the "Login" button
     And I fill in "Username" with "jessicaong"
     And I fill in "Password" with "testing123"
     When I press the "Login" button
@@ -53,17 +53,17 @@ Scenario: Logging In with a Nonexisting User
 
 Scenario: Ensuring the Language Preference Persists After Signing Up
     Given I am on the login page
-    When I press on the "Sign Up" button
+    When I press the "Sign Up" button
     And I fill in "Username" with "jessicaong"
     And I fill in "Password" with "testing3"
     When I press the "Sign Up" button
     Then I should be on the welcome page
-    When I press on the "Java" button
+    When I press the "Java" button
     Then I should be on the home page
     When I press the "Dashboard" button 
     Then I should be on the dashboard page
     And I should see "Hi jessicaong!"
-    When I click on the "Logout" button
+    When I press on the "Logout" button
     Then I should be on the login page
     When I press the "Login" button
     And I fill in "Username" with "jessicaong" 
