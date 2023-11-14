@@ -8,10 +8,11 @@ Scenario: Navigate from Home Page to Dashboard Page
   And I fill in "Username" with "jessicajong"
   And I fill in "Password" with "testing123"
   When I press the "Sign Up" button
+  Then I should see "Welcome to Syntactic"
   Then I should be on the welcome page
   When I press the "Python" button
+  Then I should see "Python"
   Then I should be on the home page
-
   When I press the "Dashboard" button
   Then I should be on the dashboard page
   And I should see "Hi"
