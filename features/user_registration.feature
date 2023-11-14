@@ -9,10 +9,25 @@ Scenario: Registering a New User
     And I fill in "Username" with "jessicajong"
     And I fill in "Password" with "testing123"
     When I press the "Sign Up" button
+    Then I should see "Welcome to SynTactic"
     Then I should be on the welcome page
-
+  
 Scenario: Attempting to Register an Existing User
     Given I am on the login page
+    When I press the "Sign Up" button
+    And I fill in "Username" with "jessicajong"
+    And I fill in "Password" with "testing123"
+    When I press the "Sign Up" button
+    Then I should see "Welcome to SynTactic"
+    Then I should be on the welcome page
+    When I press the "Python" button
+    Then I should see "Python"
+    Then I should be on the home page
+     When I press the "Dashboard" button
+    Then I should be on the dashboard page
+    When I press the "Logout" button
+    Then I should see "Login"
+    Then I should be on the login page
     When I press the "Sign Up" button
     And I fill in "Username" with "jessicajong"
     And I fill in "Password" with "567test"
@@ -21,10 +36,25 @@ Scenario: Attempting to Register an Existing User
 
 Scenario: Logging In an Existing User
     Given I am on the login page
+    When I press the "Sign Up" button
+    And I fill in "Username" with "jessicajong"
+    And I fill in "Password" with "testing123"
+    When I press the "Sign Up" button
+    Then I should see "Welcome to SynTactic"
+    Then I should be on the welcome page
+    When I press the "Python" button
+    Then I should see "Python"
+    Then I should be on the home page
+    When I press the "Dashboard" button
+    Then I should be on the dashboard page
+    When I press the "Logout" button
+    Then I should see "Login"
+    Then I should be on the login page
     When I press the "Login" button
     And I fill in "Username" with "jessicajong"
     And I fill in "Password" with "testing123"
     When I press the "Login" button
+    Then I should see "Welcome to SynTactic"
     Then I should be on the home page
 
 Scenario: Registering another New User
@@ -33,10 +63,25 @@ Scenario: Registering another New User
     And I fill in "Username" with "jessicapong"
     And I fill in "Password" with "testing456"
     When I press the "Sign Up" button
+    Then I should see "Welcome to SynTactic"
     Then I should be on the welcome page
 
 Scenario: Logging In with Wrong Password
-    Given I am on the login page
+Given I am on the login page
+    When I press the "Sign Up" button
+    And I fill in "Username" with "jessicajong"
+    And I fill in "Password" with "testing123"
+    When I press the "Sign Up" button
+    Then I should see "Welcome to SynTactic"
+    Then I should be on the welcome page
+    When I press the "Python" button
+    Then I should see "Python"
+    Then I should be on the home page
+    When I press the "Dashboard" button
+    Then I should be on the dashboard page
+    When I press the "Logout" button
+    Then I should see "Login"
+    Then I should be on the login page
     When I press the "Login" button
     And I fill in "Username" with "jessicajong"
     And I fill in "Password" with "wrongpw"
@@ -57,17 +102,20 @@ Scenario: Ensuring the Language Preference Persists After Signing Up
     And I fill in "Username" with "jessicaong"
     And I fill in "Password" with "testing3"
     When I press the "Sign Up" button
+    Then I should see "Welcome to SynTactic"
     Then I should be on the welcome page
     When I press the "Java" button
+    Then I should see "Java"
     Then I should be on the home page
     When I press the "Dashboard" button 
     Then I should be on the dashboard page
     And I should see "Hi jessicaong!"
-    When I press on the "Logout" button
+    When I press the "Logout" button
     Then I should be on the login page
     When I press the "Login" button
     And I fill in "Username" with "jessicaong" 
     And I fill in "Password" with "testing3"
     When I press the "Login" button
+    Then I should see "Welcome to SynTactic"
     Then I should be on the home page
     Then I should see "Java"

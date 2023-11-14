@@ -360,12 +360,12 @@ const Problems = () => {
             <div className="card__face card__front" id="card__front">
               <h1>Question</h1>
               <h2 className="card__text">{cardData.question}</h2> 
-              <button className="flip__button" onClick={() => setIsFlipped(!isFlipped)}>Flip Over</button>
+              <button className="flip__button" onClick={() => setIsFlipped(!isFlipped)} disabled={isFlipped}>Flip Over</button>
             </div>
             <div className="card__face card__back" id="card__back">
               <h1>Answer</h1>
               <h2 className="card__text">{cardData.answer}</h2>
-              <button className="flip__button" onClick={() => setIsFlipped(!isFlipped)}>Flip Over</button>
+              <button className="flip__button" onClick={() => setIsFlipped(!isFlipped)} disabled={!isFlipped}>Flip Over</button>
             </div>
           </div>
           <button className="next__button" id="next__card" onClick={handleNextQuestion}>

@@ -32225,7 +32225,8 @@
       className: "card__text"
     }, cardData.question), /* @__PURE__ */ import_react4.default.createElement("button", {
       className: "flip__button",
-      onClick: () => setIsFlipped(!isFlipped)
+      onClick: () => setIsFlipped(!isFlipped),
+      disabled: isFlipped
     }, "Flip Over")), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "card__face card__back",
       id: "card__back"
@@ -32233,7 +32234,8 @@
       className: "card__text"
     }, cardData.answer), /* @__PURE__ */ import_react4.default.createElement("button", {
       className: "flip__button",
-      onClick: () => setIsFlipped(!isFlipped)
+      onClick: () => setIsFlipped(!isFlipped),
+      disabled: !isFlipped
     }, "Flip Over"))), /* @__PURE__ */ import_react4.default.createElement("button", {
       className: "next__button",
       id: "next__card",
@@ -32302,7 +32304,7 @@
       className: "welcome__container"
     }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "welcome__message"
-    }, /* @__PURE__ */ import_react5.default.createElement("h1", null, "Welcome to Syntactic"), /* @__PURE__ */ import_react5.default.createElement("h2", null, "Syntactic is going to win $5k from fastpitch and go out to eatttttt")), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("h1", null, "Welcome to SynTactic")), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "language__selection"
     }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "selection__text"

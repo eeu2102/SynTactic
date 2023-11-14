@@ -32,8 +32,7 @@ const Welcome = () => {
   return (
     <div className="welcome__container">
       <div className="welcome__message">
-        <h1>Welcome to Syntactic</h1>
-      <h2>Syntactic is going to win $5k from fastpitch and go out to eatttttt</h2>
+        <h1>Welcome to SynTactic</h1>
       </div>
       <div className="language__selection">
         <div className="selection__text">
