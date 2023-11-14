@@ -22,8 +22,36 @@ Background: questions in database
   | Ruby Question D    |           |           |           | D      | Ruby            | control flow | flash card     |
   | Ruby Question E    |           |           |           | E      | Ruby            | control flow | flash card     |
 
-
-
+Scenario: I am able to select different languages from the dropdown on the home page
+    Given I am on the login page
+    When I press the "Sign Up" button
+    And I fill in "Username" with "jessicajong"
+    And I fill in "Password" with "testing1"
+    When I press the "Sign Up" button
+    Then I should see "Welcome to SynTactic"
+    Then I should be on the welcome page
+    When I press the "Java" button
+    Then I should see "Java"
+    Then I should be on the home page
+    When I click on the language dropdown on the home page
+    Then I should see "Java"
+    And I should see "Python"
+    And I should see "Ruby"
+    When I select Python from the language dropdown
+    Then I should see "Python"
+    Then I should not see "Java"
+    And I should not see "Ruby"
+    When I click on the language dropdown on the home page
+    When I select Ruby from the language dropdown
+    Then I should not see "Python"
+    Then I should not see "Java"
+    And I should see "Ruby"
+    When I click on the language dropdown on the home page
+    When I select Java from the language dropdown
+    Then I should not see "Python"
+    Then I should see "Java"
+    And I should not see "Ruby"
+    
 
 Scenario: Picking Java to practice 
     Given I am on the login page
@@ -82,4 +110,22 @@ Scenario: Picking Ruby to practice
     Then I should not see "Java Question"
 
 
+Scenario: I am unable to select different languages from the dropdown on the problems page
+    Given I am on the login page
+    When I press the "Sign Up" button
+    And I fill in "Username" with "jessicajong"
+    And I fill in "Password" with "testing1"
+    When I press the "Sign Up" button
+    Then I should see "Welcome to SynTactic"
+    Then I should be on the welcome page
+    When I press the "Java" button
+    Then I should see "Java"
+    Then I should be on the home page
+    When I press the "Control Flow" button
+    When I press the "Multiple Choice" button
+    Then I should be on the problems page
+    When I click on the language dropdown on the problems page
+    Then I should see "Java"
+    And I should not see "Python"
+    And I should not see "Ruby"
 
