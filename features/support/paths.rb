@@ -17,6 +17,7 @@ module NavigationHelpers
       when /^the problems\s?page$/ then '/problems'
       when /^the dashboard\s?page$/ then '/dashboard'
       when /^the problem\s?page$/ then '/problems'
+      when /^the welcome\s?page$/ then '/welcome'
 
       
   

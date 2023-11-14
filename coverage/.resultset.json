@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/Users/dorothyzhang/SynTactic/app/controllers/site_controller.rb": {
+      "/Users/charlesliu/Documents/SynTactic/SynTactic/app/controllers/site_controller.rb": {
         "lines": [
           null,
           null,
@@ -10,7 +10,7 @@
           null
         ]
       },
-      "/Users/dorothyzhang/SynTactic/app/controllers/application_controller.rb": {
+      "/Users/charlesliu/Documents/SynTactic/SynTactic/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -19,7 +19,7 @@
           null
         ]
       },
-      "/Users/dorothyzhang/SynTactic/app/helpers/application_helper.rb": {
+      "/Users/charlesliu/Documents/SynTactic/SynTactic/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -27,19 +27,19 @@
           null
         ]
       },
-      "/Users/dorothyzhang/SynTactic/app/helpers/questions_helper.rb": {
+      "/Users/charlesliu/Documents/SynTactic/SynTactic/app/helpers/questions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/dorothyzhang/SynTactic/app/helpers/sessions_helper.rb": {
+      "/Users/charlesliu/Documents/SynTactic/SynTactic/app/helpers/sessions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/dorothyzhang/SynTactic/app/helpers/site_helper.rb": {
+      "/Users/charlesliu/Documents/SynTactic/SynTactic/app/helpers/site_helper.rb": {
         "lines": [
           null,
           null,
@@ -47,28 +47,152 @@
           null
         ]
       },
-      "/Users/dorothyzhang/SynTactic/app/helpers/users_helper.rb": {
+      "/Users/charlesliu/Documents/SynTactic/SynTactic/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/dorothyzhang/SynTactic/app/models/question.rb": {
+      "/Users/charlesliu/Documents/SynTactic/SynTactic/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          12,
+          12,
+          12,
+          12,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          12,
+          null,
+          null
+        ]
+      },
+      "/Users/charlesliu/Documents/SynTactic/SynTactic/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          12,
+          12,
+          null,
+          null
+        ]
+      },
+      "/Users/charlesliu/Documents/SynTactic/SynTactic/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/charlesliu/Documents/SynTactic/SynTactic/app/controllers/sessions_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          13,
+          13,
+          0,
+          0,
+          null,
+          13,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/charlesliu/Documents/SynTactic/SynTactic/app/models/question.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/dorothyzhang/SynTactic/app/models/application_record.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/dorothyzhang/SynTactic/app/controllers/questions_controller.rb": {
+      "/Users/charlesliu/Documents/SynTactic/SynTactic/app/controllers/questions_controller.rb": {
         "lines": [
           0,
           0,
@@ -79,136 +203,6 @@
           0,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/dorothyzhang/SynTactic/app/controllers/sessions_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/Users/dorothyzhang/SynTactic/app/controllers/users_controller.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/dorothyzhang/SynTactic/app/models/user.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          null,
           0,
           0,
           0,
@@ -219,6 +213,6 @@
         }
       }
     },
-    "timestamp": 1699933855
+    "timestamp": 1699937581
   }
 }

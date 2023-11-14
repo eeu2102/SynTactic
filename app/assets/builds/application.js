@@ -32428,15 +32428,20 @@
     }, /* @__PURE__ */ import_react7.default.createElement("button", {
       onClick: () => handleShowSignUp(),
       className: "landing__button",
-      id: "signup__button"
+      id: "signup__button",
+      disabled: showSignUpModal || showLoginModal
     }, "Sign Up"), /* @__PURE__ */ import_react7.default.createElement("button", {
       onClick: () => handleShowLogin(),
       className: "landing__button",
-      id: "login_button"
+      id: "login_button",
+      disabled: showSignUpModal || showLoginModal
     }, "Login"), showSignUpModal && /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "signup__modal"
-    }, /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "signup__content"
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "overlay",
+      onClick: () => setShowSignUpModal(false)
+    }), /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "signup__modal"
     }, /* @__PURE__ */ import_react7.default.createElement("form", {
       className: "signup__form",
       onSubmit: handleSignUp
@@ -32466,9 +32471,12 @@
     }, "Sign Up")), signupErrorMessage && /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "error-message"
     }, signupErrorMessage), " ")), showLoginModal && /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "login__modal"
-    }, /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "login__content"
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "overlay",
+      onClick: () => setShowLoginModal(false)
+    }), /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "login__modal"
     }, /* @__PURE__ */ import_react7.default.createElement("form", {
       className: "login__form",
       onSubmit: handleLogin
