@@ -41,17 +41,35 @@ When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
   with_scope(parent) { When "#{step}:", table_or_string }
 end
 
-# Given /^(?:|I )am on (.+)$/ do |page_name|
-#   visit path_to(page_name)
-# end
+When('I click on the language dropdown on the home page') do
+  find('.selected__language').click
+end
+
+When('I click on the language dropdown on the problems page') do
+  find('.problems__selected__language').click
+end
+
+When('I select Python from the language dropdown') do
+  find('.dropdown__python').click
+end
+
+When('I select Java from the language dropdown') do
+  find('.dropdown__java').click
+end
+
+When('I select Ruby from the language dropdown') do
+  find('.dropdown__ruby').click
+end
+
+
+Then('I should see the language options') do
+  expect(page).to have_css('.dropdown__content')
+end
 
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-# When /^(?:|I )press "([^"]*)"$/ do |button|
-#   click_button(button)
-# end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)

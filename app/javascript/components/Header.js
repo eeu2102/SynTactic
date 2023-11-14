@@ -98,9 +98,9 @@ const Header = () => {
         </div>
         {isDropdownOpen && (
           <div className="dropdown__content">
-            <div onClick={() => handleSelect('Python')} className="dropdown__item">Python</div>
-            <div onClick={() => handleSelect('Java')}  className="dropdown__item">Java</div>
-            <div onClick={() => handleSelect('Ruby')} className="dropdown__item">Ruby</div>
+            <div onClick={() => handleSelect('Python')} className="dropdown__item dropdown__python">Python</div>
+            <div onClick={() => handleSelect('Java')}  className="dropdown__item dropdown__java">Java</div>
+            <div onClick={() => handleSelect('Ruby')} className="dropdown__itemid dropdown__ruby">Ruby</div>
           </div> )}
         </div>
         <div className="user__profile">

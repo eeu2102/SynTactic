@@ -31789,13 +31789,13 @@
       className: "dropdown__content"
     }, /* @__PURE__ */ import_react.default.createElement("div", {
       onClick: () => handleSelect("Python"),
-      className: "dropdown__item"
+      className: "dropdown__item dropdown__python"
     }, "Python"), /* @__PURE__ */ import_react.default.createElement("div", {
       onClick: () => handleSelect("Java"),
-      className: "dropdown__item"
+      className: "dropdown__item dropdown__java"
     }, "Java"), /* @__PURE__ */ import_react.default.createElement("div", {
       onClick: () => handleSelect("Ruby"),
-      className: "dropdown__item"
+      className: "dropdown__itemid dropdown__ruby"
     }, "Ruby"))), /* @__PURE__ */ import_react.default.createElement("div", {
       className: "user__profile"
     }, /* @__PURE__ */ import_react.default.createElement("button", {
@@ -32548,7 +32548,7 @@
     }, "SynTactic"))), /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "problems__header__buttons"
     }, /* @__PURE__ */ import_react8.default.createElement("div", {
-      className: "selected__language"
+      className: "problems__selected__language"
     }, selectedLanguage), /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "user__profile"
     }, /* @__PURE__ */ import_react8.default.createElement("button", {

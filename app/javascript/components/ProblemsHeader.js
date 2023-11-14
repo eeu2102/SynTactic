@@ -42,7 +42,7 @@ const ProblemsHeader = () => {
         </Link>
       </div>
       <div className="problems__header__buttons">
-        <div className="selected__language">
+        <div className="problems__selected__language">
           {selectedLanguage}
         </div>
         <div className="user__profile">

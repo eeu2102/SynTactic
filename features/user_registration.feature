@@ -112,6 +112,7 @@ Scenario: Ensuring the Language Preference Persists After Signing Up
     And I should see "Hi jessicaong!"
     When I press the "Logout" button
     Then I should be on the login page
+    Then I should see "Login"
     When I press the "Login" button
     And I fill in "Username" with "jessicaong" 
     And I fill in "Password" with "testing3"
