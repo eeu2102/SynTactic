@@ -112,13 +112,13 @@ const Landing = () => {
   
   return (
     <div className="landing__container">
-      <button onClick={() => handleShowSignUp()} className="landing__button" id="signup__button">Sign Up</button>
-      <button onClick={() => handleShowLogin()} className="landing__button" id="login_button">Login</button>
+      <button onClick={() => handleShowSignUp()} className="landing__button" id="signup__button" disabled={showSignUpModal || showLoginModal}>Sign Up</button>
+      <button onClick={() => handleShowLogin()} className="landing__button" id="login_button" disabled={showSignUpModal || showLoginModal}>Login</button>
 
       {showSignUpModal && (
-        <div className="signup__modal">
-          {/* <div className="overlay" onClick={() => setShowSignUpModal(false)}></div> */}
-          <div className="signup__content">
+        <div className="signup__content">
+          <div className="overlay" onClick={() => setShowSignUpModal(false)}></div>
+          <div className="signup__modal">
             <form className="signup__form" onSubmit={handleSignUp}>
                 <label htmlFor="signup__username">Username</label>
                 <input 
@@ -147,9 +147,9 @@ const Landing = () => {
       )}
 
       {showLoginModal && (
-        <div className="login__modal">
-          {/* <div className="overlay" onClick={() => setShowLoginModal(false)}></div> */}
-          <div className="login__content">
+        <div className="login__content">
+          <div className="overlay" onClick={() => setShowLoginModal(false)}></div>
+          <div className="login__modal">
             <form className="login__form" onSubmit={handleLogin}>
                 <label htmlFor="login__username">Username</label>
                 <input 
