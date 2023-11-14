@@ -110,3 +110,21 @@ Scenario: Navigate from Dashboard Page to Home Page, Using the Home button
   And I should see "Control Flow"
   And I should see "Data Structures"
 
+Scenario: Navigate from Dashboard Page to Login Page
+  Given I am on the login page
+  When I press the "Sign Up" button
+  And I fill in "Username" with "jessicajong"
+  And I fill in "Password" with "testing123"
+  When I press the "Sign Up" button
+  Then I should see "Welcome to SynTactic"
+  Then I should be on the welcome page
+  When I press the "Python" button
+  Then I should see "Python"
+  Then I should be on the home page
+  When I press the "Dashboard" button
+  Then I should be on the dashboard page
+  When I press the "Logout" button
+  And I should see "Sign Up"
+  And I should see "Login"
+  Then I should be on the login page
+
