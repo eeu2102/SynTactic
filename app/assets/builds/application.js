@@ -32304,7 +32304,7 @@
       className: "welcome__container"
     }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "welcome__message"
-    }, /* @__PURE__ */ import_react5.default.createElement("h1", null, "Welcome to Syntactic"), /* @__PURE__ */ import_react5.default.createElement("h2", null, "Syntactic is going to win $5k from fastpitch and go out to eatttttt")), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("h1", null, "Welcome to SynTactic")), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "language__selection"
     }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "selection__text"
