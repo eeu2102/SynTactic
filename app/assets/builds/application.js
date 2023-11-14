@@ -32225,7 +32225,8 @@
       className: "card__text"
     }, cardData.question), /* @__PURE__ */ import_react4.default.createElement("button", {
       className: "flip__button",
-      onClick: () => setIsFlipped(!isFlipped)
+      onClick: () => setIsFlipped(!isFlipped),
+      disabled: isFlipped
     }, "Flip Over")), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "card__face card__back",
       id: "card__back"
@@ -32233,7 +32234,8 @@
       className: "card__text"
     }, cardData.answer), /* @__PURE__ */ import_react4.default.createElement("button", {
       className: "flip__button",
-      onClick: () => setIsFlipped(!isFlipped)
+      onClick: () => setIsFlipped(!isFlipped),
+      disabled: !isFlipped
     }, "Flip Over"))), /* @__PURE__ */ import_react4.default.createElement("button", {
       className: "next__button",
       id: "next__card",
