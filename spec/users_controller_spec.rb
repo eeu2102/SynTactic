@@ -33,6 +33,17 @@ RSpec.describe UsersController, type: :controller do
         expect(JSON.parse(response.body)['message']).to eq('Language updated successfully')
       end
     end
+
+    context 'when the update fails' do
+        it 'returns an unprocessable entity status' do
+          user = instance_double("User", update: false)
+          allow(User).to receive(:find_by).and_return(user)
+          request.headers['Authorization'] = "Bearer dummytoken"
+          patch :update_language, params: { language: 'Java' }
+          expect(response).to have_http_status(:unprocessable_entity)
+        end
+    end
+
   end
 
   describe 'PATCH #update_progress' do
@@ -48,6 +59,19 @@ RSpec.describe UsersController, type: :controller do
         user.reload
         expect(user.progress).to eq(15)
       end
+    end
+
+    context 'when the update fails due to validation' do
+        it 'returns an unprocessable entity status' do
+          user.generate_token
+          request.headers['Authorization'] = "Bearer #{user.auth_token}"
+          
+          negative_score = -1 * (user.progress + 1)
+          patch :update_progress, params: { score: negative_score.to_s }
+          
+          expect(response).to have_http_status(:unprocessable_entity)
+          expect(JSON.parse(response.body)).to have_key('errors')
+        end
     end
   end
 end
