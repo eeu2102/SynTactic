@@ -41,7 +41,7 @@ end
 def update_progress
   token = request.headers['Authorization'].split(' ').last
   user = User.find_by(auth_token: token)
-  new_score = params[:score]
+  new_score = params[:score].to_i
     if user.update(progress: user.progress + new_score)
     render json: { message: 'Progress updated successfully' }, status: :ok
   else

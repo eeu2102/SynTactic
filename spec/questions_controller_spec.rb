@@ -21,7 +21,7 @@ RSpec.describe QuestionsController, type: :controller do
     
     context 'when both category and method parameters are provided' do
       it 'returns questions that match both category and method' do
-        get :index, params: { category: 'control flow', method: 'multiple choice' }
+        get :index, params: { category: 'control flow', method: 'multiple choice', coding_language: 'Python' }
         expect(response).to have_http_status(:ok)
         parsed_response = JSON.parse(response.body)
         expect(parsed_response.size).to eq(2)
