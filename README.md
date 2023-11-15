@@ -22,17 +22,15 @@ ESaaS Fall '23 Project
 # Running
 
 - Start the Rails server and esbuild with one command `./bin/dev`
-- Hit [http://localhost:3000/login/](http://localhost:3000/home/)
+- Hit [http://localhost:3000/login/](http://localhost:3000/login/)
 
 # Heroku Deployment Link
 
-- Hit [https://syntacticsugar-e3a3513c5494.herokuapp.com/home/](https://syntacticsugar-e3a3513c5494.herokuapp.com/home/)
+- Hit [https://syntacticsugar-e3a3513c5494.herokuapp.com/login/](https://syntacticsugar-e3a3513c5494.herokuapp.com/login/)
 
 # Missing Features
 
-- Currently, we have a drop-down coding language selector. Right now, no matter which language you select, the problem sets are based on Python. We will iterate lessons for more languages in Iteration 2.
-- Currently, we only offer one method for Syntax learning (multiple choice). The 'Flashcards' button is not yet functional. We will introduce this feature in Iteration 2.
-- The profile page is presently in a static state, displaying a fixed name and lacking any user-specific data on performance. We plan to revitalize this section in Iteration 2, introducing dynamic user data and a login system to personalize the learning experience.
+- In iteration 2, we implemented all of the features we were hoping to! If needed, we may make some changes for a more seamless page-to-page workflow. Otherwise, we will focus our attention on styling!
 
 # Thanks to Raphael Sofaer
 
