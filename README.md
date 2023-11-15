@@ -30,8 +30,8 @@ ESaaS Fall '23 Project
 
 # Missing Features
 
-- In iteration 2, we implemented all of the features we were hoping to! If needed, we may make some changes for a more seamless page-to-page workflow.
-- In iteration 3, we will focus our attention on styling!
+- In iteration 2, we implemented all of the features we were hoping to! 
+- In iteration 3, we will focus our attention on styling. If needed, we may make some changes for a more seamless page-to-page workflow.
 
 # Thanks to Raphael Sofaer
 
