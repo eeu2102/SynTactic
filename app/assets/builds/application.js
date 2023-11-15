@@ -32427,7 +32427,11 @@
     };
     return /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "landing__container"
-    }, /* @__PURE__ */ import_react7.default.createElement("button", {
+    }, /* @__PURE__ */ import_react7.default.createElement("h1", {
+      className: "landing__title"
+    }, "SynTactic"), /* @__PURE__ */ import_react7.default.createElement("h2", {
+      className: "landing__subtitle"
+    }, "Register for Syntactic today"), /* @__PURE__ */ import_react7.default.createElement("button", {
       onClick: () => handleShowSignUp(),
       className: "landing__button",
       id: "signup__button",

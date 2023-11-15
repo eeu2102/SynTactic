@@ -10,8 +10,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 50vh;
+    margin-top: 10vh;
   }
+
+  .landing__title,
+  .landing__subtitle {
+    margin-bottom: 5vh; 
+  }
+
   
   /* Buttons - Consistent with Homepage Button Style */
   .landing__button {
@@ -94,3 +100,5 @@ body {
     z-index: 200;
     border-radius: 10px;
   }
+
+  

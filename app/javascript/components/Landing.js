@@ -112,6 +112,9 @@ const Landing = () => {
   
   return (
     <div className="landing__container">
+      <h1 className="landing__title">SynTactic</h1>
+      <h2 className="landing__subtitle">Register for Syntactic today</h2>
+      
       <button onClick={() => handleShowSignUp()} className="landing__button" id="signup__button" disabled={showSignUpModal || showLoginModal}>Sign Up</button>
       <button onClick={() => handleShowLogin()} className="landing__button" id="login_button" disabled={showSignUpModal || showLoginModal}>Login</button>
 
