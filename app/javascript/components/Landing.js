@@ -112,13 +112,20 @@ const Landing = () => {
   
   return (
     <div className="landing__container">
-      <h1 className="landing__title">SynTactic</h1>
-      <h2 className="landing__subtitle">Register for Syntactic today</h2>
-      
-      <button onClick={() => handleShowSignUp()} className="landing__button" id="signup__button" disabled={showSignUpModal || showLoginModal}>Sign Up</button>
-      <button onClick={() => handleShowLogin()} className="landing__button" id="login_button" disabled={showSignUpModal || showLoginModal}>Login</button>
+      <div className="landing__content">
+        <div className="landing__text">
+          <p className="landing__quote">Your shortcut to syntax <span id="mastery">mastery</span></p>
+          <p className="landing__subquote">No more wasting time scouring documentation or cheatsheets. Streamline your coding interview prep with SynTactic today.</p>
+        </div>
+        <span id="orange__circle"></span>
+        <span id="blue__circle"></span>
+        <div className="landing__buttons">
+          <button onClick={() => handleShowSignUp()} className="landing__button" id="signup__button" disabled={showSignUpModal || showLoginModal}>Sign Up</button>
+          <button onClick={() => handleShowLogin()} className="landing__button" id="login_button" disabled={showSignUpModal || showLoginModal}>Login</button>
+        </div>
+      </div>
 
-      {showSignUpModal && (
+     {showSignUpModal && (
         <div className="signup__content">
           <div className="overlay" onClick={() => setShowSignUpModal(false)}></div>
           <div className="signup__modal">
@@ -178,7 +185,76 @@ const Landing = () => {
           </div>
         </div>
       )}
+      
     </div>
+//     <div className="landing__container">
+//       <h1 className="landing__title">SynTactic</h1>
+//       <h2 className="landing__subtitle">Register for Syntactic today</h2>
+      
+//       <button onClick={() => handleShowSignUp()} className="landing__button" id="signup__button" disabled={showSignUpModal || showLoginModal}>Sign Up</button>
+//       <button onClick={() => handleShowLogin()} className="landing__button" id="login_button" disabled={showSignUpModal || showLoginModal}>Login</button>
+
+//       {showSignUpModal && (
+//         <div className="signup__content">
+//           <div className="overlay" onClick={() => setShowSignUpModal(false)}></div>
+//           <div className="signup__modal">
+//             <form className="signup__form" onSubmit={handleSignUp}>
+//                 <label htmlFor="signup__username">Username</label>
+//                 <input 
+//                   type="text" 
+//                   placeholder="Username" 
+//                   required className="signup__input" 
+//                   id="signup__username"
+//                   value={username} 
+//                   onChange={(e) => setUsername(e.target.value)}/>
+
+//                 <label htmlFor="signup__password">Password</label>
+//                 <input 
+//                   type="password" 
+//                   placeholder="Password" 
+//                   required className="signup__input" 
+//                   id="signup__password" 
+//                   value={password}
+//                   onChange={(e) => setPassword(e.target.value)}/>
+//                 <button type="submit" className="signup__submit">Sign Up</button>
+//             </form>
+//             {signupErrorMessage && <div className="error-message">{signupErrorMessage}</div>} {/* Display the error message */}
+
+//           </div>
+          
+//         </div>
+//       )}
+
+//       {showLoginModal && (
+//         <div className="login__content">
+//           <div className="overlay" onClick={() => setShowLoginModal(false)}></div>
+//           <div className="login__modal">
+//             <form className="login__form" onSubmit={handleLogin}>
+//                 <label htmlFor="login__username">Username</label>
+//                 <input 
+//                   type="text" 
+//                   placeholder="Username" 
+//                   required className="login__input" 
+//                   id="login__username"
+//                   value={username} 
+//                   onChange={(e) => setUsername(e.target.value)}/>
+
+//                 <label htmlFor="login__password">Password</label>
+//                 <input 
+//                   type="password" 
+//                   placeholder="Password" 
+//                   required className="login__input" 
+//                   id="login__password" 
+//                   value={password}
+//                   onChange={(e) => setPassword(e.target.value)}/>
+//                 <button type="submit" className="login__submit">Login</button>
+//             </form>
+//             {loginErrorMessage && <div className="error-message">{loginErrorMessage}</div>}
+
+//           </div>
+//         </div>
+//       )}
+//     </div>
   );
 };
 

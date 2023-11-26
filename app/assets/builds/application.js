@@ -2885,9 +2885,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React13 = require_react();
+          var React14 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React13.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React14.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -4408,7 +4408,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React13.Children.forEach(props.children, function(child) {
+                  React14.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -5869,13 +5869,13 @@
           var batchedUpdatesImpl = function(fn, bookkeeping) {
             return fn(bookkeeping);
           };
-          var flushSyncImpl = function() {
+          var flushSyncImpl2 = function() {
           };
           var isInsideEventHandler = false;
           function finishEventHandler() {
             var controlledComponentsHavePendingUpdates = needsStateRestore();
             if (controlledComponentsHavePendingUpdates) {
-              flushSyncImpl();
+              flushSyncImpl2();
               restoreStateIfNeeded();
             }
           }
@@ -5893,7 +5893,7 @@
           }
           function setBatchingImplementation(_batchedUpdatesImpl, _discreteUpdatesImpl, _flushSyncImpl) {
             batchedUpdatesImpl = _batchedUpdatesImpl;
-            flushSyncImpl = _flushSyncImpl;
+            flushSyncImpl2 = _flushSyncImpl;
           }
           function isInteractive(tag) {
             return tag === "button" || tag === "input" || tag === "select" || tag === "textarea";
@@ -12569,7 +12569,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React13.Component().refs;
+          var emptyRefsObject = new React14.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -29863,11 +29863,12 @@
   application.register("hello", hello_controller_default);
 
   // app/javascript/application.js
-  var import_react10 = __toESM(require_react());
+  var import_react11 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/dist/index.js
   var React2 = __toESM(require_react());
+  var ReactDOM = __toESM(require_react_dom());
 
   // node_modules/react-router/dist/index.js
   var React = __toESM(require_react());
@@ -30412,6 +30413,9 @@
   function getPathContributingMatches(matches) {
     return matches.filter((match, index) => index === 0 || match.route.path && match.route.path.length > 0);
   }
+  function getResolveToMatches(matches) {
+    return getPathContributingMatches(matches).map((match, idx) => idx === matches.length - 1 ? match.pathname : match.pathnameBase);
+  }
   function resolveTo(toArg, routePathnames, locationPathname, isPathRelative) {
     if (isPathRelative === void 0) {
       isPathRelative = false;
@@ -30428,8 +30432,19 @@
     let isEmptyPath = toArg === "" || to.pathname === "";
     let toPathname = isEmptyPath ? "/" : to.pathname;
     let from;
-    if (isPathRelative || toPathname == null) {
+    if (toPathname == null) {
       from = locationPathname;
+    } else if (isPathRelative) {
+      let fromSegments = routePathnames[routePathnames.length - 1].replace(/^\//, "").split("/");
+      if (toPathname.startsWith("..")) {
+        let toSegments = toPathname.split("/");
+        while (toSegments[0] === "..") {
+          toSegments.shift();
+          fromSegments.pop();
+        }
+        to.pathname = toSegments.join("/");
+      }
+      from = "/" + fromSegments.join("/");
     } else {
       let routePathnameIndex = routePathnames.length - 1;
       if (toPathname.startsWith("..")) {
@@ -30578,7 +30593,7 @@
     let {
       pathname: locationPathname
     } = useLocation();
-    let routePathnamesJson = JSON.stringify(getPathContributingMatches(matches).map((match) => match.pathnameBase));
+    let routePathnamesJson = JSON.stringify(getResolveToMatches(matches));
     let activeRef = React.useRef(false);
     useIsomorphicLayoutEffect(() => {
       activeRef.current = true;
@@ -30612,7 +30627,7 @@
     let {
       pathname: locationPathname
     } = useLocation();
-    let routePathnamesJson = JSON.stringify(getPathContributingMatches(matches).map((match) => match.pathnameBase));
+    let routePathnamesJson = JSON.stringify(getResolveToMatches(matches));
     return React.useMemo(() => resolveTo(to, JSON.parse(routePathnamesJson), locationPathname, relative === "path"), [to, routePathnamesJson, locationPathname, relative]);
   }
   function useRoutes(routes, locationArg) {
@@ -31208,6 +31223,8 @@
   }
   var START_TRANSITION2 = "startTransition";
   var startTransitionImpl2 = React2[START_TRANSITION2];
+  var FLUSH_SYNC = "flushSync";
+  var flushSyncImpl = ReactDOM[FLUSH_SYNC];
   function BrowserRouter(_ref4) {
     let {
       basename,
@@ -31363,7 +31380,8 @@
       nextLocationPathname = nextLocationPathname ? nextLocationPathname.toLowerCase() : null;
       toPathname = toPathname.toLowerCase();
     }
-    let isActive = locationPathname === toPathname || !end && locationPathname.startsWith(toPathname) && locationPathname.charAt(toPathname.length) === "/";
+    const endSlashPosition = toPathname !== "/" && toPathname.endsWith("/") ? toPathname.length - 1 : toPathname.length;
+    let isActive = locationPathname === toPathname || !end && locationPathname.startsWith(toPathname) && locationPathname.charAt(endSlashPosition) === "/";
     let isPending = nextLocationPathname != null && (nextLocationPathname === toPathname || !end && nextLocationPathname.startsWith(toPathname) && nextLocationPathname.charAt(toPathname.length) === "/");
     let renderProps = {
       isActive,
@@ -31554,7 +31572,8 @@
           formData,
           body,
           formMethod: options.method || method,
-          formEncType: options.encType || encType
+          formEncType: options.encType || encType,
+          unstable_flushSync: options.unstable_flushSync
         });
       } else {
         router.navigate(options.action || action, {
@@ -31566,6 +31585,7 @@
           replace: options.replace,
           state: options.state,
           fromRouteId: currentRouteId,
+          unstable_flushSync: options.unstable_flushSync,
           unstable_viewTransition: options.unstable_viewTransition
         });
       }
@@ -31587,8 +31607,8 @@
     let location2 = useLocation();
     if (action == null) {
       path.search = location2.search;
-      if (match.route.index) {
-        let params = new URLSearchParams(path.search);
+      let params = new URLSearchParams(path.search);
+      if (params.has("index") && params.get("index") === "") {
         params.delete("index");
         path.search = params.toString() ? "?" + params.toString() : "";
       }
@@ -31716,7 +31736,7 @@
   }
 
   // app/javascript/components/App.js
-  var import_react9 = __toESM(require_react());
+  var import_react10 = __toESM(require_react());
 
   // app/javascript/components/Header.js
   var import_react = __toESM(require_react());
@@ -32338,15 +32358,28 @@
   };
   var WelcomeHeader_default = WelcomeHeader;
 
-  // app/javascript/components/Landing.js
+  // app/javascript/components/LandingHeader.js
   var import_react7 = __toESM(require_react());
+  var LandingHeader = () => {
+    return /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "landing__header__container"
+    }, /* @__PURE__ */ import_react7.default.createElement("span", {
+      id: "orange__banner"
+    }, /* @__PURE__ */ import_react7.default.createElement("p", {
+      className: "landing__header__text"
+    }, "SynTactic")));
+  };
+  var LandingHeader_default = LandingHeader;
+
+  // app/javascript/components/Landing.js
+  var import_react8 = __toESM(require_react());
   var Landing = () => {
-    const [showSignUpModal, setShowSignUpModal] = (0, import_react7.useState)(false);
-    const [showLoginModal, setShowLoginModal] = (0, import_react7.useState)(false);
-    const [username, setUsername] = (0, import_react7.useState)("");
-    const [password, setPassword] = (0, import_react7.useState)("");
-    const [loginErrorMessage, setLoginErrorMessage] = (0, import_react7.useState)("");
-    const [signupErrorMessage, setSignupErrorMessage] = (0, import_react7.useState)("");
+    const [showSignUpModal, setShowSignUpModal] = (0, import_react8.useState)(false);
+    const [showLoginModal, setShowLoginModal] = (0, import_react8.useState)(false);
+    const [username, setUsername] = (0, import_react8.useState)("");
+    const [password, setPassword] = (0, import_react8.useState)("");
+    const [loginErrorMessage, setLoginErrorMessage] = (0, import_react8.useState)("");
+    const [signupErrorMessage, setSignupErrorMessage] = (0, import_react8.useState)("");
     const navigate = useNavigate();
     const handleShowSignUp = () => {
       setShowLoginModal(false);
@@ -32425,35 +32458,47 @@
         console.error("There was an error during login:", error2);
       }
     };
-    return /* @__PURE__ */ import_react7.default.createElement("div", {
+    return /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "landing__container"
-    }, /* @__PURE__ */ import_react7.default.createElement("h1", {
-      className: "landing__title"
-    }, "SynTactic"), /* @__PURE__ */ import_react7.default.createElement("h2", {
-      className: "landing__subtitle"
-    }, "Register for Syntactic today"), /* @__PURE__ */ import_react7.default.createElement("button", {
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "landing__content"
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "landing__text"
+    }, /* @__PURE__ */ import_react8.default.createElement("p", {
+      className: "landing__quote"
+    }, "Your shortcut to syntax ", /* @__PURE__ */ import_react8.default.createElement("span", {
+      id: "mastery"
+    }, "mastery")), /* @__PURE__ */ import_react8.default.createElement("p", {
+      className: "landing__subquote"
+    }, "No more wasting time scouring documentation or cheatsheets. Streamline your coding interview prep with SynTactic today.")), /* @__PURE__ */ import_react8.default.createElement("span", {
+      id: "orange__circle"
+    }), /* @__PURE__ */ import_react8.default.createElement("span", {
+      id: "blue__circle"
+    }), /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "landing__buttons"
+    }, /* @__PURE__ */ import_react8.default.createElement("button", {
       onClick: () => handleShowSignUp(),
       className: "landing__button",
       id: "signup__button",
       disabled: showSignUpModal || showLoginModal
-    }, "Sign Up"), /* @__PURE__ */ import_react7.default.createElement("button", {
+    }, "Sign Up"), /* @__PURE__ */ import_react8.default.createElement("button", {
       onClick: () => handleShowLogin(),
       className: "landing__button",
       id: "login_button",
       disabled: showSignUpModal || showLoginModal
-    }, "Login"), showSignUpModal && /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, "Login"))), showSignUpModal && /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "signup__content"
-    }, /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "overlay",
       onClick: () => setShowSignUpModal(false)
-    }), /* @__PURE__ */ import_react7.default.createElement("div", {
+    }), /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "signup__modal"
-    }, /* @__PURE__ */ import_react7.default.createElement("form", {
+    }, /* @__PURE__ */ import_react8.default.createElement("form", {
       className: "signup__form",
       onSubmit: handleSignUp
-    }, /* @__PURE__ */ import_react7.default.createElement("label", {
+    }, /* @__PURE__ */ import_react8.default.createElement("label", {
       htmlFor: "signup__username"
-    }, "Username"), /* @__PURE__ */ import_react7.default.createElement("input", {
+    }, "Username"), /* @__PURE__ */ import_react8.default.createElement("input", {
       type: "text",
       placeholder: "Username",
       required: true,
@@ -32461,9 +32506,9 @@
       id: "signup__username",
       value: username,
       onChange: (e) => setUsername(e.target.value)
-    }), /* @__PURE__ */ import_react7.default.createElement("label", {
+    }), /* @__PURE__ */ import_react8.default.createElement("label", {
       htmlFor: "signup__password"
-    }, "Password"), /* @__PURE__ */ import_react7.default.createElement("input", {
+    }, "Password"), /* @__PURE__ */ import_react8.default.createElement("input", {
       type: "password",
       placeholder: "Password",
       required: true,
@@ -32471,24 +32516,24 @@
       id: "signup__password",
       value: password,
       onChange: (e) => setPassword(e.target.value)
-    }), /* @__PURE__ */ import_react7.default.createElement("button", {
+    }), /* @__PURE__ */ import_react8.default.createElement("button", {
       type: "submit",
       className: "signup__submit"
-    }, "Sign Up")), signupErrorMessage && /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, "Sign Up")), signupErrorMessage && /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "error-message"
-    }, signupErrorMessage), " ")), showLoginModal && /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, signupErrorMessage), " ")), showLoginModal && /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "login__content"
-    }, /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "overlay",
       onClick: () => setShowLoginModal(false)
-    }), /* @__PURE__ */ import_react7.default.createElement("div", {
+    }), /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "login__modal"
-    }, /* @__PURE__ */ import_react7.default.createElement("form", {
+    }, /* @__PURE__ */ import_react8.default.createElement("form", {
       className: "login__form",
       onSubmit: handleLogin
-    }, /* @__PURE__ */ import_react7.default.createElement("label", {
+    }, /* @__PURE__ */ import_react8.default.createElement("label", {
       htmlFor: "login__username"
-    }, "Username"), /* @__PURE__ */ import_react7.default.createElement("input", {
+    }, "Username"), /* @__PURE__ */ import_react8.default.createElement("input", {
       type: "text",
       placeholder: "Username",
       required: true,
@@ -32496,9 +32541,9 @@
       id: "login__username",
       value: username,
       onChange: (e) => setUsername(e.target.value)
-    }), /* @__PURE__ */ import_react7.default.createElement("label", {
+    }), /* @__PURE__ */ import_react8.default.createElement("label", {
       htmlFor: "login__password"
-    }, "Password"), /* @__PURE__ */ import_react7.default.createElement("input", {
+    }, "Password"), /* @__PURE__ */ import_react8.default.createElement("input", {
       type: "password",
       placeholder: "Password",
       required: true,
@@ -32506,24 +32551,24 @@
       id: "login__password",
       value: password,
       onChange: (e) => setPassword(e.target.value)
-    }), /* @__PURE__ */ import_react7.default.createElement("button", {
+    }), /* @__PURE__ */ import_react8.default.createElement("button", {
       type: "submit",
       className: "login__submit"
-    }, "Login")), loginErrorMessage && /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, "Login")), loginErrorMessage && /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "error-message"
     }, loginErrorMessage))));
   };
   var Landing_default = Landing;
 
   // app/javascript/components/ProblemsHeader.js
-  var import_react8 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
   var ProblemsHeader = () => {
-    const [selectedLanguage, setSelectedLanguage] = (0, import_react8.useState)("");
+    const [selectedLanguage, setSelectedLanguage] = (0, import_react9.useState)("");
     const navigate = useNavigate();
     const goToDashboard = () => {
       navigate("/dashboard");
     };
-    (0, import_react8.useEffect)(() => {
+    (0, import_react9.useEffect)(() => {
       const token = localStorage.getItem("authToken");
       if (token) {
         fetch("/current_user", {
@@ -32541,21 +32586,21 @@
         });
       }
     }, []);
-    return /* @__PURE__ */ import_react8.default.createElement("div", {
+    return /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "problems__header__container"
-    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "home__link"
-    }, /* @__PURE__ */ import_react8.default.createElement(Link, {
+    }, /* @__PURE__ */ import_react9.default.createElement(Link, {
       to: "/home"
-    }, /* @__PURE__ */ import_react8.default.createElement("h1", {
+    }, /* @__PURE__ */ import_react9.default.createElement("h1", {
       className: "problems__header__text"
-    }, "SynTactic"))), /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, "SynTactic"))), /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "problems__header__buttons"
-    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "problems__selected__language"
-    }, selectedLanguage), /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, selectedLanguage), /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "user__profile"
-    }, /* @__PURE__ */ import_react8.default.createElement("button", {
+    }, /* @__PURE__ */ import_react9.default.createElement("button", {
       id: "user__dashboard",
       onClick: goToDashboard
     }, "Dashboard"))));
@@ -32563,21 +32608,21 @@
   var ProblemsHeader_default = ProblemsHeader;
 
   // app/javascript/components/App.js
-  var App = () => /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement(Routes, null, /* @__PURE__ */ import_react9.default.createElement(Route, {
+  var App = () => /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement(Routes, null, /* @__PURE__ */ import_react10.default.createElement(Route, {
     path: "/login",
-    element: /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, /* @__PURE__ */ import_react9.default.createElement(Landing_default, null))
-  }), /* @__PURE__ */ import_react9.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null, /* @__PURE__ */ import_react10.default.createElement(LandingHeader_default, null), /* @__PURE__ */ import_react10.default.createElement(Landing_default, null))
+  }), /* @__PURE__ */ import_react10.default.createElement(Route, {
     path: "/home",
-    element: /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, /* @__PURE__ */ import_react9.default.createElement(Header_default, null), /* @__PURE__ */ import_react9.default.createElement(HomePage_default, null))
-  }), /* @__PURE__ */ import_react9.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null, /* @__PURE__ */ import_react10.default.createElement(Header_default, null), /* @__PURE__ */ import_react10.default.createElement(HomePage_default, null))
+  }), /* @__PURE__ */ import_react10.default.createElement(Route, {
     path: "/welcome",
-    element: /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, /* @__PURE__ */ import_react9.default.createElement(WelcomeHeader_default, null), /* @__PURE__ */ import_react9.default.createElement(Welcome_default, null))
-  }), /* @__PURE__ */ import_react9.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null, /* @__PURE__ */ import_react10.default.createElement(WelcomeHeader_default, null), /* @__PURE__ */ import_react10.default.createElement(Welcome_default, null))
+  }), /* @__PURE__ */ import_react10.default.createElement(Route, {
     path: "/problems",
-    element: /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, /* @__PURE__ */ import_react9.default.createElement(ProblemsHeader_default, null), /* @__PURE__ */ import_react9.default.createElement(Problems_default, null))
-  }), /* @__PURE__ */ import_react9.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null, /* @__PURE__ */ import_react10.default.createElement(ProblemsHeader_default, null), /* @__PURE__ */ import_react10.default.createElement(Problems_default, null))
+  }), /* @__PURE__ */ import_react10.default.createElement(Route, {
     path: "/dashboard",
-    element: /* @__PURE__ */ import_react9.default.createElement(Dashboard_default, null)
+    element: /* @__PURE__ */ import_react10.default.createElement(Dashboard_default, null)
   })));
   var App_default = App;
 
@@ -32586,7 +32631,7 @@
   var root = (0, import_client.createRoot)(container);
   document.addEventListener("DOMContentLoaded", () => {
     root.render(
-      /* @__PURE__ */ import_react10.default.createElement(import_react10.StrictMode, null, /* @__PURE__ */ import_react10.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react10.default.createElement(App_default, null)))
+      /* @__PURE__ */ import_react11.default.createElement(import_react11.StrictMode, null, /* @__PURE__ */ import_react11.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react11.default.createElement(App_default, null)))
     );
   });
 })();
@@ -32618,7 +32663,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 /**
- * @remix-run/router v1.11.0
+ * @remix-run/router v1.13.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -32641,7 +32686,7 @@
  * @license Modernizr 3.0.0pre (Custom Build) | MIT
  */
 /**
- * React Router DOM v6.18.0
+ * React Router DOM v6.20.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -32651,7 +32696,7 @@
  * @license MIT
  */
 /**
- * React Router v6.18.0
+ * React Router v6.20.0
  *
  * Copyright (c) Remix Software Inc.
  *

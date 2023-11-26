@@ -1,6 +1,7 @@
 body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol, li, dl, dt, dd, form, a, fieldset, input, th, td {
   margin: 0;
   padding: 0;
+  font-family: 'Source Code Pro', monospace;
 }
 
 ul, ol {
@@ -8,38 +9,13 @@ ul, ol {
 }
 
 body, button {
-  font-family: "Maven Pro";
-  background-color: #EEF4ED;
+  font-family: 'Source Code Pro', monospace;
 }
 
 a {
   text-decoration: none;
   color: black;
 }
-
-/* a:visted {
-  text-decoration: none;
-  color: #EEF4ED;
-} */
-
-/* header {
-  background: #ff663b;
-  height: 60px;
-} */
-
-/* header h1, header h1 a{
-  display: inline-block;
-  font-family: "Maven Pro";
-  font-size: 28px;
-  font-weight: 500;
-  color: white;
-  padding: 14px 5%;
-  text-decoration: none;
-} */
-
-/* header h1:hover {
-  text-decoration: underline;
-} */
 
 .grid {
   display: grid;
@@ -50,49 +26,7 @@ a {
   height: calc(100vh - 145px);
 }
 
-.eventList {
-  background: #f6f6f6;
-  padding: 16px;
-}
 
-.eventList h2 {
-  font-size: 20px;
-  padding: 8px 6px 10px;
-}
-
-.eventContainer {
-  font-size: 15px;
-  line-height: 35px;
-}
-
-.eventContainer h2 {
-  margin-bottom: 10px;
-}
-
-.eventList li:hover, a.active {
-  background: #f8e5ce;
-}
-
-.eventList a {
-  display: block;
-  color: black;
-  text-decoration: none;
-  border-bottom: 1px solid #dddddd;
-  padding: 8px 6px 10px;
-}
-
-.eventList h2 > a {
-  color: #236fff;
-  font-size: 15px;
-  float: right;
-  font-weight: normal;
-  border-bottom: none;
-  padding: 0px;
-}
-
-.eventForm {
-  margin-top: 15px;
-}
 
 label > strong {
   display: inline-block;

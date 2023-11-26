@@ -80,6 +80,7 @@ th,
 td {
   margin: 0;
   padding: 0;
+  font-family: "Source Code Pro", monospace;
 }
 ul,
 ol {
@@ -87,8 +88,7 @@ ol {
 }
 body,
 button {
-  font-family: "Maven Pro";
-  background-color: #EEF4ED;
+  font-family: "Source Code Pro", monospace;
 }
 a {
   text-decoration: none;
@@ -101,43 +101,6 @@ a {
   margin: 25px auto;
   width: 90%;
   height: calc(100vh - 145px);
-}
-.eventList {
-  background: #f6f6f6;
-  padding: 16px;
-}
-.eventList h2 {
-  font-size: 20px;
-  padding: 8px 6px 10px;
-}
-.eventContainer {
-  font-size: 15px;
-  line-height: 35px;
-}
-.eventContainer h2 {
-  margin-bottom: 10px;
-}
-.eventList li:hover,
-a.active {
-  background: #f8e5ce;
-}
-.eventList a {
-  display: block;
-  color: black;
-  text-decoration: none;
-  border-bottom: 1px solid #dddddd;
-  padding: 8px 6px 10px;
-}
-.eventList h2 > a {
-  color: #236fff;
-  font-size: 15px;
-  float: right;
-  font-weight: normal;
-  border-bottom: none;
-  padding: 0px;
-}
-.eventForm {
-  margin-top: 15px;
 }
 label > strong {
   display: inline-block;
@@ -586,35 +549,93 @@ button {
   margin-left: 30px;
 }
 
+/* app/javascript/components/LandingHeader.css */
+.landing__header__text {
+  color: #151012;
+  font-size: 30px;
+  font-weight: 600;
+  margin-left: 10vw;
+  padding: 10px 40px 10px 0px;
+}
+#orange__banner {
+  position: absolute;
+  top: 5%;
+  z-index: -100;
+  background-color: rgba(255, 107, 53, 1);
+  border-radius: 0px 10px 10px 0px;
+}
+
 /* app/javascript/components/Landing.css */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: white;
+  color: #151012;
 }
 .landing__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 10vh;
+  margin-top: 29vh;
 }
-.landing__title,
-.landing__subtitle {
-  margin-bottom: 5vh;
+.landing__content {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+.landing__text {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+.landing__quote {
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 90px;
+  width: 65vw;
+}
+#mastery {
+  font-style: italic;
+}
+.landing__subquote {
+  color: #9C8C8E;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  width: 35vw;
+}
+#orange__circle {
+  width: 450px;
+  height: 450px;
+  background-color: rgba(255, 107, 53, 1);
+  position: fixed;
+  top: 20%;
+  right: 10%;
+  z-index: -100;
+  border-radius: 50%;
+}
+#blue__circle {
+  width: 250px;
+  height: 250px;
+  background-color: rgba(30, 77, 219, 1);
+  position: fixed;
+  top: 55%;
+  right: 10%;
+  z-index: -90;
+  border-radius: 50%;
+}
+.landing__buttons {
+  display: flex;
+  gap: 2vw;
 }
 .landing__button {
-  background-color: lightgrey;
-  color: #333;
-  padding: 10px 20px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  margin: 10px;
-  font-size: 16px;
+  padding: 10px 25px;
 }
-.landing__button:hover {
-  background-color: #bcbcbc;
+#signup__button {
+  background-color: rgba(30, 77, 219, 1);
+  color: white;
 }
 .signup__modal,
 .login__modal {
