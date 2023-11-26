@@ -1,10 +1,10 @@
 
 .landing__header__text {
   color: #151012;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
   margin-left: 10vw;
-  padding: 10px 40px 10px 0px;
+  padding: 10px 30px 10px 0px;
 }
 
 #orange__banner {
@@ -13,5 +13,4 @@
   z-index: -100;
   background-color: rgba(255, 107, 53, 1);
   border-radius: 0px 10px 10px 0px;
-
 }

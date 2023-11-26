@@ -31796,9 +31796,13 @@
       className: "header__container"
     }, /* @__PURE__ */ import_react.default.createElement("div", {
       className: "home__link"
+    }, /* @__PURE__ */ import_react.default.createElement("span", {
+      id: "orange__banner"
     }, /* @__PURE__ */ import_react.default.createElement(Link, {
       to: "/home"
-    }, /* @__PURE__ */ import_react.default.createElement("h1", null, "SynTactic"))), /* @__PURE__ */ import_react.default.createElement("div", {
+    }, /* @__PURE__ */ import_react.default.createElement("p", {
+      className: "header__text"
+    }, "<SynTactic>")))), /* @__PURE__ */ import_react.default.createElement("div", {
       className: "header__buttons"
     }, /* @__PURE__ */ import_react.default.createElement("div", {
       className: `dropdown ${isDropdownOpen ? "open" : ""}`
@@ -31856,9 +31860,11 @@
     };
     return /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "home__container"
-    }, /* @__PURE__ */ import_react2.default.createElement("h1", null, "Welcome to SynTactic"), /* @__PURE__ */ import_react2.default.createElement("h2", {
-      id: "sub__header"
-    }, "Pick a Review Topic"), /* @__PURE__ */ import_react2.default.createElement("div", {
+    }, /* @__PURE__ */ import_react2.default.createElement("p", {
+      className: "home__quote"
+    }, "Pick a review ", /* @__PURE__ */ import_react2.default.createElement("span", {
+      id: "topic"
+    }, "{topic}")), /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "topics__container"
     }, /* @__PURE__ */ import_react2.default.createElement("button", {
       className: "topic",
@@ -31882,9 +31888,11 @@
       onClick: () => setShowModal(false)
     }), /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "modal"
-    }, /* @__PURE__ */ import_react2.default.createElement("h1", {
-      id: "modal__header"
-    }, "Pick a Review Method:"), /* @__PURE__ */ import_react2.default.createElement("div", {
+    }, /* @__PURE__ */ import_react2.default.createElement("p", {
+      className: "modal__header"
+    }, "Pick a review ", /* @__PURE__ */ import_react2.default.createElement("span", {
+      id: "method"
+    }, "<method>")), /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "review__methods"
     }, /* @__PURE__ */ import_react2.default.createElement("button", {
       className: "method",
@@ -32204,7 +32212,7 @@
       className: "progress__number"
     }, questionIndex + 1, "/", totalQuestions)), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "question"
-    }, /* @__PURE__ */ import_react4.default.createElement("h1", null, questionData.question)), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react4.default.createElement("p", null, questionData.question)), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "answer__choices"
     }, /* @__PURE__ */ import_react4.default.createElement("button", {
       onClick: () => handleAnswerChoice("A"),
@@ -32241,7 +32249,9 @@
     }, /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "card__face card__front",
       id: "card__front"
-    }, /* @__PURE__ */ import_react4.default.createElement("h1", null, "Question"), /* @__PURE__ */ import_react4.default.createElement("h2", {
+    }, /* @__PURE__ */ import_react4.default.createElement("p", {
+      className: "problem__title"
+    }, "Question"), /* @__PURE__ */ import_react4.default.createElement("p", {
       className: "card__text"
     }, cardData.question), /* @__PURE__ */ import_react4.default.createElement("button", {
       className: "flip__button",
@@ -32250,7 +32260,9 @@
     }, "Flip Over")), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "card__face card__back",
       id: "card__back"
-    }, /* @__PURE__ */ import_react4.default.createElement("h1", null, "Answer"), /* @__PURE__ */ import_react4.default.createElement("h2", {
+    }, /* @__PURE__ */ import_react4.default.createElement("p", {
+      className: "problem__title"
+    }, "Answer"), /* @__PURE__ */ import_react4.default.createElement("p", {
       className: "card__text"
     }, cardData.answer), /* @__PURE__ */ import_react4.default.createElement("button", {
       className: "flip__button",
@@ -32266,11 +32278,13 @@
       className: "overlay"
     }), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "results"
-    }, /* @__PURE__ */ import_react4.default.createElement("h1", null, "Practice Complete!"), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react4.default.createElement("p", {
+      className: "problem__title"
+    }, "Practice Complete!"), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "user__score"
-    }, /* @__PURE__ */ import_react4.default.createElement("h2", {
+    }, /* @__PURE__ */ import_react4.default.createElement("p", {
       id: "score"
-    }, "Your Score: ", score, " out of ", totalQuestions), /* @__PURE__ */ import_react4.default.createElement("h2", null, "Questions Solved: +", score, "!")), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, "Your Score: ", score, " out of ", totalQuestions), /* @__PURE__ */ import_react4.default.createElement("p", null, "Questions Solved: +", score, "!")), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "results__buttons"
     }, /* @__PURE__ */ import_react4.default.createElement("button", {
       onClick: handleHomeClick,
@@ -32284,7 +32298,9 @@
       className: "overlay"
     }), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "results"
-    }, /* @__PURE__ */ import_react4.default.createElement("h1", null, "Practice Complete!"), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react4.default.createElement("p", {
+      className: "problem__title"
+    }, "Practice Complete!"), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "results__buttons"
     }, /* @__PURE__ */ import_react4.default.createElement("button", {
       onClick: handleHomeClick,
@@ -32367,7 +32383,7 @@
       id: "orange__banner"
     }, /* @__PURE__ */ import_react7.default.createElement("p", {
       className: "landing__header__text"
-    }, "SynTactic")));
+    }, "<SynTactic>")));
   };
   var LandingHeader_default = LandingHeader;
 
@@ -32484,13 +32500,16 @@
     }, "Sign Up"), /* @__PURE__ */ import_react8.default.createElement("button", {
       onClick: () => handleShowLogin(),
       className: "landing__button",
-      id: "login_button",
+      id: "login__button",
       disabled: showSignUpModal || showLoginModal
     }, "Login"))), showSignUpModal && /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "signup__content"
     }, /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "overlay",
-      onClick: () => setShowSignUpModal(false)
+      onClick: () => {
+        setShowSignUpModal(false);
+        setSignupErrorMessage("");
+      }
     }), /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "signup__modal"
     }, /* @__PURE__ */ import_react8.default.createElement("form", {
@@ -32521,11 +32540,14 @@
       className: "signup__submit"
     }, "Sign Up")), signupErrorMessage && /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "error-message"
-    }, signupErrorMessage), " ")), showLoginModal && /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, signupErrorMessage))), showLoginModal && /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "login__content"
     }, /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "overlay",
-      onClick: () => setShowLoginModal(false)
+      onClick: () => {
+        setShowLoginModal(false);
+        setLoginErrorMessage("");
+      }
     }), /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "login__modal"
     }, /* @__PURE__ */ import_react8.default.createElement("form", {
