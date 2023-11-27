@@ -290,7 +290,7 @@ const Problems = () => {
           </div>
         
           <div className="question">
-            <h1>{questionData.question}</h1>
+            <p>{questionData.question}</p>
           </div>
           <div className="answer__choices">
             <button
@@ -358,13 +358,13 @@ const Problems = () => {
           <div className={`card__container ${isFlipped ? 'flipped' : ''}`}
           onClick={() => setIsFlipped(!isFlipped)}>
             <div className="card__face card__front" id="card__front">
-              <h1>Question</h1>
-              <h2 className="card__text">{cardData.question}</h2> 
+              <p className="problem__title">Question</p>
+              <p className="card__text">{cardData.question}</p> 
               <button className="flip__button" onClick={() => setIsFlipped(!isFlipped)} disabled={isFlipped}>Flip Over</button>
             </div>
             <div className="card__face card__back" id="card__back">
-              <h1>Answer</h1>
-              <h2 className="card__text">{cardData.answer}</h2>
+              <p className="problem__title">Answer</p>
+              <p className="card__text">{cardData.answer}</p>
               <button className="flip__button" onClick={() => setIsFlipped(!isFlipped)} disabled={!isFlipped}>Flip Over</button>
             </div>
           </div>
@@ -378,10 +378,10 @@ const Problems = () => {
           <div className="results__modal">
               <div className="overlay"></div>
               <div className="results">
-                <h1>Practice Complete!</h1>
+                <p className="problem__title">Practice Complete!</p>
                 <div className="user__score">
-                  <h2 id="score">Your Score: {score} out of {totalQuestions}</h2>
-                  <h2>Questions Solved: +{score}!</h2>
+                  <p id="score">Your Score: {score} out of {totalQuestions}</p>
+                  <p>Questions Solved: +{score}!</p>
                 </div>
                 <div className="results__buttons">
                   <button onClick={handleHomeClick} id="home__button">Home</button>
@@ -395,7 +395,7 @@ const Problems = () => {
           <div className="results__modal">
               <div className="overlay"></div>
               <div className="results">
-                <h1>Practice Complete!</h1>
+                <p className="problem__title">Practice Complete!</p>
                 <div className="results__buttons">
                   <button onClick={handleHomeClick} id="home__button">Home</button>
                   <button onClick={handleAgainClick} id="again__button">Again</button>

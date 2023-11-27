@@ -3,14 +3,61 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
-  /* margin-top: 150px; */
-  height: 80vh
+  gap: 35px;
+  margin-top: 13vh;
+  height: 100vh;
 }
 
-.home__button {
-  height: 45px;
-  width: 130px;
-  font-size: 24px;
-  background-color: lightgrey;
+#dashboard__orange__circle {
+  width: 250px;
+  height: 250px;
+  background-color: rgba(255, 107, 53, 1);
+  position:fixed;
+  top: 15%;
+  right: 40%;
+  z-index: -100;
+  border-radius: 50%;
+}
+
+#dashboard__blue__circle {
+  width: 150px;
+    height: 150px;
+    background-color: rgba(30, 77, 219, 1);
+    position:fixed;
+    top: 30%;
+    right: 35%;
+    z-index: -90;
+    border-radius: 50%;
+}
+
+.dashboard__greeting {
+  font-size: 30px; 
+  font-weight: 600;
+}
+
+.dashboard__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+}
+
+.dashboard__button {
+  padding: 10px 25px;
+}
+
+.progress__tracker {
+  font-size: 20px;
+}
+
+#home__button {
+  background-color: rgba(30, 77, 219, 1);
+  color: #f6fbff;
+}
+
+#logout__button {
+  background-color: rgba(247, 236, 224, 1);;
+  color: #151012;
+  font-size: 20px;
+  border-radius: 10px;
 }

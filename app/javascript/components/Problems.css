@@ -1,15 +1,19 @@
+body {
+  background-color:#f6fbff;
+  color:#151012;
+}
+
 .problems__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* height: 100vh; */
 }
 
 .progress__container {
   width: 500px;
   height: 20px;
-  background-color: lightgrey;
+  background-color: #e6e8ef;
   border-radius: 10px;
   margin-top: 70px;
   display: flex;
@@ -26,7 +30,7 @@
 
 .progress__bar {
   height: 20px;
-  background-color: #FF6B35;
+  background-color: rgba(255, 107, 53, 1);
   transition: width 0.5s;
   border-radius: 10px;
 }
@@ -34,16 +38,21 @@
 .progress__number {
   color: black;
   position: absolute; 
-  top: -5px;  
+  top: -3px;  
   right: -50px;  
-  font-weight: bolder;
-  font-size: 25px;
+  font-size: 20px;
+}
+
+.problem__title {
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .question {
   margin-bottom: 50px;
   margin-top: 50px;
-  width: 850px;
+  width: 85vw;
+  font-size: 30px;
 }
 
 .answer__choices {
@@ -62,23 +71,24 @@
   height: 80px;
   border-radius: 10px;
   border: none;
-  background-color: lightgrey;
+  background-color: #e6e8ef;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 20px;
   border: 3px solid transparent
 }
 
 .answer__choice span {
   width: 50px; 
   height: 50px;
-  background-color: #FF6B35; 
+  color: #f6fbff;
+  background-color: rgba(30, 77, 219, 1); 
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 20px;
   margin-left: 15px;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .answer__choice.selected__choice {
@@ -88,7 +98,7 @@
 }
 
 .problems__modal {
-  font-size: 30px;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -104,7 +114,7 @@
 }
 
 .problems__modal.correct {
-  background-color: rgb(61, 163, 61); 
+  background-color: #adfb3b; 
 }
 
 .problems__modal.incorrect {
@@ -112,11 +122,12 @@
 }
 
 .next__button {
-  font-size: 26px;
-  font-weight: bolder;
-  width: 100px;
-  height: 40px;
-  /* margin-right: 25px; */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer; 
+  padding: 10px 25px;
+  font-size: 20px;
+  margin-right: 25px;
 }
 
 .results {
@@ -162,13 +173,13 @@
 
 .card__text {
   width: 700px;
+  font-size: 25px;
   /* margin-left: 50px; */
 }
 
 .flip__button {
-  font-size: 26px;
-  font-weight: bolder;
-  padding: 10px;
+  color: rgba(255, 107, 53, 1);
+  background-color: rgba(255, 107, 53, 1);
 }
 
 .card__back {
@@ -179,7 +190,7 @@
 #next__card {
   bottom: 100px;
   position: absolute;
-  background-color: lightgrey;
+  background-color: #e6e8ef;
 }
 
 
@@ -195,8 +206,8 @@
 
 .results {
   position: fixed;
-  top: 50%; /* moves the top edge of the modal to the middle of the viewport */
-  left: 50%; /* same idea, but for horizontal centering */
+  top: 50%; 
+  left: 50%; 
   transform: translate(-50%, -50%); 
   display: flex;
   justify-content: center;
@@ -219,16 +230,18 @@
 
 .results__buttons {
   display: flex;
-  justify-content: space-between;
-  width: 350px;
+  justify-content: center;
+  gap: 3vw
+  
 }
 
 #home__button,
 #again__button {
-  font-size: 24px;
-  font-weight: bolder;
-  width: 150px;
-  height: 70px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer; 
+  padding: 10px 25px;
+  font-size: 20px;
 }
 
 

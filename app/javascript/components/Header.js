@@ -43,12 +43,6 @@ const Header = () => {
     setIsDropdownOpen(!isDropdownOpen);
   }
 
-
-  // const handleSelect = () => {
-  //   setSelectedLanguage(language);
-  //   setIsDropdownOpen(false);
-  // }
-
   const handleSelect = async (language) => {
     setSelectedLanguage(language);  // Update language in the frontend state
     setIsDropdownOpen(false);
@@ -84,12 +78,16 @@ const Header = () => {
   };
 
   return (
-    <div className="header__container">
-      {/* <header> */}
+    <div className="header__container"> 
       <div className="home__link">
-        <Link to="/home">
+        {/* <Link to="/home">
           <h1>SynTactic</h1>
-        </Link>
+        </Link> */}
+        <span id="orange__banner">
+          <Link to="/home">
+            <p className="header__text">&#60;SynTactic&#62;</p>
+          </Link>
+        </span> 
       </div>
       <div className="header__buttons">
         <div className={`dropdown ${isDropdownOpen ? 'open' : ''}`} >

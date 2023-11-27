@@ -2885,9 +2885,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React14 = require_react();
+          var React15 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React14.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React15.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -4408,7 +4408,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React14.Children.forEach(props.children, function(child) {
+                  React15.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -12569,7 +12569,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React14.Component().refs;
+          var emptyRefsObject = new React15.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -29863,7 +29863,7 @@
   application.register("hello", hello_controller_default);
 
   // app/javascript/application.js
-  var import_react11 = __toESM(require_react());
+  var import_react12 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/dist/index.js
@@ -31736,7 +31736,7 @@
   }
 
   // app/javascript/components/App.js
-  var import_react10 = __toESM(require_react());
+  var import_react11 = __toESM(require_react());
 
   // app/javascript/components/Header.js
   var import_react = __toESM(require_react());
@@ -31796,9 +31796,13 @@
       className: "header__container"
     }, /* @__PURE__ */ import_react.default.createElement("div", {
       className: "home__link"
+    }, /* @__PURE__ */ import_react.default.createElement("span", {
+      id: "orange__banner"
     }, /* @__PURE__ */ import_react.default.createElement(Link, {
       to: "/home"
-    }, /* @__PURE__ */ import_react.default.createElement("h1", null, "SynTactic"))), /* @__PURE__ */ import_react.default.createElement("div", {
+    }, /* @__PURE__ */ import_react.default.createElement("p", {
+      className: "header__text"
+    }, "<SynTactic>")))), /* @__PURE__ */ import_react.default.createElement("div", {
       className: "header__buttons"
     }, /* @__PURE__ */ import_react.default.createElement("div", {
       className: `dropdown ${isDropdownOpen ? "open" : ""}`
@@ -31856,9 +31860,11 @@
     };
     return /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "home__container"
-    }, /* @__PURE__ */ import_react2.default.createElement("h1", null, "Welcome to SynTactic"), /* @__PURE__ */ import_react2.default.createElement("h2", {
-      id: "sub__header"
-    }, "Pick a Review Topic"), /* @__PURE__ */ import_react2.default.createElement("div", {
+    }, /* @__PURE__ */ import_react2.default.createElement("p", {
+      className: "home__quote"
+    }, "Pick a review ", /* @__PURE__ */ import_react2.default.createElement("span", {
+      id: "topic"
+    }, "{\xA0topic\xA0}")), /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "topics__container"
     }, /* @__PURE__ */ import_react2.default.createElement("button", {
       className: "topic",
@@ -31882,9 +31888,11 @@
       onClick: () => setShowModal(false)
     }), /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "modal"
-    }, /* @__PURE__ */ import_react2.default.createElement("h1", {
-      id: "modal__header"
-    }, "Pick a Review Method:"), /* @__PURE__ */ import_react2.default.createElement("div", {
+    }, /* @__PURE__ */ import_react2.default.createElement("p", {
+      className: "modal__header"
+    }, "Pick a review ", /* @__PURE__ */ import_react2.default.createElement("span", {
+      id: "method"
+    }, "<\xA0method\xA0>")), /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "review__methods"
     }, /* @__PURE__ */ import_react2.default.createElement("button", {
       className: "method",
@@ -31924,11 +31932,7 @@
             if (response.ok) {
               setUsername(data.username);
               setProgress(data.progress);
-              console.log(data.username);
-              console.log(data.progress);
-              console.log(data);
             } else {
-              console.log("PROBLEM");
               navigate("/login");
             }
           } catch (error2) {
@@ -31943,8 +31947,6 @@
     }, [navigate]);
     const handleLogout = async () => {
       const token = localStorage.getItem("authToken");
-      console.log(token);
-      console.log("RARIWRNO");
       localStorage.removeItem("authToken");
       try {
         const response = await fetch("/logout", {
@@ -31967,48 +31969,73 @@
     };
     return /* @__PURE__ */ import_react3.default.createElement("div", {
       className: "profile__container"
+    }, /* @__PURE__ */ import_react3.default.createElement("span", {
+      id: "dashboard__orange__circle"
+    }), /* @__PURE__ */ import_react3.default.createElement("span", {
+      id: "dashboard__blue__circle"
+    }), /* @__PURE__ */ import_react3.default.createElement("p", {
+      className: "dashboard__greeting"
+    }, "{\xA0Hi ", username, "\xA0}"), /* @__PURE__ */ import_react3.default.createElement("p", {
+      className: "progress__tracker"
+    }, "Questions Solved: ", progress, " "), /* @__PURE__ */ import_react3.default.createElement("div", {
+      className: "dashboard__buttons"
     }, /* @__PURE__ */ import_react3.default.createElement("button", {
-      onClick: handleLogout,
-      className: "logout__button"
-    }, "Logout"), /* @__PURE__ */ import_react3.default.createElement("h1", null, "Hi ", username, "!"), /* @__PURE__ */ import_react3.default.createElement("h2", {
-      id: "progress__tracker"
-    }, "Questions Solved: ", progress, " "), /* @__PURE__ */ import_react3.default.createElement("button", {
       onClick: handleHomeClick,
-      className: "home__button"
-    }, "Home"));
+      className: "dashboard__button",
+      id: "home__button"
+    }, "Home"), /* @__PURE__ */ import_react3.default.createElement("button", {
+      onClick: handleLogout,
+      className: "dashboard__button",
+      id: "logout__button"
+    }, "Logout")));
   };
   var Dashboard_default = Dashboard;
 
-  // app/javascript/components/Problems.js
+  // app/javascript/components/DashboardHeader.js
   var import_react4 = __toESM(require_react());
+  var DashboardHeader = () => {
+    return /* @__PURE__ */ import_react4.default.createElement("div", {
+      className: "dashboard__header__container"
+    }, /* @__PURE__ */ import_react4.default.createElement("span", {
+      id: "orange__banner"
+    }, /* @__PURE__ */ import_react4.default.createElement(Link, {
+      to: "/home"
+    }, /* @__PURE__ */ import_react4.default.createElement("p", {
+      className: "landing__header__text"
+    }, "<SynTactic>"))));
+  };
+  var DashboardHeader_default = DashboardHeader;
+
+  // app/javascript/components/Problems.js
+  var import_react5 = __toESM(require_react());
   var Problems = () => {
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
     const category = searchParams.get("category");
     const method = searchParams.get("method");
-    const [multipleChoice, setMultipleChoice] = (0, import_react4.useState)(false);
-    const [flashCards, setFlashcards] = (0, import_react4.useState)(false);
-    const [userLanguage, setUserLanguage] = (0, import_react4.useState)("");
-    const [questionArray, setQuestionArray] = (0, import_react4.useState)([]);
-    const [totalQuestions, setTotalQuestions] = (0, import_react4.useState)(0);
-    const [questionIndex, setQuestionIndex] = (0, import_react4.useState)(0);
+    const [multipleChoice, setMultipleChoice] = (0, import_react5.useState)(false);
+    const [flashCards, setFlashcards] = (0, import_react5.useState)(false);
+    const [userLanguage, setUserLanguage] = (0, import_react5.useState)("");
+    const [questionArray, setQuestionArray] = (0, import_react5.useState)([]);
+    const [totalQuestions, setTotalQuestions] = (0, import_react5.useState)(0);
+    const [questionIndex, setQuestionIndex] = (0, import_react5.useState)(0);
     const progressPercentage = (questionIndex + 1) / totalQuestions * 100;
-    const [score, setScore] = (0, import_react4.useState)(0);
-    const [questionData, setQuestionData] = (0, import_react4.useState)({
+    const [score, setScore] = (0, import_react5.useState)(0);
+    const [questionData, setQuestionData] = (0, import_react5.useState)({
       question: "",
       choices: ["", "", ""],
       correctAnswer: ""
     });
-    const [isFlipped, setIsFlipped] = (0, import_react4.useState)(false);
-    const [cardData, setCardData] = (0, import_react4.useState)({
+    const [isFlipped, setIsFlipped] = (0, import_react5.useState)(false);
+    const [cardData, setCardData] = (0, import_react5.useState)({
       question: "",
       answer: ""
     });
-    const [showCorrectnessModal, setShowCorrectnessModal] = (0, import_react4.useState)(false);
-    const [showResultModal, setShowResultModal] = (0, import_react4.useState)(false);
-    const [selectedAnswer, setSelectedAnswer] = (0, import_react4.useState)(null);
-    const [isAnswerCorrect, setAnswerCorrect] = (0, import_react4.useState)(false);
-    (0, import_react4.useEffect)(() => {
+    const [showCorrectnessModal, setShowCorrectnessModal] = (0, import_react5.useState)(false);
+    const [showResultModal, setShowResultModal] = (0, import_react5.useState)(false);
+    const [selectedAnswer, setSelectedAnswer] = (0, import_react5.useState)(null);
+    const [isAnswerCorrect, setAnswerCorrect] = (0, import_react5.useState)(false);
+    (0, import_react5.useEffect)(() => {
       const token = localStorage.getItem("authToken");
       if (token) {
         fetch("/current_user", {
@@ -32026,7 +32053,7 @@
         });
       }
     }, []);
-    (0, import_react4.useEffect)(() => {
+    (0, import_react5.useEffect)(() => {
       if (category && method === "multiple choice") {
         console.log("MC");
         setMultipleChoice(true);
@@ -32193,103 +32220,111 @@
         }
       }
     };
-    return /* @__PURE__ */ import_react4.default.createElement("div", null, multipleChoice && /* @__PURE__ */ import_react4.default.createElement("div", {
+    return /* @__PURE__ */ import_react5.default.createElement("div", null, multipleChoice && /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "problems__container"
-    }, /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "progress__container"
-    }, /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "progress__bar",
       style: { width: `${progressPercentage}%` }
-    }), /* @__PURE__ */ import_react4.default.createElement("p", {
+    }), /* @__PURE__ */ import_react5.default.createElement("p", {
       className: "progress__number"
-    }, questionIndex + 1, "/", totalQuestions)), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, questionIndex + 1, "/", totalQuestions)), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "question"
-    }, /* @__PURE__ */ import_react4.default.createElement("h1", null, questionData.question)), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("p", null, questionData.question)), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "answer__choices"
-    }, /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, /* @__PURE__ */ import_react5.default.createElement("button", {
       onClick: () => handleAnswerChoice("A"),
       className: `answer__choice ${selectedAnswer === "A" ? "selected__choice" : ""}`
-    }, /* @__PURE__ */ import_react4.default.createElement("span", null, "A"), questionData.choices[0]), /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, /* @__PURE__ */ import_react5.default.createElement("span", null, "A"), questionData.choices[0]), /* @__PURE__ */ import_react5.default.createElement("button", {
       onClick: () => handleAnswerChoice("B"),
       className: `answer__choice ${selectedAnswer === "B" ? "selected__choice" : ""}`
-    }, /* @__PURE__ */ import_react4.default.createElement("span", null, "B"), questionData.choices[1]), /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, /* @__PURE__ */ import_react5.default.createElement("span", null, "B"), questionData.choices[1]), /* @__PURE__ */ import_react5.default.createElement("button", {
       onClick: () => handleAnswerChoice("C"),
       className: `answer__choice ${selectedAnswer === "C" ? "selected__choice" : ""}`
-    }, /* @__PURE__ */ import_react4.default.createElement("span", null, "C"), questionData.choices[2])), showCorrectnessModal && /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("span", null, "C"), questionData.choices[2])), showCorrectnessModal && /* @__PURE__ */ import_react5.default.createElement("div", {
       className: `problems__modal ${isAnswerCorrect ? "correct" : "incorrect"}`
-    }, isAnswerCorrect ? /* @__PURE__ */ import_react4.default.createElement("p", {
+    }, isAnswerCorrect ? /* @__PURE__ */ import_react5.default.createElement("p", {
       className: "correctness__modal",
       id: "correct__answer"
-    }, "Correct!") : /* @__PURE__ */ import_react4.default.createElement("p", {
+    }, "Correct!") : /* @__PURE__ */ import_react5.default.createElement("p", {
       className: "correctness__modal",
       id: "incorrect__answer"
-    }, "Incorrect. The correct answer is: ", questionData.correctAnswer), /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, "Incorrect. The correct answer is: ", questionData.correctAnswer), /* @__PURE__ */ import_react5.default.createElement("button", {
       className: "next__button",
       onClick: handleNextQuestion
-    }, "Next"))), flashCards && /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, "Next"))), flashCards && /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "problems__container"
-    }, /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "progress__container"
-    }, /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "progress__bar",
       style: { width: `${progressPercentage}%` }
-    }), /* @__PURE__ */ import_react4.default.createElement("p", {
+    }), /* @__PURE__ */ import_react5.default.createElement("p", {
       className: "progress__number"
-    }, questionIndex + 1, "/", totalQuestions)), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, questionIndex + 1, "/", totalQuestions)), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: `card__container ${isFlipped ? "flipped" : ""}`,
       onClick: () => setIsFlipped(!isFlipped)
-    }, /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "card__face card__front",
       id: "card__front"
-    }, /* @__PURE__ */ import_react4.default.createElement("h1", null, "Question"), /* @__PURE__ */ import_react4.default.createElement("h2", {
+    }, /* @__PURE__ */ import_react5.default.createElement("p", {
+      className: "problem__title"
+    }, "Question"), /* @__PURE__ */ import_react5.default.createElement("p", {
       className: "card__text"
-    }, cardData.question), /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, cardData.question), /* @__PURE__ */ import_react5.default.createElement("button", {
       className: "flip__button",
       onClick: () => setIsFlipped(!isFlipped),
       disabled: isFlipped
-    }, "Flip Over")), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, "Flip Over")), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "card__face card__back",
       id: "card__back"
-    }, /* @__PURE__ */ import_react4.default.createElement("h1", null, "Answer"), /* @__PURE__ */ import_react4.default.createElement("h2", {
+    }, /* @__PURE__ */ import_react5.default.createElement("p", {
+      className: "problem__title"
+    }, "Answer"), /* @__PURE__ */ import_react5.default.createElement("p", {
       className: "card__text"
-    }, cardData.answer), /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, cardData.answer), /* @__PURE__ */ import_react5.default.createElement("button", {
       className: "flip__button",
       onClick: () => setIsFlipped(!isFlipped),
       disabled: !isFlipped
-    }, "Flip Over"))), /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, "Flip Over"))), /* @__PURE__ */ import_react5.default.createElement("button", {
       className: "next__button",
       id: "next__card",
       onClick: handleNextQuestion
-    }, "Next")), showResultModal && multipleChoice && /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, "Next")), showResultModal && multipleChoice && /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "results__modal"
-    }, /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "overlay"
-    }), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "results"
-    }, /* @__PURE__ */ import_react4.default.createElement("h1", null, "Practice Complete!"), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("p", {
+      className: "problem__title"
+    }, "Practice Complete!"), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "user__score"
-    }, /* @__PURE__ */ import_react4.default.createElement("h2", {
+    }, /* @__PURE__ */ import_react5.default.createElement("p", {
       id: "score"
-    }, "Your Score: ", score, " out of ", totalQuestions), /* @__PURE__ */ import_react4.default.createElement("h2", null, "Questions Solved: +", score, "!")), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, "Your Score: ", score, " out of ", totalQuestions), /* @__PURE__ */ import_react5.default.createElement("p", null, "Questions Solved: +", score, "!")), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "results__buttons"
-    }, /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, /* @__PURE__ */ import_react5.default.createElement("button", {
       onClick: handleHomeClick,
       id: "home__button"
-    }, "Home"), /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, "Home"), /* @__PURE__ */ import_react5.default.createElement("button", {
       onClick: handleAgainClick,
       id: "again__button"
-    }, "Again")))), showResultModal && flashCards && /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, "Again")))), showResultModal && flashCards && /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "results__modal"
-    }, /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "overlay"
-    }), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "results"
-    }, /* @__PURE__ */ import_react4.default.createElement("h1", null, "Practice Complete!"), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("p", {
+      className: "problem__title"
+    }, "Practice Complete!"), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "results__buttons"
-    }, /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, /* @__PURE__ */ import_react5.default.createElement("button", {
       onClick: handleHomeClick,
       id: "home__button"
-    }, "Home"), /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, "Home"), /* @__PURE__ */ import_react5.default.createElement("button", {
       onClick: handleAgainClick,
       id: "again__button"
     }, "Again")))));
@@ -32297,7 +32332,7 @@
   var Problems_default = Problems;
 
   // app/javascript/components/Welcome.js
-  var import_react5 = __toESM(require_react());
+  var import_react6 = __toESM(require_react());
   var Welcome = () => {
     const navigate = useNavigate();
     const handleLanguageSelection = async (language) => {
@@ -32320,27 +32355,27 @@
         console.error("There was an error updating language preference:", error2);
       }
     };
-    return /* @__PURE__ */ import_react5.default.createElement("div", {
+    return /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "welcome__container"
-    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "welcome__message"
-    }, /* @__PURE__ */ import_react5.default.createElement("h1", null, "Welcome to SynTactic")), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, /* @__PURE__ */ import_react6.default.createElement("h1", null, "Welcome to SynTactic")), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "language__selection"
-    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "selection__text"
-    }, /* @__PURE__ */ import_react5.default.createElement("h2", {
+    }, /* @__PURE__ */ import_react6.default.createElement("h2", {
       id: "select__language"
-    }, "Select a Language:"), /* @__PURE__ */ import_react5.default.createElement("p", {
+    }, "Select a Language:"), /* @__PURE__ */ import_react6.default.createElement("p", {
       id: "change__language"
-    }, "You can always change your practice language later!")), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, "You can always change your practice language later!")), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "language__options"
-    }, /* @__PURE__ */ import_react5.default.createElement("button", {
+    }, /* @__PURE__ */ import_react6.default.createElement("button", {
       onClick: () => handleLanguageSelection("Java"),
       className: "language__choice"
-    }, "Java"), /* @__PURE__ */ import_react5.default.createElement("button", {
+    }, "Java"), /* @__PURE__ */ import_react6.default.createElement("button", {
       onClick: () => handleLanguageSelection("Python"),
       className: "language__choice"
-    }, "Python"), /* @__PURE__ */ import_react5.default.createElement("button", {
+    }, "Python"), /* @__PURE__ */ import_react6.default.createElement("button", {
       onClick: () => handleLanguageSelection("Ruby"),
       className: "language__choice"
     }, "Ruby"))));
@@ -32348,38 +32383,38 @@
   var Welcome_default = Welcome;
 
   // app/javascript/components/WelcomeHeader.js
-  var import_react6 = __toESM(require_react());
+  var import_react7 = __toESM(require_react());
   var WelcomeHeader = () => {
-    return /* @__PURE__ */ import_react6.default.createElement("div", {
+    return /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "welcome__header__container"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement("h1", {
+    }, /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement("h1", {
       className: "welcome__header__text"
     }, "SynTactic")));
   };
   var WelcomeHeader_default = WelcomeHeader;
 
   // app/javascript/components/LandingHeader.js
-  var import_react7 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
   var LandingHeader = () => {
-    return /* @__PURE__ */ import_react7.default.createElement("div", {
+    return /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "landing__header__container"
-    }, /* @__PURE__ */ import_react7.default.createElement("span", {
+    }, /* @__PURE__ */ import_react8.default.createElement("span", {
       id: "orange__banner"
-    }, /* @__PURE__ */ import_react7.default.createElement("p", {
+    }, /* @__PURE__ */ import_react8.default.createElement("p", {
       className: "landing__header__text"
-    }, "SynTactic")));
+    }, "<SynTactic>")));
   };
   var LandingHeader_default = LandingHeader;
 
   // app/javascript/components/Landing.js
-  var import_react8 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
   var Landing = () => {
-    const [showSignUpModal, setShowSignUpModal] = (0, import_react8.useState)(false);
-    const [showLoginModal, setShowLoginModal] = (0, import_react8.useState)(false);
-    const [username, setUsername] = (0, import_react8.useState)("");
-    const [password, setPassword] = (0, import_react8.useState)("");
-    const [loginErrorMessage, setLoginErrorMessage] = (0, import_react8.useState)("");
-    const [signupErrorMessage, setSignupErrorMessage] = (0, import_react8.useState)("");
+    const [showSignUpModal, setShowSignUpModal] = (0, import_react9.useState)(false);
+    const [showLoginModal, setShowLoginModal] = (0, import_react9.useState)(false);
+    const [username, setUsername] = (0, import_react9.useState)("");
+    const [password, setPassword] = (0, import_react9.useState)("");
+    const [loginErrorMessage, setLoginErrorMessage] = (0, import_react9.useState)("");
+    const [signupErrorMessage, setSignupErrorMessage] = (0, import_react9.useState)("");
     const navigate = useNavigate();
     const handleShowSignUp = () => {
       setShowLoginModal(false);
@@ -32458,47 +32493,50 @@
         console.error("There was an error during login:", error2);
       }
     };
-    return /* @__PURE__ */ import_react8.default.createElement("div", {
+    return /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "landing__container"
-    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "landing__content"
-    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "landing__text"
-    }, /* @__PURE__ */ import_react8.default.createElement("p", {
+    }, /* @__PURE__ */ import_react9.default.createElement("p", {
       className: "landing__quote"
-    }, "Your shortcut to syntax ", /* @__PURE__ */ import_react8.default.createElement("span", {
+    }, "Your shortcut to syntax ", /* @__PURE__ */ import_react9.default.createElement("span", {
       id: "mastery"
-    }, "mastery")), /* @__PURE__ */ import_react8.default.createElement("p", {
+    }, "mastery")), /* @__PURE__ */ import_react9.default.createElement("p", {
       className: "landing__subquote"
-    }, "No more wasting time scouring documentation or cheatsheets. Streamline your coding interview prep with SynTactic today.")), /* @__PURE__ */ import_react8.default.createElement("span", {
+    }, "No more wasting time scouring documentation or cheatsheets. Streamline your coding interview prep with SynTactic today.")), /* @__PURE__ */ import_react9.default.createElement("span", {
       id: "orange__circle"
-    }), /* @__PURE__ */ import_react8.default.createElement("span", {
+    }), /* @__PURE__ */ import_react9.default.createElement("span", {
       id: "blue__circle"
-    }), /* @__PURE__ */ import_react8.default.createElement("div", {
+    }), /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "landing__buttons"
-    }, /* @__PURE__ */ import_react8.default.createElement("button", {
+    }, /* @__PURE__ */ import_react9.default.createElement("button", {
       onClick: () => handleShowSignUp(),
       className: "landing__button",
       id: "signup__button",
       disabled: showSignUpModal || showLoginModal
-    }, "Sign Up"), /* @__PURE__ */ import_react8.default.createElement("button", {
+    }, "Sign Up"), /* @__PURE__ */ import_react9.default.createElement("button", {
       onClick: () => handleShowLogin(),
       className: "landing__button",
-      id: "login_button",
+      id: "login__button",
       disabled: showSignUpModal || showLoginModal
-    }, "Login"))), showSignUpModal && /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, "Login"))), showSignUpModal && /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "signup__content"
-    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "overlay",
-      onClick: () => setShowSignUpModal(false)
-    }), /* @__PURE__ */ import_react8.default.createElement("div", {
+      onClick: () => {
+        setShowSignUpModal(false);
+        setSignupErrorMessage("");
+      }
+    }), /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "signup__modal"
-    }, /* @__PURE__ */ import_react8.default.createElement("form", {
+    }, /* @__PURE__ */ import_react9.default.createElement("form", {
       className: "signup__form",
       onSubmit: handleSignUp
-    }, /* @__PURE__ */ import_react8.default.createElement("label", {
+    }, /* @__PURE__ */ import_react9.default.createElement("label", {
       htmlFor: "signup__username"
-    }, "Username"), /* @__PURE__ */ import_react8.default.createElement("input", {
+    }, "Username"), /* @__PURE__ */ import_react9.default.createElement("input", {
       type: "text",
       placeholder: "Username",
       required: true,
@@ -32506,9 +32544,9 @@
       id: "signup__username",
       value: username,
       onChange: (e) => setUsername(e.target.value)
-    }), /* @__PURE__ */ import_react8.default.createElement("label", {
+    }), /* @__PURE__ */ import_react9.default.createElement("label", {
       htmlFor: "signup__password"
-    }, "Password"), /* @__PURE__ */ import_react8.default.createElement("input", {
+    }, "Password"), /* @__PURE__ */ import_react9.default.createElement("input", {
       type: "password",
       placeholder: "Password",
       required: true,
@@ -32516,24 +32554,27 @@
       id: "signup__password",
       value: password,
       onChange: (e) => setPassword(e.target.value)
-    }), /* @__PURE__ */ import_react8.default.createElement("button", {
+    }), /* @__PURE__ */ import_react9.default.createElement("button", {
       type: "submit",
       className: "signup__submit"
-    }, "Sign Up")), signupErrorMessage && /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, "Sign Up")), signupErrorMessage && /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "error-message"
-    }, signupErrorMessage), " ")), showLoginModal && /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, signupErrorMessage))), showLoginModal && /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "login__content"
-    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "overlay",
-      onClick: () => setShowLoginModal(false)
-    }), /* @__PURE__ */ import_react8.default.createElement("div", {
+      onClick: () => {
+        setShowLoginModal(false);
+        setLoginErrorMessage("");
+      }
+    }), /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "login__modal"
-    }, /* @__PURE__ */ import_react8.default.createElement("form", {
+    }, /* @__PURE__ */ import_react9.default.createElement("form", {
       className: "login__form",
       onSubmit: handleLogin
-    }, /* @__PURE__ */ import_react8.default.createElement("label", {
+    }, /* @__PURE__ */ import_react9.default.createElement("label", {
       htmlFor: "login__username"
-    }, "Username"), /* @__PURE__ */ import_react8.default.createElement("input", {
+    }, "Username"), /* @__PURE__ */ import_react9.default.createElement("input", {
       type: "text",
       placeholder: "Username",
       required: true,
@@ -32541,9 +32582,9 @@
       id: "login__username",
       value: username,
       onChange: (e) => setUsername(e.target.value)
-    }), /* @__PURE__ */ import_react8.default.createElement("label", {
+    }), /* @__PURE__ */ import_react9.default.createElement("label", {
       htmlFor: "login__password"
-    }, "Password"), /* @__PURE__ */ import_react8.default.createElement("input", {
+    }, "Password"), /* @__PURE__ */ import_react9.default.createElement("input", {
       type: "password",
       placeholder: "Password",
       required: true,
@@ -32551,24 +32592,24 @@
       id: "login__password",
       value: password,
       onChange: (e) => setPassword(e.target.value)
-    }), /* @__PURE__ */ import_react8.default.createElement("button", {
+    }), /* @__PURE__ */ import_react9.default.createElement("button", {
       type: "submit",
       className: "login__submit"
-    }, "Login")), loginErrorMessage && /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, "Login")), loginErrorMessage && /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "error-message"
     }, loginErrorMessage))));
   };
   var Landing_default = Landing;
 
   // app/javascript/components/ProblemsHeader.js
-  var import_react9 = __toESM(require_react());
+  var import_react10 = __toESM(require_react());
   var ProblemsHeader = () => {
-    const [selectedLanguage, setSelectedLanguage] = (0, import_react9.useState)("");
+    const [selectedLanguage, setSelectedLanguage] = (0, import_react10.useState)("");
     const navigate = useNavigate();
     const goToDashboard = () => {
       navigate("/dashboard");
     };
-    (0, import_react9.useEffect)(() => {
+    (0, import_react10.useEffect)(() => {
       const token = localStorage.getItem("authToken");
       if (token) {
         fetch("/current_user", {
@@ -32586,21 +32627,21 @@
         });
       }
     }, []);
-    return /* @__PURE__ */ import_react9.default.createElement("div", {
+    return /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "problems__header__container"
-    }, /* @__PURE__ */ import_react9.default.createElement("div", {
+    }, /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "home__link"
-    }, /* @__PURE__ */ import_react9.default.createElement(Link, {
+    }, /* @__PURE__ */ import_react10.default.createElement(Link, {
       to: "/home"
-    }, /* @__PURE__ */ import_react9.default.createElement("h1", {
+    }, /* @__PURE__ */ import_react10.default.createElement("h1", {
       className: "problems__header__text"
-    }, "SynTactic"))), /* @__PURE__ */ import_react9.default.createElement("div", {
+    }, "SynTactic"))), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "problems__header__buttons"
-    }, /* @__PURE__ */ import_react9.default.createElement("div", {
+    }, /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "problems__selected__language"
-    }, selectedLanguage), /* @__PURE__ */ import_react9.default.createElement("div", {
+    }, selectedLanguage), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "user__profile"
-    }, /* @__PURE__ */ import_react9.default.createElement("button", {
+    }, /* @__PURE__ */ import_react10.default.createElement("button", {
       id: "user__dashboard",
       onClick: goToDashboard
     }, "Dashboard"))));
@@ -32608,21 +32649,21 @@
   var ProblemsHeader_default = ProblemsHeader;
 
   // app/javascript/components/App.js
-  var App = () => /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement(Routes, null, /* @__PURE__ */ import_react10.default.createElement(Route, {
+  var App = () => /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement(Routes, null, /* @__PURE__ */ import_react11.default.createElement(Route, {
     path: "/login",
-    element: /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null, /* @__PURE__ */ import_react10.default.createElement(LandingHeader_default, null), /* @__PURE__ */ import_react10.default.createElement(Landing_default, null))
-  }), /* @__PURE__ */ import_react10.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react11.default.createElement(import_react11.default.Fragment, null, /* @__PURE__ */ import_react11.default.createElement(LandingHeader_default, null), /* @__PURE__ */ import_react11.default.createElement(Landing_default, null))
+  }), /* @__PURE__ */ import_react11.default.createElement(Route, {
     path: "/home",
-    element: /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null, /* @__PURE__ */ import_react10.default.createElement(Header_default, null), /* @__PURE__ */ import_react10.default.createElement(HomePage_default, null))
-  }), /* @__PURE__ */ import_react10.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react11.default.createElement(import_react11.default.Fragment, null, /* @__PURE__ */ import_react11.default.createElement(Header_default, null), /* @__PURE__ */ import_react11.default.createElement(HomePage_default, null))
+  }), /* @__PURE__ */ import_react11.default.createElement(Route, {
     path: "/welcome",
-    element: /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null, /* @__PURE__ */ import_react10.default.createElement(WelcomeHeader_default, null), /* @__PURE__ */ import_react10.default.createElement(Welcome_default, null))
-  }), /* @__PURE__ */ import_react10.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react11.default.createElement(import_react11.default.Fragment, null, /* @__PURE__ */ import_react11.default.createElement(WelcomeHeader_default, null), /* @__PURE__ */ import_react11.default.createElement(Welcome_default, null))
+  }), /* @__PURE__ */ import_react11.default.createElement(Route, {
     path: "/problems",
-    element: /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null, /* @__PURE__ */ import_react10.default.createElement(ProblemsHeader_default, null), /* @__PURE__ */ import_react10.default.createElement(Problems_default, null))
-  }), /* @__PURE__ */ import_react10.default.createElement(Route, {
+    element: /* @__PURE__ */ import_react11.default.createElement(import_react11.default.Fragment, null, /* @__PURE__ */ import_react11.default.createElement(ProblemsHeader_default, null), /* @__PURE__ */ import_react11.default.createElement(Problems_default, null))
+  }), /* @__PURE__ */ import_react11.default.createElement(Route, {
     path: "/dashboard",
-    element: /* @__PURE__ */ import_react10.default.createElement(Dashboard_default, null)
+    element: /* @__PURE__ */ import_react11.default.createElement(import_react11.default.Fragment, null, /* @__PURE__ */ import_react11.default.createElement(DashboardHeader_default, null), /* @__PURE__ */ import_react11.default.createElement(Dashboard_default, null))
   })));
   var App_default = App;
 
@@ -32631,7 +32672,7 @@
   var root = (0, import_client.createRoot)(container);
   document.addEventListener("DOMContentLoaded", () => {
     root.render(
-      /* @__PURE__ */ import_react11.default.createElement(import_react11.StrictMode, null, /* @__PURE__ */ import_react11.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react11.default.createElement(App_default, null)))
+      /* @__PURE__ */ import_react12.default.createElement(import_react12.StrictMode, null, /* @__PURE__ */ import_react12.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react12.default.createElement(App_default, null)))
     );
   });
 })();

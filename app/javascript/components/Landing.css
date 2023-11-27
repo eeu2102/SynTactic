@@ -1,5 +1,10 @@
 body {
-    background-color: white;
+    background-color:#f6fbff;
+    color:#151012;
+  }
+
+  label {
+    font-size: 16px;
     color:#151012;
   }
   
@@ -50,7 +55,7 @@ body {
     background-color: rgba(255, 107, 53, 1);
     position:fixed;
     top: 20%;
-    right: 10%;
+    right: 8%;
     z-index: -100;
     border-radius: 50%;
   }
@@ -68,7 +73,7 @@ body {
 
   .landing__buttons {
     display: flex;
-    gap: 2vw;
+    gap: 1.5vw;
   }
 
   .landing__button {
@@ -76,39 +81,39 @@ body {
     border-radius: 10px;
     cursor: pointer; 
     padding: 10px 25px;
-    /* background-color: rgba(30, 77, 219, 1); */
+    font-size: 16px;
   }
 
   #signup__button {
     background-color: rgba(30, 77, 219, 1);
-    color: white;
+    color: #f6fbff;
+  }
+
+  #login__button {
+    background-color: rgba(247, 236, 224, 1);
   }
   
-  
-  /* Modals - Using Styles from Modal on Homepage */
-  .signup__modal, .login__modal {
-    background-color: white;
-    width: 600px; /* Matching width from .modal */
-    margin-top: 50px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  .signup__modal, 
+  .login__modal {
+    background-color: #f6fbff;
+    position: relative;
   }
   
-  /* Forms - Flexbox Layout */
-  .signup__form, .login__form {
+  .signup__form, 
+  .login__form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 1vh;
   }
   
-  /* Input Fields - Slightly Larger and More Spacing */
-  .signup__input, .login__input {
+  .signup__input, 
+  .login__input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 10px;
   }
   
   /* Labels - Bold and Spaced */
@@ -117,11 +122,21 @@ body {
     font-weight: bold;
   }
   
-  /* Error Message - Consistent with Color Scheme */
   .error-message {
-    color: red;
-    margin-top: 10px;
+    color: rgba(255, 107, 53, 1);
+    position: absolute;
+    bottom: 60px;
   }
+
+  .signup__submit,
+  .login__submit {
+    border: none;
+    border-radius: 10px;
+    cursor: pointer; 
+    padding: 10px 25px;
+    font-size: 16px;
+  }
+
 
   .overlay {
     position: fixed;
@@ -135,20 +150,18 @@ body {
   .signup__modal,
   .login__modal {
     position: fixed;
-    top: 50%; /* moves the top edge of the modal to the middle of the viewport */
-    left: 50%; /* same idea, but for horizontal centering */
+    top: 50%; 
+    left: 50%; 
     transform: translate(-50%, -50%); 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: white;
-    /* padding: 100px 50px 100px 50px; */
-    /* top: -50vh; */
-    height: 450px;
-    width: 600px;
+    background-color: #f6fbff;
+    height: 60vh;
+    width: 65vw;
     z-index: 200;
-    border-radius: 10px;
+    border-radius: 20px;
   }
 
   

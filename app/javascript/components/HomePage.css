@@ -1,42 +1,56 @@
+body {
+  background-color:#f6fbff;
+  color:#151012;
+}
+
 .home__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* gap: 40px; */
-  /* margin-top: 50px; */
-  height: 80vh
+  height: 85vh;
+  gap: 8vh;
+}
+
+.home__quote {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#topic {
+  font-style: italic;
+  
 }
 
 .topics__container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
-}
-
-#sub__header {
-  margin-top: 30px;
+  gap: 3vw;
 }
 
 .topic {
+  color:#f6fbff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
-  line-height: 40px;
-  background-color: lightgrey;
-  width: 510px;
-  height: 80px;
-  margin-top: 15px;
+  font-size: 20px;
+  line-height: 35px;
+  background-color: rgba(30, 77, 219, 1);
   cursor: pointer;
+  height: 40vh;
+  width: 30vw;
+  max-width: 300px;
+  transition: transform 0.4s ease; 
+}
 
+.topic:hover {
+  transform: translateY(-20px);
 }
 
 button {
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .home__modal {
@@ -44,6 +58,11 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.modal__header {
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .overlay {
@@ -57,41 +76,52 @@ button {
 
 .modal {
   position: fixed;
-  top: 50%; /* moves the top edge of the modal to the middle of the viewport */
-  left: 50%; /* same idea, but for horizontal centering */
+  top: 50%; 
+  left: 50%; 
   transform: translate(-50%, -50%); 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: white;
-  /* padding: 100px 50px 100px 50px; */
-  /* top: -50vh; */
-  height: 450px;
-  width: 600px;
+  gap: 7vh;
+  background-color: #f6fbff;
+  height: 60vh;
+  width: 65vw;
+  min-width: 600px;
   z-index: 200;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
-/* #modal__header {
-  margin-bottom: 
-} */
 
 .review__methods {
   display: flex;
-  justify-content: space-between;
-  width: 525px;
+  justify-content: center;
+  gap: 3vw;
+}
+
+#method {
+  font-style: italic;
 }
 
 .method {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-size: 24px;
-  font-weight: bolder;
-  width: 250px;
-  height: 70px;
+  font-size: 20px;
+  background-color: rgba(255, 107, 53, 1);
+  cursor: pointer;
+  height: 15vh;
+  width: 20vw;
+  min-width: 250px;
+  transition: transform ease 0.4s; 
+}
+
+.method:hover {
+  transform: translateY(-20px);
 }
 
 #back__button {
-  background-color: transparent;
+  background-color: rgba(247, 236, 224, 1);
+  border: none;
+    border-radius: 10px;
+    cursor: pointer; 
+    padding: 10px 25px;
+    font-size: 16px;
 }
