@@ -48,7 +48,7 @@ const HomePage = () => {
 
   return (
     <div className="home__container">
-      <p className="home__quote">Pick a review <span id="topic">&#123;topic&#125;</span></p>
+      <p className="home__quote">Pick a review <span id="topic">&#123;&nbsp;topic&nbsp;&#125;</span></p>
       <div className="topics__container">
         <button
           className="topic"
@@ -80,7 +80,7 @@ const HomePage = () => {
         <div className="home__modal">
           <div className="overlay" onClick={() => setShowModal(false)}></div>
           <div className="modal">
-            <p className="modal__header">Pick a review <span id="method">&#60;method&#62;</span></p>
+            <p className="modal__header">Pick a review <span id="method">&#60;&nbsp;method&nbsp;&#62;</span></p>
             <div className="review__methods">
               <button
                 className="method"

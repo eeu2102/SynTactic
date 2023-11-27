@@ -3,6 +3,7 @@ import Header from "./Header";
 import "./App.css";
 import HomePage from "./HomePage";
 import Dashboard from "./Dashboard";
+import DashboardHeader from "./DashboardHeader";
 import Problems from "./Problems";
 import Welcome from "./Welcome";
 import WelcomeHeader from "./WelcomeHeader";
@@ -10,6 +11,7 @@ import LandingHeader from "./LandingHeader";
 import Landing from "./Landing";
 import ProblemsHeader from "./ProblemsHeader";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,500;1,600&display=swap');
 </style>
@@ -39,7 +41,13 @@ const App = () => (
           <Problems />
         </>
       }/>
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/dashboard" element={
+        <>
+          <DashboardHeader />
+          <Dashboard />
+        </>
+        
+      } />
     </Routes>
   </div>
 );

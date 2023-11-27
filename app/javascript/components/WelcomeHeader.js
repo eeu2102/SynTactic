@@ -2,7 +2,7 @@ import React from 'react';
 import "./WelcomeHeader.css";
 
 const WelcomeHeader = () => {
-  return ( // Added return statement here
+  return ( 
     <div className="welcome__header__container">
       <div>
         <h1 className="welcome__header__text">SynTactic</h1>

@@ -32,12 +32,9 @@ const Dashboard = () => {
           if (response.ok) {
             setUsername(data.username); // Set the username if the request was successful
             setProgress(data.progress); // Set the progress
-            console.log(data.username);
-            console.log(data.progress);
-            console.log(data)
+            
 
           } else {
-            console.log("PROBLEM"); // Log or handle errors
             navigate('/login'); // Redirect to login page if not authenticated
           }
         } catch (error) {
@@ -54,23 +51,17 @@ const Dashboard = () => {
   
   
   const handleLogout = async () => {
-    // Retrieve the token from local storage
     const token = localStorage.getItem('authToken');
-    console.log(token);
-    console.log("RARIWRNO")
   
-    // Remove the token from local storage
     localStorage.removeItem('authToken');
     
-    // Optionally inform the backend about the logout for token invalidation
     try {
       const response = await fetch('/logout', {
-        method: 'DELETE', // or 'DELETE', depending on your API design
+        method: 'DELETE', 
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`, // Include the token in the Authorization header
+          'Authorization': `Bearer ${token}`,
         },
-        // If your backend expects a body, include it here
       });
   
       if (!response.ok) {
@@ -79,9 +70,7 @@ const Dashboard = () => {
     } catch (error) {
       console.error('There was an error during logout:', error);
     }
-  
-    // Redirect to the landing page
-    navigate('/login');
+      navigate('/login');
   };
   
 
@@ -91,11 +80,14 @@ const Dashboard = () => {
 
   return (
     <div className="profile__container">
-      <button onClick={handleLogout} className="logout__button">Logout</button>
-      {/* <h1>Hi Jessica！</h1> */}
-      <h1>Hi {username}!</h1>
-      <h2 id="progress__tracker">Questions Solved: {progress} </h2>
-      <button onClick={handleHomeClick} className="home__button">Home</button>
+      <span id="dashboard__orange__circle"></span>
+      <span id="dashboard__blue__circle"></span>
+      <p className="dashboard__greeting">&#123;&nbsp;Hi {username}&nbsp;&#125;</p>
+      <p className="progress__tracker">Questions Solved: {progress} </p>
+      <div className="dashboard__buttons">
+        <button onClick={handleHomeClick} className="dashboard__button" id="home__button">Home</button>
+        <button onClick={handleLogout} className="dashboard__button" id="logout__button">Logout</button>
+      </div>
     </div>
   );
 };

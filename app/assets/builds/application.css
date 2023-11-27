@@ -30,32 +30,30 @@
 }
 .dropdown {
   font-size: 20px;
-  background-color: lightgrey;
+  background-color: rgba(30, 77, 219, 1);
+  color: #f6fbff;
   text-align: center;
   border-radius: 10px;
-  width: 10vw;
-  height: 45px;
+  width: 13vw;
+  max-width: 100px;
+  padding: 12px 0px 12px 0px;
   align-items: center;
   display: flex;
   justify-content: center;
   position: relative;
-  border-bottom: 1px transparent solid;
 }
 .dropdown.open {
-  border-radius: 10px 10px 0px 0px;
-  border-bottom: 1px black solid;
 }
 .dropdown__content {
-  background-color: lightgrey;
+  background-color: rgba(30, 77, 219, 1);
+  color: #f6fbff;
   font-size: 20px;
   position: absolute;
-  top: 102%;
-  width: 95px;
-  border-radius: 0 0 10px 10px;
-  padding-bottom: 10px;
-}
-.dropdown__item {
-  padding-top: 5px;
+  top: 110%;
+  border-radius: 10px;
+  padding: 10px 0 10px 0;
+  width: 13vw;
+  max-width: 100px;
 }
 #user__dashboard {
   font-size: 25px;
@@ -325,14 +323,71 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
-  height: 80vh;
+  gap: 35px;
+  margin-top: 13vh;
+  height: 100vh;
 }
-.home__button {
-  height: 45px;
-  width: 130px;
-  font-size: 24px;
-  background-color: lightgrey;
+#dashboard__orange__circle {
+  width: 250px;
+  height: 250px;
+  background-color: rgba(255, 107, 53, 1);
+  position: fixed;
+  top: 15%;
+  right: 40%;
+  z-index: -100;
+  border-radius: 50%;
+}
+#dashboard__blue__circle {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(30, 77, 219, 1);
+  position: fixed;
+  top: 30%;
+  right: 35%;
+  z-index: -90;
+  border-radius: 50%;
+}
+.dashboard__greeting {
+  font-size: 30px;
+  font-weight: 600;
+}
+.dashboard__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+}
+.dashboard__button {
+  padding: 10px 25px;
+}
+.progress__tracker {
+  font-size: 20px;
+}
+#home__button {
+  background-color: rgba(30, 77, 219, 1);
+  color: #f6fbff;
+}
+#logout__button {
+  background-color: rgba(247, 236, 224, 1);
+  color: #151012;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+/* app/javascript/components/DashboardHeader.css */
+.dashboard__header__text {
+  color: #151012;
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 10vw;
+  padding: 10px 30px 10px 0px;
+}
+#orange__banner {
+  position: absolute;
+  top: 5%;
+  z-index: -100;
+  background-color: rgba(255, 107, 53, 1);
+  border-radius: 0px 10px 10px 0px;
 }
 
 /* app/javascript/components/Problems.css */
