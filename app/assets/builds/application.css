@@ -7,7 +7,7 @@
 }
 .header__text {
   color: #151012;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 600;
   margin-left: 10vw;
   padding: 10px 30px 10px 0px;
@@ -21,22 +21,22 @@
 }
 .header__buttons {
   display: flex;
-  justify-content: space-between;
+  gap: 15px;
   align-items: center;
-  width: 55vw;
   position: absolute;
   top: 5%;
-  left: 45%;
+  right: 2%;
 }
 .dropdown {
-  font-size: 20px;
-  background-color: rgba(30, 77, 219, 1);
-  color: #f6fbff;
+  font-size: 16px;
+  border: solid rgba(30, 77, 219, 1) 3px;
+  box-sizing: border-box;
+  color: #151012;
   text-align: center;
   border-radius: 10px;
   width: 13vw;
   max-width: 100px;
-  padding: 12px 0px 12px 0px;
+  padding: 7px;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -45,22 +45,22 @@
 .dropdown.open {
 }
 .dropdown__content {
-  background-color: rgba(30, 77, 219, 1);
-  color: #f6fbff;
-  font-size: 20px;
+  border: solid rgba(30, 77, 219, 1) 3px;
+  box-sizing: border-box;
+  color: #151012;
+  font-size: 16px;
   position: absolute;
-  top: 110%;
+  top: 115%;
   border-radius: 10px;
   padding: 10px 0 10px 0;
   width: 13vw;
   max-width: 100px;
 }
 #user__dashboard {
-  font-size: 25px;
-  font-weight: 600;
+  font-size: 16px;
   background-color: rgba(247, 236, 224, 1);
-  padding: 10px 12vw 10px 30px;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 /* app/javascript/components/App.css */
@@ -355,29 +355,29 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3vw;
+  gap: 15px;
 }
 .dashboard__button {
   padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 10px;
 }
 .progress__tracker {
   font-size: 20px;
 }
-#home__button {
+#dashboard__home__button {
   background-color: rgba(30, 77, 219, 1);
   color: #f6fbff;
 }
 #logout__button {
   background-color: rgba(247, 236, 224, 1);
   color: #151012;
-  font-size: 20px;
-  border-radius: 10px;
 }
 
 /* app/javascript/components/DashboardHeader.css */
 .dashboard__header__text {
   color: #151012;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 600;
   margin-left: 10vw;
   padding: 10px 30px 10px 0px;
@@ -406,7 +406,7 @@ body {
   height: 20px;
   background-color: #e6e8ef;
   border-radius: 10px;
-  margin-top: 70px;
+  margin-top: 15vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -437,8 +437,11 @@ body {
 .question {
   margin-bottom: 50px;
   margin-top: 50px;
-  width: 85vw;
-  font-size: 30px;
+  max-width: 750px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .answer__choices {
   display: flex;
@@ -457,10 +460,12 @@ body {
   border: none;
   background-color: #e6e8ef;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 16px;
   border: 3px solid transparent;
 }
 .answer__choice span {
+  min-height: 50px;
+  min-width: 50px;
   width: 50px;
   height: 50px;
   color: #f6fbff;
@@ -471,7 +476,7 @@ body {
   justify-content: center;
   margin-right: 20px;
   margin-left: 15px;
-  font-size: 20px;
+  font-size: 16px;
 }
 .answer__choice.selected__choice {
   border-style: solid;
@@ -493,7 +498,7 @@ body {
   display: inline;
 }
 .problems__modal.correct {
-  background-color: #adfb3b;
+  background-color: #7dd000;
 }
 .problems__modal.incorrect {
   background-color: rgb(227, 61, 61);
@@ -503,7 +508,7 @@ body {
   border-radius: 10px;
   cursor: pointer;
   padding: 10px 25px;
-  font-size: 20px;
+  font-size: 16px;
   margin-right: 25px;
 }
 .results {
@@ -590,7 +595,7 @@ body {
 .results__buttons {
   display: flex;
   justify-content: center;
-  gap: 3vw;
+  gap: 15px;
 }
 #home__button,
 #again__button {
@@ -598,7 +603,15 @@ body {
   border-radius: 10px;
   cursor: pointer;
   padding: 10px 25px;
-  font-size: 20px;
+  font-size: 16px;
+}
+#home__button {
+  background-color: rgba(30, 77, 219, 1);
+  color: #e6e8ef;
+}
+#again__button {
+  background-color: (247, 236, 224, 1);
+  color: #151012;
 }
 
 /* app/javascript/components/Welcome.css */
@@ -607,37 +620,52 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10vh;
-  margin-top: 50px;
+  gap: 7vh;
+  margin-top: 10vh;
 }
 .welcome__message {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+}
+.welcome__text {
+  font-size: 50px;
+  font-weight: 600;
+}
+#language {
+  font-style: italic;
 }
 .language__selection {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 4vh;
 }
 .selection__text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 3vh;
 }
 .language__choice {
-  background-color: red;
-  font-size: 30px;
-  line-height: 40px;
-  background-color: lightgrey;
-  width: 250px;
-  height: 80px;
+  color: #f6fbff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 35px;
+  background-color: rgba(30, 77, 219, 1);
   cursor: pointer;
+  height: 35vh;
+  width: 25vw;
+  max-width: 250px;
+  transition: transform 0.4s ease;
+}
+.language__choice:hover {
+  transform: translateY(-20px);
 }
 .language__options {
   gap: 30px;
@@ -645,8 +673,13 @@ body {
   justify-content: center;
   align-items: center;
 }
+#select__language {
+  font-size: 30px;
+  font-weight: 600;
+}
 #change__language {
-  margin-top: 15px;
+  font-size: 16px;
+  color: #9C8C8E;
 }
 
 /* app/javascript/components/WelcomeHeader.css */
@@ -664,7 +697,7 @@ body {
 /* app/javascript/components/LandingHeader.css */
 .landing__header__text {
   color: #151012;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 600;
   margin-left: 10vw;
   padding: 10px 30px 10px 0px;
@@ -820,30 +853,47 @@ label {
 }
 
 /* app/javascript/components/ProblemsHeader.css */
-.problems__header__container {
-  display: flex;
-  background-color: #ff663b;
-  align-items: center;
-  height: 70px;
-  justify-content: space-between;
+.problems__header__text {
+  color: #151012;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 10vw;
+  padding: 10px 30px 10px 0px;
+}
+#orange__banner {
+  position: absolute;
+  top: 5%;
+  z-index: -100;
+  background-color: rgba(255, 107, 53, 1);
+  border-radius: 0px 10px 10px 0px;
 }
 .problems__header__buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
+  position: absolute;
+  top: 5%;
+  right: 2%;
 }
 .problems__selected__language {
-  font-size: 20px;
-  background-color: lightgrey;
+  font-size: 16px;
+  border: solid rgba(30, 77, 219, 1) 3px;
+  box-sizing: border-box;
+  color: #151012;
   text-align: center;
   border-radius: 10px;
-  width: 95px;
-  height: 45px;
+  width: 13vw;
+  max-width: 100px;
+  padding: 7px;
   align-items: center;
   display: flex;
   justify-content: center;
   position: relative;
-  border-bottom: 3px transparent solid;
-  box-sizing: border-box;
+}
+#user__dashboard {
+  font-size: 16px;
+  background-color: rgba(247, 236, 224, 1);
+  border-radius: 10px;
+  padding: 10px;
 }

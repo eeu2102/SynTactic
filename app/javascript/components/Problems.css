@@ -15,7 +15,7 @@ body {
   height: 20px;
   background-color: #e6e8ef;
   border-radius: 10px;
-  margin-top: 70px;
+  margin-top: 15vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,8 +51,11 @@ body {
 .question {
   margin-bottom: 50px;
   margin-top: 50px;
-  width: 85vw;
-  font-size: 30px;
+  max-width: 750px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .answer__choices {
@@ -73,11 +76,13 @@ body {
   border: none;
   background-color: #e6e8ef;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 16px;
   border: 3px solid transparent
 }
 
 .answer__choice span {
+  min-height: 50px;
+  min-width: 50px;
   width: 50px; 
   height: 50px;
   color: #f6fbff;
@@ -88,7 +93,7 @@ body {
   justify-content: center;
   margin-right: 20px;
   margin-left: 15px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .answer__choice.selected__choice {
@@ -114,7 +119,7 @@ body {
 }
 
 .problems__modal.correct {
-  background-color: #adfb3b; 
+  background-color: #7dd000; 
 }
 
 .problems__modal.incorrect {
@@ -126,7 +131,7 @@ body {
   border-radius: 10px;
   cursor: pointer; 
   padding: 10px 25px;
-  font-size: 20px;
+  font-size: 16px;
   margin-right: 25px;
 }
 
@@ -231,7 +236,7 @@ body {
 .results__buttons {
   display: flex;
   justify-content: center;
-  gap: 3vw
+  gap: 15px;
   
 }
 
@@ -241,7 +246,17 @@ body {
   border-radius: 10px;
   cursor: pointer; 
   padding: 10px 25px;
-  font-size: 20px;
+  font-size: 16px;
+}
+
+#home__button {
+  background-color: rgba(30, 77, 219, 1);
+  color: #e6e8ef;
+}
+
+#again__button {
+  background-color: (247, 236, 224, 1);;
+  color: #151012;
 }
 
 

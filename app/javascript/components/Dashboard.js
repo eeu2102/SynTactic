@@ -85,7 +85,7 @@ const Dashboard = () => {
       <p className="dashboard__greeting">&#123;&nbsp;Hi {username}&nbsp;&#125;</p>
       <p className="progress__tracker">Questions Solved: {progress} </p>
       <div className="dashboard__buttons">
-        <button onClick={handleHomeClick} className="dashboard__button" id="home__button">Home</button>
+        <button onClick={handleHomeClick} className="dashboard__button" id="dashboard__home__button">Home</button>
         <button onClick={handleLogout} className="dashboard__button" id="logout__button">Logout</button>
       </div>
     </div>
