@@ -32,11 +32,11 @@ const Welcome = () => {
   return (
     <div className="welcome__container">
       <div className="welcome__message">
-        <h1>Welcome to SynTactic</h1>
+        <p className="welcome__text">Welcome to SynTactic!</p>
       </div>
       <div className="language__selection">
         <div className="selection__text">
-          <h2 id="select__language">Select a Language:</h2>
+          <p id="select__language">Select a <span id="language">&#123;&nbsp;language&nbsp;&#125;</span></p>
           <p id="change__language">You can always change your practice language later!</p>
         </div>
         <div className="language__options">

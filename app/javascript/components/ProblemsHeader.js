@@ -37,9 +37,11 @@ const ProblemsHeader = () => {
   return (
     <div className="problems__header__container">
       <div className="home__link">
+      <span id="orange__banner">
         <Link to="/home">
-          <h1 className="problems__header__text">SynTactic</h1>
+          <p className="problems__header__text">SynTactic</p>
         </Link>
+        </span> 
       </div>
       <div className="problems__header__buttons">
         <div className="problems__selected__language">

@@ -31982,7 +31982,7 @@
     }, /* @__PURE__ */ import_react3.default.createElement("button", {
       onClick: handleHomeClick,
       className: "dashboard__button",
-      id: "home__button"
+      id: "dashboard__home__button"
     }, "Home"), /* @__PURE__ */ import_react3.default.createElement("button", {
       onClick: handleLogout,
       className: "dashboard__button",
@@ -32359,13 +32359,17 @@
       className: "welcome__container"
     }, /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "welcome__message"
-    }, /* @__PURE__ */ import_react6.default.createElement("h1", null, "Welcome to SynTactic")), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react6.default.createElement("p", {
+      className: "welcome__text"
+    }, "Welcome to SynTactic!")), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "language__selection"
     }, /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "selection__text"
-    }, /* @__PURE__ */ import_react6.default.createElement("h2", {
+    }, /* @__PURE__ */ import_react6.default.createElement("p", {
       id: "select__language"
-    }, "Select a Language:"), /* @__PURE__ */ import_react6.default.createElement("p", {
+    }, "Select a ", /* @__PURE__ */ import_react6.default.createElement("span", {
+      id: "language"
+    }, "{\xA0language\xA0}")), /* @__PURE__ */ import_react6.default.createElement("p", {
       id: "change__language"
     }, "You can always change your practice language later!")), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "language__options"
@@ -32631,11 +32635,13 @@
       className: "problems__header__container"
     }, /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "home__link"
+    }, /* @__PURE__ */ import_react10.default.createElement("span", {
+      id: "orange__banner"
     }, /* @__PURE__ */ import_react10.default.createElement(Link, {
       to: "/home"
-    }, /* @__PURE__ */ import_react10.default.createElement("h1", {
+    }, /* @__PURE__ */ import_react10.default.createElement("p", {
       className: "problems__header__text"
-    }, "SynTactic"))), /* @__PURE__ */ import_react10.default.createElement("div", {
+    }, "SynTactic")))), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "problems__header__buttons"
     }, /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "problems__selected__language"

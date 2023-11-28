@@ -194,7 +194,6 @@ const Problems = () => {
   };
 
   //if the user wants to go through the questions again 
-  // TODO ADD LOGIC FOR IF MC OR FC AGAIN
   const handleAgainClick = async () => {
     setSelectedAnswer(null);
     setQuestionIndex(0);
@@ -288,6 +287,7 @@ const Problems = () => {
             ></div>
             <p className="progress__number">{questionIndex + 1}/{totalQuestions}</p>
           </div>
+        
         
           <div className="question">
             <p>{questionData.question}</p>

@@ -39,18 +39,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3vw;
+  gap: 15px;
 }
 
 .dashboard__button {
   padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 10px;
 }
 
 .progress__tracker {
   font-size: 20px;
 }
 
-#home__button {
+#dashboard__home__button {
   background-color: rgba(30, 77, 219, 1);
   color: #f6fbff;
 }
@@ -58,6 +60,5 @@
 #logout__button {
   background-color: rgba(247, 236, 224, 1);;
   color: #151012;
-  font-size: 20px;
-  border-radius: 10px;
+  
 }
