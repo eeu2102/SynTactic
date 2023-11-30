@@ -42,8 +42,6 @@
   justify-content: center;
   position: relative;
 }
-.dropdown.open {
-}
 .dropdown__content {
   border: solid rgba(30, 77, 219, 1) 3px;
   box-sizing: border-box;
@@ -824,7 +822,6 @@ label {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  padding: 10px 25px;
   font-size: 16px;
 }
 .overlay {
@@ -859,11 +856,12 @@ label {
   font-weight: 600;
   margin-left: 10vw;
   padding: 10px 30px 10px 0px;
+  background-color: transparent;
 }
 #orange__banner {
   position: absolute;
   top: 5%;
-  z-index: -100;
+  z-index: 100;
   background-color: rgba(255, 107, 53, 1);
   border-radius: 0px 10px 10px 0px;
 }

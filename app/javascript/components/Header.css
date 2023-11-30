@@ -50,10 +50,6 @@
   /* border-bottom: 1px transparent solid; */
 }
 
-.dropdown.open {
-  /* border-radius: 10px 10px 0px 0px; */
-  /* border-bottom: 1px black solid; */
-}
 
 .dropdown__content {
   /* background-color: rgba(30, 77, 219, 1); */

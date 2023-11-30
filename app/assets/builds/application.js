@@ -32611,7 +32611,11 @@
     const [selectedLanguage, setSelectedLanguage] = (0, import_react10.useState)("");
     const navigate = useNavigate();
     const goToDashboard = () => {
-      navigate("/dashboard");
+      console.log("WTF");
+      navigate("/home");
+    };
+    const goToHome = () => {
+      navigate("/home");
     };
     (0, import_react10.useEffect)(() => {
       const token = localStorage.getItem("authToken");
@@ -32633,15 +32637,12 @@
     }, []);
     return /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "problems__header__container"
-    }, /* @__PURE__ */ import_react10.default.createElement("div", {
-      className: "home__link"
     }, /* @__PURE__ */ import_react10.default.createElement("span", {
       id: "orange__banner"
-    }, /* @__PURE__ */ import_react10.default.createElement(Link, {
-      to: "/home"
-    }, /* @__PURE__ */ import_react10.default.createElement("p", {
+    }, /* @__PURE__ */ import_react10.default.createElement("button", {
+      onClick: goToHome,
       className: "problems__header__text"
-    }, "SynTactic")))), /* @__PURE__ */ import_react10.default.createElement("div", {
+    }, "<SynTactic>")), /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "problems__header__buttons"
     }, /* @__PURE__ */ import_react10.default.createElement("div", {
       className: "problems__selected__language"
