@@ -9,7 +9,12 @@ const ProblemsHeader = () => {
   const navigate = useNavigate();
 
   const goToDashboard = () => {
-    navigate("/dashboard");
+    console.log("WTF");
+    navigate("/home");
+  };
+
+  const goToHome = () => {
+    navigate("/home");
   };
 
   useEffect(() => {
@@ -36,13 +41,11 @@ const ProblemsHeader = () => {
 
   return (
     <div className="problems__header__container">
-      <div className="home__link">
       <span id="orange__banner">
-        <Link to="/home">
-          <p className="problems__header__text">SynTactic</p>
-        </Link>
-        </span> 
-      </div>
+          <button onClick={goToHome}
+          className="problems__header__text">&#60;SynTactic&#62;</button>
+      </span>
+         
       <div className="problems__header__buttons">
         <div className="problems__selected__language">
           {selectedLanguage}
@@ -54,6 +57,7 @@ const ProblemsHeader = () => {
         </div>
       </div>
     </div>
+
   )
 };
 
