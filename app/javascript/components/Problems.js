@@ -432,7 +432,8 @@ const Problems = () => {
                 </p>
               )}
               <button className="next__button" onClick={handleNextQuestion}>
-                Next
+                {/* Next */}
+                {questionIndex + 1 === totalQuestions ? "Finish" : "Next"}
               </button>
             </div>
           )}
@@ -462,7 +463,8 @@ const Problems = () => {
             </div>
           </div>
           <button className="next__button" id="next__card" onClick={handleNextQuestion}>
-            Next
+            {/* Next */}
+            {questionIndex + 1 === totalQuestions ? "Finish" : "Next"}
           </button>
         </div>
       )}
@@ -511,7 +513,8 @@ const Problems = () => {
                 </p>
               )}
               <button className="next__button" onClick={handleNextQuestion}>
-                Next
+                {/* Next */}
+                {questionIndex + 1 === totalQuestions ? "Finish" : "Next"}
               </button>
             </div>
           )}

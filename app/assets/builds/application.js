@@ -32327,7 +32327,7 @@
     }, "Incorrect. The correct answer is: ", questionData.correctAnswer), /* @__PURE__ */ import_react5.default.createElement("button", {
       className: "next__button",
       onClick: handleNextQuestion
-    }, "Next"))), flashCards && /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, questionIndex + 1 === totalQuestions ? "Finish" : "Next"))), flashCards && /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "problems__container"
     }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "progress__container"
@@ -32365,7 +32365,7 @@
       className: "next__button",
       id: "next__card",
       onClick: handleNextQuestion
-    }, "Next")), trueFalse && /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, questionIndex + 1 === totalQuestions ? "Finish" : "Next")), trueFalse && /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "problems__container"
     }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "progress__container"
@@ -32397,7 +32397,7 @@
     }, "Incorrect. The correct answer is: ", tfData.answer), /* @__PURE__ */ import_react5.default.createElement("button", {
       className: "next__button",
       onClick: handleNextQuestion
-    }, "Next"))), showResultModal && multipleChoice && /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, questionIndex + 1 === totalQuestions ? "Finish" : "Next"))), showResultModal && multipleChoice && /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "results__modal"
     }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "overlay"
