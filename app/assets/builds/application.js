@@ -30413,9 +30413,6 @@
   function getPathContributingMatches(matches) {
     return matches.filter((match, index) => index === 0 || match.route.path && match.route.path.length > 0);
   }
-  function getResolveToMatches(matches) {
-    return getPathContributingMatches(matches).map((match, idx) => idx === matches.length - 1 ? match.pathname : match.pathnameBase);
-  }
   function resolveTo(toArg, routePathnames, locationPathname, isPathRelative) {
     if (isPathRelative === void 0) {
       isPathRelative = false;
@@ -30593,7 +30590,7 @@
     let {
       pathname: locationPathname
     } = useLocation();
-    let routePathnamesJson = JSON.stringify(getResolveToMatches(matches));
+    let routePathnamesJson = JSON.stringify(getPathContributingMatches(matches).map((match) => match.pathnameBase));
     let activeRef = React.useRef(false);
     useIsomorphicLayoutEffect(() => {
       activeRef.current = true;
@@ -30627,7 +30624,7 @@
     let {
       pathname: locationPathname
     } = useLocation();
-    let routePathnamesJson = JSON.stringify(getResolveToMatches(matches));
+    let routePathnamesJson = JSON.stringify(getPathContributingMatches(matches).map((match) => match.pathnameBase));
     return React.useMemo(() => resolveTo(to, JSON.parse(routePathnamesJson), locationPathname, relative === "path"), [to, routePathnamesJson, locationPathname, relative]);
   }
   function useRoutes(routes, locationArg) {
@@ -31904,7 +31901,12 @@
       onClick: () => navigate(
         `/problems?category=${selectedTopic}&method=flash card&language=${userLanguage}`
       )
-    }, "Flash Cards")), /* @__PURE__ */ import_react2.default.createElement("button", {
+    }, "Flash Cards"), /* @__PURE__ */ import_react2.default.createElement("button", {
+      className: "method",
+      onClick: () => navigate(
+        `/problems?category=${selectedTopic}&method=truefalse&language=${userLanguage}`
+      )
+    }, "True/False")), /* @__PURE__ */ import_react2.default.createElement("button", {
       id: "back__button",
       onClick: () => setShowModal(false)
     }, "Back"))));
@@ -32013,8 +32015,10 @@
     const navigate = useNavigate();
     const category = searchParams.get("category");
     const method = searchParams.get("method");
+    const language = searchParams.get("language");
     const [multipleChoice, setMultipleChoice] = (0, import_react5.useState)(false);
     const [flashCards, setFlashcards] = (0, import_react5.useState)(false);
+    const [trueFalse, setTrueFalse] = (0, import_react5.useState)(false);
     const [userLanguage, setUserLanguage] = (0, import_react5.useState)("");
     const [questionArray, setQuestionArray] = (0, import_react5.useState)([]);
     const [totalQuestions, setTotalQuestions] = (0, import_react5.useState)(0);
@@ -32029,6 +32033,11 @@
     const [isFlipped, setIsFlipped] = (0, import_react5.useState)(false);
     const [cardData, setCardData] = (0, import_react5.useState)({
       question: "",
+      answer: ""
+    });
+    const [tfData, setTFData] = (0, import_react5.useState)({
+      question: "",
+      claim: "",
       answer: ""
     });
     const [showCorrectnessModal, setShowCorrectnessModal] = (0, import_react5.useState)(false);
@@ -32058,6 +32067,7 @@
         console.log("MC");
         setMultipleChoice(true);
         setFlashcards(false);
+        setTrueFalse(false);
         fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`).then((response) => response.json()).then((data) => {
           if (data.length) {
             const shuffled = data.sort(() => 0.5 - Math.random());
@@ -32082,6 +32092,7 @@
         console.log("FC");
         setMultipleChoice(false);
         setFlashcards(true);
+        setTrueFalse(false);
         fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`).then((response) => response.json()).then((data) => {
           if (data.length) {
             const shuffled = data.sort(() => 0.5 - Math.random());
@@ -32097,13 +32108,34 @@
             }
           }
         });
+      } else if (category && method === "truefalse") {
+        console.log("TF");
+        setMultipleChoice(false);
+        setFlashcards(false);
+        setTrueFalse(true);
+        fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`).then((response) => response.json()).then((data) => {
+          if (data.length) {
+            const shuffled = data.sort(() => 0.5 - Math.random());
+            let selected = shuffled.slice(0, 5);
+            setQuestionArray(selected);
+            setTotalQuestions(selected.length);
+            if (selected[0]) {
+              const firstTF = selected[0];
+              setTFData({
+                question: firstTF.question,
+                claim: firstTF.choice_a,
+                answer: firstTF.answer
+              });
+            }
+          }
+        });
       }
     }, [category, method, userLanguage]);
     const handleAnswerChoice = (selectedChoice) => {
       if (showCorrectnessModal)
         return;
       setSelectedAnswer(selectedChoice);
-      if (selectedChoice === questionData.correctAnswer) {
+      if (selectedChoice === questionData.correctAnswer || selectedChoice === tfData.answer) {
         setAnswerCorrect(true);
         setScore(score + 1);
       } else {
@@ -32145,10 +32177,26 @@
         } else {
           setShowResultModal(true);
         }
+      } else if (method === `truefalse`) {
+        if (nextIndex < totalQuestions) {
+          setShowCorrectnessModal(false);
+          setAnswerCorrect(false);
+          setSelectedAnswer(null);
+          setQuestionIndex(nextIndex);
+          const nextTF = questionArray[nextIndex];
+          setTFData({
+            question: nextTF.question,
+            claim: nextTF.choice_a,
+            answer: nextTF.answer
+          });
+        } else {
+          setShowCorrectnessModal(false);
+          setShowResultModal(true);
+        }
       }
     };
     const handleHomeClick = () => {
-      if (method === `multiple choice`) {
+      if (method === `multiple choice` || method === `truefalse`) {
         updateProgress(score);
       }
       navigate("/home");
@@ -32158,6 +32206,7 @@
       setQuestionIndex(0);
       setShowResultModal(false);
       if (method === `multiple choice`) {
+        console.log("MC");
         await updateProgress(score);
         if (category && method) {
           const response = await fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`);
@@ -32183,6 +32232,7 @@
           }
         }
       } else if (method === `flash card`) {
+        console.log("FC");
         setIsFlipped(false);
         if (category && method) {
           const response = await fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`);
@@ -32197,6 +32247,30 @@
               setQuestionData({
                 question: firstCard.question,
                 answer: firstCard.answer
+              });
+            }
+          }
+        }
+      } else if (method === `truefalse`) {
+        console.log("TF");
+        await updateProgress(score);
+        if (category && method) {
+          const response = await fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`);
+          const data = await response.json();
+          if (data.length) {
+            console.log("hello");
+            console.log(data.length);
+            const shuffled = data.sort(() => 0.5 - Math.random());
+            let selected = shuffled.slice(0, 5);
+            setQuestionArray(selected);
+            setTotalQuestions(selected.length);
+            setScore(0);
+            if (selected[0]) {
+              const firstTF = selected[0];
+              setTFData({
+                question: firstTF.question,
+                claim: firstTF.choice_a,
+                answer: firstTF.answer
               });
             }
           }
@@ -32291,7 +32365,39 @@
       className: "next__button",
       id: "next__card",
       onClick: handleNextQuestion
-    }, "Next")), showResultModal && multipleChoice && /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, "Next")), trueFalse && /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "problems__container"
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "progress__container"
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "progress__bar",
+      style: { width: `${progressPercentage}%` }
+    }), /* @__PURE__ */ import_react5.default.createElement("p", {
+      className: "progress__number"
+    }, questionIndex + 1, "/", totalQuestions)), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "tf__question"
+    }, /* @__PURE__ */ import_react5.default.createElement("p", null, tfData.question)), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "tf__claim"
+    }, /* @__PURE__ */ import_react5.default.createElement("p", null, tfData.claim)), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "true__false"
+    }, /* @__PURE__ */ import_react5.default.createElement("button", {
+      onClick: () => handleAnswerChoice("TRUE"),
+      className: `true__choice ${selectedAnswer === "TRUE" ? "selected__choice" : ""}`
+    }, "TRUE"), /* @__PURE__ */ import_react5.default.createElement("button", {
+      onClick: () => handleAnswerChoice("FALSE"),
+      className: `false__choice ${selectedAnswer === "FALSE" ? "selected__choice" : ""}`
+    }, "FALSE")), showCorrectnessModal && /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: `problems__modal ${isAnswerCorrect ? "correct" : "incorrect"}`
+    }, isAnswerCorrect ? /* @__PURE__ */ import_react5.default.createElement("p", {
+      className: "correctness__modal",
+      id: "correct__answer"
+    }, "Correct!") : /* @__PURE__ */ import_react5.default.createElement("p", {
+      className: "correctness__modal",
+      id: "incorrect__answer"
+    }, "Incorrect. The correct answer is: ", tfData.answer), /* @__PURE__ */ import_react5.default.createElement("button", {
+      className: "next__button",
+      onClick: handleNextQuestion
+    }, "Next"))), showResultModal && multipleChoice && /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "results__modal"
     }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "overlay"
@@ -32320,6 +32426,26 @@
     }, /* @__PURE__ */ import_react5.default.createElement("p", {
       className: "problem__title"
     }, "Practice Complete!"), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "results__buttons"
+    }, /* @__PURE__ */ import_react5.default.createElement("button", {
+      onClick: handleHomeClick,
+      id: "home__button"
+    }, "Home"), /* @__PURE__ */ import_react5.default.createElement("button", {
+      onClick: handleAgainClick,
+      id: "again__button"
+    }, "Again")))), showResultModal && trueFalse && /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "results__modal"
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "overlay"
+    }), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "results"
+    }, /* @__PURE__ */ import_react5.default.createElement("p", {
+      className: "problem__title"
+    }, "Practice Complete!"), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "user__score"
+    }, /* @__PURE__ */ import_react5.default.createElement("p", {
+      id: "score"
+    }, "Your Score: ", score, " out of ", totalQuestions), /* @__PURE__ */ import_react5.default.createElement("p", null, "Questions Solved: +", score, "!")), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "results__buttons"
     }, /* @__PURE__ */ import_react5.default.createElement("button", {
       onClick: handleHomeClick,
@@ -32611,8 +32737,7 @@
     const [selectedLanguage, setSelectedLanguage] = (0, import_react10.useState)("");
     const navigate = useNavigate();
     const goToDashboard = () => {
-      console.log("WTF");
-      navigate("/home");
+      navigate("/dashboard");
     };
     const goToHome = () => {
       navigate("/home");
@@ -32711,7 +32836,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 /**
- * @remix-run/router v1.13.0
+ * @remix-run/router v1.13.1
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -32734,7 +32859,7 @@
  * @license Modernizr 3.0.0pre (Custom Build) | MIT
  */
 /**
- * React Router DOM v6.20.0
+ * React Router DOM v6.20.1
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -32744,7 +32869,7 @@
  * @license MIT
  */
 /**
- * React Router v6.20.0
+ * React Router v6.20.1
  *
  * Copyright (c) Remix Software Inc.
  *

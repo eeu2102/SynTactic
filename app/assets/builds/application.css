@@ -299,9 +299,10 @@ button {
   background-color: rgba(255, 107, 53, 1);
   cursor: pointer;
   height: 15vh;
-  width: 20vw;
-  min-width: 250px;
+  width: 15vw;
+  min-width: 150px;
   transition: transform ease 0.4s;
+  line-height: 30px;
 }
 .method:hover {
   transform: translateY(-20px);
@@ -559,6 +560,47 @@ body {
   bottom: 100px;
   position: absolute;
   background-color: #e6e8ef;
+}
+.tf__question {
+  margin-bottom: 90px;
+  margin-top: 50px;
+  max-width: 750px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 30px;
+}
+.tf__claim {
+  margin-bottom: 100px;
+  max-width: 750px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #FF6B35;
+  padding: 20px 50px;
+  border-radius: 10px;
+}
+.true__false {
+  display: flex;
+  gap: 5vw;
+  margin-top: 10px;
+}
+.true__choice,
+.false__choice {
+  font-size: 16px;
+  background-color: #e6e8ef;
+  cursor: pointer;
+  border: 3px solid transparent;
+  width: 150px;
+  height: 70px;
+}
+.true__choice.selected__choice,
+.false__choice.selected__choice {
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
 }
 .overlay {
   position: fixed;

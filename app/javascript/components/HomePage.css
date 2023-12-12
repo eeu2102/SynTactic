@@ -108,9 +108,10 @@ button {
   background-color: rgba(255, 107, 53, 1);
   cursor: pointer;
   height: 15vh;
-  width: 20vw;
-  min-width: 250px;
+  width: 15vw;
+  min-width: 150px;
   transition: transform ease 0.4s; 
+  line-height: 30px;
 }
 
 .method:hover {

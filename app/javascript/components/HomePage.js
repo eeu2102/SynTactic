@@ -102,6 +102,16 @@ const HomePage = () => {
               >
                 Flash Cards
               </button>
+              <button
+                className="method"
+                onClick={() =>
+                  navigate(
+                    `/problems?category=${selectedTopic}&method=truefalse&language=${userLanguage}`
+                  )
+                }
+              >
+                True/False
+              </button>
             </div>
             <button id="back__button" onClick={() => setShowModal(false)}>
               Back

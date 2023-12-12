@@ -16,10 +16,11 @@ const Problems = () => {
   const navigate = useNavigate();
   const category = searchParams.get("category");
   const method = searchParams.get("method");
-  // const language = searchParams.get("language");
+  const language = searchParams.get("language");
 
   const [multipleChoice, setMultipleChoice] = useState(false);
   const [flashCards, setFlashcards] = useState(false);
+  const [trueFalse, setTrueFalse] = useState(false);
   const [userLanguage, setUserLanguage] = useState('');
 
   const [questionArray, setQuestionArray] = useState([]);
@@ -27,8 +28,10 @@ const Problems = () => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const progressPercentage = ((questionIndex + 1) / totalQuestions) * 100;
 
-  //initializing variables to hold multiple choice question data and scoring
+  //initialize variable to hold scoring
   const [score, setScore] = useState(0);
+
+  //initializing variables to hold multiple choice question data
   const [questionData, setQuestionData] = useState({
     question: "",
     choices: ["", "", ""],
@@ -41,6 +44,14 @@ const Problems = () => {
     question: "",
     answer: ""
   })
+
+  //initializing variables to hold true false question data and scoring
+  const [tfData, setTFData] = useState({
+    question: "",
+    claim: "",
+    answer: "",
+  })
+
 
   //initializing variables (cont)
   const [showCorrectnessModal, setShowCorrectnessModal] = useState(false);
@@ -75,6 +86,7 @@ const Problems = () => {
       console.log("MC");
       setMultipleChoice(true);
       setFlashcards(false);
+      setTrueFalse(false);
       fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`)
       .then(response => response.json())
       .then(data => {
@@ -103,6 +115,7 @@ const Problems = () => {
       console.log("FC");
       setMultipleChoice(false);
       setFlashcards(true);
+      setTrueFalse(false);
       fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`)
       .then(response => response.json())
       .then(data => {
@@ -122,15 +135,44 @@ const Problems = () => {
           }
         }
       });
+    } 
+    else if (category && method === 'truefalse') {
+      console.log("TF");
+      setMultipleChoice(false);
+      setFlashcards(false);
+      setTrueFalse(true);
+      fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.length) {
+          const shuffled = data.sort(() => 0.5 - Math.random());
+          let selected = shuffled.slice(0, 5);
+  
+          setQuestionArray(selected);
+          setTotalQuestions(selected.length);
+  
+          if (selected[0]) {
+            const firstTF = selected[0];
+            setTFData({
+              question: firstTF.question,
+              claim: firstTF.choice_a,
+              answer: firstTF.answer
+            });
+          }
+        }
+      });
     }
+
   }, [category, method, userLanguage]);
   
 
-  //handling cases if it was the last question, answer was right, answer was wrong
+  // shows correctness of answer after selection
   const handleAnswerChoice = (selectedChoice) => {
     if (showCorrectnessModal) return;
     setSelectedAnswer(selectedChoice);
-    if (selectedChoice === questionData.correctAnswer) {
+    if (selectedChoice === questionData.correctAnswer || 
+        selectedChoice === tfData.answer) {
+    // if (selectedChoice === tfData.answer) {
       setAnswerCorrect(true);
       setScore(score + 1);
     } else {
@@ -182,12 +224,31 @@ const Problems = () => {
       }
     }
 
+    else if (method === `truefalse`) {
+      if (nextIndex < totalQuestions) {
+        setShowCorrectnessModal(false);
+        setAnswerCorrect(false);
+        setSelectedAnswer(null);
+        setQuestionIndex(nextIndex);
+        
+        const nextTF = questionArray[nextIndex];
+        setTFData({
+          question: nextTF.question,
+          claim: nextTF.choice_a,
+          answer: nextTF.answer
+        });
+      } else {
+        setShowCorrectnessModal(false);
+        setShowResultModal(true);
+      }
+    }
+
     
   };
 
   //if the user clicks the home icon
   const handleHomeClick = () => {
-    if (method === `multiple choice`) {
+    if (method === `multiple choice` || method === `truefalse`) {
       updateProgress(score);
     }
     navigate("/home");
@@ -201,6 +262,7 @@ const Problems = () => {
     
     // Reset the questionData to the first question for multiple choice
     if (method === `multiple choice`) {
+      console.log("MC")
       await updateProgress(score);
       if (category && method) {
         const response = await fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`);
@@ -232,6 +294,7 @@ const Problems = () => {
 
     // Reset the questionData to the first question for flash cards
     else if (method === `flash card`) {
+      console.log("FC")
       setIsFlipped(false);
       if (category && method) {
         const response = await fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`);
@@ -249,6 +312,36 @@ const Problems = () => {
             setQuestionData({
               question: firstCard.question,
               answer: firstCard.answer
+            });
+          }
+        }
+      }
+    }
+
+    // Reset the questionData to the first question for true false
+    else if (method === `truefalse`) {
+      console.log("TF")
+      await updateProgress(score);
+      if (category && method) {
+        const response = await fetch(`/questions?category=${category}&method=${method}&coding_language=${userLanguage}`);
+        const data = await response.json();
+  
+        if (data.length) {
+          console.log("hello");
+          console.log(data.length);
+          const shuffled = data.sort(() => 0.5 - Math.random());
+          let selected = shuffled.slice(0, 5);
+  
+          setQuestionArray(selected);
+          setTotalQuestions(selected.length);
+          setScore(0);
+  
+          if (selected[0]) {
+            const firstTF = selected[0];
+            setTFData({
+              question: firstTF.question,
+              claim: firstTF.choice_a,
+              answer: firstTF.answer,
             });
           }
         }
@@ -374,6 +467,57 @@ const Problems = () => {
         </div>
       )}
 
+      { trueFalse && (
+        <div className="problems__container">
+          <div className="progress__container">
+            <div
+              className="progress__bar"
+              style={{ width: `${progressPercentage}%` }}
+            ></div>
+            <p className="progress__number">{questionIndex + 1}/{totalQuestions}</p>
+          </div>
+          <div className="tf__question">
+            <p>{tfData.question}</p>
+          </div>
+          <div className="tf__claim">
+            <p>{tfData.claim}</p>
+          </div>
+          <div className="true__false">
+            <button
+              onClick={() => handleAnswerChoice("TRUE")}
+              className={`true__choice ${selectedAnswer === "TRUE" ? "selected__choice" : ""}`}>
+              TRUE
+            </button>
+            <button
+              onClick={() => handleAnswerChoice("FALSE")}
+              className={`false__choice ${selectedAnswer === "FALSE" ? "selected__choice" : ""}`}>
+              FALSE
+            </button>
+          </div>
+
+          {showCorrectnessModal && (
+            <div
+              className={`problems__modal ${
+                isAnswerCorrect ? "correct" : "incorrect"
+              }`}
+            >
+              {isAnswerCorrect ? (
+                <p className="correctness__modal" id="correct__answer">
+                  Correct!
+                </p>
+              ) : (
+                <p className="correctness__modal" id="incorrect__answer">
+                  Incorrect. The correct answer is: {tfData.answer}
+                </p>
+              )}
+              <button className="next__button" onClick={handleNextQuestion}>
+                Next
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
       { showResultModal && multipleChoice && (
           <div className="results__modal">
               <div className="overlay"></div>
@@ -396,6 +540,23 @@ const Problems = () => {
               <div className="overlay"></div>
               <div className="results">
                 <p className="problem__title">Practice Complete!</p>
+                <div className="results__buttons">
+                  <button onClick={handleHomeClick} id="home__button">Home</button>
+                  <button onClick={handleAgainClick} id="again__button">Again</button>
+                </div>
+              </div>
+            </div>
+        )}
+
+        { showResultModal && trueFalse && (
+          <div className="results__modal">
+              <div className="overlay"></div>
+              <div className="results">
+                <p className="problem__title">Practice Complete!</p>
+                <div className="user__score">
+                  <p id="score">Your Score: {score} out of {totalQuestions}</p>
+                  <p>Questions Solved: +{score}!</p>
+                </div>
                 <div className="results__buttons">
                   <button onClick={handleHomeClick} id="home__button">Home</button>
                   <button onClick={handleAgainClick} id="again__button">Again</button>
