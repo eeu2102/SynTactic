@@ -9,8 +9,7 @@ const ProblemsHeader = () => {
   const navigate = useNavigate();
 
   const goToDashboard = () => {
-    console.log("WTF");
-    navigate("/home");
+    navigate("/dashboard");
   };
 
   const goToHome = () => {
