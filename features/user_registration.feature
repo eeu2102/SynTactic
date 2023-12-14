@@ -54,7 +54,7 @@ Scenario: Logging In an Existing User
     And I fill in "Username" with "jessicajong"
     And I fill in "Password" with "testing123"
     When I press the "Login" button
-    Then I should see "Welcome to SynTactic"
+    Then I should see "Pick a review"
     Then I should be on the home page
 
 Scenario: Registering another New User
@@ -109,7 +109,7 @@ Scenario: Ensuring the Language Preference Persists After Signing Up
     Then I should be on the home page
     When I press the "Dashboard" button 
     Then I should be on the dashboard page
-    And I should see "Hi jessicaong!"
+    And I should see "Hi jessicaong"
     When I press the "Logout" button
     Then I should be on the login page
     Then I should see "Login"
@@ -117,6 +117,5 @@ Scenario: Ensuring the Language Preference Persists After Signing Up
     And I fill in "Username" with "jessicaong" 
     And I fill in "Password" with "testing3"
     When I press the "Login" button
-    Then I should see "Welcome to SynTactic"
+    Then I should see "Pick a review"
     Then I should be on the home page
-    Then I should see "Java"

@@ -49,7 +49,7 @@ Scenario: Navigate from results modal to Home Page
    Then I should see "C"
    Then I press the "wrong" button
    Then I should see "Incorrect. The correct answer is:"
-   When I press the "Next" button
+   When I press the "Finish" button
    Then I should see "Practice Complete!"
    And I should see "Your Score:"
    And I should see "Questions Solved:"
@@ -97,7 +97,7 @@ Scenario: Repeat the set of questions from results modal
    Then I should see "C"
    Then I press the "wrong" button
    Then I should see "Incorrect. The correct answer is:"
-   When I press the "Next" button
+   When I press the "Finish" button
    Then I should see "Practice Complete!"
    And I should see "Your Score:"
    And I should see "Questions Solved:"

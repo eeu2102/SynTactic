@@ -1,16 +1,16 @@
-Feature: solving a problem
-    As a user, I want to answer questions.
-    So that I can test my knowledge and receive feedback.
+Feature: solving a problem using true false
+    As a user, I want to learn syntax using true false
+    So that I can test my knowledge.
 
 Background: questions in database
 
   Given the following questions exist:
-  | question     | choice_a  | choice_b  | choice_c  | answer | coding_language | category     | method          |
-  | Answer is B  | wrong     | correct   | choice 3  | B      | Python          | control flow | multiple choice |
-  | Answer is A  | correct   | wrong     | choice 3  | A      | Python          | control flow | multiple choice |
-  | Answer is C  | wrong     | choice 2  | correct   | C      | Python          | control flow | multiple choice |
-  | Answer is C  | choice 1  | wrong     | correct   | C      | Python          | control flow | multiple choice |
-  | Answer is A  | correct   | choice 2  | wrong     | A      | Python          | control flow | multiple choice |
+  | question        | choice_a  | choice_b  | choice_c  | answer | coding_language | category     | method          |
+  | Answer is TRUE  | null      | null      | null      | TRUE   | Python          | control flow | truefalse       |
+  | Answer is TRUE  | null      | null      | null      | TRUE   | Python          | control flow | truefalse       |
+  | Answer is TRUE  | null      | null      | null      | TRUE   | Python          | control flow | truefalse       |
+  | Answer is TRUE  | null      | null      | null      | TRUE   | Python          | control flow | truefalse       |
+  | Answer is TRUE  | null      | null      | null      | TRUE   | Python          | control flow | truefalse       |
 
 Scenario: Answer a question correctly
    Given I am on the login page
@@ -25,13 +25,12 @@ Scenario: Answer a question correctly
    Then I should be on the home page
 
    When I press the "Control Flow" button
-   When I press the "Multiple Choice" button
+   When I press the "True/False" button
    Then I should be on the problems page
-   And I do not see "5/5"
-   Then I should see "A"
-   Then I should see "B"
-   Then I should see "C"
-   When I press the "correct" button
+   Then I should see "TRUE"
+   Then I should see "FALSE"
+   Then I should see "Answer is TRUE"
+   When I press the "TRUE" button
    Then I should see "Correct!"
    When I press the "Next" button 
    Then I should be on the problems page
@@ -50,13 +49,12 @@ Scenario: Answer a question incorrectly
    And I should see "Python"   
 
    When I press the "Control Flow" button
-   When I press the "Multiple Choice" button
+   When I press the "True/False" button
    Then I should be on the problems page
-   And I do not see "5/5"
-   Then I should see "A"
-   Then I should see "B"
-   Then I should see "C"
-   When I press the "wrong" button
+   Then I should see "TRUE"
+   Then I should see "FALSE"
+   Then I should see "Answer is TRUE"
+   When I press the "FALSE" button
    Then I should see "Incorrect. The correct answer is:"
    When I press the "Next" button 
    Then I should be on the problems page
@@ -75,25 +73,24 @@ Scenario: Answer all the questions and see the results
    And I should see "Python"
 
    When I press the "Control Flow" button
-   When I press the "Multiple Choice" button
+   When I press the "True/False" button
    Then I should be on the problems page
-   Then I should see "A"
-   Then I should see "B"
-   Then I should see "C"
+   Then I should see "TRUE"
+   Then I should see "FALSE"
    And I should see "1/5"
-   Then I press the "correct" button
+   Then I press the "TRUE" button
    Then I press the "Next" button
    And I should see "2/5"
-   Then I press the "wrong" button
+   Then I press the "TRUE" button
    Then I press the "Next" button
    And I should see "3/5"
-   Then I press the "correct" button
+   Then I press the "FALSE" button
    Then I press the "Next" button
    And I should see "4/5"
-   Then I press the "wrong" button
+   Then I press the "TRUE" button
    Then I press the "Next" button
    And I should see "5/5"
-   Then I press the "correct" button
+   Then I press the "FALSE" button
    Then I press the "Finish" button
    Then I should see "Practice Complete!"
    And I should see "Your Score: 3 out of 5"
@@ -112,35 +109,33 @@ Scenario: Answer all the questions then choose to do another round of practice
    Then I should be on the home page
    And I should see "Python"
    
+   
    When I press the "Control Flow" button
-   When I press the "Multiple Choice" button
+   When I press the "True/False" button
    Then I should be on the problems page
-   Then I should see "A"
-   Then I should see "B"
-   Then I should see "C"
+   Then I should see "TRUE"
+   Then I should see "FALSE"
    And I should see "1/5"
-   Then I press the "correct" button
+   Then I press the "TRUE" button
    Then I press the "Next" button
    And I should see "2/5"
-   Then I press the "wrong" button
+   Then I press the "TRUE" button
    Then I press the "Next" button
    And I should see "3/5"
-   Then I press the "correct" button
+   Then I press the "TRUE" button
    Then I press the "Next" button
    And I should see "4/5"
-   Then I press the "wrong" button
+   Then I press the "TRUE" button
    Then I press the "Next" button
    And I should see "5/5"
-   Then I should see "A"
-   Then I should see "B"
-   Then I should see "C"
-   Then I press the "wrong" button
-   Then I should see "Incorrect. The correct answer is:"
-   When I press the "Finish" button
+   Then I press the "FALSE" button
+   Then I press the "Finish" button
    Then I should see "Practice Complete!"
-   And I should see "Your Score:"
-   And I should see "Questions Solved:"
+   And I should see "Your Score: 4 out of 5"
+   And I should see "Questions Solved: +4"
    And I should see "Home"
    And I should see "Again"
-
+   Then I press the "Again" button
+   Then I should see "TRUE"
+   Then I should see "FALSE"
 

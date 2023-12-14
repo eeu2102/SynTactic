@@ -61,6 +61,6 @@ Scenario: Finish all flash cards and see results
    And I should see "4/5"
    Then I press the "Next" button
    And I should see "5/5"
-   Then I press the "Next" button
+   Then I press the "Finish" button
    Then I should see "Practice Complete!"
 
