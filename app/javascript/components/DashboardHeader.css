@@ -14,3 +14,7 @@
   background-color: rgba(255, 107, 53, 1);
   border-radius: 0px 10px 10px 0px;
 }
+
+#orange__banner:hover {
+  cursor: pointer;
+}
