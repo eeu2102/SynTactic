@@ -1,4 +1,6 @@
-
+button:hover {
+  cursor: pointer;
+}
 .problems__header__text {
     color: #151012;
     font-size: 20px;
@@ -40,6 +42,10 @@
   display: flex;
   justify-content: center;
   position: relative;
+}
+
+.problems__selected__language:hover {
+  cursor: pointer;
 }
 
 #user__dashboard {

@@ -1,3 +1,8 @@
+button:hover {
+  cursor: pointer;
+}
+
+
 .header__container {
   display: flex;
   align-items: center;
@@ -20,6 +25,10 @@
   z-index: -100;
   background-color: rgba(255, 107, 53, 1);
   border-radius: 0px 10px 10px 0px;
+}
+
+#orange__banner:hover {
+  cursor: pointer;
 }
 
 .header__buttons {
@@ -48,6 +57,10 @@
   justify-content: center;
   position: relative;
   /* border-bottom: 1px transparent solid; */
+}
+
+.dropdown:hover {
+  cursor: pointer;
 }
 
 
