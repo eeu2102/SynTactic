@@ -28,11 +28,6 @@ ESaaS Fall '23 Project
 
 - Hit [https://syntacticsugar-e3a3513c5494.herokuapp.com/login/](https://syntacticsugar-e3a3513c5494.herokuapp.com/login/)
 
-# Missing Features
-
-- In iteration 2, we implemented all of the features we were hoping to! 
-- In iteration 3, we will focus our attention on styling. If needed, we may make some changes for a more seamless page-to-page workflow.
-
 # Thanks to Raphael Sofaer
 
 - Special thanks to Raphael Sofaer for helping us debug a very annoying Webpacker error. You may see some of his commits from our (11/1/2023) Office Hour Session where we were trying different methods of deleting and reinstalling configuration files. Thankfully we found a solution in deleting the following line from our Gemfile: 
