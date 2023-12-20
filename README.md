@@ -11,7 +11,7 @@ ESaaS Fall '23 Project
 # Installation
 
 - Clone repo
-- - Run `npm install`
+- Run `npm install`
 - Run `bundle install`
 - Run `npm install`
 
